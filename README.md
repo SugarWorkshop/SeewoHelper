@@ -16,3 +16,5 @@ SeewoHelper 是一个**为解决Seewo一体机屏幕过大而导致的操作不�
 - 课件自动整理
 - [充当RemoteExecutor的ClientLauncher](https://github.com/zi-jing/RemoteExecutor)
 - 高危指令可密码上锁
+
+项目目前搁置中,**欢迎大佬参与开发！**
