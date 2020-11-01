@@ -31,15 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SettingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.OperationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OperationMenuItem,
             this.HelpMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -50,18 +54,10 @@
             // HelpMenuItem
             // 
             this.HelpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SettingMenuItem,
             this.AboutMenuItem});
             this.HelpMenuItem.Name = "HelpMenuItem";
             this.HelpMenuItem.Size = new System.Drawing.Size(44, 21);
             this.HelpMenuItem.Text = "帮助";
-            // 
-            // SettingMenuItem
-            // 
-            this.SettingMenuItem.Name = "SettingMenuItem";
-            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SettingMenuItem.Text = "选项";
-            this.SettingMenuItem.Click += new System.EventHandler(this.SettingMenuItem_Click);
             // 
             // AboutMenuItem
             // 
@@ -69,6 +65,39 @@
             this.AboutMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AboutMenuItem.Text = "关于...";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // OperationMenuItem
+            // 
+            this.OperationMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SettingMenuItem,
+            this.toolStripSeparator,
+            this.ExitMenuItem});
+            this.OperationMenuItem.Name = "OperationMenuItem";
+            this.OperationMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.OperationMenuItem.Text = "操作";
+            // 
+            // SettingMenuItem
+            // 
+            this.SettingMenuItem.Name = "SettingMenuItem";
+            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingMenuItem.Text = "选项";
+            // 
+            // ExitMenuItem
+            // 
+            this.ExitMenuItem.Name = "ExitMenuItem";
+            this.ExitMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitMenuItem.Text = "退出";
+            this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
             // 
             // WindowMain
             // 
@@ -94,8 +123,11 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem HelpMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SettingMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem OperationMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SettingMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     }
 }
 

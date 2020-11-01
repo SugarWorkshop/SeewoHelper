@@ -31,5 +31,15 @@ namespace SeewoHelper
         {
 
         }
+
+        private void toolStripContainer1_LeftToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
