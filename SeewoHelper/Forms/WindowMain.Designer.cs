@@ -63,7 +63,7 @@
             // SettingMenuItem
             // 
             this.SettingMenuItem.Name = "SettingMenuItem";
-            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingMenuItem.Size = new System.Drawing.Size(100, 22);
             this.SettingMenuItem.Text = "选项";
             // 
             // HelpMenuItem
@@ -77,7 +77,7 @@
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutMenuItem.Size = new System.Drawing.Size(109, 22);
             this.AboutMenuItem.Text = "关于...";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
