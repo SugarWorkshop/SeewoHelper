@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.OperationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.OperationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SettingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.menuStrip.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -50,6 +51,20 @@
             this.menuStrip.Size = new System.Drawing.Size(800, 25);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
+            // 
+            // OperationMenuItem
+            // 
+            this.OperationMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SettingMenuItem});
+            this.OperationMenuItem.Name = "OperationMenuItem";
+            this.OperationMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.OperationMenuItem.Text = "操作";
+            // 
+            // SettingMenuItem
+            // 
+            this.SettingMenuItem.Name = "SettingMenuItem";
+            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingMenuItem.Text = "选项";
             // 
             // HelpMenuItem
             // 
@@ -71,39 +86,35 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // OperationMenuItem
+            // tabPage1
             // 
-            this.OperationMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SettingMenuItem,
-            this.toolStripSeparator,
-            this.ExitMenuItem});
-            this.OperationMenuItem.Name = "OperationMenuItem";
-            this.OperationMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.OperationMenuItem.Text = "操作";
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(768, 383);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "快捷功能";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // SettingMenuItem
+            // tabControl
             // 
-            this.SettingMenuItem.Name = "SettingMenuItem";
-            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SettingMenuItem.Text = "选项";
-            // 
-            // ExitMenuItem
-            // 
-            this.ExitMenuItem.Name = "ExitMenuItem";
-            this.ExitMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ExitMenuItem.Text = "退出";
-            this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Font = new System.Drawing.Font("宋体", 10F);
+            this.tabControl.Location = new System.Drawing.Point(12, 28);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(776, 410);
+            this.tabControl.TabIndex = 1;
             // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip;
@@ -113,6 +124,7 @@
             this.Load += new System.EventHandler(this.WindowMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,8 +138,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem OperationMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SettingMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }
 

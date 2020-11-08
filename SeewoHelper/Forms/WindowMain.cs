@@ -36,10 +36,5 @@ namespace SeewoHelper
         {
 
         }
-
-        private void ExitMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
