@@ -57,6 +57,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.UpgradeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -91,6 +92,7 @@
             // HelpMenuItem
             // 
             this.HelpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UpgradeMenuItem,
             this.AboutMenuItem});
             this.HelpMenuItem.Name = "HelpMenuItem";
             this.HelpMenuItem.Size = new System.Drawing.Size(44, 21);
@@ -99,7 +101,7 @@
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.AboutMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AboutMenuItem.Text = "关于...";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
@@ -423,6 +425,13 @@
             this.tabControl.Size = new System.Drawing.Size(776, 410);
             this.tabControl.TabIndex = 1;
             // 
+            // UpgradeMenuItem
+            // 
+            this.UpgradeMenuItem.Name = "UpgradeMenuItem";
+            this.UpgradeMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UpgradeMenuItem.Text = "检查更新";
+            this.UpgradeMenuItem.Click += new System.EventHandler(this.UpgradeMenuItem_Click);
+            // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -478,6 +487,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ToolStripMenuItem UpgradeMenuItem;
     }
 }
 

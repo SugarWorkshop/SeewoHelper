@@ -1,11 +1,5 @@
-﻿using Console.Forms;
+﻿using SeewoHelper.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -206,6 +200,11 @@ namespace SeewoHelper
             {
                 textBox7.Text = dilog.SelectedPath;
             }
+        }
+
+        private void UpgradeMenuItem_Click(object sender, EventArgs e)
+        {
+            new UpgradeWindow().Show();
         }
     }
 }

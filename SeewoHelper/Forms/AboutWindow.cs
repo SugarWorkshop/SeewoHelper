@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Console.Forms
+namespace SeewoHelper.Forms
 {
     public partial class AboutWindow : Form
     {
