@@ -137,5 +137,75 @@ namespace SeewoHelper
                 button7.Enabled = true;
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = dilog.SelectedPath;
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox2.Text = dilog.SelectedPath;
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox3.Text = dilog.SelectedPath;
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox4.Text = dilog.SelectedPath;
+            }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox5.Text = dilog.SelectedPath;
+            }
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox6.Text = dilog.SelectedPath;
+            }
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK)
+            {
+                textBox7.Text = dilog.SelectedPath;
+            }
+        }
     }
 }
