@@ -40,7 +40,7 @@ namespace SeewoHelper
             new AboutWindow().Show();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false)
             {
@@ -54,7 +54,7 @@ namespace SeewoHelper
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked == false)
             {
@@ -68,7 +68,7 @@ namespace SeewoHelper
             }
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked == false)
             {
@@ -82,7 +82,7 @@ namespace SeewoHelper
             }
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox4_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox4.Checked == false)
             {
@@ -96,7 +96,7 @@ namespace SeewoHelper
             }
         }
 
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox5.Checked == false)
             {
@@ -110,7 +110,7 @@ namespace SeewoHelper
             }
         }
 
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox6_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox6.Checked == false)
             {
@@ -124,7 +124,7 @@ namespace SeewoHelper
             }
         }
 
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox7_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox7.Checked == false)
             {
