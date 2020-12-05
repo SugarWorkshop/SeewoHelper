@@ -31,7 +31,7 @@ namespace SeewoHelper
 
         private void AboutMenuItem_Click(object sender, EventArgs e)
         {
-            new AboutWindow().Show();
+            new AboutWindow().ShowDialog();
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -204,7 +204,7 @@ namespace SeewoHelper
 
         private void UpgradeMenuItem_Click(object sender, EventArgs e)
         {
-            new UpgradeWindow().Show();
+            new UpgradeWindow().ShowDialog();
         }
     }
 }
