@@ -32,6 +32,7 @@
             this.OperationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UpgradeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,7 +58,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.UpgradeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,6 +98,13 @@
             this.HelpMenuItem.Size = new System.Drawing.Size(44, 21);
             this.HelpMenuItem.Text = "帮助";
             // 
+            // UpgradeMenuItem
+            // 
+            this.UpgradeMenuItem.Name = "UpgradeMenuItem";
+            this.UpgradeMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UpgradeMenuItem.Text = "检查更新";
+            this.UpgradeMenuItem.Click += new System.EventHandler(this.UpgradeMenuItem_Click);
+            // 
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
@@ -122,6 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -425,13 +433,6 @@
             this.tabControl.Size = new System.Drawing.Size(776, 410);
             this.tabControl.TabIndex = 1;
             // 
-            // UpgradeMenuItem
-            // 
-            this.UpgradeMenuItem.Name = "UpgradeMenuItem";
-            this.UpgradeMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.UpgradeMenuItem.Text = "检查更新";
-            this.UpgradeMenuItem.Click += new System.EventHandler(this.UpgradeMenuItem_Click);
-            // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -439,8 +440,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip;
+            this.MaximizeBox = false;
             this.Name = "WindowMain";
             this.ShowIcon = false;
             this.Text = "SeewoHelper";
@@ -448,6 +451,7 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
