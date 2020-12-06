@@ -40,7 +40,7 @@ namespace SeewoHelper
             }
         }
 
-        private void listViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        private void ListViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             e.Cancel = true;
             e.NewWidth = listViewSubjectStorageInfos.Columns[e.ColumnIndex].Width;
