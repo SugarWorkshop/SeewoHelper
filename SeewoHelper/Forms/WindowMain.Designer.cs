@@ -36,13 +36,13 @@
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewSubjectStorageInfos = new System.Windows.Forms.ListView();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderKeywords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubjectStorageInfoAdd = new System.Windows.Forms.Button();
             this.buttonSubjectInfoStorageRemove = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderKeywords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
@@ -119,10 +119,22 @@
             this.listViewSubjectStorageInfos.HideSelection = false;
             this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(7, 6);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(742, 284);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(742, 315);
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderName
+            // 
+            this.columnHeaderName.Text = "名称";
+            // 
+            // columnHeaderPath
+            // 
+            this.columnHeaderPath.Text = "路径";
+            // 
+            // columnHeaderKeywords
+            // 
+            this.columnHeaderKeywords.Text = "关键词";
             // 
             // tableLayoutPanelSubjectStorageInfoListControlButtons
             // 
@@ -131,19 +143,22 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectStorageInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectInfoStorageRemove, 1, 0);
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(6, 302);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(7, 327);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(743, 75);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(161, 50);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.TabIndex = 1;
             // 
             // buttonSubjectStorageInfoAdd
             // 
+            this.buttonSubjectStorageInfoAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSubjectStorageInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(3, 3);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
-            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(365, 69);
+            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(74, 44);
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.UseVisualStyleBackColor = true;
@@ -151,10 +166,13 @@
             // 
             // buttonSubjectInfoStorageRemove
             // 
+            this.buttonSubjectInfoStorageRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSubjectInfoStorageRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(374, 3);
+            this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(83, 3);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
-            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(366, 69);
+            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(75, 44);
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.UseVisualStyleBackColor = true;
@@ -172,18 +190,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(776, 410);
             this.tabControl.TabIndex = 1;
-            // 
-            // columnHeaderName
-            // 
-            this.columnHeaderName.Text = "名称";
-            // 
-            // columnHeaderPath
-            // 
-            this.columnHeaderPath.Text = "路径";
-            // 
-            // columnHeaderKeywords
-            // 
-            this.columnHeaderKeywords.Text = "关键词";
             // 
             // WindowMain
             // 

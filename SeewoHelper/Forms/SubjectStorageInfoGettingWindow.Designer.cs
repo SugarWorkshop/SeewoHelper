@@ -29,7 +29,7 @@ namespace SeewoHelper.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelButton = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,32 +39,35 @@ namespace SeewoHelper.Forms
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.textBoxKeywords = new System.Windows.Forms.TextBox();
             this.buttonGettingPath = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanelButton.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanelButton
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonOK, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.buttonCancel, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 151);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(776, 75);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanelButton.ColumnCount = 2;
+            this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
+            this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(633, 127);
+            this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
+            this.tableLayoutPanelButton.RowCount = 1;
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanelButton.Size = new System.Drawing.Size(150, 44);
+            this.tableLayoutPanelButton.TabIndex = 2;
             // 
             // buttonOK
             // 
+            this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonOK.Location = new System.Drawing.Point(3, 3);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(381, 69);
+            this.buttonOK.Size = new System.Drawing.Size(69, 38);
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -72,10 +75,14 @@ namespace SeewoHelper.Forms
             // 
             // buttonCancel
             // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(391, 3);
+            this.buttonCancel.Location = new System.Drawing.Point(78, 3);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(382, 69);
+            this.buttonCancel.Size = new System.Drawing.Size(69, 38);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -141,9 +148,11 @@ namespace SeewoHelper.Forms
             // 
             // SubjectStorageInfoGettingWindow
             // 
+            this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 238);
+            this.CancelButton = this.buttonCancel;
+            this.ClientSize = new System.Drawing.Size(795, 183);
             this.Controls.Add(this.buttonGettingPath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -151,18 +160,18 @@ namespace SeewoHelper.Forms
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxPath);
             this.Controls.Add(this.textBoxKeywords);
-            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanelButton);
             this.MaximizeBox = false;
             this.Name = "SubjectStorageInfoGettingWindow";
             this.Text = "添加课件存储信息";
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelButton;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
