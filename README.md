@@ -16,4 +16,6 @@ SeewoHelper 是一个为**解决Seewo一体机屏幕过大而导致的操作不�
 - [一键部署RemoteExecutor的Client端](https://github.com/zi-jing/RemoteExecutor)
 - 高危指令可密码上锁
 
-项目目前搁置中，**欢迎大佬参与开发！**
+本项目制作较为仓促，部分代码实现非常暴力，如有更好的处理方案，请提issue或提交pr！
+
+**欢迎大佬参与开发！**
