@@ -125,6 +125,7 @@
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
+            this.listViewSubjectStorageInfos.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listViewSubjectStorageInfos_ColumnWidthChanging);
             // 
             // columnHeaderName
             // 
