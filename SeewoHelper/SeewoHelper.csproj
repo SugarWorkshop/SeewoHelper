@@ -69,6 +69,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ControlUtilities.cs" />
+    <Compile Include="Utilities\FolderBrowserDialogUtilities.cs" />
     <EmbeddedResource Include="Forms\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
