@@ -1,5 +1,7 @@
 ﻿using SeewoHelper.Forms;
+using SeewoHelper.Utilities;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -13,20 +15,11 @@ namespace SeewoHelper
 
         private void WindowMain_Load(object sender, EventArgs e)
         {
-            textBox1.Enabled = false;
-            button1.Enabled = false;
-            textBox2.Enabled = false;
-            button2.Enabled = false;
-            textBox3.Enabled = false;
-            button3.Enabled = false;
-            textBox4.Enabled = false;
-            button4.Enabled = false;
-            textBox5.Enabled = false;
-            button5.Enabled = false;
-            textBox6.Enabled = false;
-            button6.Enabled = false;
-            textBox7.Enabled = false;
-            button7.Enabled = false;
+            ControlUtilities.SetEnabled(
+                false,
+                textBox1, textBox2, textBox3, textBox4, textBox5, textBox6, textBox7,
+                button1, button2, button3, button4, button5, button6, button7
+                );
         }
 
         private void AboutMenuItem_Click(object sender, EventArgs e)
@@ -36,170 +29,72 @@ namespace SeewoHelper
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == false)
-            {
-                textBox1.Enabled = false;
-                button1.Enabled = false;
-            }
-            else
-            {
-                textBox1.Enabled = true;
-                button1.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox1.Checked, textBox1, button1);
         }
 
         private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked == false)
-            {
-                textBox2.Enabled = false;
-                button2.Enabled = false;
-            }
-            else
-            {
-                textBox2.Enabled = true;
-                button2.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox2.Checked, textBox2, button2);
         }
 
         private void CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked == false)
-            {
-                textBox3.Enabled = false;
-                button3.Enabled = false;
-            }
-            else
-            {
-                textBox3.Enabled = true;
-                button3.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox3.Checked, textBox3, button3);
         }
 
         private void CheckBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox4.Checked == false)
-            {
-                textBox4.Enabled = false;
-                button4.Enabled = false;
-            }
-            else
-            {
-                textBox4.Enabled = true;
-                button4.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox4.Checked, textBox4, button4);
         }
 
         private void CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox5.Checked == false)
-            {
-                textBox5.Enabled = false;
-                button5.Enabled = false;
-            }
-            else
-            {
-                textBox5.Enabled = true;
-                button5.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox5.Checked, textBox5, button5);
         }
 
         private void CheckBox6_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox6.Checked == false)
-            {
-                textBox6.Enabled = false;
-                button6.Enabled = false;
-            }
-            else
-            {
-                textBox6.Enabled = true;
-                button6.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox6.Checked, textBox6, button6);
         }
 
         private void CheckBox7_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox7.Checked == false)
-            {
-                textBox7.Enabled = false;
-                button7.Enabled = false;
-            }
-            else
-            {
-                textBox7.Enabled = true;
-                button7.Enabled = true;
-            }
+            ControlUtilities.SetEnabled(checkBox7.Checked, textBox7, button7);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox1.Text = dilog.SelectedPath;
-            }
+            textBox1.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox2.Text = dilog.SelectedPath;
-            }
+            textBox2.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox3.Text = dilog.SelectedPath;
-            }
+            textBox3.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox4.Text = dilog.SelectedPath;
-            }
+            textBox4.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox5.Text = dilog.SelectedPath;
-            }
+            textBox5.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox6.Text = dilog.SelectedPath;
-            }
+            textBox6.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dilog = new FolderBrowserDialog();
-            dilog.Description = "请选择文件夹";
-            if (dilog.ShowDialog() == DialogResult.OK)
-            {
-                textBox7.Text = dilog.SelectedPath;
-            }
+            textBox7.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
 
         private void UpgradeMenuItem_Click(object sender, EventArgs e)
