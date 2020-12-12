@@ -35,6 +35,9 @@
             this.UpgradeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonGettingPath = new System.Windows.Forms.Button();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
             this.listViewSubjectStorageInfos = new System.Windows.Forms.ListView();
             this.listViewSubjectStorageInfosColumnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewSubjectStorageInfosColumnHeaderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +46,7 @@
             this.buttonSubjectStorageInfoAdd = new System.Windows.Forms.Button();
             this.buttonSubjectInfoStorageRemove = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
@@ -100,6 +104,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonStart);
+            this.tabPage1.Controls.Add(this.buttonGettingPath);
+            this.tabPage1.Controls.Add(this.labelSearch);
+            this.tabPage1.Controls.Add(this.textBoxPath);
             this.tabPage1.Controls.Add(this.listViewSubjectStorageInfos);
             this.tabPage1.Controls.Add(this.tableLayoutPanelSubjectStorageInfoListControlButtons);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
@@ -109,6 +117,35 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课件整理";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonGettingPath
+            // 
+            this.buttonGettingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonGettingPath.Location = new System.Drawing.Point(726, 6);
+            this.buttonGettingPath.Name = "buttonGettingPath";
+            this.buttonGettingPath.Size = new System.Drawing.Size(36, 25);
+            this.buttonGettingPath.TabIndex = 15;
+            this.buttonGettingPath.Text = "...";
+            this.buttonGettingPath.UseVisualStyleBackColor = true;
+            this.buttonGettingPath.Click += new System.EventHandler(this.buttonGettingPath_Click);
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelSearch.Location = new System.Drawing.Point(6, 9);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(74, 19);
+            this.labelSearch.TabIndex = 13;
+            this.labelSearch.Text = "搜索路径：";
+            // 
+            // textBoxPath
+            // 
+            this.textBoxPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxPath.Location = new System.Drawing.Point(86, 6);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.Size = new System.Drawing.Size(634, 25);
+            this.textBoxPath.TabIndex = 14;
             // 
             // listViewSubjectStorageInfos
             // 
@@ -121,9 +158,9 @@
             this.listViewSubjectStorageInfos.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
-            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(7, 6);
+            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(6, 37);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(755, 315);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(756, 294);
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
@@ -151,11 +188,12 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectStorageInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectInfoStorageRemove, 1, 0);
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(7, 327);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(6, 337);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(161, 50);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(161, 35);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.TabIndex = 1;
             // 
             // buttonSubjectStorageInfoAdd
@@ -166,7 +204,7 @@
             this.buttonSubjectStorageInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(3, 3);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
-            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(74, 44);
+            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(74, 29);
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.UseVisualStyleBackColor = true;
@@ -180,7 +218,7 @@
             this.buttonSubjectInfoStorageRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(83, 3);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
-            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(75, 44);
+            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(75, 29);
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.UseVisualStyleBackColor = true;
@@ -199,6 +237,16 @@
             this.tabControl.Size = new System.Drawing.Size(776, 410);
             this.tabControl.TabIndex = 1;
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Font = new System.Drawing.Font("微软雅黑", 10.75F);
+            this.buttonStart.Location = new System.Drawing.Point(675, 337);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(87, 35);
+            this.buttonStart.TabIndex = 16;
+            this.buttonStart.Text = "整理";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -216,6 +264,7 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -239,6 +288,10 @@
         private System.Windows.Forms.Button buttonSubjectStorageInfoAdd;
         private System.Windows.Forms.Button buttonSubjectInfoStorageRemove;
         private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.Button buttonGettingPath;
+        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.TextBox textBoxPath;
+        private System.Windows.Forms.Button buttonStart;
     }
 }
 

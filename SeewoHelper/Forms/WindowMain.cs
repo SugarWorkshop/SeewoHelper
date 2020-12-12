@@ -1,4 +1,5 @@
 ﻿using SeewoHelper.Forms;
+using SeewoHelper.Utilities;
 using System;
 using System.Windows.Forms;
 
@@ -41,6 +42,11 @@ namespace SeewoHelper
         {
             e.Cancel = true;
             e.NewWidth = listViewSubjectStorageInfos.Columns[e.ColumnIndex].Width;
+        }
+
+        private void buttonGettingPath_Click(object sender, EventArgs e)
+        {
+            textBoxPath.Text = FolderBrowserDialogUtilities.GetFilePath();
         }
     }
 }
