@@ -2,6 +2,7 @@
 using SeewoHelper.Forms;
 using SeewoHelper.Utilities;
 using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -53,12 +54,23 @@ namespace SeewoHelper
 
         private void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
         {
-            if (IOUtilities.IsProperPath(textBoxCoursewareSortingSearchingPath.Text))
+            var path = textBoxCoursewareSortingSearchingPath.Text;
+
+            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path, true) == PathType.Directionary && Directory.Exists(path))
             {
                 var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
-                var sorter = new CoursewareSorter(infos, textBoxCoursewareSortingSearchingPath.Text);
 
+                foreach (var info in infos)
+                {
+                    Directory.CreateDirectory(info.Path);
+                }
+
+                var sorter = new CoursewareSorter(infos, textBoxCoursewareSortingSearchingPath.Text);
                 sorter.Sort();
+            }
+            else
+            {
+                MessageBox.Show("非法路径或指定目录不存在！");
             }
         }
     }

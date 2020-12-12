@@ -1,30 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SeewoHelper.Utilities
 {
     internal static class IOUtilities
     {
-        public static bool IsProperPath(string path)
+        public static bool IsProperPath(string path, bool allowRoot = true)
         {
-            var regex = new Regex(@"^[a-zA-Z]:(\\[0-9a-zA-Z]+)*\\?$");
-            return regex.IsMatch(path);
+            var regex = new Regex(@"^[a-zA-Z]:[\\]((?! )(?![^\\/]*\s+[\\/])[\w -]+[\\/])*(?! )(?![^.]*\s+\.)[\w -]+$");
+            var regexRoot = new Regex(@"^[a-zA-Z]:[\\]");
+
+            return regex.IsMatch(path) || (allowRoot && regexRoot.IsMatch(path));
+        }
+
+        public static PathType GetPathType(string path, bool check = false)
+        {
+            if (string.IsNullOrEmpty(Path.GetExtension(path)) || (check && File.Exists(path)))
+            {
+                return PathType.Directionary;
+            }
+            else
+            {
+                return PathType.File;
+            }
         }
 
         public static string PathAppend(string path, string append)
         {
-            if (path.EndsWith("\\"))
+            if (IsProperPath(path) && GetPathType(path, true) == PathType.Directionary)
             {
-                return path + append;
+                return path.TrimEnd('\\') + "\\" + append;
             }
             else
             {
-                return path + "\\" + append;
+                throw new InvalidOperationException();
             }
         }
+
+        public static string ToFormattedPath(string path)
+        {
+            if (IsProperPath(path))
+            {
+                return path.TrimEnd('\\');
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
+        }
+    }
+
+    internal enum PathType
+    {
+        Directionary,
+        File
     }
 }
