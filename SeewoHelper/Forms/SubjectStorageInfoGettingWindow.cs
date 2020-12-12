@@ -19,7 +19,6 @@ namespace SeewoHelper.Forms
         {
             var form = new SubjectStorageInfoGettingWindow();
             form.ShowDialog();
-
             return form._subjectStorageInfo;
         }
 
@@ -31,9 +30,7 @@ namespace SeewoHelper.Forms
         private void ButtonOK_Click(object sender, EventArgs e)
         {
             if (StringUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text, textBoxKeywords.Text))
-            {
                 MessageBox.Show("请输入内容！");
-            }
             else
             {
                 _subjectStorageInfo = new SubjectStorageInfo(textBoxName.Text, textBoxPath.Text, textBoxKeywords.Text.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()).ToList());
@@ -44,6 +41,11 @@ namespace SeewoHelper.Forms
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ButtonEditKeyword_Click(object sender, EventArgs e)
+        {
+            new KeywordWindow().ShowDialog();
         }
     }
 }

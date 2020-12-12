@@ -55,6 +55,12 @@
     <Compile Include="Forms\AboutWindow.designer.cs">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KeywordWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeywordWindow.Designer.cs">
+      <DependentUpon>KeywordWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubjectStorageInfoGettingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Utilities\StringUtilities.cs" />
     <EmbeddedResource Include="Forms\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeywordWindow.resx">
+      <DependentUpon>KeywordWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubjectStorageInfoGettingWindow.resx">
       <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>

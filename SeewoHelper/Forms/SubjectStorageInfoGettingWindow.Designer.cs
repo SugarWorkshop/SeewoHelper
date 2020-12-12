@@ -39,6 +39,7 @@ namespace SeewoHelper.Forms
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.textBoxKeywords = new System.Windows.Forms.TextBox();
             this.buttonGettingPath = new System.Windows.Forms.Button();
+            this.buttonEditKeyword = new System.Windows.Forms.Button();
             this.tableLayoutPanelButton.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +103,7 @@ namespace SeewoHelper.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(13, 61);
+            this.label2.Location = new System.Drawing.Point(13, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 7;
@@ -112,7 +113,7 @@ namespace SeewoHelper.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(13, 97);
+            this.label3.Location = new System.Drawing.Point(13, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 8;
@@ -129,25 +130,35 @@ namespace SeewoHelper.Forms
             // 
             this.textBoxPath.Location = new System.Drawing.Point(91, 58);
             this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(692, 21);
+            this.textBoxPath.Size = new System.Drawing.Size(652, 21);
             this.textBoxPath.TabIndex = 10;
             // 
             // textBoxKeywords
             // 
             this.textBoxKeywords.Location = new System.Drawing.Point(91, 94);
             this.textBoxKeywords.Name = "textBoxKeywords";
-            this.textBoxKeywords.Size = new System.Drawing.Size(692, 21);
+            this.textBoxKeywords.Size = new System.Drawing.Size(653, 21);
             this.textBoxKeywords.TabIndex = 11;
             // 
             // buttonGettingPath
             // 
-            this.buttonGettingPath.Location = new System.Drawing.Point(749, 58);
+            this.buttonGettingPath.Location = new System.Drawing.Point(747, 58);
             this.buttonGettingPath.Name = "buttonGettingPath";
-            this.buttonGettingPath.Size = new System.Drawing.Size(33, 20);
+            this.buttonGettingPath.Size = new System.Drawing.Size(36, 21);
             this.buttonGettingPath.TabIndex = 12;
             this.buttonGettingPath.Text = "...";
             this.buttonGettingPath.UseVisualStyleBackColor = true;
             this.buttonGettingPath.Click += new System.EventHandler(this.ButtonGettingPath_Click);
+            // 
+            // buttonEditKeyword
+            // 
+            this.buttonEditKeyword.Location = new System.Drawing.Point(747, 94);
+            this.buttonEditKeyword.Name = "buttonEditKeyword";
+            this.buttonEditKeyword.Size = new System.Drawing.Size(36, 21);
+            this.buttonEditKeyword.TabIndex = 13;
+            this.buttonEditKeyword.Text = "🖊";
+            this.buttonEditKeyword.UseVisualStyleBackColor = true;
+            this.buttonEditKeyword.Click += new System.EventHandler(this.ButtonEditKeyword_Click);
             // 
             // SubjectStorageInfoGettingWindow
             // 
@@ -156,6 +167,7 @@ namespace SeewoHelper.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(795, 183);
+            this.Controls.Add(this.buttonEditKeyword);
             this.Controls.Add(this.buttonGettingPath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -184,5 +196,6 @@ namespace SeewoHelper.Forms
         private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.TextBox textBoxKeywords;
         private System.Windows.Forms.Button buttonGettingPath;
+        private System.Windows.Forms.Button buttonEditKeyword;
     }
 }
