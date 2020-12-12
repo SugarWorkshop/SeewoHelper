@@ -43,10 +43,5 @@ namespace SeewoHelper.Forms
             _str = textBox.Text;
             Close();
         }
-
-        private void InputBoxWindow_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

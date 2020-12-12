@@ -115,7 +115,6 @@ namespace SeewoHelper.Forms
             this.MinimizeBox = false;
             this.Name = "InputBoxWindow";
             this.ShowIcon = false;
-            this.Load += new System.EventHandler(this.InputBoxWindow_Load);
             this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
