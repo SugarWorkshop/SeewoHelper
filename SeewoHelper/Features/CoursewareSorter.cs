@@ -1,19 +1,16 @@
 ﻿using SeewoHelper.Utilities;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SeewoHelper.Features
 {
     public class CoursewareSorter
     {
-        private IEnumerable<SubjectStorageInfo> _subjectStorageInfos;
+        private readonly IEnumerable<SubjectStorageInfo> _subjectStorageInfos;
 
-        private IEnumerable<FileInfo> _files;
+        private readonly IEnumerable<FileInfo> _files;
 
         public void Sort()
         {

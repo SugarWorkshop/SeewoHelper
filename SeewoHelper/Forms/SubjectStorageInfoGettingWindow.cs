@@ -33,7 +33,7 @@ namespace SeewoHelper.Forms
             {
                 MessageBox.Show("请输入内容！");
             }
-            else if (!IOUtilities.IsProperPath(textBoxPath.Text))
+            else if (!IOUtilities.IsProperPath(textBoxPath.Text) && IOUtilities.GetPathType(textBoxPath.Text, true) != PathType.Directionary)
             {
                 MessageBox.Show("请输入合法路径！");
             }
