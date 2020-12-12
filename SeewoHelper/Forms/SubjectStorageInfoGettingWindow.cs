@@ -1,25 +1,26 @@
 ﻿using SeewoHelper.Utilities;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class SubjectStorageInfoGettingWindow : Form
+    public partial class SubjectStorageInfoGettingWindow : Form, IReturnableForm<SubjectStorageInfo>
     {
         private SubjectStorageInfo _subjectStorageInfo = null;
+        private List<string> _keywords = new List<string>();
 
         public SubjectStorageInfoGettingWindow()
         {
             InitializeComponent();
         }
 
-        public static SubjectStorageInfo GetInfo()
+        public SubjectStorageInfo GetInfo()
         {
-            var form = new SubjectStorageInfoGettingWindow();
-            form.ShowDialog();
-            return form._subjectStorageInfo;
+            ShowDialog();
+            return _subjectStorageInfo;
         }
 
         private void ButtonGettingPath_Click(object sender, EventArgs e)
@@ -29,11 +30,13 @@ namespace SeewoHelper.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (StringUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text, textBoxKeywords.Text))
+            if (StringUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text) || !_keywords.Any())
+            {
                 MessageBox.Show("请输入内容！");
+            }
             else
             {
-                _subjectStorageInfo = new SubjectStorageInfo(textBoxName.Text, textBoxPath.Text, textBoxKeywords.Text.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()).ToList());
+                _subjectStorageInfo = new SubjectStorageInfo(textBoxName.Text, textBoxPath.Text, _keywords);
                 Close();
             }
         }
@@ -45,7 +48,8 @@ namespace SeewoHelper.Forms
 
         private void ButtonEditKeyword_Click(object sender, EventArgs e)
         {
-            new KeywordEditWindow().ShowDialog();
+            _keywords = new KeywordEditWindow().GetInfo(_keywords);
+            textBoxKeywords.Text = string.Join(", ", _keywords);
         }
     }
 }

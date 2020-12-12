@@ -23,15 +23,12 @@ namespace SeewoHelper
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in listViewSubjectStorageInfos.SelectedItems)
-            {
-                listViewSubjectStorageInfos.Items.RemoveAt(item.Index);
-            }
+            listViewSubjectStorageInfos.RemoveSelectedItems();
         }
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
         {
-            var info = SubjectStorageInfoGettingWindow.GetInfo();
+            var info = new SubjectStorageInfoGettingWindow().GetInfo();
 
             if (info != null)
             {

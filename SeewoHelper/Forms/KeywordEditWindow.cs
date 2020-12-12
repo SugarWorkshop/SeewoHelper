@@ -10,21 +10,58 @@ using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class KeywordEditWindow : Form
+    public partial class KeywordEditWindow : Form, IReturnableForm<List<string>, List<string>>
     {
+        private List<string> _keywords;
+        
         public KeywordEditWindow()
         {
             InitializeComponent();
         }
 
-        private void buttonOK_Click(object sender, EventArgs e)
+        public List<string> GetInfo(List<string> list)
+        {
+            _keywords = list;
+            listViewKeywords.Items.AddRange(list.Select(x => new ListViewItem(x)).ToArray());
+            ShowDialog();
+
+            return _keywords;
+        }
+
+        private void ButtonOK_Click(object sender, EventArgs e)
+        {
+            _keywords = listViewKeywords.Items.ToList().Select(x => x.Text).ToList();
+            Close();
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            Close();
+            string keyword = new InputBoxWindow().GetInfo("添加关键词：", Text);
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                listViewKeywords.Items.Add(keyword);
+            }
+        }
+
+        private void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            listViewKeywords.RemoveSelectedItems();
+        }
+
+        private void ListViewKeywords_DoubleClick(object sender, EventArgs e)
+        {
+            string keyword = new InputBoxWindow().GetInfo("修改关键词：", Text);
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                listViewKeywords.SelectedItems.ToList().Single().Text = keyword;
+            }
         }
     }
 }
