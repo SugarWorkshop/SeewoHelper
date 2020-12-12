@@ -51,12 +51,13 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OperationMenuItem,
             this.HelpMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 25);
+            this.menuStrip.Size = new System.Drawing.Size(800, 27);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -65,13 +66,13 @@
             this.OperationMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingMenuItem});
             this.OperationMenuItem.Name = "OperationMenuItem";
-            this.OperationMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.OperationMenuItem.Size = new System.Drawing.Size(47, 23);
             this.OperationMenuItem.Text = "操作";
             // 
             // SettingMenuItem
             // 
             this.SettingMenuItem.Name = "SettingMenuItem";
-            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingMenuItem.Size = new System.Drawing.Size(104, 24);
             this.SettingMenuItem.Text = "选项";
             // 
             // HelpMenuItem
@@ -80,20 +81,20 @@
             this.UpgradeMenuItem,
             this.AboutMenuItem});
             this.HelpMenuItem.Name = "HelpMenuItem";
-            this.HelpMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.HelpMenuItem.Size = new System.Drawing.Size(47, 23);
             this.HelpMenuItem.Text = "帮助";
             // 
             // UpgradeMenuItem
             // 
             this.UpgradeMenuItem.Name = "UpgradeMenuItem";
-            this.UpgradeMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.UpgradeMenuItem.Size = new System.Drawing.Size(130, 24);
             this.UpgradeMenuItem.Text = "检查更新";
             this.UpgradeMenuItem.Click += new System.EventHandler(this.UpgradeMenuItem_Click);
             // 
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.AboutMenuItem.Size = new System.Drawing.Size(130, 24);
             this.AboutMenuItem.Text = "关于...";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
@@ -101,10 +102,10 @@
             // 
             this.tabPage1.Controls.Add(this.listViewSubjectStorageInfos);
             this.tabPage1.Controls.Add(this.tableLayoutPanelSubjectStorageInfoListControlButtons);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 383);
+            this.tabPage1.Size = new System.Drawing.Size(768, 378);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课件整理";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -117,6 +118,7 @@
             this.listViewSubjectStorageInfosColumnHeaderName,
             this.listViewSubjectStorageInfosColumnHeaderPath,
             this.listViewSubjectStorageInfosColumnHeaderKeywords});
+            this.listViewSubjectStorageInfos.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
             this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(7, 6);
@@ -190,7 +192,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Font = new System.Drawing.Font("宋体", 10F);
+            this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl.Location = new System.Drawing.Point(12, 28);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -222,22 +224,21 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem HelpMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OperationMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SettingMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ToolStripMenuItem UpgradeMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSubjectStorageInfoListControlButtons;
-        private System.Windows.Forms.Button buttonSubjectStorageInfoAdd;
-        private System.Windows.Forms.Button buttonSubjectInfoStorageRemove;
-        private System.Windows.Forms.ListView listViewSubjectStorageInfos;
         private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderName;
         private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderPath;
         private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderKeywords;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ListView listViewSubjectStorageInfos;
+        private System.Windows.Forms.Button buttonSubjectStorageInfoAdd;
+        private System.Windows.Forms.Button buttonSubjectInfoStorageRemove;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }
 

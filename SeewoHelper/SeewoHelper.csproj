@@ -9,6 +9,7 @@
     <RootNamespace>SeewoHelper</RootNamespace>
     <AssemblyName>SeewoHelper</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -49,17 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ListViewExtensions.cs" />
     <Compile Include="Forms\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AboutWindow.designer.cs">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\KeywordWindow.cs">
+    <Compile Include="Forms\InputBoxWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\KeywordWindow.Designer.cs">
-      <DependentUpon>KeywordWindow.cs</DependentUpon>
+    <Compile Include="Forms\InputBoxWindow.Designer.cs">
+      <DependentUpon>InputBoxWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KeywordEditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeywordEditWindow.Designer.cs">
+      <DependentUpon>KeywordEditWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SubjectStorageInfoGettingWindow.cs">
       <SubType>Form</SubType>
@@ -79,6 +87,7 @@
     <Compile Include="Forms\WindowMain.Designer.cs">
       <DependentUpon>WindowMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\IReturnableForm.cs" />
     <Compile Include="Models\SubjectStorageInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +97,11 @@
     <EmbeddedResource Include="Forms\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KeywordWindow.resx">
-      <DependentUpon>KeywordWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InputBoxWindow.resx">
+      <DependentUpon>InputBoxWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeywordEditWindow.resx">
+      <DependentUpon>KeywordEditWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubjectStorageInfoGettingWindow.resx">
       <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>
