@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -13,7 +9,7 @@ namespace SeewoHelper.Forms
     public partial class KeywordEditWindow : Form, IReturnableForm<List<string>, List<string>>
     {
         private List<string> _keywords;
-        
+
         public KeywordEditWindow()
         {
             InitializeComponent();
