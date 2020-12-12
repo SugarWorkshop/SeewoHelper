@@ -1,6 +1,8 @@
-﻿using SeewoHelper.Forms;
+﻿using SeewoHelper.Features;
+using SeewoHelper.Forms;
 using SeewoHelper.Utilities;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -44,9 +46,20 @@ namespace SeewoHelper
             e.NewWidth = listViewSubjectStorageInfos.Columns[e.ColumnIndex].Width;
         }
 
-        private void buttonGettingPath_Click(object sender, EventArgs e)
+        private void ButtonGettingCoursewareSortingSearchingPath_Click(object sender, EventArgs e)
         {
-            textBoxPath.Text = FolderBrowserDialogUtilities.GetFilePath();
+            textBoxCoursewareSortingSearchingPath.Text = FolderBrowserDialogUtilities.GetFilePath();
+        }
+
+        private void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
+        {
+            if (IOUtilities.IsProperPath(textBoxCoursewareSortingSearchingPath.Text))
+            {
+                var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
+                var sorter = new CoursewareSorter(infos, textBoxCoursewareSortingSearchingPath.Text);
+
+                sorter.Sort();
+            }
         }
     }
 }

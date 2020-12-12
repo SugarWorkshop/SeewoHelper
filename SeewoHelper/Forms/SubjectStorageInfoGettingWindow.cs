@@ -33,6 +33,10 @@ namespace SeewoHelper.Forms
             {
                 MessageBox.Show("请输入内容！");
             }
+            else if (!IOUtilities.IsProperPath(textBoxPath.Text))
+            {
+                MessageBox.Show("请输入合法路径！");
+            }
             else
             {
                 _subjectStorageInfo = new SubjectStorageInfo(textBoxName.Text, textBoxPath.Text, _keywords);
