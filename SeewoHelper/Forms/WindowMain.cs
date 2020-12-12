@@ -35,12 +35,12 @@ namespace SeewoHelper
 
             if (info != null)
             {
-                var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) });
+                var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
                 listViewSubjectStorageInfos.Items.Add(item);
             }
         }
 
-        private void listViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        private void ListViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             e.Cancel = true;
             e.NewWidth = listViewSubjectStorageInfos.Columns[e.ColumnIndex].Width;

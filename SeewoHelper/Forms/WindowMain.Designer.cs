@@ -36,9 +36,9 @@
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewSubjectStorageInfos = new System.Windows.Forms.ListView();
-            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderKeywords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewSubjectStorageInfosColumnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewSubjectStorageInfosColumnHeaderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewSubjectStorageInfosColumnHeaderKeywords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubjectStorageInfoAdd = new System.Windows.Forms.Button();
             this.buttonSubjectInfoStorageRemove = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             // SettingMenuItem
             // 
             this.SettingMenuItem.Name = "SettingMenuItem";
-            this.SettingMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.SettingMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SettingMenuItem.Text = "选项";
             // 
             // HelpMenuItem
@@ -114,9 +114,9 @@
             this.listViewSubjectStorageInfos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewSubjectStorageInfos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderName,
-            this.columnHeaderPath,
-            this.columnHeaderKeywords});
+            this.listViewSubjectStorageInfosColumnHeaderName,
+            this.listViewSubjectStorageInfosColumnHeaderPath,
+            this.listViewSubjectStorageInfosColumnHeaderKeywords});
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
             this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(7, 6);
@@ -125,22 +125,22 @@
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
-            this.listViewSubjectStorageInfos.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listViewSubjectStorageInfos_ColumnWidthChanging);
+            this.listViewSubjectStorageInfos.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListViewSubjectStorageInfos_ColumnWidthChanging);
             // 
-            // columnHeaderName
+            // listViewSubjectStorageInfosColumnHeaderName
             // 
-            this.columnHeaderName.Text = "名称";
-            this.columnHeaderName.Width = 55;
+            this.listViewSubjectStorageInfosColumnHeaderName.Text = "名称";
+            this.listViewSubjectStorageInfosColumnHeaderName.Width = 55;
             // 
-            // columnHeaderPath
+            // listViewSubjectStorageInfosColumnHeaderPath
             // 
-            this.columnHeaderPath.Text = "路径";
-            this.columnHeaderPath.Width = 400;
+            this.listViewSubjectStorageInfosColumnHeaderPath.Text = "路径";
+            this.listViewSubjectStorageInfosColumnHeaderPath.Width = 400;
             // 
-            // columnHeaderKeywords
+            // listViewSubjectStorageInfosColumnHeaderKeywords
             // 
-            this.columnHeaderKeywords.Text = "关键词";
-            this.columnHeaderKeywords.Width = 300;
+            this.listViewSubjectStorageInfosColumnHeaderKeywords.Text = "关键词";
+            this.listViewSubjectStorageInfosColumnHeaderKeywords.Width = 300;
             // 
             // tableLayoutPanelSubjectStorageInfoListControlButtons
             // 
@@ -235,9 +235,9 @@
         private System.Windows.Forms.Button buttonSubjectStorageInfoAdd;
         private System.Windows.Forms.Button buttonSubjectInfoStorageRemove;
         private System.Windows.Forms.ListView listViewSubjectStorageInfos;
-        private System.Windows.Forms.ColumnHeader columnHeaderName;
-        private System.Windows.Forms.ColumnHeader columnHeaderPath;
-        private System.Windows.Forms.ColumnHeader columnHeaderKeywords;
+        private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderName;
+        private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderPath;
+        private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderKeywords;
     }
 }
 
