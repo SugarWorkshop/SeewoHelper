@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class KeywordWindow : Form
+    public partial class KeywordEditWindow : Form
     {
-        public KeywordWindow()
+        public KeywordEditWindow()
         {
             InitializeComponent();
         }

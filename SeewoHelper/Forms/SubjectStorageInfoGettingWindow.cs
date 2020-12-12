@@ -45,7 +45,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonEditKeyword_Click(object sender, EventArgs e)
         {
-            new KeywordWindow().ShowDialog();
+            new KeywordEditWindow().ShowDialog();
         }
     }
 }

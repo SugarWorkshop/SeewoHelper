@@ -1,7 +1,7 @@
 ﻿
 namespace SeewoHelper.Forms
 {
-    partial class KeywordWindow
+    partial class KeywordEditWindow
     {
         /// <summary>
         /// Required designer variable.
