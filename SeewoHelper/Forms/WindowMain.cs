@@ -35,7 +35,7 @@ namespace SeewoHelper
 
             if (info != null)
             {
-                var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) });
+                var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
                 listViewSubjectStorageInfos.Items.Add(item);
             }
         }
