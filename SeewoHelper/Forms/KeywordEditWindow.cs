@@ -52,11 +52,12 @@ namespace SeewoHelper.Forms
 
         private void ListViewKeywords_DoubleClick(object sender, EventArgs e)
         {
-            string keyword = new InputBoxWindow().GetInfo("修改关键词：", Text);
+            var item = listViewKeywords.SelectedItems.ToList().Single();
+            string keyword = new InputBoxWindow().GetInfo("修改关键词：", Text, item.Text);
 
             if (!string.IsNullOrWhiteSpace(keyword))
             {
-                listViewKeywords.SelectedItems.ToList().Single().Text = keyword;
+                item.Text = keyword;
             }
         }
     }

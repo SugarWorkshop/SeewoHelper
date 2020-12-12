@@ -14,4 +14,9 @@
     {
         TResult GetInfo(T1 arg1, T2 arg2);
     }
+
+    public interface IReturnableForm<TResult, T1, T2, T3>
+    {
+        TResult GetInfo(T1 arg1, T2 arg2, T3 arg3);
+    }
 }
