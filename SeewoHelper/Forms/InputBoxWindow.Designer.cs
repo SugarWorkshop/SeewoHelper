@@ -53,7 +53,6 @@ namespace SeewoHelper.Forms
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(477, 25);
             this.textBox.TabIndex = 1;
-            this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // tableLayoutPanelButton
             // 
@@ -104,13 +103,19 @@ namespace SeewoHelper.Forms
             // 
             // InputBoxWindow
             // 
+            this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(499, 117);
             this.Controls.Add(this.tableLayoutPanelButton);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.lblPrompt);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InputBoxWindow";
+            this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.InputBoxWindow_Load);
             this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

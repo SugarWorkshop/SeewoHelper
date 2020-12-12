@@ -182,7 +182,9 @@ namespace SeewoHelper.Forms
             this.Controls.Add(this.textBoxKeywords);
             this.Controls.Add(this.tableLayoutPanelButton);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SubjectStorageInfoGettingWindow";
+            this.ShowIcon = false;
             this.Text = "添加课件存储信息";
             this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);

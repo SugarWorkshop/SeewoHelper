@@ -32,7 +32,6 @@ namespace SeewoHelper.Forms
             this.listViewKeywords = new System.Windows.Forms.ListView();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanelButton = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOK = new System.Windows.Forms.Button();
@@ -50,7 +49,7 @@ namespace SeewoHelper.Forms
             this.listViewKeywords.HideSelection = false;
             this.listViewKeywords.Location = new System.Drawing.Point(12, 12);
             this.listViewKeywords.Name = "listViewKeywords";
-            this.listViewKeywords.Size = new System.Drawing.Size(385, 457);
+            this.listViewKeywords.Size = new System.Drawing.Size(385, 446);
             this.listViewKeywords.TabIndex = 0;
             this.listViewKeywords.UseCompatibleStateImageBehavior = false;
             this.listViewKeywords.View = System.Windows.Forms.View.List;
@@ -60,24 +59,22 @@ namespace SeewoHelper.Forms
             // 
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Controls.Add(this.buttonDelete, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.buttonEdit, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.buttonAdd, 0, 0);
             this.tableLayoutPanel.Location = new System.Drawing.Point(403, 12);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 3;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(90, 130);
+            this.tableLayoutPanel.RowCount = 2;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(90, 88);
             this.tableLayoutPanel.TabIndex = 1;
             // 
             // buttonDelete
             // 
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDelete.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonDelete.Location = new System.Drawing.Point(3, 49);
+            this.buttonDelete.Location = new System.Drawing.Point(3, 51);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(84, 30);
             this.buttonDelete.TabIndex = 1;
@@ -85,22 +82,11 @@ namespace SeewoHelper.Forms
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEdit.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonEdit.Location = new System.Drawing.Point(3, 93);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(84, 30);
-            this.buttonEdit.TabIndex = 2;
-            this.buttonEdit.Text = "编辑";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            // 
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonAdd.Location = new System.Drawing.Point(3, 6);
+            this.buttonAdd.Location = new System.Drawing.Point(3, 7);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(84, 30);
             this.buttonAdd.TabIndex = 0;
@@ -115,7 +101,7 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
             this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
-            this.tableLayoutPanelButton.Location = new System.Drawing.Point(308, 475);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(309, 464);
             this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
             this.tableLayoutPanelButton.RowCount = 1;
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -185,7 +171,6 @@ namespace SeewoHelper.Forms
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAdd;
     }
 }

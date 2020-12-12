@@ -38,18 +38,15 @@ namespace SeewoHelper.Forms
             Close();
         }
 
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                Exit();
-            }
-        }
-
         private void Exit()
         {
             _str = textBox.Text;
             Close();
+        }
+
+        private void InputBoxWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
