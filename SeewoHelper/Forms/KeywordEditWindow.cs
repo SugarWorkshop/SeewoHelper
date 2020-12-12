@@ -13,7 +13,7 @@ namespace SeewoHelper.Forms
     public partial class KeywordEditWindow : Form, IReturnableForm<List<string>, List<string>>
     {
         private List<string> _keywords;
-
+        
         public KeywordEditWindow()
         {
             InitializeComponent();
