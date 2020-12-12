@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class InputBoxWindow : Form, IReturnableForm<string, string, string>
+    public partial class InputBoxWindow : Form, IReturnableForm<string, string, string, string>
     {
         private string _str = null;
 
@@ -19,10 +12,11 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public string GetInfo(string prompt, string title = "")
+        public string GetInfo(string prompt, string title = "", string defaultText = "")
         {
             Text = title;
             lblPrompt.Text = prompt;
+            textBox.Text = defaultText;
             ShowDialog();
 
             return _str;
