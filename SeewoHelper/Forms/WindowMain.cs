@@ -67,6 +67,8 @@ namespace SeewoHelper
 
                 var sorter = new CoursewareSorter(infos, textBoxCoursewareSortingSearchingPath.Text);
                 sorter.Sort();
+
+                MessageBox.Show("Done!");
             }
             else
             {
