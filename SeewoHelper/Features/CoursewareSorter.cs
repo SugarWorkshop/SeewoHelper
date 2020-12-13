@@ -26,7 +26,8 @@ namespace SeewoHelper.Features
 
             foreach (string keyword in info.Keywords)
             {
-                files.AddRange(_files.Where(x => new Regex(keyword).IsMatch(x.Name)));
+                var regex = new Regex(keyword);
+                files.AddRange(_files.Where(x => regex.IsMatch(x.Name)));
             }
 
             var processFiles = files.Distinct();
