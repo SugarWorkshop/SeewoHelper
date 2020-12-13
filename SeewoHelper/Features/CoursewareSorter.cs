@@ -34,7 +34,7 @@ namespace SeewoHelper.Features
 
             foreach (var file in processFiles)
             {
-                file.MoveTo(IOUtilities.PathAppend(info.Path, file.Name));
+                file.MoveTo(IOUtilities.PathAppend(info.Path, file.Name), true);
             }
         }
 
