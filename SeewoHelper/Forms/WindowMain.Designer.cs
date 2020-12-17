@@ -202,9 +202,8 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(6, 337);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(161, 35);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(170, 35);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.TabIndex = 1;
             // 
             // buttonSubjectStorageInfoAdd
@@ -215,7 +214,7 @@
             this.buttonSubjectStorageInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(3, 3);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
-            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(74, 29);
+            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(79, 29);
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.UseVisualStyleBackColor = true;
@@ -227,9 +226,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSubjectInfoStorageRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(83, 3);
+            this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(88, 3);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
-            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(75, 29);
+            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(79, 29);
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.UseVisualStyleBackColor = true;
@@ -262,6 +261,8 @@
             this.Name = "WindowMain";
             this.ShowIcon = false;
             this.Text = "SeewoHelper";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WindowMain_FormClosed);
+            this.Load += new System.EventHandler(this.WindowMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabPage1.ResumeLayout(false);

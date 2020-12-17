@@ -38,10 +38,10 @@ namespace SeewoHelper.Features
             }
         }
 
-        public CoursewareSorter(IEnumerable<SubjectStorageInfo> infos, string path)
+        public CoursewareSorter(CoursewareSortingInfo info)
         {
-            _subjectStorageInfos = infos;
-            _files = Directory.GetFiles(path).Select(x => new FileInfo(x));
+            _subjectStorageInfos = info.Subjects;
+            _files = Directory.GetFiles(info.Path).Select(x => new FileInfo(x));
         }
     }
 }
