@@ -85,12 +85,15 @@ namespace SeewoHelper
         {
             var info = Configurations.CoursewareSortingInfoConfig.Content;
 
-            foreach (var subject in info.Subjects)
+            if (info != null)
             {
-                AddSubjectStorageInfoToList(subject);
-            }
+                foreach (var subject in info.Subjects)
+                {
+                    AddSubjectStorageInfoToList(subject);
+                }
 
-            textBoxCoursewareSortingSearchingPath.Text = info.Path;
+                textBoxCoursewareSortingSearchingPath.Text = info.Path;
+            }
         }
 
         private void WindowMain_FormClosed(object sender, FormClosedEventArgs e)
