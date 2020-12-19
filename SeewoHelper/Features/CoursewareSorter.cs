@@ -37,7 +37,7 @@ namespace SeewoHelper.Features
             }
 
             var processFiles = selectedFiles.Distinct();
-            var processDirectories = selectedDirectories.Distinct();
+            var processDirectories = selectedDirectories.Distinct().SkipWhile(x => x.FullName == info.Path);
 
             foreach (var file in processFiles)
             {

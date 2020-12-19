@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class SubjectStorageInfoGettingWindow : Form, IReturnableForm<SubjectStorageInfo>
+    public partial class SubjectStorageInfoGettingWindow : Form, IReturnableForm<SubjectStorageInfo, SubjectStorageInfo>
     {
         private SubjectStorageInfo _subjectStorageInfo = null;
         private List<string> _keywords = new List<string>();
@@ -16,8 +16,16 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public SubjectStorageInfo GetInfo()
+        public SubjectStorageInfo GetInfo(SubjectStorageInfo info = null)
         {
+            if (info != null)
+            {
+                textBoxName.Text = info.Name;
+                textBoxPath.Text = info.Path;
+                _keywords = info.Keywords;
+                textBoxKeywords.Text = string.Join(", ", info.Keywords);
+            }
+
             ShowDialog();
             return _subjectStorageInfo;
         }

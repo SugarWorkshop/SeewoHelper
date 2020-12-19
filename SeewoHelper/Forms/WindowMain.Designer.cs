@@ -176,6 +176,7 @@
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
             this.listViewSubjectStorageInfos.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListViewSubjectStorageInfos_ColumnWidthChanging);
+            this.listViewSubjectStorageInfos.DoubleClick += new System.EventHandler(this.ListViewSubjectStorageInfos_DoubleClick);
             // 
             // listViewSubjectStorageInfosColumnHeaderName
             // 

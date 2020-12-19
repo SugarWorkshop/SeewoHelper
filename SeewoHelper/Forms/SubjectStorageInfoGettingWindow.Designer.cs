@@ -185,7 +185,7 @@ namespace SeewoHelper.Forms
             this.MinimizeBox = false;
             this.Name = "SubjectStorageInfoGettingWindow";
             this.ShowIcon = false;
-            this.Text = "添加课件存储信息";
+            this.Text = "添加/编辑课件存储信息";
             this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
