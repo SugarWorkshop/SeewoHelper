@@ -10,7 +10,7 @@ namespace SeewoHelper.Features
     {
         private readonly IEnumerable<SubjectStorageInfo> _subjectStorageInfos;
 
-        private readonly IEnumerable<FileInfo> _files;
+        private readonly DirectoryInfo _directory;
 
         public void Sort()
         {
@@ -22,26 +22,38 @@ namespace SeewoHelper.Features
 
         private void Sort(SubjectStorageInfo info)
         {
-            var files = new List<FileInfo>();
+            var files = _directory.GetFiles();
+            var directories = _directory.GetDirectories();
+
+            var selectedFiles = new List<FileInfo>();
+            var selectedDirectories = new List<DirectoryInfo>();
 
             foreach (string keyword in info.Keywords)
             {
                 var regex = new Regex(keyword);
-                files.AddRange(_files.Where(x => regex.IsMatch(x.Name)));
+
+                selectedFiles.AddRange(files.Where(x => regex.IsMatch(x.Name)));
+                selectedDirectories.AddRange(directories.Where(x => regex.IsMatch(x.Name)));
             }
 
-            var processFiles = files.Distinct();
+            var processFiles = selectedFiles.Distinct();
+            var processDirectories = selectedDirectories.Distinct();
 
             foreach (var file in processFiles)
             {
                 file.MoveTo(IOUtilities.PathAppend(info.Path, file.Name), true);
+            }
+
+            foreach (var directory in processDirectories)
+            {
+                directory.MoveTo(IOUtilities.PathAppend(info.Path, directory.Name), true);
             }
         }
 
         public CoursewareSorter(CoursewareSortingInfo info)
         {
             _subjectStorageInfos = info.Subjects;
-            _files = Directory.GetFiles(info.Path).Select(x => new FileInfo(x));
+            _directory = new DirectoryInfo(info.Path);
         }
     }
 }
