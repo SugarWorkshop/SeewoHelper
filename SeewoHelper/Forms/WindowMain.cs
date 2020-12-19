@@ -36,9 +36,14 @@ namespace SeewoHelper
 
             if (info != null)
             {
-                var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
-                listViewSubjectStorageInfos.Items.Add(item);
+                AddSubjectStorageInfoToList(info);
             }
+        }
+
+        private void AddSubjectStorageInfoToList(SubjectStorageInfo info)
+        {
+            var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
+            listViewSubjectStorageInfos.Items.Add(item);
         }
 
         private void ListViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
@@ -65,7 +70,7 @@ namespace SeewoHelper
                     Directory.CreateDirectory(info.Path);
                 }
 
-                var sorter = new CoursewareSorter(infos, textBoxCoursewareSortingSearchingPath.Text);
+                var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
                 sorter.Sort();
 
                 MessageBox.Show("Done!");
@@ -74,6 +79,27 @@ namespace SeewoHelper
             {
                 MessageBox.Show("非法路径或指定目录不存在！");
             }
+        }
+
+        private void WindowMain_Load(object sender, EventArgs e)
+        {
+            var info = Configurations.CoursewareSortingInfoConfig.Content;
+
+            if (info != null)
+            {
+                foreach (var subject in info.Subjects)
+                {
+                    AddSubjectStorageInfoToList(subject);
+                }
+
+                textBoxCoursewareSortingSearchingPath.Text = info.Path;
+            }
+        }
+
+        private void WindowMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
+            Configurations.CoursewareSortingInfoConfig.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
         }
     }
 }

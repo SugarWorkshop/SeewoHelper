@@ -49,6 +49,17 @@ namespace SeewoHelper.Utilities
                 throw new InvalidOperationException();
             }
         }
+
+        public static void CreateFile(string path, bool overwrite = true)
+        {
+            var fileInfo = new FileInfo(path);
+
+            if (overwrite || !fileInfo.Exists)
+            {
+                Directory.CreateDirectory(fileInfo.DirectoryName);
+                fileInfo.Create().Close();
+            }
+        }
     }
 
     internal enum PathType
