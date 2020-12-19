@@ -27,7 +27,7 @@ namespace SeewoHelper
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
-            listViewSubjectStorageInfos.RemoveSelectedItems();
+            listViewSubjectStorageInfos.SelectedItems.Remove();
         }
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace SeewoHelper
 
             if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path, true) == PathType.Directionary && Directory.Exists(path))
             {
-                var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
+                var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
 
                 if (infos.Any(x => x.Path == path))
                 {
@@ -105,13 +105,13 @@ namespace SeewoHelper
 
         private void WindowMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
+            var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
             Configurations.CoursewareSortingInfoConfig.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
         }
 
         private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
         {
-            var selectedItem = listViewSubjectStorageInfos.SelectedItems.ToList().SingleOrDefault();
+            var selectedItem = listViewSubjectStorageInfos.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
             if (selectedItem != null)
             {
@@ -120,7 +120,7 @@ namespace SeewoHelper
                 if (info != null)
                 {
                     var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
-                    listViewSubjectStorageInfos.Items.Replace(selectedItem, item);
+                    listViewSubjectStorageInfos.Items[selectedItem.Index] = item;
                 }
             }
         }
