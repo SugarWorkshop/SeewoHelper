@@ -65,15 +65,22 @@ namespace SeewoHelper
             {
                 var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
 
-                foreach (var info in infos)
+                if (infos.Any(x => x.Path == path))
                 {
-                    Directory.CreateDirectory(info.Path);
+                    MessageBox.Show("整理目标目录与搜索目录路径相同！");
                 }
+                else
+                {
+                    foreach (var info in infos)
+                    {
+                        Directory.CreateDirectory(info.Path);
+                    }
 
-                var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
-                sorter.Sort();
+                    var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
+                    sorter.Sort();
 
-                MessageBox.Show("Done!");
+                    MessageBox.Show("完成！");
+                }
             }
             else
             {
@@ -100,6 +107,22 @@ namespace SeewoHelper
         {
             var infos = listViewSubjectStorageInfos.Items.ToList().Select(x => (SubjectStorageInfo)x.Tag);
             Configurations.CoursewareSortingInfoConfig.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
+        }
+
+        private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedItem = listViewSubjectStorageInfos.SelectedItems.ToList().SingleOrDefault();
+
+            if (selectedItem != null)
+            {
+                var info = new SubjectStorageInfoGettingWindow().GetInfo((SubjectStorageInfo)selectedItem.Tag);
+
+                if (info != null)
+                {
+                    var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
+                    listViewSubjectStorageInfos.Items.Replace(selectedItem, item);
+                }
+            }
         }
     }
 }
