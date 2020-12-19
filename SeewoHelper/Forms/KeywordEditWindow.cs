@@ -26,7 +26,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            _keywords = listViewKeywords.Items.ToList().Select(x => x.Text).ToList();
+            _keywords = listViewKeywords.Items.Cast<ListViewItem>().Select(x => x.Text).ToList();
             Close();
         }
 
@@ -47,12 +47,12 @@ namespace SeewoHelper.Forms
 
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            listViewKeywords.RemoveSelectedItems();
+            listViewKeywords.SelectedItems.Remove();
         }
 
         private void ListViewKeywords_DoubleClick(object sender, EventArgs e)
         {
-            var item = listViewKeywords.SelectedItems.ToList().SingleOrDefault();
+            var item = listViewKeywords.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
             if (item != null)
             {

@@ -6,7 +6,7 @@ using System.IO;
 
 namespace SeewoHelper
 {
-    public partial class Configuration<T> : IDisposable
+    public class Configuration<T> : IDisposable
     {
         private readonly string _name;
 
