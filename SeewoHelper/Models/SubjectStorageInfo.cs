@@ -14,6 +14,7 @@ namespace SeewoHelper
         [JsonProperty(PropertyName = "keywords")]
         public List<string> Keywords { get; }
 
+        [JsonConstructor]
         public SubjectStorageInfo(string name, string path, List<string> keywords)
         {
             Name = name;

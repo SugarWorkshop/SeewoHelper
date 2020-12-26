@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using SeewoHelper.Utilities;
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace SeewoHelper
@@ -34,7 +35,7 @@ namespace SeewoHelper
 
         public void Dispose() => Save();
 
-        public Configuration(string name, string directoryPath)
+        public Configuration(string name, string directoryPath, T defaultValue)
         {
             if (directoryPath == null)
             {
@@ -53,6 +54,8 @@ namespace SeewoHelper
 
                 IOUtilities.CreateFile(Path, false);
                 Read();
+
+                Content ??= defaultValue;
             }
             else
             {

@@ -50,7 +50,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxLogs = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
@@ -279,7 +279,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.textBoxLogs);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -288,14 +288,15 @@
             this.tabPage3.Text = "日志";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // textBoxLogs
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TODO";
+            this.textBoxLogs.Location = new System.Drawing.Point(3, 6);
+            this.textBoxLogs.Multiline = true;
+            this.textBoxLogs.Name = "textBoxLogs";
+            this.textBoxLogs.ReadOnly = true;
+            this.textBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxLogs.Size = new System.Drawing.Size(759, 366);
+            this.textBoxLogs.TabIndex = 0;
             // 
             // WindowMain
             // 
@@ -311,7 +312,7 @@
             this.Name = "WindowMain";
             this.ShowIcon = false;
             this.Text = "SeewoHelper";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WindowMain_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -351,7 +352,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxLogs;
     }
 }
 

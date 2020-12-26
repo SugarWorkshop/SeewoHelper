@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\ListViewExtensions.cs" />
     <Compile Include="Features\CoursewareSorter.cs" />
@@ -112,7 +113,9 @@
     <Compile Include="Models\CoursewareSortingInfo.cs" />
     <Compile Include="Models\DisposableCollection.cs" />
     <Compile Include="Models\Configuration{T}.cs" />
+    <Compile Include="Models\MonitorableList.cs" />
     <Compile Include="Models\IReturnableForm.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\SubjectStorageInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

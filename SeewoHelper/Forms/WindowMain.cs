@@ -2,6 +2,7 @@
 using SeewoHelper.Forms;
 using SeewoHelper.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -77,7 +78,8 @@ namespace SeewoHelper
                     }
 
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
-                    sorter.Sort();
+
+                    sorter.SortMore();
 
                     MessageBox.Show("完成！");
                 }
@@ -90,23 +92,19 @@ namespace SeewoHelper
 
         private void WindowMain_Load(object sender, EventArgs e)
         {
-            var info = Configurations.CoursewareSortingInfoConfig.Content;
-
-            if (info != null)
-            {
-                foreach (var subject in info.Subjects)
-                {
-                    AddSubjectStorageInfoToList(subject);
-                }
-
-                textBoxCoursewareSortingSearchingPath.Text = info.Path;
-            }
+            LoadSubjectStorageInfoConfig();
+            LoadLoggerConfig();
         }
 
-        private void WindowMain_FormClosed(object sender, FormClosedEventArgs e)
+        private void LoadLoggerConfig()
         {
-            var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
-            Configurations.CoursewareSortingInfoConfig.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
+            UpdateLoggerElement();
+            Program.Logger.AddElementModifiedEventHandler((sender, e) => { UpdateLoggerElement(); });
+        }
+
+        private void UpdateLoggerElement()
+        {
+            textBoxLogs.Text = string.Join("\r\n", Program.Logger.Select(x => $"[{x.Level}]{x.Time}: {x.Content}"));
         }
 
         private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
@@ -123,6 +121,29 @@ namespace SeewoHelper
                     listViewSubjectStorageInfos.Items[selectedItem.Index] = item;
                 }
             }
+        }
+
+        private void WindowMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UpdateSubjectStorageInfoConfig();
+        }
+
+        private void UpdateSubjectStorageInfoConfig()
+        {
+            var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
+            Configurations.CoursewareSortingInfoConfig.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
+        }
+
+        private void LoadSubjectStorageInfoConfig()
+        {
+            var info = Configurations.CoursewareSortingInfoConfig.Content;
+
+            foreach (var subject in info.Subjects)
+            {
+                AddSubjectStorageInfoToList(subject);
+            }
+
+            textBoxCoursewareSortingSearchingPath.Text = info.Path;
         }
     }
 }

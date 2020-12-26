@@ -24,11 +24,11 @@ namespace SeewoHelper
 
     public partial class DisposableCollection : ICollection<IDisposable>
     {
-        private List<IDisposable> _disposables = new List<IDisposable>();
+        private readonly List<IDisposable> _disposables = new List<IDisposable>();
 
         public int Count => _disposables.Count;
 
-        public bool IsReadOnly { get; } = false;
+        bool ICollection<IDisposable>.IsReadOnly { get; } = false;
 
         void ICollection<IDisposable>.Add(IDisposable item) => _disposables.Add(item);
 
