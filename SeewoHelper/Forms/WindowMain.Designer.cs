@@ -1,4 +1,4 @@
-﻿namespace SeewoHelper
+﻿namespace SeewoHelper.Forms
 {
     partial class WindowMain
     {

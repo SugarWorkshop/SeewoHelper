@@ -96,7 +96,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(309, 35);
             this.label2.TabIndex = 1;
-            this.label2.Text = "作者：Mo_Ink";
+            this.label2.Text = "贡献者：Mo_Ink, ricky8955555";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabel1

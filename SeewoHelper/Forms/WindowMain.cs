@@ -1,13 +1,11 @@
 ﻿using SeewoHelper.Features;
-using SeewoHelper.Forms;
 using SeewoHelper.Utilities;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace SeewoHelper
+namespace SeewoHelper.Forms
 {
     public partial class WindowMain : Form
     {
