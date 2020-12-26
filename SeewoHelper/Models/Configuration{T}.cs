@@ -2,7 +2,6 @@
 using Newtonsoft.Json.Linq;
 using SeewoHelper.Utilities;
 using System;
-using System.Diagnostics;
 using System.IO;
 
 namespace SeewoHelper
