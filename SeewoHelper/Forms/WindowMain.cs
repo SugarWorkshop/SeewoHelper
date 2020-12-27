@@ -3,6 +3,7 @@ using SeewoHelper.Utilities;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -92,6 +93,15 @@ namespace SeewoHelper.Forms
         {
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
+            if(ServiceUtilities.IsServiceStart("ShellHWDetection"))
+            {
+                checkBox1.Checked = false;
+            }
+            else
+            {
+                checkBox1.Checked = true;
+            }
+
         }
 
         private void LoadLoggerConfig()
@@ -142,6 +152,28 @@ namespace SeewoHelper.Forms
             }
 
             textBoxCoursewareSortingSearchingPath.Text = info.Path;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                checkBox1.Enabled = false;
+                ServiceUtilities.StopService("ShellHWDetection");
+                Program.Logger.Add(new Log("停止Shell Hardware Detection服务"));
+                ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
+                Program.Logger.Add(new Log("将Shell Hardware Detection服务的startType调整为Disabled"));
+                checkBox1.Enabled = true;
+            }
+            else
+            {
+                checkBox1.Enabled = false;
+                ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
+                Program.Logger.Add(new Log("将Shell Hardware Detection服务的startType调整为Automatic"));
+                ServiceUtilities.StartService("ShellHWDetection");
+                Program.Logger.Add(new Log("启动Shell Hardware Detection服务"));
+                checkBox1.Enabled = true;
+            }
         }
     }
 }
