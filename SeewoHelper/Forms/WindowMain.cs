@@ -1,16 +1,17 @@
-﻿using SeewoHelper.Features;
+using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
     public partial class WindowMain : Form
     {
+        private readonly List<ServiceCheckBox> ServiceCheckBoxs = new List<ServiceCheckBox>();
+
         public WindowMain()
         {
             InitializeComponent();
@@ -94,21 +95,34 @@ namespace SeewoHelper.Forms
         {
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
-            if (ServiceUtilities.IsServiceStart("ShellHWDetection"))
+            CreateServiceCheckBox();
+        }
+
+        private void CreateServiceCheckBox()
+        {
+            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBox1, "ShellHWDetection", true)
             {
-                checkBox1.Checked = false;
-            }
-            else
-            {
-                checkBox1.Checked = true;
-            }
+                StartAction = () =>
+                {
+                    Program.Logger.Add(new Log("启动 Shell Hardware Detection 服务"));
+                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
+                    Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Automatic"));
+                },
+                StopAction = () =>
+                {
+                    Program.Logger.Add(new Log("停止 Shell Hardware Detection 服务"));
+                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
+                    Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Disabled"));
+                }
+            });
+            
             Program.Logger.Add(new Log("主窗口加载完成"));
         }
 
         private void LoadLoggerConfig()
         {
             UpdateLoggerElement();
-            Program.Logger.AddElementModifiedEventHandler((sender, e) => { UpdateLoggerElement(); });
+            Program.Logger.AddElementModifiedEventHandler((sender, e) => UpdateLoggerElement());
         }
 
         private void UpdateLoggerElement()
@@ -153,30 +167,6 @@ namespace SeewoHelper.Forms
             }
 
             textBoxCoursewareSortingSearchingPath.Text = info.Path;
-        }
-
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            Cursor = Cursors.WaitCursor;
-            checkBox1.Enabled = false;
-            ThreadPool.QueueUserWorkItem((object state) =>
-            {
-                if (checkBox1.Checked == true)
-                {
-                    ServiceUtilities.StopService("ShellHWDetection");
-                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
-                }
-                else
-                {
-                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
-                    ServiceUtilities.StartService("ShellHWDetection");
-                }
-                checkBox1.BeginInvoke(new MethodInvoker(() =>
-                {
-                    Cursor = Cursors.Arrow;
-                    checkBox1.Enabled = true;
-                }));
-            }, null);
         }
     }
 }

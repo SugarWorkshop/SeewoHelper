@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using Microsoft.Win32;
+using System;
 using System.ServiceProcess;
-using Microsoft.Win32;
 
 
 namespace SeewoHelper.Utilities
