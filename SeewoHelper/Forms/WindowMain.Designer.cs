@@ -276,7 +276,6 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "关闭U盘插入提示修复（禁用Shell Hardware Detection服务）";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // tabPage3
             // 

@@ -1,15 +1,17 @@
 ﻿using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
     public partial class WindowMain : Form
     {
+        private readonly List<ServiceCheckBox> ServiceCheckBoxs = new List<ServiceCheckBox>();
+
         public WindowMain()
         {
             InitializeComponent();
@@ -93,21 +95,32 @@ namespace SeewoHelper.Forms
         {
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
-            if(ServiceUtilities.IsServiceStart("ShellHWDetection"))
-            {
-                checkBox1.Checked = false;
-            }
-            else
-            {
-                checkBox1.Checked = true;
-            }
+            CreateServiceCheckBox();
+        }
 
+        private void CreateServiceCheckBox()
+        {
+            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBox1, "ShellHWDetection", true)
+            {
+                StartAction = () =>
+                {
+                    Program.Logger.Add(new Log("启动 Shell Hardware Detection 服务"));
+                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
+                    Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Automatic"));
+                },
+                StopAction = () =>
+                {
+                    Program.Logger.Add(new Log("停止 Shell Hardware Detection 服务"));
+                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
+                    Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Disabled"));
+                }
+            });
         }
 
         private void LoadLoggerConfig()
         {
             UpdateLoggerElement();
-            Program.Logger.AddElementModifiedEventHandler((sender, e) => { UpdateLoggerElement(); });
+            Program.Logger.AddElementModifiedEventHandler((sender, e) => UpdateLoggerElement());
         }
 
         private void UpdateLoggerElement()
@@ -152,28 +165,6 @@ namespace SeewoHelper.Forms
             }
 
             textBoxCoursewareSortingSearchingPath.Text = info.Path;
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-            {
-                checkBox1.Enabled = false;
-                ServiceUtilities.StopService("ShellHWDetection");
-                Program.Logger.Add(new Log("停止Shell Hardware Detection服务"));
-                ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
-                Program.Logger.Add(new Log("将Shell Hardware Detection服务的startType调整为Disabled"));
-                checkBox1.Enabled = true;
-            }
-            else
-            {
-                checkBox1.Enabled = false;
-                ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
-                Program.Logger.Add(new Log("将Shell Hardware Detection服务的startType调整为Automatic"));
-                ServiceUtilities.StartService("ShellHWDetection");
-                Program.Logger.Add(new Log("启动Shell Hardware Detection服务"));
-                checkBox1.Enabled = true;
-            }
         }
     }
 }

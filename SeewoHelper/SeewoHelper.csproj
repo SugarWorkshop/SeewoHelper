@@ -126,6 +126,7 @@
     <Compile Include="Models\MonitorableList.cs" />
     <Compile Include="Models\IReturnableForm.cs" />
     <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\ServiceCheckBox.cs" />
     <Compile Include="Models\SubjectStorageInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
