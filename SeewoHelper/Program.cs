@@ -19,7 +19,7 @@ namespace SeewoHelper
         {
             Logger.Add(new Log("应用启动"));
 
-            Application.ApplicationExit += Application_ApplicationExit;
+            Application.ThreadExit += Application_ThreadExit;
             Application.ThreadException += Application_ThreadException;
 
             Application.EnableVisualStyles();
@@ -32,7 +32,7 @@ namespace SeewoHelper
             Logger.Add(new Log(e.Exception.ToString(), LogLevel.Fatal));
         }
 
-        private static void Application_ApplicationExit(object sender, EventArgs e)
+        private static void Application_ThreadExit(object sender, EventArgs e)
         {
             DisposableCollection.Dispose();
         }

@@ -26,18 +26,6 @@ namespace SeewoHelper.Utilities
             }
         }
 
-        public static string PathAppend(string path, string append)
-        {
-            if (IsProperPath(path) && GetPathType(path, true) == PathType.Directionary)
-            {
-                return path.TrimEnd('\\') + "\\" + append;
-            }
-            else
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
         public static string ToFormattedPath(string path)
         {
             if (IsProperPath(path))

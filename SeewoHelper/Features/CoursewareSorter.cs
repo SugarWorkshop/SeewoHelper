@@ -1,8 +1,6 @@
-﻿using SeewoHelper.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace SeewoHelper.Features
 {
@@ -26,46 +24,30 @@ namespace SeewoHelper.Features
 
         private void Sort(SubjectStorageInfo info)
         {
-            var files = _directory.GetFiles();
-            var directories = _directory.GetDirectories();
-
-            var selectedFiles = new List<FileInfo>();
-            var selectedDirectories = new List<DirectoryInfo>();
+            var fileSystemInfos = _directory.GetFileSystemInfos();
+            var selectedFileSystemInfos = new List<FileSystemInfo>();
 
             Program.Logger.Add(new Log($"开始整理科目：{info.Name}，目标路径：{info.Path}"));
 
-            foreach (string keyword in info.Keywords)
+            foreach (var keyword in info.Keywords)
             {
-                Program.Logger.Add(new Log($"正在匹配关键词：{keyword}"));
+                Program.Logger.Add(new Log($"正在匹配关键词：{keyword.Pattern} ({keyword.MatchingWay})"));
 
-                var regex = new Regex(keyword);
+                var matchedFileSystemInfos = fileSystemInfos.Where(x => keyword.IsMatch(x.Name));
+                selectedFileSystemInfos.AddRange(matchedFileSystemInfos);
 
-                var matchedFiles = files.Where(x => regex.IsMatch(x.Name));
-                var matchedDirerctories = directories.Where(x => regex.IsMatch(x.Name));
-
-                selectedFiles.AddRange(matchedFiles);
-                selectedDirectories.AddRange(matchedDirerctories);
-
-                Program.Logger.Add(new Log($"匹配到文件：{string.Join("/", matchedFiles)}，匹配到文件夹：{string.Join("\n", matchedDirerctories)}"));
+                Program.Logger.Add(new Log($"匹配到：{string.Join("/", matchedFileSystemInfos)}"));
             }
 
-            var processFiles = selectedFiles.Distinct();
-            var processDirectories = selectedDirectories.Distinct().SkipWhile(x => x.FullName == info.Path);
+            var processFileSystemInfos = selectedFileSystemInfos.Distinct();
 
-            Program.Logger.Add(new Log($"将要处理文件：{string.Join("/", processFiles)}，将要处理文件夹：{string.Join("\n", processDirectories)}"));
+            Program.Logger.Add(new Log($"将要处理：{string.Join("/", processFileSystemInfos)}"));
 
-            foreach (var file in processFiles)
+            foreach (var fileSysmteInfo in processFileSystemInfos)
             {
-                Program.Logger.Add(new Log($"正在移动文件：{file}"));
+                Program.Logger.Add(new Log($"正在移动：{fileSysmteInfo}"));
 
-                file.MoveTo(IOUtilities.PathAppend(info.Path, file.Name), true);
-            }
-
-            foreach (var directory in processDirectories)
-            {
-                Program.Logger.Add(new Log($"正在移动文件夹：{directory}"));
-
-                directory.MoveTo(IOUtilities.PathAppend(info.Path, directory.Name), true);
+                fileSysmteInfo.MoveTo(Path.Combine(info.Path, fileSysmteInfo.Name), true);
             }
 
             Program.Logger.Add(new Log($"科目 {info.Name} 整理完成"));

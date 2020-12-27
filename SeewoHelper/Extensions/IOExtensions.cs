@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 
 namespace SeewoHelper
 {
@@ -6,26 +7,33 @@ namespace SeewoHelper
     {
         public static void MoveTo(this FileInfo file, string destFileName, bool overwrite)
         {
-            var fileInfo = new FileInfo(destFileName);
-
-            if (overwrite && fileInfo.Exists)
-            {
-                fileInfo.Delete();
-            }
-
-            file.MoveTo(destFileName);
+            file.CopyTo(destFileName, overwrite);
+            file.Delete();
         }
 
         public static void MoveTo(this DirectoryInfo directory, string destDirName, bool overwrite)
         {
-            var directoryInfo = new DirectoryInfo(destDirName);
-
-            if (overwrite && directoryInfo.Exists)
+            foreach (var fileSystemInfo in directory.GetFileSystemInfos())
             {
-                directoryInfo.Delete();
+                fileSystemInfo.MoveTo(Path.Combine(destDirName, fileSystemInfo.Name), overwrite);
             }
 
-            directory.MoveTo(destDirName);
+            if (!directory.GetFileSystemInfos().Any())
+            {
+                directory.Delete();
+            }
+        }
+
+        public static void MoveTo(this FileSystemInfo fileSystemInfo, string destFileName, bool overwrite = false)
+        {
+            if (fileSystemInfo is FileInfo fileInfo)
+            {
+                fileInfo.MoveTo(destFileName, overwrite);
+            }
+            else if (fileSystemInfo is DirectoryInfo directoryInfo)
+            {
+                directoryInfo.MoveTo(destFileName, overwrite);
+            }
         }
     }
 }

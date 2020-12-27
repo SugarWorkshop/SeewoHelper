@@ -92,6 +92,12 @@
     <Compile Include="Forms\KeywordEditWindow.Designer.cs">
       <DependentUpon>KeywordEditWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KeywordGettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeywordGettingWindow.Designer.cs">
+      <DependentUpon>KeywordGettingWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubjectStorageInfoGettingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,7 @@
     <Compile Include="Models\CoursewareSortingInfo.cs" />
     <Compile Include="Models\DisposableCollection.cs" />
     <Compile Include="Models\Configuration{T}.cs" />
+    <Compile Include="Models\Keyword.cs" />
     <Compile Include="Models\MonitorableList.cs" />
     <Compile Include="Models\IReturnableForm.cs" />
     <Compile Include="Models\Log.cs" />
@@ -131,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeywordEditWindow.resx">
       <DependentUpon>KeywordEditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeywordGettingWindow.resx">
+      <DependentUpon>KeywordGettingWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubjectStorageInfoGettingWindow.resx">
       <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>
