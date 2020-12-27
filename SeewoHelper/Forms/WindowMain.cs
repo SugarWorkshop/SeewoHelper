@@ -1,4 +1,4 @@
-﻿using SeewoHelper.Features;
+using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
 using System.Collections.Generic;
@@ -115,6 +115,8 @@ namespace SeewoHelper.Forms
                     Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Disabled"));
                 }
             });
+            
+            Program.Logger.Add(new Log("主窗口加载完成"));
         }
 
         private void LoadLoggerConfig()
