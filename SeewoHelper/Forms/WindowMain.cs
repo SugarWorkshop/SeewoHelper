@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -93,7 +94,7 @@ namespace SeewoHelper.Forms
         {
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
-            if(ServiceUtilities.IsServiceStart("ShellHWDetection"))
+            if (ServiceUtilities.IsServiceStart("ShellHWDetection"))
             {
                 checkBox1.Checked = false;
             }
@@ -101,7 +102,7 @@ namespace SeewoHelper.Forms
             {
                 checkBox1.Checked = true;
             }
-
+            Program.Logger.Add(new Log("主窗口加载完成"));
         }
 
         private void LoadLoggerConfig()
@@ -154,26 +155,28 @@ namespace SeewoHelper.Forms
             textBoxCoursewareSortingSearchingPath.Text = info.Path;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            Cursor = Cursors.WaitCursor;
+            checkBox1.Enabled = false;
+            ThreadPool.QueueUserWorkItem((object state) =>
             {
-                checkBox1.Enabled = false;
-                ServiceUtilities.StopService("ShellHWDetection");
-                Program.Logger.Add(new Log("停止Shell Hardware Detection服务"));
-                ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
-                Program.Logger.Add(new Log("将Shell Hardware Detection服务的startType调整为Disabled"));
-                checkBox1.Enabled = true;
-            }
-            else
-            {
-                checkBox1.Enabled = false;
-                ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
-                Program.Logger.Add(new Log("将Shell Hardware Detection服务的startType调整为Automatic"));
-                ServiceUtilities.StartService("ShellHWDetection");
-                Program.Logger.Add(new Log("启动Shell Hardware Detection服务"));
-                checkBox1.Enabled = true;
-            }
+                if (checkBox1.Checked == true)
+                {
+                    ServiceUtilities.StopService("ShellHWDetection");
+                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
+                }
+                else
+                {
+                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
+                    ServiceUtilities.StartService("ShellHWDetection");
+                }
+                checkBox1.BeginInvoke(new MethodInvoker(() =>
+                {
+                    Cursor = Cursors.Arrow;
+                    checkBox1.Enabled = true;
+                }));
+            }, null);
         }
     }
 }
