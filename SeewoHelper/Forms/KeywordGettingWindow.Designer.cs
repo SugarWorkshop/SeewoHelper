@@ -44,8 +44,8 @@ namespace SeewoHelper.Forms
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.793815F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.20618F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.30928F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.69072F));
             this.tableLayoutPanel1.Controls.Add(this.labelMatchingWay, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelPattern, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPattern, 1, 0);
@@ -61,34 +61,38 @@ namespace SeewoHelper.Forms
             // labelMatchingWay
             // 
             this.labelMatchingWay.AutoSize = true;
+            this.labelMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelMatchingWay.Location = new System.Drawing.Point(3, 28);
             this.labelMatchingWay.Name = "labelMatchingWay";
-            this.labelMatchingWay.Size = new System.Drawing.Size(65, 12);
+            this.labelMatchingWay.Size = new System.Drawing.Size(74, 19);
             this.labelMatchingWay.TabIndex = 2;
             this.labelMatchingWay.Text = "匹配方式：";
             // 
             // labelPattern
             // 
             this.labelPattern.AutoSize = true;
+            this.labelPattern.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelPattern.Location = new System.Drawing.Point(3, 0);
             this.labelPattern.Name = "labelPattern";
-            this.labelPattern.Size = new System.Drawing.Size(53, 12);
+            this.labelPattern.Size = new System.Drawing.Size(61, 19);
             this.labelPattern.TabIndex = 1;
             this.labelPattern.Text = "关键词：";
             // 
             // textBoxPattern
             // 
-            this.textBoxPattern.Location = new System.Drawing.Point(79, 3);
+            this.textBoxPattern.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxPattern.Location = new System.Drawing.Point(83, 3);
             this.textBoxPattern.Name = "textBoxPattern";
-            this.textBoxPattern.Size = new System.Drawing.Size(694, 21);
+            this.textBoxPattern.Size = new System.Drawing.Size(690, 23);
             this.textBoxPattern.TabIndex = 2;
             // 
             // comboBoxMatchingWay
             // 
+            this.comboBoxMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxMatchingWay.FormattingEnabled = true;
-            this.comboBoxMatchingWay.Location = new System.Drawing.Point(79, 31);
+            this.comboBoxMatchingWay.Location = new System.Drawing.Point(83, 31);
             this.comboBoxMatchingWay.Name = "comboBoxMatchingWay";
-            this.comboBoxMatchingWay.Size = new System.Drawing.Size(694, 20);
+            this.comboBoxMatchingWay.Size = new System.Drawing.Size(690, 25);
             this.comboBoxMatchingWay.TabIndex = 3;
             // 
             // tableLayoutPanelButton
@@ -145,7 +149,9 @@ namespace SeewoHelper.Forms
             this.ClientSize = new System.Drawing.Size(800, 147);
             this.Controls.Add(this.tableLayoutPanelButton);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximizeBox = false;
             this.Name = "KeywordGettingWindow";
+            this.ShowIcon = false;
             this.Text = "修改关键词";
             this.Load += new System.EventHandler(this.KeywordGettingWindow_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
