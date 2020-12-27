@@ -21,12 +21,12 @@ namespace SeewoHelper
             if (enable)
             {
                 ServiceUtilities.StartService(_serviceName);
-                StartAction.Invoke();
+                StartAction?.Invoke();
             }
             else
             {
                 ServiceUtilities.StopService(_serviceName);
-                StopAction.Invoke();
+                StopAction?.Invoke();
             }
         }
 
