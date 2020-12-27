@@ -1,12 +1,7 @@
-﻿using SeewoHelper.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -52,7 +47,7 @@ namespace SeewoHelper.Forms
             {
                 _keyword = new Keyword(textBoxPattern.Text, KeywordMatchingWayDictionary.Where(x => x.Value == (string)comboBoxMatchingWay.SelectedItem).Single().Key);
             }
-            
+
             Close();
         }
 
