@@ -6,19 +6,19 @@ using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class KeywordEditWindow : Form, IReturnableForm<List<string>, List<string>>
+    public partial class KeywordEditWindow : Form, IReturnableForm<List<Keyword>, List<Keyword>>
     {
-        private List<string> _keywords;
+        private List<Keyword> _keywords;
 
         public KeywordEditWindow()
         {
             InitializeComponent();
         }
 
-        public List<string> GetInfo(List<string> list)
+        public List<Keyword> GetInfo(List<Keyword> list)
         {
             _keywords = list;
-            listViewKeywords.Items.AddRange(list.Select(x => new ListViewItem(x)).ToArray());
+            listViewKeywords.Items.AddRange(list.Select(x => new ListViewItem(x.Pattern) { Tag = x }).ToArray());
             ShowDialog();
 
             return _keywords;
@@ -26,7 +26,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            _keywords = listViewKeywords.Items.Cast<ListViewItem>().Select(x => x.Text).ToList();
+            _keywords = listViewKeywords.Items.Cast<ListViewItem>().Select(x => (Keyword)x.Tag).ToList();
             Close();
         }
 
@@ -37,11 +37,11 @@ namespace SeewoHelper.Forms
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            string keyword = new InputBoxWindow().GetInfo("添加关键词：", Text);
+            var keyword = new KeywordGettingWindow().GetInfo();
 
-            if (!string.IsNullOrWhiteSpace(keyword))
+            if (keyword != null)
             {
-                listViewKeywords.Items.Add(keyword);
+                listViewKeywords.Items.Add(new ListViewItem(keyword.Pattern) { Tag = keyword });
             }
         }
 
@@ -52,15 +52,16 @@ namespace SeewoHelper.Forms
 
         private void ListViewKeywords_DoubleClick(object sender, EventArgs e)
         {
-            var item = listViewKeywords.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
+            var selectedItem = listViewKeywords.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
-            if (item != null)
+            if (selectedItem != null)
             {
-                string keyword = new InputBoxWindow().GetInfo("修改关键词：", Text, item.Text);
+                var keyword = new KeywordGettingWindow().GetInfo((Keyword)selectedItem.Tag);
 
-                if (!string.IsNullOrWhiteSpace(keyword))
+                if (keyword != null)
                 {
-                    item.Text = keyword;
+                    var item = new ListViewItem(keyword.Pattern) { Tag = keyword };
+                    listViewKeywords.Items[selectedItem.Index] = item;
                 }
             }
         }

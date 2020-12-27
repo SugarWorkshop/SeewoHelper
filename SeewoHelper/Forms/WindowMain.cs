@@ -41,7 +41,7 @@ namespace SeewoHelper.Forms
 
         private void AddSubjectStorageInfoToList(SubjectStorageInfo info)
         {
-            var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
+            var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
             listViewSubjectStorageInfos.Items.Add(item);
         }
 
@@ -115,7 +115,7 @@ namespace SeewoHelper.Forms
 
                 if (info != null)
                 {
-                    var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords) }) { Tag = info };
+                    var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
                     listViewSubjectStorageInfos.Items[selectedItem.Index] = item;
                 }
             }

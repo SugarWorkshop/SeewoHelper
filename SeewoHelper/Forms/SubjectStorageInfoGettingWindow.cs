@@ -9,7 +9,7 @@ namespace SeewoHelper.Forms
     public partial class SubjectStorageInfoGettingWindow : Form, IReturnableForm<SubjectStorageInfo, SubjectStorageInfo>
     {
         private SubjectStorageInfo _subjectStorageInfo = null;
-        private List<string> _keywords = new List<string>();
+        private List<Keyword> _keywords = new List<Keyword>();
 
         public SubjectStorageInfoGettingWindow()
         {
@@ -23,7 +23,7 @@ namespace SeewoHelper.Forms
                 textBoxName.Text = info.Name;
                 textBoxPath.Text = info.Path;
                 _keywords = info.Keywords;
-                textBoxKeywords.Text = string.Join(", ", info.Keywords);
+                textBoxKeywords.Text = string.Join(", ", info.Keywords.Select(x => x.Pattern));
             }
 
             ShowDialog();
@@ -60,7 +60,7 @@ namespace SeewoHelper.Forms
         private void ButtonEditKeyword_Click(object sender, EventArgs e)
         {
             _keywords = new KeywordEditWindow().GetInfo(_keywords);
-            textBoxKeywords.Text = string.Join(", ", _keywords);
+            textBoxKeywords.Text = string.Join(", ", _keywords.Select(x => x.Pattern));
         }
     }
 }

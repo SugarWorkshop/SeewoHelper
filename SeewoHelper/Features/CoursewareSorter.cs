@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace SeewoHelper.Features
 {
@@ -30,13 +29,11 @@ namespace SeewoHelper.Features
 
             Program.Logger.Add(new Log($"开始整理科目：{info.Name}，目标路径：{info.Path}"));
 
-            foreach (string keyword in info.Keywords)
+            foreach (var keyword in info.Keywords)
             {
-                Program.Logger.Add(new Log($"正在匹配关键词：{keyword}"));
+                Program.Logger.Add(new Log($"正在匹配关键词：{keyword.Pattern} ({keyword.MatchingWay})"));
 
-                var regex = new Regex(keyword);
-                var matchedFileSystemInfos = fileSystemInfos.Where(x => regex.IsMatch(x.Name));
-
+                var matchedFileSystemInfos = fileSystemInfos.Where(x => keyword.IsMatch(x.Name));
                 selectedFileSystemInfos.AddRange(matchedFileSystemInfos);
 
                 Program.Logger.Add(new Log($"匹配到：{string.Join("/", matchedFileSystemInfos)}"));

@@ -12,10 +12,10 @@ namespace SeewoHelper
         public string Path { get; }
 
         [JsonProperty(PropertyName = "keywords")]
-        public List<string> Keywords { get; }
+        public List<Keyword> Keywords { get; }
 
         [JsonConstructor]
-        public SubjectStorageInfo(string name, string path, List<string> keywords)
+        public SubjectStorageInfo(string name, string path, List<Keyword> keywords)
         {
             Name = name;
             Path = path;
