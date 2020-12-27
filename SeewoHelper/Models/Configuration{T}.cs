@@ -16,7 +16,7 @@ namespace SeewoHelper
 
         private string FileName => _name + _suffix;
 
-        private string Path => IOUtilities.PathAppend(_directoryPath, FileName);
+        private string Path => System.IO.Path.Combine(_directoryPath, FileName);
 
         public T Content { get; set; }
 
