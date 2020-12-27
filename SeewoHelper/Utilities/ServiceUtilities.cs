@@ -70,6 +70,7 @@ namespace SeewoHelper.Utilities
             {
                 return false;
             }
+            Program.Logger.Add(new Log($"将{serviceName}服务的startType调整为{startType}"));
             return true;
         }
 
@@ -102,6 +103,7 @@ namespace SeewoHelper.Utilities
                     }
                 }
             }
+            Program.Logger.Add(new Log($"启动{serviceName}服务"));
             return flag;
         }
 
@@ -134,6 +136,7 @@ namespace SeewoHelper.Utilities
                     }
                 }
             }
+            Program.Logger.Add(new Log($"停止{serviceName}服务"));
             return flag;
         }
     }
