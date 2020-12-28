@@ -100,20 +100,10 @@ namespace SeewoHelper.Forms
 
         private void CreateServiceCheckBox()
         {
-            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBox1, "ShellHWDetection", true)
+            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true)
             {
-                StartAction = () =>
-                {
-                    Program.Logger.Add(new Log("启动 Shell Hardware Detection 服务"));
-                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2);
-                    Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Automatic"));
-                },
-                StopAction = () =>
-                {
-                    Program.Logger.Add(new Log("停止 Shell Hardware Detection 服务"));
-                    ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4);
-                    Program.Logger.Add(new Log("将 Shell Hardware Detection 服务的 startType 调整为 Disabled"));
-                }
+                StartAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2),
+                StopAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4)
             });
             
             Program.Logger.Add(new Log("主窗口加载完成"));
