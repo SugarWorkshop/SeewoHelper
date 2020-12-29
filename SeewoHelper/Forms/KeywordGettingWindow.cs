@@ -28,7 +28,7 @@ namespace SeewoHelper.Forms
             {
                 _keyword = keyword;
                 textBoxPattern.Text = keyword.Pattern;
-                comboBoxMatchingWay.SelectedItem = KeywordMatchingWayDictionary[keyword.MatchingWay];
+                comboBoxMatchingWay.Text = KeywordMatchingWayDictionary[keyword.MatchingWay];
             }
 
             ShowDialog();

@@ -153,7 +153,6 @@ namespace SeewoHelper.Forms
             this.Name = "KeywordGettingWindow";
             this.ShowIcon = false;
             this.Text = "修改关键词";
-            this.Load += new System.EventHandler(this.KeywordGettingWindow_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanelButton.ResumeLayout(false);

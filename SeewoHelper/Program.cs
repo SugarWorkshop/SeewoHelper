@@ -29,7 +29,8 @@ namespace SeewoHelper
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            Logger.Add(new Log(e.Exception.ToString(), LogLevel.Fatal));
+            MessageBox.Show($"程序给你抛出了异常，异常信息：\n{e.Exception.Message}\n\n详细信息请查看日志，并提交 issue，有能力的话也可以发 pr 哦");
+            Logger.Add(new Log(e.Exception.ToString(), LogLevel.Error));
         }
 
         private static void Application_ThreadExit(object sender, EventArgs e)
