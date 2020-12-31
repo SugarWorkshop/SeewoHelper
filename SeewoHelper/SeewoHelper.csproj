@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\ListViewExtensions.cs" />
@@ -120,17 +121,14 @@
       <DependentUpon>WindowMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CoursewareSortingInfo.cs" />
-    <Compile Include="Models\DisposableCollection.cs" />
     <Compile Include="Models\Configuration{T}.cs" />
     <Compile Include="Models\Keyword.cs" />
-    <Compile Include="Models\MonitorableList.cs" />
     <Compile Include="Models\IReturnableForm.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\ServiceCheckBox.cs" />
     <Compile Include="Models\SubjectStorageInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\ControlUtilities.cs" />
     <Compile Include="Utilities\FolderBrowserDialogUtilities.cs" />
     <Compile Include="Utilities\IOUtilities.cs" />
     <Compile Include="Utilities\ServiceUtilities.cs" />
@@ -153,31 +151,12 @@
     <EmbeddedResource Include="Forms\UpgradeWindow.resx">
       <DependentUpon>UpgradeWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Forms\WindowMain.resx">
       <DependentUpon>WindowMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

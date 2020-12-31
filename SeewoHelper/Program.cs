@@ -1,5 +1,7 @@
 ﻿using SeewoHelper.Forms;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -7,9 +9,9 @@ namespace SeewoHelper
 {
     static class Program
     {
-        public static readonly DisposableCollection DisposableCollection = new DisposableCollection();
+        public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
 
-        public static MonitorableList<Log> Logger => Configurations.LoggerConfig.Content;
+        public static ObservableCollection<Log> Logger => Configurations.LoggerConfig.Content;
 
         /// <summary>
         /// 应用程序的主入口点。
@@ -35,7 +37,10 @@ namespace SeewoHelper
 
         private static void Application_ThreadExit(object sender, EventArgs e)
         {
-            DisposableCollection.Dispose();
+            foreach (var disposable in AutoDisposer)
+            {
+                disposable.Dispose();
+            }
         }
     }
 }

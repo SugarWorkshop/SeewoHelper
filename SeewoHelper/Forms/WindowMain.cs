@@ -111,7 +111,7 @@ namespace SeewoHelper.Forms
         private void LoadLoggerConfig()
         {
             UpdateLoggerElement();
-            Program.Logger.AddElementModifiedEventHandler((sender, e) => UpdateLoggerElement());
+            Program.Logger.CollectionChanged += (sender, e) => UpdateLoggerElement();
         }
 
         private void UpdateLoggerElement()

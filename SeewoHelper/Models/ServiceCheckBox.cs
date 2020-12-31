@@ -6,11 +6,11 @@ namespace SeewoHelper
 {
     public class ServiceCheckBox
     {
-        private CheckBox _checkBox;
+        private readonly CheckBox _checkBox;
 
-        private string _serviceName;
+        private readonly string _serviceName;
 
-        private bool _isReverseCheck;
+        private readonly bool _isReverseCheck;
 
         public Action StartAction { get; set; }
 
