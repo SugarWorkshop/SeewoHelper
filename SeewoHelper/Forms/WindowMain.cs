@@ -116,7 +116,7 @@ namespace SeewoHelper.Forms
 
         private void UpdateLoggerElement()
         {
-            textBoxLogs.Text = string.Join("\r\n", Program.Logger);
+            textBoxLogs.Invoke(new MethodInvoker(() => textBoxLogs.Text = string.Join("\r\n", Program.Logger)));
         }
 
         private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
