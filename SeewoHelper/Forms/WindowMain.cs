@@ -104,7 +104,7 @@ namespace SeewoHelper.Forms
                 StartAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2),
                 StopAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4)
             });
-            
+
             Program.Logger.Add(new Log("主窗口加载完成"));
         }
 
