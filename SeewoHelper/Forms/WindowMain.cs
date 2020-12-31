@@ -95,8 +95,8 @@ namespace SeewoHelper.Forms
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
+            Program.Logger.Add(new Log("主窗口加载完成"));
         }
-
         private void CreateServiceCheckBox()
         {
             ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true)
@@ -104,8 +104,6 @@ namespace SeewoHelper.Forms
                 StartAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2),
                 StopAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4)
             });
-
-            Program.Logger.Add(new Log("主窗口加载完成"));
         }
 
         private void LoadLoggerConfig()
