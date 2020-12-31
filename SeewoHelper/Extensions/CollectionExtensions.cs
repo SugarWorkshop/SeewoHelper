@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SeewoHelper
 {
     internal static class CollectionExtensions
     {
-        public static void AddElementModifiedEventHandler<T>(this MonitorableList<T> list, EventHandler<IEnumerable<T>> eventHandler)
+        public static TElement AddElement<TCollection, TElement>(this ICollection<TCollection> collection, TElement element)
+            where TElement : TCollection
         {
-            list.ElementAdded += eventHandler;
-            list.ElementRemoved += eventHandler;
+            collection.Add(element);
+            return element;
         }
     }
 }

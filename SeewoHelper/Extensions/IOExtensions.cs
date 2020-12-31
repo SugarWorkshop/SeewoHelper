@@ -13,6 +13,11 @@ namespace SeewoHelper
 
         public static void MoveTo(this DirectoryInfo directory, string destDirName, bool overwrite)
         {
+            if (!Directory.Exists(destDirName))
+            {
+                Directory.CreateDirectory(destDirName);
+            }
+
             foreach (var fileSystemInfo in directory.GetFileSystemInfos())
             {
                 fileSystemInfo.MoveTo(Path.Combine(destDirName, fileSystemInfo.Name), overwrite);

@@ -36,18 +36,25 @@ namespace SeewoHelper.Features
                 var matchedFileSystemInfos = fileSystemInfos.Where(x => keyword.IsMatch(x.Name));
                 selectedFileSystemInfos.AddRange(matchedFileSystemInfos);
 
-                Program.Logger.Add(new Log($"匹配到：{string.Join("/", matchedFileSystemInfos)}"));
+                Program.Logger.Add(new Log($"匹配到：{string.Join(", ", matchedFileSystemInfos)}"));
             }
 
             var processFileSystemInfos = selectedFileSystemInfos.Distinct();
 
-            Program.Logger.Add(new Log($"将要处理：{string.Join("/", processFileSystemInfos)}"));
+            Program.Logger.Add(new Log($"将要处理：{string.Join(", ", processFileSystemInfos)}"));
 
-            foreach (var fileSysmteInfo in processFileSystemInfos)
+            foreach (var fileSystemInfo in processFileSystemInfos)
             {
-                Program.Logger.Add(new Log($"正在移动：{fileSysmteInfo}"));
+                Program.Logger.Add(new Log($"正在移动：{fileSystemInfo}"));
 
-                fileSysmteInfo.MoveTo(Path.Combine(info.Path, fileSysmteInfo.Name), true);
+                try
+                {
+                    fileSystemInfo.MoveTo(Path.Combine(info.Path, fileSystemInfo.Name), true);
+                }
+                catch (IOException e)
+                {
+                    Program.Logger.Add(new Log($"移动 {fileSystemInfo} 失败，异常消息：{e.Message}"));
+                }
             }
 
             Program.Logger.Add(new Log($"科目 {info.Name} 整理完成"));

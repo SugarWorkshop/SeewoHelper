@@ -28,7 +28,11 @@ namespace SeewoHelper.Forms
             {
                 _keyword = keyword;
                 textBoxPattern.Text = keyword.Pattern;
-                comboBoxMatchingWay.SelectedItem = KeywordMatchingWayDictionary[keyword.MatchingWay];
+                comboBoxMatchingWay.Text = KeywordMatchingWayDictionary[keyword.MatchingWay];
+            }
+            else
+            {
+                comboBoxMatchingWay.SelectedIndex = 0;
             }
 
             ShowDialog();
@@ -38,7 +42,6 @@ namespace SeewoHelper.Forms
         private void KeywordGettingWindow_Load(object sender, EventArgs e)
         {
             comboBoxMatchingWay.Items.AddRange(KeywordMatchingWayDictionary.Values.ToArray());
-            comboBoxMatchingWay.SelectedIndex = 0;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)

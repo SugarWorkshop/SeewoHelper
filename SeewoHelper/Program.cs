@@ -1,5 +1,7 @@
 ﻿using SeewoHelper.Forms;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -7,9 +9,9 @@ namespace SeewoHelper
 {
     static class Program
     {
-        public static readonly DisposableCollection DisposableCollection = new DisposableCollection();
+        public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
 
-        public static MonitorableList<Log> Logger => Configurations.LoggerConfig.Content;
+        public static ObservableCollection<Log> Logger => Configurations.LoggerConfig.Content;
 
         /// <summary>
         /// 应用程序的主入口点。
@@ -29,12 +31,16 @@ namespace SeewoHelper
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            Logger.Add(new Log(e.Exception.ToString(), LogLevel.Fatal));
+            MessageBox.Show($"程序给你抛出了异常，异常消息：\n{e.Exception.Message}\n\n详细信息请查看日志，并提交 issue，有能力的话也可以发 pr 哦");
+            Logger.Add(new Log(e.Exception.ToString(), LogLevel.Error));
         }
 
         private static void Application_ThreadExit(object sender, EventArgs e)
         {
-            DisposableCollection.Dispose();
+            foreach (var disposable in AutoDisposer)
+            {
+                disposable.Dispose();
+            }
         }
     }
 }
