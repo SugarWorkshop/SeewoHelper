@@ -1,5 +1,6 @@
 ﻿using SeewoHelper.Utilities;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -32,7 +33,17 @@ namespace SeewoHelper
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            _checkBox.Invoke(new MethodInvoker(() => SetService(!(_isReverseCheck && _checkBox.Checked))));
+            bool checkBoxStatus = _isReverseCheck && _checkBox.Checked;
+
+            if (checkBoxStatus == ServiceUtilities.IsServiceStart(_serviceName))
+            {
+                _checkBox.Enabled = false;
+
+                new Thread(new ThreadStart(() => {
+                    SetService(!checkBoxStatus);
+                    _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
+                })).Start();
+            }
         }
 
         public ServiceCheckBox(CheckBox checkBox, string serviceName, bool isReverseCheck)
