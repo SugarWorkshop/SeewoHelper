@@ -79,7 +79,6 @@ namespace SeewoHelper.Forms
                     }
 
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
-
                     sorter.SortMore();
 
                     MessageBox.Show("完成！");
