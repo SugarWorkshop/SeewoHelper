@@ -46,7 +46,6 @@ namespace SeewoHelper
                 {
                     SetService(!checkBoxStatus);
                     _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
-
                     if (PostAction != null)
                     {
                         _checkBox.Invoke(PostAction);
