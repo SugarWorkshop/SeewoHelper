@@ -30,10 +30,6 @@ namespace SeewoHelper.Forms
                 textBoxPattern.Text = keyword.Pattern;
                 comboBoxMatchingWay.Text = KeywordMatchingWayDictionary[keyword.MatchingWay];
             }
-            else
-            {
-                comboBoxMatchingWay.SelectedIndex = 0;
-            }
 
             ShowDialog();
             return _keyword;
@@ -46,7 +42,11 @@ namespace SeewoHelper.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrWhiteSpace(textBoxPattern.Text) || comboBoxMatchingWay.SelectedIndex == -1))
+            if (string.IsNullOrWhiteSpace(textBoxPattern.Text) || comboBoxMatchingWay.SelectedIndex == -1)
+            {
+                MessageBox.Show("请输入内容！");
+            }
+            else
             {
                 _keyword = new Keyword(textBoxPattern.Text, KeywordMatchingWayDictionary.Where(x => x.Value == (string)comboBoxMatchingWay.SelectedItem).Single().Key);
             }
