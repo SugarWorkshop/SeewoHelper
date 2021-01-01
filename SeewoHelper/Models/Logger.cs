@@ -26,7 +26,7 @@ namespace SeewoHelper
 
         public void Dispose() => Save();
 
-        public override string ToString() => string.Join("\n", this);
+        public override string ToString() => string.Join(Environment.NewLine, this);
 
         public Logger(string path)
         {
