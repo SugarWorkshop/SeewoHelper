@@ -1,5 +1,5 @@
-﻿using SeewoHelper.Utilities;
-using System;
+﻿using System;
+using System.ServiceProcess;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -9,11 +9,11 @@ namespace SeewoHelper
     {
         private readonly CheckBox _checkBox;
 
-        private readonly string _serviceName;
+        private readonly Service _service;
 
         private readonly bool _isReverseCheck;
 
-        private readonly int _startType;
+        private readonly ServiceStartMode _startMode;
 
         public Action PreAction { get; set; }
 
@@ -23,13 +23,13 @@ namespace SeewoHelper
         {
             if (enable)
             {
-                ServiceUtilities.ChangeServiceStartType(_serviceName, _startType);
-                ServiceUtilities.StartService(_serviceName);
+                _service.SetStartMode(_startMode);
+                _service.Start();
             }
             else
             {
-                ServiceUtilities.StopService(_serviceName);
-                ServiceUtilities.ChangeServiceStartType(_serviceName, 4);
+                _service.Stop();
+                _service.SetStartMode(ServiceStartMode.Disabled);
             }
         }
 
@@ -37,12 +37,13 @@ namespace SeewoHelper
         {
             bool checkBoxStatus = _isReverseCheck && _checkBox.Checked;
 
-            if (checkBoxStatus == ServiceUtilities.IsServiceStart(_serviceName))
+            if (checkBoxStatus == _service.Started)
             {
                 PreAction?.Invoke();
                 _checkBox.Enabled = false;
 
-                new Thread(new ThreadStart(() => {
+                new Thread(new ThreadStart(() =>
+                {
                     SetService(!checkBoxStatus);
                     _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
 
@@ -54,14 +55,14 @@ namespace SeewoHelper
             }
         }
 
-        public ServiceCheckBox(CheckBox checkBox, string serviceName, bool isReverseCheck, int startType = 2)
+        public ServiceCheckBox(CheckBox checkBox, string serviceName, bool isReverseCheck, ServiceStartMode startMode = ServiceStartMode.Automatic)
         {
             _checkBox = checkBox ?? throw new ArgumentNullException(nameof(checkBox));
-            _serviceName = serviceName ?? throw new ArgumentNullException(nameof(serviceName));
+            _service = new Service(serviceName ?? throw new ArgumentNullException(nameof(serviceName)));
             _isReverseCheck = isReverseCheck;
-            _startType = startType;
+            _startMode = startMode;
 
-            checkBox.Checked = !(isReverseCheck && ServiceUtilities.IsServiceStart(serviceName));
+            checkBox.Checked = !(isReverseCheck && _service.Started);
             checkBox.CheckedChanged += CheckBox_CheckedChanged;
         }
     }
