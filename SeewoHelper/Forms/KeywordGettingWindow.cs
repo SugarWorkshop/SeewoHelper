@@ -49,9 +49,8 @@ namespace SeewoHelper.Forms
             else
             {
                 _keyword = new Keyword(textBoxPattern.Text, KeywordMatchingWayDictionary.Where(x => x.Value == (string)comboBoxMatchingWay.SelectedItem).Single().Key);
+                Close();
             }
-
-            Close();
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
