@@ -132,6 +132,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\FolderBrowserDialogUtilities.cs" />
+    <Compile Include="Utilities\InstanceUtilities.cs" />
     <Compile Include="Utilities\IOUtilities.cs" />
     <Compile Include="Utilities\StringUtilities.cs" />
     <EmbeddedResource Include="Forms\AboutWindow.resx">
