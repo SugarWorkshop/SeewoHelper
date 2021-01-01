@@ -12,7 +12,7 @@ namespace SeewoHelper
 
         public bool Exists => _controller.ServiceName.ToLower() == Name.ToLower();
 
-        public bool IsRunning => !(_controller.Status == ServiceControllerStatus.Running);
+        public bool IsRunning => _controller.Status == ServiceControllerStatus.Running;
 
         public ServiceStartMode StartType => _controller.StartType;
 
