@@ -1,7 +1,6 @@
 using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,8 +9,6 @@ namespace SeewoHelper.Forms
 {
     public partial class WindowMain : Form
     {
-        private readonly List<ServiceCheckBox> ServiceCheckBoxs = new List<ServiceCheckBox>();
-
         public WindowMain()
         {
             InitializeComponent();
@@ -95,15 +92,13 @@ namespace SeewoHelper.Forms
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
+
             Program.Logger.Add(new Log("主窗口加载完成"));
         }
+
         private void CreateServiceCheckBox()
         {
-            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true)
-            {
-                StartAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2),
-                StopAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4)
-            });
+            checkBoxDisableServiceShellHardwareDetection.Tag = new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default };
         }
 
         private void LoadLoggerConfig()
