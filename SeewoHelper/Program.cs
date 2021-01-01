@@ -11,9 +11,9 @@ namespace SeewoHelper
 {
     static class Program
     {
-        public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
+        public static List<IDisposable> AutoDisposer { get; } = new List<IDisposable>();
 
-        public static readonly Logger Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+        public static Logger Logger { get; private set; }
 
         /// <summary>
         /// 应用程序的主入口点。
@@ -23,6 +23,8 @@ namespace SeewoHelper
         {
             if (!IsRunning())
             {
+                Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+
                 Logger.Add("应用启动");
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -36,13 +38,14 @@ namespace SeewoHelper
 
         private static bool IsRunning()
         {
-            var process = Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName);
-            bool running = process.Length > 1;
+            var currentProcess = Process.GetCurrentProcess();
+            var processes = Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName);
+            bool running = processes.Length > 1;
 
             if (running)
             {
                 MessageBox.Show("该应用已在运行");
-                var oldProcess = process.Where(x => x.Id != Process.GetCurrentProcess().Id).First();
+                var oldProcess = processes.Where(x => x.Id != currentProcess.Id).First();
                 NativeMethods.SwitchToThisWindow(oldProcess.MainWindowHandle, true);
             }
 
