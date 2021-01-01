@@ -11,8 +11,6 @@ namespace SeewoHelper
         public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
         public static ObservableCollection<Log> Logger => Configurations.LoggerConfig.Content;
 
-        public static WindowMain windowMain;
-
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -27,8 +25,7 @@ namespace SeewoHelper
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            windowMain = new WindowMain();
-            Application.Run(windowMain);
+            Application.Run(new WindowMain());
         }
 
         private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
