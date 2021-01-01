@@ -132,7 +132,7 @@ namespace SeewoHelper.Forms
             this.textBoxPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxPath.Location = new System.Drawing.Point(91, 58);
             this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(652, 25);
+            this.textBoxPath.Size = new System.Drawing.Size(640, 25);
             this.textBoxPath.TabIndex = 10;
             // 
             // textBoxKeywords
@@ -141,15 +141,15 @@ namespace SeewoHelper.Forms
             this.textBoxKeywords.Location = new System.Drawing.Point(91, 94);
             this.textBoxKeywords.Name = "textBoxKeywords";
             this.textBoxKeywords.ReadOnly = true;
-            this.textBoxKeywords.Size = new System.Drawing.Size(653, 25);
+            this.textBoxKeywords.Size = new System.Drawing.Size(640, 25);
             this.textBoxKeywords.TabIndex = 11;
             // 
             // buttonGettingPath
             // 
             this.buttonGettingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonGettingPath.Location = new System.Drawing.Point(747, 58);
+            this.buttonGettingPath.Location = new System.Drawing.Point(737, 58);
             this.buttonGettingPath.Name = "buttonGettingPath";
-            this.buttonGettingPath.Size = new System.Drawing.Size(36, 25);
+            this.buttonGettingPath.Size = new System.Drawing.Size(46, 25);
             this.buttonGettingPath.TabIndex = 12;
             this.buttonGettingPath.Text = "...";
             this.buttonGettingPath.UseVisualStyleBackColor = true;
@@ -157,11 +157,12 @@ namespace SeewoHelper.Forms
             // 
             // buttonEditKeyword
             // 
-            this.buttonEditKeyword.Location = new System.Drawing.Point(747, 94);
+            this.buttonEditKeyword.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.buttonEditKeyword.Location = new System.Drawing.Point(737, 94);
             this.buttonEditKeyword.Name = "buttonEditKeyword";
-            this.buttonEditKeyword.Size = new System.Drawing.Size(36, 25);
+            this.buttonEditKeyword.Size = new System.Drawing.Size(46, 25);
             this.buttonEditKeyword.TabIndex = 13;
-            this.buttonEditKeyword.Text = "🖊";
+            this.buttonEditKeyword.Text = "编辑";
             this.buttonEditKeyword.UseVisualStyleBackColor = true;
             this.buttonEditKeyword.Click += new System.EventHandler(this.ButtonEditKeyword_Click);
             // 
