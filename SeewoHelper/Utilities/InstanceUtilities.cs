@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
-using System.Reflection;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace SeewoHelper.Utilities
 {
@@ -29,21 +29,12 @@ namespace SeewoHelper.Utilities
         /// <summary>
         /// 获取正在运行的实例，没有运行的实例返回null;
         /// </summary>
-        public static Process RunningInstance()
+        public static Process GetRunningInstance()
         {
-            Process current = Process.GetCurrentProcess();
-            Process[] processes = Process.GetProcessesByName(current.ProcessName);
-            foreach (Process process in processes)
-            {
-                if (process.Id != current.Id)
-                {
-                    if (Assembly.GetExecutingAssembly().Location.Replace("/", "\\") == current.MainModule.FileName)
-                    {
-                        return process;
-                    }
-                }
-            }
-            return null;
+            var current = Process.GetCurrentProcess();
+            var processes = Process.GetProcessesByName(current.ProcessName);
+
+            return processes.Where(x => x.Id != current.Id).FirstOrDefault();
         }
 
         /// <summary>

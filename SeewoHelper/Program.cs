@@ -2,7 +2,6 @@
 using SeewoHelper.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,9 +9,9 @@ namespace SeewoHelper
 {
     static class Program
     {
-        public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
+        public static List<IDisposable> AutoDisposer { get; } = new List<IDisposable>();
 
-        public static Logger Logger;
+        public static Logger Logger { get; private set; }
 
         /// <summary>
         /// 应用程序的主入口点。
@@ -20,17 +19,20 @@ namespace SeewoHelper
         [STAThread]
         static void Main()
         {
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
+            var instance = InstanceUtilities.GetRunningInstance();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            Process instance = InstanceUtilities.RunningInstance();
             if (instance == null)
             {
                 Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+                AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
                 Logger.Add("应用启动");
+
                 Application.Run(new WindowMain());
             }
             else
