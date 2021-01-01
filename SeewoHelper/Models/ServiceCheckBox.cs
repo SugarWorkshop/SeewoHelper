@@ -48,6 +48,12 @@ namespace SeewoHelper
                     {
                         SetService(!checkBoxStatus);
                     }
+                    catch
+                    {
+                        _checkBox.Checked = _isReverseCheck && _service.IsRunning;
+                        MessageBox.Show("设置服务状态失败");
+                        throw;
+                    }
                     finally
                     {
                         _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -20,26 +21,36 @@ namespace SeewoHelper
         [STAThread]
         static void Main()
         {
-            var instance = InstanceUtilities.GetRunningInstance();
-
-            if (instance == null)
+            if (!IsRunning())
             {
                 Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+
+                Logger.Add("应用启动");
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
                 AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new WindowMain());
+            }
+        }
 
+            Process instance = InstanceUtilities.RunningInstance();
+            if (instance == null)
+            {
+                Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
                 Logger.Add("应用启动");
-
                 Application.Run(new WindowMain());
             }
             else
             {
-                InstanceUtilities.HandleRunningInstance(instance);
+                MessageBox.Show("该应用已在运行");
+                var oldProcess = processes.Where(x => x.Id != currentProcess.Id).First();
+                NativeMethods.SwitchToThisWindow(oldProcess.MainWindowHandle, true);
             }
+
+            return running;
         }
 
         private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
