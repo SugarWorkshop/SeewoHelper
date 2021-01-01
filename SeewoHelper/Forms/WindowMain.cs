@@ -89,11 +89,12 @@ namespace SeewoHelper.Forms
 
         private void WindowMain_Load(object sender, EventArgs e)
         {
+            Program.Logger.Add(new Log("开始加载WindowMain"));
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
 
-            Program.Logger.Add(new Log("主窗口加载完成"));
+            Program.Logger.Add(new Log("WindowMain加载完成"));
         }
 
         private void CreateServiceCheckBox()

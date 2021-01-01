@@ -22,8 +22,10 @@ namespace SeewoHelper.Forms
 
         private void AboutWindow_Load(object sender, EventArgs e)
         {
+            Program.Logger.Add(new Log("开始加载AboutWindow"));
             textBoxContributors.Text = string.Join("\r\n", Constants.Contributors);
             labelVersion.Text = "应用版本：" + Constants.Version.ToString();
+            Program.Logger.Add(new Log("AboutWindow加载完成"));
         }
     }
 }

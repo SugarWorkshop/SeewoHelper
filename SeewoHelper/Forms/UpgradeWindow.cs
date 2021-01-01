@@ -14,5 +14,10 @@ namespace SeewoHelper.Forms
         {
             this.Close();
         }
+        private void UpgradeWindow_Load(object sender, EventArgs e)
+        {
+            Program.Logger.Add(new Log("开始加载UpgradeWindow"));
+            Program.Logger.Add(new Log("UpgradeWindow加载完成"));
+        }
     }
 }
