@@ -10,7 +10,7 @@ namespace SeewoHelper.Forms
     {
         private Keyword _keyword = null;
 
-        private static readonly Dictionary<KeywordMatchingWay, string> KeywordMatchingWayDictionary = new Dictionary<KeywordMatchingWay, string>()
+        private static readonly Dictionary<KeywordMatchingWay, string> _keywordMatchingWayDictionary = new Dictionary<KeywordMatchingWay, string>()
         {
             [KeywordMatchingWay.Normal] = "正常",
             [KeywordMatchingWay.CaseInsensitive] = "不区分大小写",
@@ -28,16 +28,11 @@ namespace SeewoHelper.Forms
             {
                 _keyword = keyword;
                 textBoxPattern.Text = keyword.Pattern;
-                comboBoxMatchingWay.Text = KeywordMatchingWayDictionary[keyword.MatchingWay];
+                comboBoxMatchingWay.Text = _keywordMatchingWayDictionary[keyword.MatchingWay];
             }
 
             ShowDialog();
             return _keyword;
-        }
-
-        private void KeywordGettingWindow_Load(object sender, EventArgs e)
-        {
-            comboBoxMatchingWay.Items.AddRange(KeywordMatchingWayDictionary.Values.ToArray());
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
@@ -48,7 +43,7 @@ namespace SeewoHelper.Forms
             }
             else
             {
-                _keyword = new Keyword(textBoxPattern.Text, KeywordMatchingWayDictionary.Where(x => x.Value == (string)comboBoxMatchingWay.SelectedItem).Single().Key);
+                _keyword = new Keyword(textBoxPattern.Text, _keywordMatchingWayDictionary.GetKey(comboBoxMatchingWay.Text));
                 Close();
             }
         }
