@@ -1,4 +1,5 @@
-﻿using SeewoHelper.Utilities;
+﻿using SeewoHelper.Forms;
+using SeewoHelper.Utilities;
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -13,7 +14,6 @@ namespace SeewoHelper
 
         private readonly bool _isReverseCheck;
 
-
         public Action StartAction { get; set; }
 
         public Action StopAction { get; set; }
@@ -22,8 +22,8 @@ namespace SeewoHelper
         {
             if (enable)
             {
-                ServiceUtilities.StartService(_serviceName);
                 StartAction.Invoke();
+                ServiceUtilities.StartService(_serviceName);
             }
             else
             {
@@ -39,10 +39,11 @@ namespace SeewoHelper
             if (checkBoxStatus == ServiceUtilities.IsServiceStart(_serviceName))
             {
                 _checkBox.Enabled = false;
+                Program.windowMain.Cursor = Cursors.WaitCursor;
 
                 new Thread(new ThreadStart(() => {
                     SetService(!checkBoxStatus);
-                    _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true)) ;
+                    Program.windowMain.Invoke(new MethodInvoker(() => { Program.windowMain.Cursor = Cursors.Default; _checkBox.Enabled = true; }));
                 })).Start();
             }
         }

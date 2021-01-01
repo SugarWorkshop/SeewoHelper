@@ -10,8 +10,9 @@ namespace SeewoHelper
     static class Program
     {
         public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
-
         public static ObservableCollection<Log> Logger => Configurations.LoggerConfig.Content;
+
+        public static WindowMain windowMain;
 
         /// <summary>
         /// 应用程序的主入口点。
@@ -26,7 +27,9 @@ namespace SeewoHelper
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WindowMain());
+
+            windowMain = new WindowMain();
+            Application.Run(windowMain);
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
