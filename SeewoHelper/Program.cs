@@ -1,7 +1,7 @@
 ﻿using SeewoHelper.Forms;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -9,7 +9,8 @@ namespace SeewoHelper
     static class Program
     {
         public static readonly List<IDisposable> AutoDisposer = new List<IDisposable>();
-        public static ObservableCollection<Log> Logger => Configurations.LoggerConfig.Content;
+
+        public static readonly Logger Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-ddTHH-mm-ss-fffffff") + ".log"));
 
         /// <summary>
         /// 应用程序的主入口点。

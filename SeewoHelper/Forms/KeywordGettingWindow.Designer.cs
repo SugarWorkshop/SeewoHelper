@@ -103,6 +103,10 @@ namespace SeewoHelper.Forms
             this.comboBoxMatchingWay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxMatchingWay.FormattingEnabled = true;
+            this.comboBoxMatchingWay.Items.AddRange(new object[] {
+            "正常",
+            "不区分大小写",
+            "正则表达式"});
             this.comboBoxMatchingWay.Location = new System.Drawing.Point(83, 31);
             this.comboBoxMatchingWay.Name = "comboBoxMatchingWay";
             this.comboBoxMatchingWay.Size = new System.Drawing.Size(690, 25);
@@ -166,7 +170,6 @@ namespace SeewoHelper.Forms
             this.Name = "KeywordGettingWindow";
             this.ShowIcon = false;
             this.Text = "修改关键词";
-            this.Load += new System.EventHandler(this.KeywordGettingWindow_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanelButton.ResumeLayout(false);
