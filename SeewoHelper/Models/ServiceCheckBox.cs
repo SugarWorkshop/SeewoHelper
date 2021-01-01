@@ -37,19 +37,25 @@ namespace SeewoHelper
         {
             bool checkBoxStatus = _isReverseCheck && _checkBox.Checked;
 
-            if (checkBoxStatus == _service.Started)
+            if (checkBoxStatus == _service.IsRunning)
             {
                 PreAction?.Invoke();
                 _checkBox.Enabled = false;
 
                 new Thread(new ThreadStart(() =>
                 {
-                    SetService(!checkBoxStatus);
-                    _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
-
-                    if (PostAction != null)
+                    try
                     {
-                        _checkBox.Invoke(PostAction);
+                        SetService(!checkBoxStatus);
+                    }
+                    finally
+                    {
+                        _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
+
+                        if (PostAction != null)
+                        {
+                            _checkBox.Invoke(PostAction);
+                        }
                     }
                 })).Start();
             }
@@ -62,7 +68,7 @@ namespace SeewoHelper
             _isReverseCheck = isReverseCheck;
             _startMode = startMode;
 
-            checkBox.Checked = !(isReverseCheck && _service.Started);
+            checkBox.Checked = !(isReverseCheck && _service.IsRunning);
             checkBox.CheckedChanged += CheckBox_CheckedChanged;
         }
     }

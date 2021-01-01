@@ -25,7 +25,6 @@ namespace SeewoHelper
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new WindowMain());
         }
 
@@ -40,7 +39,7 @@ namespace SeewoHelper
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             MessageBox.Show($"程序给你抛出了异常，异常消息：\n{(e.ExceptionObject as Exception)?.Message ?? e.ExceptionObject}\n\n详细信息请查看日志，并提交 issue，有能力的话也可以发 pr 哦");
-            Logger.Add(new Log(e.ExceptionObject.ToString(), LogLevel.Error));
+            Logger.Add(new Log(e.ExceptionObject.ToString(), e.IsTerminating ? LogLevel.Fatal : LogLevel.Error));
         }
     }
 }

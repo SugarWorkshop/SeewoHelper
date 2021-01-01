@@ -12,9 +12,9 @@ namespace SeewoHelper
 
         public bool Exists => IsExists();
 
-        public bool Started => IsStarted();
+        public bool IsRunning => !(_controller.Status == ServiceControllerStatus.Running);
 
-        public ServiceStartMode StartMode => _controller.StartType;
+        public ServiceStartMode StartType => _controller.StartType;
 
         private readonly ServiceController _controller;
 
@@ -38,24 +38,6 @@ namespace SeewoHelper
             }
 
             return false;
-        }
-
-        private bool IsStarted()
-        {
-            bool bStartStatus = false;
-            try
-            {
-                if (!_controller.Status.Equals(ServiceControllerStatus.Stopped))
-                {
-                    bStartStatus = true;
-                }
-
-                return bStartStatus;
-            }
-            catch
-            {
-                throw;
-            }
         }
 
         public bool Start()
@@ -128,7 +110,7 @@ namespace SeewoHelper
                 return false;
             }
 
-            Program.Logger.Add(new Log($"将 {Name} 服务的 startType 调整为 {startMode}"));
+            Program.Logger.Add(new Log($"将 {Name} 服务的 StartType 调整为 {startMode}"));
             return true;
         }
 
