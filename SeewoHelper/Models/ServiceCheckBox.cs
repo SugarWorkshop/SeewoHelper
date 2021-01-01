@@ -13,6 +13,7 @@ namespace SeewoHelper
 
         private readonly bool _isReverseCheck;
 
+
         public Action StartAction { get; set; }
 
         public Action StopAction { get; set; }
@@ -41,7 +42,7 @@ namespace SeewoHelper
 
                 new Thread(new ThreadStart(() => {
                     SetService(!checkBoxStatus);
-                    _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
+                    _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true)) ;
                 })).Start();
             }
         }
