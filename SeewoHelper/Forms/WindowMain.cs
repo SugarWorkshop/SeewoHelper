@@ -95,13 +95,13 @@ namespace SeewoHelper.Forms
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
+
+            Program.Logger.Add(new Log("主窗口加载完成"));
         }
 
         private void CreateServiceCheckBox()
         {
-            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true));
-
-            Program.Logger.Add(new Log("主窗口加载完成"));
+            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default } );
         }
 
         private void LoadLoggerConfig()

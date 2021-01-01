@@ -15,6 +15,10 @@ namespace SeewoHelper
 
         private readonly int _startType;
 
+        public Action PreAction { get; set; }
+
+        public Action PostAction { get; set; }
+
         private void SetService(bool enable)
         {
             if (enable)
@@ -35,11 +39,17 @@ namespace SeewoHelper
 
             if (checkBoxStatus == ServiceUtilities.IsServiceStart(_serviceName))
             {
+                PreAction?.Invoke();
                 _checkBox.Enabled = false;
 
                 new Thread(new ThreadStart(() => {
                     SetService(!checkBoxStatus);
                     _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
+
+                    if (PostAction != null)
+                    {
+                        _checkBox.Invoke(PostAction);
+                    }
                 })).Start();
             }
         }
