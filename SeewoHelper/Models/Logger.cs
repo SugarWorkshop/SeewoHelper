@@ -9,7 +9,7 @@ namespace SeewoHelper
     {
         private readonly string _path;
 
-        private void Save() => File.WriteAllText(_path, string.Join("\n", this));
+        private void Save() => File.WriteAllText(_path, ToString());
 
         private bool TrySave()
         {
@@ -25,6 +25,8 @@ namespace SeewoHelper
         }
 
         public void Dispose() => Save();
+
+        public override string ToString() => string.Join(Environment.NewLine, this);
 
         public Logger(string path)
         {
