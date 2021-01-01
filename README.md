@@ -13,9 +13,9 @@ SeewoHelper 是一个为**解决Seewo一体机屏幕过大导致操作不便**�
 - 快捷电源控制
 - 一键关闭/重启WPS或office进程
 - 课件自动整理
-- 一键部署[RemoteExecutor](https://github.com/zi-jing/RemoteExecutor)的Client端
+- 一键部署[RemoteGenius](https://github.com/zi-jing/RemoteGenius)的Client端
 - 高危指令可密码上锁
 
-本项目制作较为仓促，部分代码实现非常暴力，如有更好的处理方案，请提issue或提交pr！
+本项目制作较为仓促，部分代码实现非常暴力，如有更好的处理方案，请提Issue或提交Pull request！
 
 **欢迎大佬参与开发！**
