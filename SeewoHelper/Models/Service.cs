@@ -10,7 +10,7 @@ namespace SeewoHelper
     {
         public string Name { get; }
 
-        public bool Exists => IsExists();
+        public bool Exists => _controller.ServiceName.ToLower() == Name.ToLower();
 
         public bool IsRunning => !(_controller.Status == ServiceControllerStatus.Running);
 
@@ -26,19 +26,6 @@ namespace SeewoHelper
             [ServiceStartMode.Manual] = "demand",
             [ServiceStartMode.Disabled] = "disabled"
         };
-
-        private bool IsExists()
-        {
-            foreach (ServiceController _controller in ServiceController.GetServices())
-            {
-                if (_controller.ServiceName.ToLower() == Name.ToLower())
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
 
         public bool Start()
         {
