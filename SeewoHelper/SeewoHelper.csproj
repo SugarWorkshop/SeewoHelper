@@ -125,6 +125,7 @@
     <Compile Include="Models\Keyword.cs" />
     <Compile Include="Models\IReturnableForm.cs" />
     <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceCheckBox.cs" />
     <Compile Include="Models\SubjectStorageInfo.cs" />
