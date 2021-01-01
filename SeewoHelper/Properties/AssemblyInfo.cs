@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mo_Ink")]
 [assembly: AssemblyProduct("SeewoHelper")]
-[assembly: AssemblyCopyright("Copyright© 2020 Mo_Ink, All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright© 2020 - 2021 Mo_Ink , All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
