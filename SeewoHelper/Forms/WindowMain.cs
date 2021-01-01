@@ -93,7 +93,7 @@ namespace SeewoHelper.Forms
             LoadLoggerConfig();
             CreateServiceCheckBox();
 
-            Program.Logger.Add(new Log("主窗口加载完成"));
+            Program.Logger.Add("主窗口加载完成");
         }
 
         private void CreateServiceCheckBox()

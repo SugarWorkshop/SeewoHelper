@@ -65,7 +65,7 @@ namespace SeewoHelper
                 }
             }
 
-            Program.Logger.Add(new Log($"启动 {Name} 服务"));
+            Program.Logger.Add($"启动 {Name} 服务");
             return flag;
         }
 
@@ -94,7 +94,7 @@ namespace SeewoHelper
                 }
             }
 
-            Program.Logger.Add(new Log($"停止 {Name} 服务"));
+            Program.Logger.Add($"停止 {Name} 服务");
             return flag;
         }
 
@@ -110,7 +110,7 @@ namespace SeewoHelper
                 return false;
             }
 
-            Program.Logger.Add(new Log($"将 {Name} 服务的 StartType 调整为 {startMode}"));
+            Program.Logger.Add($"将 {Name} 服务的 StartType 调整为 {startMode}");
             return true;
         }
 
