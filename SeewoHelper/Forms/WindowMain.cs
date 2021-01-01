@@ -99,11 +99,7 @@ namespace SeewoHelper.Forms
 
         private void CreateServiceCheckBox()
         {
-            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true)
-            {
-                StartAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 2),
-                StopAction = () => ServiceUtilities.ChangeServiceStartType("ShellHWDetection", 4)
-            });
+            ServiceCheckBoxs.Add(new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true));
 
             Program.Logger.Add(new Log("主窗口加载完成"));
         }
