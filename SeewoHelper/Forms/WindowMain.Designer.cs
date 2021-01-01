@@ -97,14 +97,14 @@
             // UpgradeMenuItem
             // 
             this.UpgradeMenuItem.Name = "UpgradeMenuItem";
-            this.UpgradeMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.UpgradeMenuItem.Size = new System.Drawing.Size(180, 24);
             this.UpgradeMenuItem.Text = "检查更新";
             this.UpgradeMenuItem.Click += new System.EventHandler(this.UpgradeMenuItem_Click);
             // 
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.AboutMenuItem.Size = new System.Drawing.Size(180, 24);
             this.AboutMenuItem.Text = "关于...";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
