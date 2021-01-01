@@ -16,8 +16,8 @@ namespace SeewoHelper.Forms
         }
         private void UpgradeWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Add(new Log("开始加载UpgradeWindow"));
-            Program.Logger.Add(new Log("UpgradeWindow加载完成"));
+            Program.Logger.Add("开始加载 UpgradeWindow");
+            Program.Logger.Add("UpgradeWindow 加载完成");
         }
     }
 }
