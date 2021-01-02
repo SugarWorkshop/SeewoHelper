@@ -48,7 +48,7 @@ namespace SeewoHelper
                 PreAction?.Invoke();
                 _checkBox.Enabled = false;
 
-                new Thread(new ThreadStart(() =>
+                ThreadPool.QueueUserWorkItem(obj =>
                 {
                     try
                     {
@@ -68,7 +68,7 @@ namespace SeewoHelper
                             _checkBox.Invoke(PostAction);
                         }
                     }
-                })).Start();
+                });
             }
         }
 

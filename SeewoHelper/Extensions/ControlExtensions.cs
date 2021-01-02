@@ -2,7 +2,7 @@
 
 namespace SeewoHelper
 {
-    internal static class ListViewExtensions
+    internal static class ControlExtensions
     {
         public static void Remove(this ListView.SelectedListViewItemCollection collection)
         {
@@ -10,6 +10,12 @@ namespace SeewoHelper
             {
                 item.Remove();
             }
+        }
+
+        public static void SetText(this LinkLabel linkLabel, string text, string nullText)
+        {
+            linkLabel.Text = text ?? nullText;
+            linkLabel.Enabled = text != null;
         }
     }
 }

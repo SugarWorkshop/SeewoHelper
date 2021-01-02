@@ -112,8 +112,9 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\IOExtensions.cs" />
-    <Compile Include="Extensions\ListViewExtensions.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Features\CoursewareSorter.cs" />
+    <Compile Include="Features\Updater.cs" />
     <Compile Include="Forms\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,11 +145,11 @@
     <Compile Include="Forms\SubjectStorageInfoGettingWindow.Designer.cs">
       <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpgradeWindow.cs">
+    <Compile Include="Forms\UpdateCheckerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpgradeWindow.Designer.cs">
-      <DependentUpon>UpgradeWindow.cs</DependentUpon>
+    <Compile Include="Forms\UpdateCheckerWindow.Designer.cs">
+      <DependentUpon>UpdateCheckerWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WindowMain.cs">
       <SubType>Form</SubType>
@@ -162,7 +163,7 @@
     <Compile Include="Models\IReturnableForm.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Logger.cs" />
-    <Compile Include="Models\Release.cs" />
+    <Compile Include="Models\ReleaseInfo.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceCheckBox.cs" />
     <Compile Include="Models\SubjectStorageInfo.cs" />
@@ -187,8 +188,8 @@
     <EmbeddedResource Include="Forms\SubjectStorageInfoGettingWindow.resx">
       <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpgradeWindow.resx">
-      <DependentUpon>UpgradeWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UpdateCheckerWindow.resx">
+      <DependentUpon>UpdateCheckerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WindowMain.resx">
       <DependentUpon>WindowMain.cs</DependentUpon>
