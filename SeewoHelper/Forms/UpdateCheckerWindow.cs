@@ -33,9 +33,8 @@ namespace SeewoHelper.Forms
                     linkLabelPrerelease.Invoke(new MethodInvoker(() => linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无")));
                     linkLabelRelease.Invoke(new MethodInvoker(() => linkLabelRelease.SetText(_updater.Release?.Name, "暂无")));
                 }
+                Program.Logger.Add("UpgradeWindow 加载完成");
             });
-
-            Program.Logger.Add("UpgradeWindow 加载完成");
         }
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
