@@ -1,6 +1,7 @@
 using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -131,7 +132,15 @@ namespace SeewoHelper.Forms
 
         private void WindowMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            UpdateSubjectStorageInfoConfig();
+            if (e.CloseReason ==  CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                UpdateSubjectStorageInfoConfig();
+            }
         }
 
         private void UpdateSubjectStorageInfoConfig()
@@ -150,6 +159,23 @@ namespace SeewoHelper.Forms
             }
 
             textBoxCoursewareSortingSearchingPath.Text = info.Path;
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+            Activate();
+        }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+            Activate();
+        }
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

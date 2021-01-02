@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowMain));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.OperationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,13 +52,19 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.textBoxLogs = new System.Windows.Forms.TextBox();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextNotifyIconMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.contextNotifyIconMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -249,6 +257,7 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Controls.Add(this.tabPage4);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl.Location = new System.Drawing.Point(12, 28);
             this.tabControl.Name = "tabControl";
@@ -279,24 +288,66 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBoxLogs);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(768, 378);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "日志";
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "调试";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.textBoxLogs);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(768, 378);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "日志";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // textBoxLogs
             // 
-            this.textBoxLogs.Location = new System.Drawing.Point(3, 6);
+            this.textBoxLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLogs.Location = new System.Drawing.Point(6, 6);
             this.textBoxLogs.Multiline = true;
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.ReadOnly = true;
             this.textBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxLogs.Size = new System.Drawing.Size(759, 366);
+            this.textBoxLogs.Size = new System.Drawing.Size(756, 366);
             this.textBoxLogs.TabIndex = 0;
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextNotifyIconMenuStrip;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "SeewoHelper";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // contextNotifyIconMenuStrip
+            // 
+            this.contextNotifyIconMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenToolStripMenuItem,
+            this.ExitToolStripMenuItem});
+            this.contextNotifyIconMenuStrip.Name = "contextNotifyIconMenuStrip";
+            this.contextNotifyIconMenuStrip.Size = new System.Drawing.Size(181, 70);
+            // 
+            // OpenToolStripMenuItem
+            // 
+            this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Text = "打开界面";
+            this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // ExitToolStripMenuItem
+            // 
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Text = "退出";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // WindowMain
             // 
@@ -306,11 +357,12 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WindowMain";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "SeewoHelper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);
@@ -322,8 +374,9 @@
             this.tabControl.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.contextNotifyIconMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,9 +403,14 @@
         private System.Windows.Forms.TextBox textBoxCoursewareSortingSearchingPath;
         private System.Windows.Forms.Button buttonStartCoursewareSorting;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.CheckBox checkBoxDisableServiceShellHardwareDetection;
         private System.Windows.Forms.TextBox textBoxLogs;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip contextNotifyIconMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
     }
 }
 
