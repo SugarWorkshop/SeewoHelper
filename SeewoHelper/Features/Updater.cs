@@ -13,6 +13,7 @@ namespace SeewoHelper.Features
 
         public async Task GetInfo()
         {
+            Program.Logger.Add("开始获取 Release 信息");
             var client = new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.50 Safari/537.36 Edg/88.0.705.29");
 
@@ -24,6 +25,7 @@ namespace SeewoHelper.Features
 
             Release = infos.FirstOrDefault(x => !x.IsPrerelese);
             Prerelease = infos.FirstOrDefault(x => x.IsPrerelese);
+            Program.Logger.Add("Release 信息获取完成");
         }
 
         public Updater()
