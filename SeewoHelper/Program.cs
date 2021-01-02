@@ -3,6 +3,7 @@ using SeewoHelper.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -25,6 +26,8 @@ namespace SeewoHelper
             {
                 Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
+                Application.ThreadException += Application_ThreadException;
+
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
                 AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
 
@@ -41,6 +44,11 @@ namespace SeewoHelper
             }
         }
 
+        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+        {
+            e.Exception.ShowAndLog(Logger);
+        }
+
         private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
         {
             foreach (var disposable in AutoDisposer)
@@ -51,8 +59,7 @@ namespace SeewoHelper
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            MessageBox.Show($"程序给你抛出了异常，异常消息：\n{(e.ExceptionObject as Exception)?.Message ?? e.ExceptionObject}\n\n详细信息请查看日志，并提交 issue，有能力的话也可以发 pr 哦");
-            Logger.Add(e.ExceptionObject.ToString(), e.IsTerminating ? LogLevel.Fatal : LogLevel.Error);
+            (e.ExceptionObject as Exception).ShowAndLog(Logger, e.IsTerminating);
         }
     }
 }
