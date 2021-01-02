@@ -134,7 +134,7 @@
     <Compile Include="Utilities\FolderBrowserDialogUtilities.cs" />
     <Compile Include="Utilities\IOUtilities.cs" />
     <Compile Include="Utilities\NativeMethods.cs" />
-    <Compile Include="Utilities\StringUtilities.cs" />
+    <Compile Include="Utilities\SystemUtilities.cs" />
     <EmbeddedResource Include="Forms\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
