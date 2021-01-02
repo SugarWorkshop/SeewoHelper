@@ -12,9 +12,9 @@ namespace SeewoHelper
 
         public bool Exists => _controller.ServiceName.ToLower() == Name.ToLower();
 
-        public bool IsRunning => _controller.Status == ServiceControllerStatus.Running;
+        public bool IsRunning => Refresh().Status == ServiceControllerStatus.Running;
 
-        public ServiceStartMode StartType => _controller.StartType;
+        public ServiceStartMode StartType => Refresh().StartType;
 
         private readonly ServiceController _controller;
 
@@ -27,13 +27,19 @@ namespace SeewoHelper
             [ServiceStartMode.Disabled] = "disabled"
         };
 
+        private ServiceController Refresh()
+        {
+            _controller.Refresh();
+            return _controller;
+        }
+
         public bool Start()
         {
             bool flag = true;
 
             if (Exists)
             {
-                if (_controller.Status != ServiceControllerStatus.Running && _controller.Status != ServiceControllerStatus.StartPending)
+                if (!IsRunning && _controller.Status != ServiceControllerStatus.StartPending)
                 {
                     _controller.Start();
                     for (int i = 0; i < 60; i++)
@@ -62,7 +68,7 @@ namespace SeewoHelper
 
             if (Exists)
             {
-                if (_controller.Status == ServiceControllerStatus.Running)
+                if (IsRunning)
                 {
                     _controller.Stop();
                     for (int i = 0; i < 60; i++)
