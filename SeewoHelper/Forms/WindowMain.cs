@@ -161,13 +161,17 @@ namespace SeewoHelper.Forms
             textBoxCoursewareSortingSearchingPath.Text = info.Path;
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            WindowState = FormWindowState.Normal;
-            Activate();
+            ShowWindow();
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindow();
+        }
+
+        private void ShowWindow()
         {
             WindowState = FormWindowState.Normal;
             Activate();
