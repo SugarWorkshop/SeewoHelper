@@ -14,7 +14,7 @@ namespace SeewoHelper
         [JsonProperty(PropertyName = "content")]
         public string Content { get; }
 
-        public override string ToString() => $"[{Level}]{Time:s}: {Content}";
+        public override string ToString() => $"[{Level}]{Time:F}: {Content}";
 
         [JsonConstructor]
         public Log(string content, DateTime time, LogLevel level = LogLevel.Info)
