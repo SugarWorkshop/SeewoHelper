@@ -45,9 +45,9 @@
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.5F, System.Drawing.FontStyle.Bold);
-            this.ButtonOK.Location = new System.Drawing.Point(238, 247);
+            this.ButtonOK.Location = new System.Drawing.Point(252, 260);
             this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.Size = new System.Drawing.Size(89, 44);
+            this.ButtonOK.Size = new System.Drawing.Size(75, 31);
             this.ButtonOK.TabIndex = 4;
             this.ButtonOK.Text = "确定";
             this.ButtonOK.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(309, 119);
+            this.labelTitle.Size = new System.Drawing.Size(309, 108);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "检查更新";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,26 +79,29 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.40174F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.59826F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(315, 229);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(315, 242);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.labelRelease, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelPreRelease, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.linkLabelRelease, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.linkLabelPrerelease, 1, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 122);
+            this.tableLayoutPanel2.Controls.Add(this.labelRelease, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 111);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(309, 104);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(309, 128);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // labelRelease
@@ -110,7 +113,7 @@
             this.labelRelease.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelRelease.Location = new System.Drawing.Point(3, 0);
             this.labelRelease.Name = "labelRelease";
-            this.labelRelease.Size = new System.Drawing.Size(148, 52);
+            this.labelRelease.Size = new System.Drawing.Size(148, 64);
             this.labelRelease.TabIndex = 0;
             this.labelRelease.Text = "最新正式版：";
             this.labelRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,9 +125,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPreRelease.AutoSize = true;
             this.labelPreRelease.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.labelPreRelease.Location = new System.Drawing.Point(3, 52);
+            this.labelPreRelease.Location = new System.Drawing.Point(3, 64);
             this.labelPreRelease.Name = "labelPreRelease";
-            this.labelPreRelease.Size = new System.Drawing.Size(148, 52);
+            this.labelPreRelease.Size = new System.Drawing.Size(148, 64);
             this.labelPreRelease.TabIndex = 1;
             this.labelPreRelease.Text = "最新开发版：";
             this.labelPreRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -139,7 +142,7 @@
             this.linkLabelRelease.Font = new System.Drawing.Font("微软雅黑", 13.5F, System.Drawing.FontStyle.Bold);
             this.linkLabelRelease.Location = new System.Drawing.Point(157, 0);
             this.linkLabelRelease.Name = "linkLabelRelease";
-            this.linkLabelRelease.Size = new System.Drawing.Size(149, 52);
+            this.linkLabelRelease.Size = new System.Drawing.Size(149, 64);
             this.linkLabelRelease.TabIndex = 2;
             this.linkLabelRelease.TabStop = true;
             this.linkLabelRelease.Text = "检测中……";
@@ -154,9 +157,9 @@
             this.linkLabelPrerelease.AutoSize = true;
             this.linkLabelPrerelease.Enabled = false;
             this.linkLabelPrerelease.Font = new System.Drawing.Font("微软雅黑", 13.5F, System.Drawing.FontStyle.Bold);
-            this.linkLabelPrerelease.Location = new System.Drawing.Point(157, 52);
+            this.linkLabelPrerelease.Location = new System.Drawing.Point(157, 64);
             this.linkLabelPrerelease.Name = "linkLabelPrerelease";
-            this.linkLabelPrerelease.Size = new System.Drawing.Size(149, 52);
+            this.linkLabelPrerelease.Size = new System.Drawing.Size(149, 64);
             this.linkLabelPrerelease.TabIndex = 3;
             this.linkLabelPrerelease.TabStop = true;
             this.linkLabelPrerelease.Text = "检测中……";
