@@ -13,7 +13,7 @@ namespace SeewoHelper.Utilities
         /// 该函数设置由不同线程产生的窗口的显示状态。
         /// </summary>
         /// <param name="hWnd">窗口句柄</param>
-        /// <param name="cmdShow">指定窗口如何显示。查看允许值列表，请查阅ShowWlndow函数的说明部分。</param>
+        /// <param name="cmdShow">指定窗口如何显示。查看允许值列表，请查阅ShowWindow函数的说明部分。</param>
         /// <returns>如果函数原来可见，返回值为非零；如果函数原来被隐藏，返回值为零。</returns>
         [DllImport("User32.dll")]
         private static extern bool ShowWindowAsync(IntPtr hWnd, int cmdShow);
