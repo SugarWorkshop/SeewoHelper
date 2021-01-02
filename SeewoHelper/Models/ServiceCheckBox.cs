@@ -15,6 +15,8 @@ namespace SeewoHelper
 
         private readonly ServiceStartMode _startMode;
 
+        private bool IsChecked => _isReverseCheck ? !_service.IsRunning : _service.IsRunning;
+
         public Action PreAction { get; set; }
 
         public Action PostAction { get; set; }
@@ -35,9 +37,7 @@ namespace SeewoHelper
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            bool checkBoxStatus = _isReverseCheck && _checkBox.Checked;
-
-            if (checkBoxStatus == _service.IsRunning)
+            if (_checkBox.Checked != IsChecked)
             {
                 PreAction?.Invoke();
                 _checkBox.Enabled = false;
@@ -46,12 +46,11 @@ namespace SeewoHelper
                 {
                     try
                     {
-                        SetService(!checkBoxStatus);
+                        SetService(!_service.IsRunning);
                     }
                     catch
                     {
-                        _checkBox.Checked = _isReverseCheck && _service.IsRunning;
-                        MessageBox.Show("设置服务状态失败");
+                        _checkBox.Invoke(new MethodInvoker(() => _checkBox.Checked = IsChecked));
                         throw;
                     }
                     finally
@@ -74,7 +73,7 @@ namespace SeewoHelper
             _isReverseCheck = isReverseCheck;
             _startMode = startMode;
 
-            checkBox.Checked = !(isReverseCheck && _service.IsRunning);
+            checkBox.Checked = IsChecked;
             checkBox.CheckedChanged += CheckBox_CheckedChanged;
         }
     }
