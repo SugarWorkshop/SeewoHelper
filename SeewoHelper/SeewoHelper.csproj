@@ -113,6 +113,7 @@
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Extensions\SystemExtensions.cs" />
     <Compile Include="Features\CoursewareSorter.cs" />
     <Compile Include="Features\Updater.cs" />
     <Compile Include="Forms\AboutWindow.cs">
