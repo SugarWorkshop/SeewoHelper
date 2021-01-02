@@ -21,7 +21,7 @@ namespace SeewoHelper.Forms
 
         private void UpgradeMenuItem_Click(object sender, EventArgs e)
         {
-            new UpgradeWindow().ShowDialog();
+            new UpdateCheckerWindow().ShowDialog();
         }
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)

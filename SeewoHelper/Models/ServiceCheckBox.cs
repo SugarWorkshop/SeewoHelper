@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeewoHelper.Utilities;
+using System;
 using System.ServiceProcess;
 using System.Threading;
 using System.Windows.Forms;
@@ -14,6 +15,8 @@ namespace SeewoHelper
         private readonly bool _isReverseCheck;
 
         private readonly ServiceStartMode _startMode;
+
+        private bool IsChecked => SystemUtilities.ReverseBool(_isReverseCheck, _service.IsRunning);
 
         public Action PreAction { get; set; }
 
@@ -35,23 +38,25 @@ namespace SeewoHelper
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            bool checkBoxStatus = _isReverseCheck && _checkBox.Checked;
+            // --- 用于保留当前状态，解决部分问题 ---
+            bool current = _service.IsRunning;
+            bool isChecked = SystemUtilities.ReverseBool(_isReverseCheck, current);
+            // --- ! ---
 
-            if (checkBoxStatus == _service.IsRunning)
+            if (_checkBox.Checked != isChecked)
             {
                 PreAction?.Invoke();
                 _checkBox.Enabled = false;
 
-                new Thread(new ThreadStart(() =>
+                ThreadPool.QueueUserWorkItem(obj =>
                 {
                     try
                     {
-                        SetService(!checkBoxStatus);
+                        SetService(!current);
                     }
                     catch
                     {
-                        _checkBox.Checked = _isReverseCheck && _service.IsRunning;
-                        MessageBox.Show("设置服务状态失败");
+                        _checkBox.Invoke(new MethodInvoker(() => _checkBox.Checked = IsChecked));
                         throw;
                     }
                     finally
@@ -63,7 +68,7 @@ namespace SeewoHelper
                             _checkBox.Invoke(PostAction);
                         }
                     }
-                })).Start();
+                });
             }
         }
 
@@ -74,7 +79,7 @@ namespace SeewoHelper
             _isReverseCheck = isReverseCheck;
             _startMode = startMode;
 
-            checkBox.Checked = !(isReverseCheck && _service.IsRunning);
+            checkBox.Checked = IsChecked;
             checkBox.CheckedChanged += CheckBox_CheckedChanged;
         }
     }

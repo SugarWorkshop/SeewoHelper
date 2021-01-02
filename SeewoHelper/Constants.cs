@@ -25,9 +25,8 @@ namespace SeewoHelper
         public static readonly Version Version = Assembly.GetExecutingAssembly().GetName().Version;
 
         /// <summary>
-        /// Release API链接
+        /// Releases API 链接
         /// </summary>
-        public static readonly string ReleaseAllLink = "https://api.github.com/repos/Mo-Ink/SeewoHelper/releases";
-        public static readonly string ReleaseLatestLink = "https://api.github.com/repos/Mo-Ink/SeewoHelper/releases/latest";
+        public static readonly string ReleasesLink = "https://api.github.com/repos/Mo-Ink/SeewoHelper/releases";
     }
 }

@@ -37,7 +37,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (StringUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text) || !_keywords.Any())
+            if (SystemUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text) || !_keywords.Any())
             {
                 MessageBox.Show("请输入内容！");
             }
