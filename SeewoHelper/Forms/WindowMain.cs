@@ -1,7 +1,6 @@
 using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -132,7 +131,7 @@ namespace SeewoHelper.Forms
 
         private void WindowMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason ==  CloseReason.UserClosing)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 WindowState = FormWindowState.Minimized;
