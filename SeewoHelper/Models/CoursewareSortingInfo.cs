@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SeewoHelper
 {
     public class CoursewareSortingInfo
     {
-        [JsonProperty(PropertyName = "path")]
+        [JsonPropertyName("path")]
         public string Path { get; }
 
-        [JsonProperty(PropertyName = "subjects")]
+        [JsonPropertyName("subjects")]
         public List<SubjectStorageInfo> Subjects { get; }
 
         [JsonConstructor]

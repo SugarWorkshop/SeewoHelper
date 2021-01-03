@@ -42,9 +42,9 @@
             this.labelCoursewareSortingSearchingPath = new System.Windows.Forms.Label();
             this.textBoxCoursewareSortingSearchingPath = new System.Windows.Forms.TextBox();
             this.listViewSubjectStorageInfos = new System.Windows.Forms.ListView();
-            this.listViewSubjectStorageInfosColumnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewSubjectStorageInfosColumnHeaderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewSubjectStorageInfosColumnHeaderKeywords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewSubjectStorageInfosColumnHeaderName = new System.Windows.Forms.ColumnHeader();
+            this.listViewSubjectStorageInfosColumnHeaderPath = new System.Windows.Forms.ColumnHeader();
+            this.listViewSubjectStorageInfosColumnHeaderKeywords = new System.Windows.Forms.ColumnHeader();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubjectStorageInfoAdd = new System.Windows.Forms.Button();
             this.buttonSubjectInfoStorageRemove = new System.Windows.Forms.Button();
@@ -69,13 +69,14 @@
             // 
             // menuStrip
             // 
-            this.menuStrip.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.menuStrip.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OperationMenuItem,
             this.HelpMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 27);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(933, 29);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -125,19 +126,21 @@
             this.tabPage1.Controls.Add(this.listViewSubjectStorageInfos);
             this.tabPage1.Controls.Add(this.tableLayoutPanelSubjectStorageInfoListControlButtons);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 378);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(897, 468);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课件整理";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // buttonStartCoursewareSorting
             // 
-            this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(675, 337);
+            this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(787, 418);
+            this.buttonStartCoursewareSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartCoursewareSorting.Name = "buttonStartCoursewareSorting";
-            this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(87, 35);
+            this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(102, 42);
             this.buttonStartCoursewareSorting.TabIndex = 16;
             this.buttonStartCoursewareSorting.Text = "整理";
             this.buttonStartCoursewareSorting.UseVisualStyleBackColor = true;
@@ -145,10 +148,11 @@
             // 
             // buttonGettingCoursewareSortingSearchingPath
             // 
-            this.buttonGettingCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(726, 6);
+            this.buttonGettingCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(859, 8);
+            this.buttonGettingCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGettingCoursewareSortingSearchingPath.Name = "buttonGettingCoursewareSortingSearchingPath";
-            this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(36, 25);
+            this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(30, 25);
             this.buttonGettingCoursewareSortingSearchingPath.TabIndex = 15;
             this.buttonGettingCoursewareSortingSearchingPath.Text = "...";
             this.buttonGettingCoursewareSortingSearchingPath.UseVisualStyleBackColor = true;
@@ -157,8 +161,9 @@
             // labelCoursewareSortingSearchingPath
             // 
             this.labelCoursewareSortingSearchingPath.AutoSize = true;
-            this.labelCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelCoursewareSortingSearchingPath.Location = new System.Drawing.Point(6, 9);
+            this.labelCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCoursewareSortingSearchingPath.Location = new System.Drawing.Point(8, 11);
+            this.labelCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCoursewareSortingSearchingPath.Name = "labelCoursewareSortingSearchingPath";
             this.labelCoursewareSortingSearchingPath.Size = new System.Drawing.Size(74, 19);
             this.labelCoursewareSortingSearchingPath.TabIndex = 13;
@@ -166,10 +171,11 @@
             // 
             // textBoxCoursewareSortingSearchingPath
             // 
-            this.textBoxCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxCoursewareSortingSearchingPath.Location = new System.Drawing.Point(86, 6);
+            this.textBoxCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCoursewareSortingSearchingPath.Location = new System.Drawing.Point(89, 8);
+            this.textBoxCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
-            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(634, 25);
+            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(762, 25);
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
             // 
             // listViewSubjectStorageInfos
@@ -180,12 +186,13 @@
             this.listViewSubjectStorageInfosColumnHeaderName,
             this.listViewSubjectStorageInfosColumnHeaderPath,
             this.listViewSubjectStorageInfosColumnHeaderKeywords});
-            this.listViewSubjectStorageInfos.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.listViewSubjectStorageInfos.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
-            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(6, 37);
+            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(8, 41);
+            this.listViewSubjectStorageInfos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(756, 294);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(881, 365);
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
@@ -194,16 +201,19 @@
             // 
             // listViewSubjectStorageInfosColumnHeaderName
             // 
+            this.listViewSubjectStorageInfosColumnHeaderName.Name = "listViewSubjectStorageInfosColumnHeaderName";
             this.listViewSubjectStorageInfosColumnHeaderName.Text = "名称";
             this.listViewSubjectStorageInfosColumnHeaderName.Width = 52;
             // 
             // listViewSubjectStorageInfosColumnHeaderPath
             // 
+            this.listViewSubjectStorageInfosColumnHeaderPath.Name = "listViewSubjectStorageInfosColumnHeaderPath";
             this.listViewSubjectStorageInfosColumnHeaderPath.Text = "路径";
             this.listViewSubjectStorageInfosColumnHeaderPath.Width = 400;
             // 
             // listViewSubjectStorageInfosColumnHeaderKeywords
             // 
+            this.listViewSubjectStorageInfosColumnHeaderKeywords.Name = "listViewSubjectStorageInfosColumnHeaderKeywords";
             this.listViewSubjectStorageInfosColumnHeaderKeywords.Text = "关键词";
             this.listViewSubjectStorageInfosColumnHeaderKeywords.Width = 300;
             // 
@@ -214,11 +224,12 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectStorageInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectInfoStorageRemove, 1, 0);
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(6, 337);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(8, 414);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(170, 35);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(198, 50);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.TabIndex = 1;
             // 
             // buttonSubjectStorageInfoAdd
@@ -226,10 +237,11 @@
             this.buttonSubjectStorageInfoAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSubjectStorageInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(3, 3);
+            this.buttonSubjectStorageInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(4, 4);
+            this.buttonSubjectStorageInfoAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
-            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(79, 29);
+            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(91, 42);
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.UseVisualStyleBackColor = true;
@@ -240,10 +252,11 @@
             this.buttonSubjectInfoStorageRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSubjectInfoStorageRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(88, 3);
+            this.buttonSubjectInfoStorageRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(103, 4);
+            this.buttonSubjectInfoStorageRemove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
-            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(79, 29);
+            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(91, 42);
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.UseVisualStyleBackColor = true;
@@ -258,20 +271,22 @@
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Controls.Add(this.tabPage4);
-            this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabControl.Location = new System.Drawing.Point(12, 28);
+            this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl.Location = new System.Drawing.Point(15, 33);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(776, 410);
+            this.tabControl.Size = new System.Drawing.Size(905, 500);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.checkBoxDisableServiceShellHardwareDetection);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 378);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(897, 468);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "实用功能";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -279,7 +294,8 @@
             // checkBoxDisableServiceShellHardwareDetection
             // 
             this.checkBoxDisableServiceShellHardwareDetection.AutoSize = true;
-            this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(7, 7);
+            this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(8, 10);
+            this.checkBoxDisableServiceShellHardwareDetection.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(389, 23);
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
@@ -289,8 +305,9 @@
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(768, 378);
+            this.tabPage3.Size = new System.Drawing.Size(897, 468);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "调试";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -299,9 +316,10 @@
             // 
             this.tabPage4.Controls.Add(this.textBoxLogs);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(768, 378);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Size = new System.Drawing.Size(897, 468);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "日志";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -311,12 +329,13 @@
             this.textBoxLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLogs.Location = new System.Drawing.Point(6, 6);
+            this.textBoxLogs.Location = new System.Drawing.Point(7, 8);
+            this.textBoxLogs.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLogs.Multiline = true;
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.ReadOnly = true;
             this.textBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxLogs.Size = new System.Drawing.Size(756, 366);
+            this.textBoxLogs.Size = new System.Drawing.Size(881, 456);
             this.textBoxLogs.TabIndex = 0;
             // 
             // notifyIcon
@@ -333,31 +352,32 @@
             this.OpenToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.contextNotifyIconMenuStrip.Name = "contextNotifyIconMenuStrip";
-            this.contextNotifyIconMenuStrip.Size = new System.Drawing.Size(181, 70);
+            this.contextNotifyIconMenuStrip.Size = new System.Drawing.Size(125, 48);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.OpenToolStripMenuItem.Text = "打开界面";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.ExitToolStripMenuItem.Text = "退出";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // WindowMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(933, 546);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowMain";

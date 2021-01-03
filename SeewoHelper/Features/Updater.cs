@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using System.Linq;
+﻿using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SeewoHelper.Features
@@ -21,7 +21,7 @@ namespace SeewoHelper.Features
             res.EnsureSuccessStatusCode();
 
             string content = await res.Content.ReadAsStringAsync();
-            var infos = JsonConvert.DeserializeObject<ReleaseInfo[]>(content);
+            var infos = JsonSerializer.Deserialize<ReleaseInfo[]>(content);
 
             Release = infos.FirstOrDefault(x => !x.IsPrerelese);
             Prerelease = infos.FirstOrDefault(x => x.IsPrerelese);

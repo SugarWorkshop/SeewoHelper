@@ -24,7 +24,11 @@ namespace SeewoHelper
             }
         }
 
-        public void Dispose() => Save();
+        public void Dispose()
+        {
+            Save();
+            GC.SuppressFinalize(this);
+        }
 
         public override string ToString() => string.Join(Environment.NewLine, this);
 
