@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_32A8B0053AE1484D9981274CAE055C2C"
+        "MsmKey" = "8:_10F20C6400054396957E65B4C513BFF0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,12 +46,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DD1B9EA94F816C86360240F3AAABE3BA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_5CB3ABB1A4C24671A10B2F973F19F791"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -59,6 +53,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0A22A3FC5245B5A7384E16A0CF0E59B4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DD1B9EA94F816C86360240F3AAABE3BA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -148,7 +148,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.8"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
                 }
@@ -187,9 +187,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_32A8B0053AE1484D9981274CAE055C2C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10F20C6400054396957E65B4C513BFF0"
             {
-            "SourcePath" = "8:D:\\图片\\favicon.ico"
+            "SourcePath" = "8:favicon.ico"
             "TargetName" = "8:favicon.ico"
             "Tag" = "8:"
             "Folder" = "8:_4600B4B7C6594172BABA3BB15859A30B"
@@ -468,7 +468,7 @@
             "Target" = "8:_5CB3ABB1A4C24671A10B2F973F19F791"
             "Folder" = "8:_CCA5398D9BFE4B63BD67D9582425D484"
             "WorkingFolder" = "8:_E24F6C17FAF84DB9AA8250FF50CD6E13"
-            "Icon" = "8:_32A8B0053AE1484D9981274CAE055C2C"
+            "Icon" = "8:_10F20C6400054396957E65B4C513BFF0"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_64E04207792D46D8A41CEE02A71D8CC9"
@@ -482,7 +482,7 @@
             "Target" = "8:_5CB3ABB1A4C24671A10B2F973F19F791"
             "Folder" = "8:_772ED54B715943508949F50594B8ABD0"
             "WorkingFolder" = "8:_E24F6C17FAF84DB9AA8250FF50CD6E13"
-            "Icon" = "8:_32A8B0053AE1484D9981274CAE055C2C"
+            "Icon" = "8:_10F20C6400054396957E65B4C513BFF0"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9ABB414C09ED4A1AA05AF857AEC3BB18"
