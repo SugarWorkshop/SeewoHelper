@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <StartupObject></StartupObject>
+    <StartupObject>SeewoHelper.Program</StartupObject>
     <Authors>Mo_Ink</Authors>
     <Description>一个为 Seewo 等一体机定制的教室多媒体辅助程序</Description>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
@@ -12,6 +12,7 @@
     <PackageIcon>favicon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Mo-Ink/SeewoHelper</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +24,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   
 </Project>

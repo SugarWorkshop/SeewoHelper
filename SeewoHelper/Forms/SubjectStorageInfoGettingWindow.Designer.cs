@@ -50,7 +50,7 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
             this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
-            this.tableLayoutPanelButton.Location = new System.Drawing.Point(728, 125);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(711, 118);
             this.tableLayoutPanelButton.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
             this.tableLayoutPanelButton.RowCount = 1;
@@ -58,7 +58,7 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanelButton.Size = new System.Drawing.Size(175, 48);
+            this.tableLayoutPanelButton.Size = new System.Drawing.Size(192, 38);
             this.tableLayoutPanelButton.TabIndex = 2;
             // 
             // buttonOK
@@ -70,7 +70,7 @@ namespace SeewoHelper.Forms
             this.buttonOK.Location = new System.Drawing.Point(4, 4);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(79, 40);
+            this.buttonOK.Size = new System.Drawing.Size(88, 30);
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancel.Location = new System.Drawing.Point(91, 4);
+            this.buttonCancel.Location = new System.Drawing.Point(100, 4);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(80, 40);
+            this.buttonCancel.Size = new System.Drawing.Size(88, 30);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@ namespace SeewoHelper.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(916, 186);
+            this.ClientSize = new System.Drawing.Size(916, 168);
             this.Controls.Add(this.buttonEditKeyword);
             this.Controls.Add(this.buttonGettingPath);
             this.Controls.Add(this.label1);

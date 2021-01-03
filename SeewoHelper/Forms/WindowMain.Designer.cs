@@ -129,7 +129,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(897, 468);
+            this.tabPage1.Size = new System.Drawing.Size(897, 456);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课件整理";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,10 +137,10 @@
             // buttonStartCoursewareSorting
             // 
             this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(787, 418);
+            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(787, 415);
             this.buttonStartCoursewareSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartCoursewareSorting.Name = "buttonStartCoursewareSorting";
-            this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(102, 42);
+            this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(102, 34);
             this.buttonStartCoursewareSorting.TabIndex = 16;
             this.buttonStartCoursewareSorting.Text = "整理";
             this.buttonStartCoursewareSorting.UseVisualStyleBackColor = true;
@@ -192,7 +192,7 @@
             this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(8, 41);
             this.listViewSubjectStorageInfos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(881, 365);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(881, 367);
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
@@ -224,12 +224,12 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectStorageInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectInfoStorageRemove, 1, 0);
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(8, 414);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(8, 412);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(198, 50);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Size = new System.Drawing.Size(198, 40);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.TabIndex = 1;
             // 
             // buttonSubjectStorageInfoAdd
@@ -241,7 +241,7 @@
             this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(4, 4);
             this.buttonSubjectStorageInfoAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
-            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(91, 42);
+            this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(91, 32);
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.UseVisualStyleBackColor = true;
@@ -256,7 +256,7 @@
             this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(103, 4);
             this.buttonSubjectInfoStorageRemove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
-            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(91, 42);
+            this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(91, 32);
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(905, 500);
+            this.tabControl.Size = new System.Drawing.Size(905, 488);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage2
@@ -286,7 +286,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(897, 468);
+            this.tabPage2.Size = new System.Drawing.Size(897, 456);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "实用功能";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -307,7 +307,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(897, 468);
+            this.tabPage3.Size = new System.Drawing.Size(897, 456);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "调试";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -319,7 +319,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(897, 468);
+            this.tabPage4.Size = new System.Drawing.Size(897, 456);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "日志";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.ReadOnly = true;
             this.textBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxLogs.Size = new System.Drawing.Size(881, 456);
+            this.textBoxLogs.Size = new System.Drawing.Size(881, 444);
             this.textBoxLogs.TabIndex = 0;
             // 
             // notifyIcon
@@ -372,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 546);
+            this.ClientSize = new System.Drawing.Size(933, 534);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

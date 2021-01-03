@@ -57,14 +57,14 @@
             this.tableLayoutPanelPage1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanelPage1.Controls.Add(this.linkLabelGithub, 0, 2);
             this.tableLayoutPanelPage1.Controls.Add(this.labelVersion, 0, 1);
-            this.tableLayoutPanelPage1.Location = new System.Drawing.Point(7, 8);
+            this.tableLayoutPanelPage1.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanelPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelPage1.Name = "tableLayoutPanelPage1";
             this.tableLayoutPanelPage1.RowCount = 3;
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelPage1.Size = new System.Drawing.Size(344, 205);
+            this.tableLayoutPanelPage1.Size = new System.Drawing.Size(354, 240);
             this.tableLayoutPanelPage1.TabIndex = 1;
             // 
             // labelTitle
@@ -77,7 +77,7 @@
             this.labelTitle.Location = new System.Drawing.Point(4, 0);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(336, 68);
+            this.labelTitle.Size = new System.Drawing.Size(346, 80);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "SeewoHelper";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,10 +90,10 @@
             this.linkLabelGithub.AutoSize = true;
             this.linkLabelGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabelGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(80)))), ((int)(((byte)(150)))));
-            this.linkLabelGithub.Location = new System.Drawing.Point(4, 136);
+            this.linkLabelGithub.Location = new System.Drawing.Point(4, 160);
             this.linkLabelGithub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelGithub.Name = "linkLabelGithub";
-            this.linkLabelGithub.Size = new System.Drawing.Size(336, 69);
+            this.linkLabelGithub.Size = new System.Drawing.Size(346, 80);
             this.linkLabelGithub.TabIndex = 1;
             this.linkLabelGithub.TabStop = true;
             this.linkLabelGithub.Text = "Github";
@@ -107,10 +107,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(4, 68);
+            this.labelVersion.Location = new System.Drawing.Point(4, 80);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(336, 68);
+            this.labelVersion.Size = new System.Drawing.Size(346, 80);
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "应用版本：";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,11 +123,11 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabControl.Location = new System.Drawing.Point(14, 17);
+            this.tabControl.Location = new System.Drawing.Point(13, 13);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(368, 267);
+            this.tabControl.Size = new System.Drawing.Size(370, 280);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage1
@@ -137,7 +137,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(360, 235);
+            this.tabPage1.Size = new System.Drawing.Size(362, 248);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "关于";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(360, 235);
+            this.tabPage2.Size = new System.Drawing.Size(362, 248);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "贡献者";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -163,13 +163,13 @@
             this.tableLayoutPanelPage2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelPage2.Controls.Add(this.labelContributors, 0, 0);
             this.tableLayoutPanelPage2.Controls.Add(this.textBoxContributors, 0, 1);
-            this.tableLayoutPanelPage2.Location = new System.Drawing.Point(7, 8);
+            this.tableLayoutPanelPage2.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanelPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelPage2.Name = "tableLayoutPanelPage2";
             this.tableLayoutPanelPage2.RowCount = 2;
             this.tableLayoutPanelPage2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelPage2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanelPage2.Size = new System.Drawing.Size(344, 223);
+            this.tableLayoutPanelPage2.Size = new System.Drawing.Size(354, 240);
             this.tableLayoutPanelPage2.TabIndex = 1;
             // 
             // labelContributors
@@ -182,7 +182,7 @@
             this.labelContributors.Location = new System.Drawing.Point(4, 0);
             this.labelContributors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelContributors.Name = "labelContributors";
-            this.labelContributors.Size = new System.Drawing.Size(336, 55);
+            this.labelContributors.Size = new System.Drawing.Size(346, 60);
             this.labelContributors.TabIndex = 1;
             this.labelContributors.Text = "贡献者";
             this.labelContributors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,12 +193,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxContributors.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContributors.Location = new System.Drawing.Point(4, 59);
+            this.textBoxContributors.Location = new System.Drawing.Point(4, 64);
             this.textBoxContributors.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxContributors.Multiline = true;
             this.textBoxContributors.Name = "textBoxContributors";
             this.textBoxContributors.ReadOnly = true;
-            this.textBoxContributors.Size = new System.Drawing.Size(336, 160);
+            this.textBoxContributors.Size = new System.Drawing.Size(346, 172);
             this.textBoxContributors.TabIndex = 1;
             this.textBoxContributors.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -208,10 +208,10 @@
             this.ButtonOK.AutoSize = true;
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ButtonOK.Location = new System.Drawing.Point(294, 292);
+            this.ButtonOK.Location = new System.Drawing.Point(295, 301);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.Size = new System.Drawing.Size(88, 44);
+            this.ButtonOK.Size = new System.Drawing.Size(88, 33);
             this.ButtonOK.TabIndex = 1;
             this.ButtonOK.Text = "确定";
             this.ButtonOK.UseVisualStyleBackColor = true;

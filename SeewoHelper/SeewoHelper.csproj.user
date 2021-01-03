@@ -9,7 +9,7 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>zh-CN</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
-    <_LastSelectedProfileId>C:\Users\mokin\source\repos\SeewoHelper\SeewoHelper\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>D:\Github\SeewoHelper\SeewoHelper\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Forms\AboutWindow.cs">
