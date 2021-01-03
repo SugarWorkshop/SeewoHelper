@@ -54,10 +54,10 @@ namespace SeewoHelper
                     {
                         SetService(!current);
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         _checkBox.Invoke(new MethodInvoker(() => _checkBox.Checked = IsChecked));
-                        throw;
+                        ex.ShowAndLog(Program.Logger);
                     }
                     finally
                     {

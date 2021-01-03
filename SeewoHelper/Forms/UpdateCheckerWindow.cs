@@ -26,14 +26,22 @@ namespace SeewoHelper.Forms
 
             ThreadPool.QueueUserWorkItem(obj =>
             {
-                _updater.GetInfo().Wait();
-
-                if (IsHandleCreated)
+                try
                 {
-                    linkLabelPrerelease.Invoke(new MethodInvoker(() => linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无")));
-                    linkLabelRelease.Invoke(new MethodInvoker(() => linkLabelRelease.SetText(_updater.Release?.Name, "暂无")));
+                    _updater.GetInfo().Wait();
+
+                    if (IsHandleCreated)
+                    {
+                        linkLabelPrerelease.Invoke(new MethodInvoker(() => linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无")));
+                        linkLabelRelease.Invoke(new MethodInvoker(() => linkLabelRelease.SetText(_updater.Release?.Name, "暂无")));
+
+                        Program.Logger.Add("UpgradeWindow 加载完成");
+                    }
                 }
-                Program.Logger.Add("UpgradeWindow 加载完成");
+                catch (Exception ex)
+                {
+                    ex.ShowAndLog(Program.Logger);
+                }
             });
         }
 
