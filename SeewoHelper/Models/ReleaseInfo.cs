@@ -1,19 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace SeewoHelper
 {
     public class ReleaseInfo
     {
-        [JsonProperty(PropertyName = "html_url")]
+        [JsonPropertyName("html_url")]
         public string Url { get; }
 
-        [JsonProperty(PropertyName = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; }
 
-        [JsonProperty(PropertyName = "tag_name")]
+        [JsonPropertyName("tag_name")]
         public string Tag { get; }
 
-        [JsonProperty(PropertyName = "prerelease")]
+        [JsonPropertyName("prerelease")]
         public bool IsPrerelese { get; }
 
         [JsonConstructor]

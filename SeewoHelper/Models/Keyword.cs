@@ -1,15 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace SeewoHelper
 {
     public class Keyword
     {
-        [JsonProperty(PropertyName = "pattern")]
+        [JsonPropertyName("pattern")]
         public string Pattern { get; set; }
 
-        [JsonProperty(PropertyName = "matchingWay")]
+        [JsonPropertyName("matchingWay")]
         public KeywordMatchingWay MatchingWay { get; set; }
 
         public bool IsMatch(string input) => MatchingWay switch

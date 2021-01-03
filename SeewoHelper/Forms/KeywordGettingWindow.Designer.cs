@@ -50,12 +50,13 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanel1.Controls.Add(this.labelPattern, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPattern, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxMatchingWay, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 17);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 57);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(905, 66);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelMatchingWay
@@ -64,10 +65,11 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMatchingWay.AutoSize = true;
-            this.labelMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelMatchingWay.Location = new System.Drawing.Point(3, 28);
+            this.labelMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMatchingWay.Location = new System.Drawing.Point(4, 33);
+            this.labelMatchingWay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMatchingWay.Name = "labelMatchingWay";
-            this.labelMatchingWay.Size = new System.Drawing.Size(74, 29);
+            this.labelMatchingWay.Size = new System.Drawing.Size(85, 33);
             this.labelMatchingWay.TabIndex = 2;
             this.labelMatchingWay.Text = "匹配方式：";
             // 
@@ -77,10 +79,11 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPattern.AutoSize = true;
-            this.labelPattern.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPattern.Location = new System.Drawing.Point(3, 0);
+            this.labelPattern.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPattern.Location = new System.Drawing.Point(4, 0);
+            this.labelPattern.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPattern.Name = "labelPattern";
-            this.labelPattern.Size = new System.Drawing.Size(74, 28);
+            this.labelPattern.Size = new System.Drawing.Size(85, 33);
             this.labelPattern.TabIndex = 1;
             this.labelPattern.Text = "关键词：";
             // 
@@ -89,10 +92,11 @@ namespace SeewoHelper.Forms
             this.textBoxPattern.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPattern.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxPattern.Location = new System.Drawing.Point(83, 3);
+            this.textBoxPattern.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPattern.Location = new System.Drawing.Point(97, 4);
+            this.textBoxPattern.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPattern.Name = "textBoxPattern";
-            this.textBoxPattern.Size = new System.Drawing.Size(690, 23);
+            this.textBoxPattern.Size = new System.Drawing.Size(804, 23);
             this.textBoxPattern.TabIndex = 2;
             // 
             // comboBoxMatchingWay
@@ -101,15 +105,16 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxMatchingWay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxMatchingWay.FormattingEnabled = true;
             this.comboBoxMatchingWay.Items.AddRange(new object[] {
             "正常",
             "不区分大小写",
             "正则表达式"});
-            this.comboBoxMatchingWay.Location = new System.Drawing.Point(83, 31);
+            this.comboBoxMatchingWay.Location = new System.Drawing.Point(97, 37);
+            this.comboBoxMatchingWay.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMatchingWay.Name = "comboBoxMatchingWay";
-            this.comboBoxMatchingWay.Size = new System.Drawing.Size(690, 25);
+            this.comboBoxMatchingWay.Size = new System.Drawing.Size(804, 25);
             this.comboBoxMatchingWay.TabIndex = 3;
             // 
             // tableLayoutPanelButton
@@ -119,14 +124,15 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
             this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
-            this.tableLayoutPanelButton.Location = new System.Drawing.Point(604, 76);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(705, 105);
+            this.tableLayoutPanelButton.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
             this.tableLayoutPanelButton.RowCount = 1;
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanelButton.Size = new System.Drawing.Size(184, 45);
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanelButton.Size = new System.Drawing.Size(215, 53);
             this.tableLayoutPanelButton.TabIndex = 4;
             // 
             // buttonOK
@@ -134,10 +140,11 @@ namespace SeewoHelper.Forms
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonOK.Location = new System.Drawing.Point(3, 3);
+            this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonOK.Location = new System.Drawing.Point(4, 4);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(86, 39);
+            this.buttonOK.Size = new System.Drawing.Size(99, 45);
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -150,10 +157,11 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(95, 3);
+            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancel.Location = new System.Drawing.Point(111, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(86, 39);
+            this.buttonCancel.Size = new System.Drawing.Size(100, 45);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -161,11 +169,12 @@ namespace SeewoHelper.Forms
             // 
             // KeywordGettingWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 133);
+            this.ClientSize = new System.Drawing.Size(933, 171);
             this.Controls.Add(this.tableLayoutPanelButton);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "KeywordGettingWindow";
             this.ShowIcon = false;

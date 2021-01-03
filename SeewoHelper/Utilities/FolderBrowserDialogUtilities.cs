@@ -4,7 +4,7 @@ namespace SeewoHelper.Utilities
 {
     internal static class FolderBrowserDialogUtilities
     {
-        public static string GetFilePath(string description = "请选择文件夹")
+        public static string GetFilePath(string description = "")
         {
             var dialog = new FolderBrowserDialog() { Description = description };
             dialog.ShowDialog();
