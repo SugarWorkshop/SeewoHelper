@@ -9,5 +9,29 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>zh-CN</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <_LastSelectedProfileId>C:\Users\mokin\source\repos\SeewoHelper\SeewoHelper\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Forms\AboutWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\InputBoxWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\KeywordEditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\KeywordGettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SubjectStorageInfoGettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\UpdateCheckerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\WindowMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

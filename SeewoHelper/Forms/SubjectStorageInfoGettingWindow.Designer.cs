@@ -50,14 +50,15 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
             this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
-            this.tableLayoutPanelButton.Location = new System.Drawing.Point(633, 127);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(728, 125);
+            this.tableLayoutPanelButton.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
             this.tableLayoutPanelButton.RowCount = 1;
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanelButton.Size = new System.Drawing.Size(150, 44);
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanelButton.Size = new System.Drawing.Size(175, 48);
             this.tableLayoutPanelButton.TabIndex = 2;
             // 
             // buttonOK
@@ -65,10 +66,11 @@ namespace SeewoHelper.Forms
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonOK.Location = new System.Drawing.Point(3, 3);
+            this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonOK.Location = new System.Drawing.Point(4, 4);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(69, 38);
+            this.buttonOK.Size = new System.Drawing.Size(79, 40);
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -80,10 +82,11 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(78, 3);
+            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancel.Location = new System.Drawing.Point(91, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(69, 38);
+            this.buttonCancel.Size = new System.Drawing.Size(80, 40);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -92,8 +95,9 @@ namespace SeewoHelper.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(13, 25);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 6;
@@ -102,8 +106,9 @@ namespace SeewoHelper.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(13, 59);
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(13, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 7;
@@ -112,8 +117,9 @@ namespace SeewoHelper.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(13, 94);
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(26, 85);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 8;
@@ -121,35 +127,39 @@ namespace SeewoHelper.Forms
             // 
             // textBoxName
             // 
-            this.textBoxName.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxName.Location = new System.Drawing.Point(91, 22);
+            this.textBoxName.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxName.Location = new System.Drawing.Point(95, 15);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(692, 25);
+            this.textBoxName.Size = new System.Drawing.Size(807, 25);
             this.textBoxName.TabIndex = 9;
             // 
             // textBoxPath
             // 
-            this.textBoxPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxPath.Location = new System.Drawing.Point(91, 58);
+            this.textBoxPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPath.Location = new System.Drawing.Point(95, 49);
+            this.textBoxPath.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(640, 25);
+            this.textBoxPath.Size = new System.Drawing.Size(756, 25);
             this.textBoxPath.TabIndex = 10;
             // 
             // textBoxKeywords
             // 
-            this.textBoxKeywords.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxKeywords.Location = new System.Drawing.Point(91, 94);
+            this.textBoxKeywords.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxKeywords.Location = new System.Drawing.Point(95, 85);
+            this.textBoxKeywords.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxKeywords.Name = "textBoxKeywords";
             this.textBoxKeywords.ReadOnly = true;
-            this.textBoxKeywords.Size = new System.Drawing.Size(640, 25);
+            this.textBoxKeywords.Size = new System.Drawing.Size(756, 25);
             this.textBoxKeywords.TabIndex = 11;
             // 
             // buttonGettingPath
             // 
-            this.buttonGettingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonGettingPath.Location = new System.Drawing.Point(737, 58);
+            this.buttonGettingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGettingPath.Location = new System.Drawing.Point(859, 49);
+            this.buttonGettingPath.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGettingPath.Name = "buttonGettingPath";
-            this.buttonGettingPath.Size = new System.Drawing.Size(46, 25);
+            this.buttonGettingPath.Size = new System.Drawing.Size(44, 25);
             this.buttonGettingPath.TabIndex = 12;
             this.buttonGettingPath.Text = "...";
             this.buttonGettingPath.UseVisualStyleBackColor = true;
@@ -157,10 +167,11 @@ namespace SeewoHelper.Forms
             // 
             // buttonEditKeyword
             // 
-            this.buttonEditKeyword.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.buttonEditKeyword.Location = new System.Drawing.Point(737, 94);
+            this.buttonEditKeyword.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditKeyword.Location = new System.Drawing.Point(859, 85);
+            this.buttonEditKeyword.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditKeyword.Name = "buttonEditKeyword";
-            this.buttonEditKeyword.Size = new System.Drawing.Size(46, 25);
+            this.buttonEditKeyword.Size = new System.Drawing.Size(44, 25);
             this.buttonEditKeyword.TabIndex = 13;
             this.buttonEditKeyword.Text = "编辑";
             this.buttonEditKeyword.UseVisualStyleBackColor = true;
@@ -169,10 +180,10 @@ namespace SeewoHelper.Forms
             // SubjectStorageInfoGettingWindow
             // 
             this.AcceptButton = this.buttonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(795, 183);
+            this.ClientSize = new System.Drawing.Size(916, 186);
             this.Controls.Add(this.buttonEditKeyword);
             this.Controls.Add(this.buttonGettingPath);
             this.Controls.Add(this.label1);
@@ -182,6 +193,7 @@ namespace SeewoHelper.Forms
             this.Controls.Add(this.textBoxPath);
             this.Controls.Add(this.textBoxKeywords);
             this.Controls.Add(this.tableLayoutPanelButton);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SubjectStorageInfoGettingWindow";

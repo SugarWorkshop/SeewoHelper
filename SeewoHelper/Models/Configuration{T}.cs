@@ -1,8 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using SeewoHelper.Utilities;
+﻿using SeewoHelper.Utilities;
 using System;
 using System.IO;
+using System.Text.Json;
 
 namespace SeewoHelper
 {
@@ -26,13 +25,17 @@ namespace SeewoHelper
 
             if (!string.IsNullOrWhiteSpace(data))
             {
-                Content = JToken.Parse(data).ToObject<T>();
+                Content = JsonSerializer.Deserialize<T>(data);
             }
         }
 
-        private void Save() => File.WriteAllText(Path, JsonConvert.SerializeObject(Content));
+        private void Save() => File.WriteAllText(Path, JsonSerializer.Serialize(Content));
 
-        public void Dispose() => Save();
+        public void Dispose()
+        {
+            Save();
+            GC.SuppressFinalize(this);
+        }
 
         public Configuration(string name, string directoryPath, T defaultValue)
         {

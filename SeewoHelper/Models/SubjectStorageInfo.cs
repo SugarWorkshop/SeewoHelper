@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SeewoHelper
 {
     public class SubjectStorageInfo
     {
-        [JsonProperty(PropertyName = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; }
 
-        [JsonProperty(PropertyName = "path")]
+        [JsonPropertyName("path")]
         public string Path { get; }
 
-        [JsonProperty(PropertyName = "keywords")]
+        [JsonPropertyName("keywords")]
         public List<Keyword> Keywords { get; }
 
         [JsonConstructor]

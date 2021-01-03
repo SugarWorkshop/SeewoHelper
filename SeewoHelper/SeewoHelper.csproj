@@ -1,185 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{84FC0603-FD33-45D1-8749-4AEC1FC5D792}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SeewoHelper</RootNamespace>
-    <AssemblyName>SeewoHelper</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <LangVersion>8.0</LangVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
+    <Authors>Mo_Ink</Authors>
+    <Description>一个为 Seewo 等一体机定制的教室多媒体辅助程序</Description>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>Copyright© 2020 - 2021 Mo_Ink, All Rights Reserved.</PackageProjectUrl>
+    <PackageIcon>favicon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Mo-Ink/SeewoHelper</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>SeewoHelper.Program</StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Configurations.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="Extensions\CollectionExtensions.cs" />
-    <Compile Include="Extensions\IOExtensions.cs" />
-    <Compile Include="Extensions\ControlExtensions.cs" />
-    <Compile Include="Extensions\SystemExtensions.cs" />
-    <Compile Include="Features\CoursewareSorter.cs" />
-    <Compile Include="Features\Updater.cs" />
-    <Compile Include="Forms\AboutWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutWindow.designer.cs">
-      <DependentUpon>AboutWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\InputBoxWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InputBoxWindow.Designer.cs">
-      <DependentUpon>InputBoxWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\KeywordEditWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\KeywordEditWindow.Designer.cs">
-      <DependentUpon>KeywordEditWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\KeywordGettingWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\KeywordGettingWindow.Designer.cs">
-      <DependentUpon>KeywordGettingWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SubjectStorageInfoGettingWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SubjectStorageInfoGettingWindow.Designer.cs">
-      <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UpdateCheckerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UpdateCheckerWindow.Designer.cs">
-      <DependentUpon>UpdateCheckerWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WindowMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WindowMain.Designer.cs">
-      <DependentUpon>WindowMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CoursewareSortingInfo.cs" />
-    <Compile Include="Models\Configuration{T}.cs" />
-    <Compile Include="Models\Keyword.cs" />
-    <Compile Include="Models\IReturnableForm.cs" />
-    <Compile Include="Models\Log.cs" />
-    <Compile Include="Models\Logger.cs" />
-    <Compile Include="Models\ReleaseInfo.cs" />
-    <Compile Include="Models\Service.cs" />
-    <Compile Include="Models\ServiceCheckBox.cs" />
-    <Compile Include="Models\SubjectStorageInfo.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\FolderBrowserDialogUtilities.cs" />
-    <Compile Include="Utilities\InstanceUtilities.cs" />
-    <Compile Include="Utilities\IOUtilities.cs" />
-    <Compile Include="Utilities\SystemUtilities.cs" />
-    <EmbeddedResource Include="Forms\AboutWindow.resx">
-      <DependentUpon>AboutWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InputBoxWindow.resx">
-      <DependentUpon>InputBoxWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KeywordEditWindow.resx">
-      <DependentUpon>KeywordEditWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KeywordGettingWindow.resx">
-      <DependentUpon>KeywordGettingWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubjectStorageInfoGettingWindow.resx">
-      <DependentUpon>SubjectStorageInfoGettingWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateCheckerWindow.resx">
-      <DependentUpon>UpdateCheckerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WindowMain.resx">
-      <DependentUpon>WindowMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="app.manifest" />
-    <None Include="packages.config" />
+    <None Include="..\favicon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  
 </Project>
