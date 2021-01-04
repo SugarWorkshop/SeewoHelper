@@ -31,6 +31,7 @@ namespace SeewoHelper
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
                 AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
 
+                Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 

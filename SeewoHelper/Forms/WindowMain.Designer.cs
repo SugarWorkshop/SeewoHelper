@@ -76,7 +76,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip.Size = new System.Drawing.Size(933, 29);
+            this.menuStrip.Size = new System.Drawing.Size(809, 29);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -129,7 +129,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(897, 456);
+            this.tabPage1.Size = new System.Drawing.Size(773, 456);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课件整理";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             // buttonStartCoursewareSorting
             // 
             this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(787, 415);
+            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(662, 415);
             this.buttonStartCoursewareSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartCoursewareSorting.Name = "buttonStartCoursewareSorting";
             this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(102, 34);
@@ -149,10 +149,10 @@
             // buttonGettingCoursewareSortingSearchingPath
             // 
             this.buttonGettingCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(859, 8);
+            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(736, 8);
             this.buttonGettingCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGettingCoursewareSortingSearchingPath.Name = "buttonGettingCoursewareSortingSearchingPath";
-            this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(30, 25);
+            this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(28, 25);
             this.buttonGettingCoursewareSortingSearchingPath.TabIndex = 15;
             this.buttonGettingCoursewareSortingSearchingPath.Text = "...";
             this.buttonGettingCoursewareSortingSearchingPath.UseVisualStyleBackColor = true;
@@ -175,7 +175,7 @@
             this.textBoxCoursewareSortingSearchingPath.Location = new System.Drawing.Point(89, 8);
             this.textBoxCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
-            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(762, 25);
+            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(639, 25);
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
             // 
             // listViewSubjectStorageInfos
@@ -192,7 +192,7 @@
             this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(8, 41);
             this.listViewSubjectStorageInfos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(881, 367);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(757, 367);
             this.listViewSubjectStorageInfos.TabIndex = 2;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
@@ -276,7 +276,7 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(905, 488);
+            this.tabControl.Size = new System.Drawing.Size(781, 488);
             this.tabControl.TabIndex = 1;
             // 
             // tabPage2
@@ -286,7 +286,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(897, 456);
+            this.tabPage2.Size = new System.Drawing.Size(773, 456);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "实用功能";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -307,7 +307,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(897, 456);
+            this.tabPage3.Size = new System.Drawing.Size(773, 456);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "调试";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -319,7 +319,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(897, 456);
+            this.tabPage4.Size = new System.Drawing.Size(773, 456);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "日志";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -372,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 534);
+            this.ClientSize = new System.Drawing.Size(809, 534);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

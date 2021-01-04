@@ -141,6 +141,7 @@
             this.linkLabelRelease.TabStop = true;
             this.linkLabelRelease.Text = "检测中……";
             this.linkLabelRelease.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabelRelease.UseCompatibleTextRendering = true;
             this.linkLabelRelease.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelRelease_LinkClicked);
             // 
             // linkLabelPrerelease
@@ -160,6 +161,7 @@
             this.linkLabelPrerelease.TabStop = true;
             this.linkLabelPrerelease.Text = "检测中……";
             this.linkLabelPrerelease.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabelPrerelease.UseCompatibleTextRendering = true;
             this.linkLabelPrerelease.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelPreRelease_LinkClicked);
             // 
             // labelRelease
