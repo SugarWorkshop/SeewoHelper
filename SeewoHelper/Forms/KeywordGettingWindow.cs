@@ -12,7 +12,7 @@ namespace SeewoHelper.Forms
         {
             [KeywordMatchingWay.Normal] = "正常",
             [KeywordMatchingWay.CaseInsensitive] = "不区分大小写",
-            [KeywordMatchingWay.Regex] = "正则匹配"
+            [KeywordMatchingWay.Regex] = "正则表达式"
         };
 
         public KeywordGettingWindow()
