@@ -26,9 +26,9 @@ namespace SeewoHelper
             {
                 Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
-                Application.ThreadException += Application_ThreadException;
+                Application.ThreadException += Application_ThreadException; // 处理主线程的异常
 
-                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; // 处理子线程未捕获异常
                 AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
 
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);

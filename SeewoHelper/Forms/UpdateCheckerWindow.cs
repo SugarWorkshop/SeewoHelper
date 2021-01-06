@@ -20,29 +20,16 @@ namespace SeewoHelper.Forms
             Close();
         }
 
-        private void UpgradeWindow_Load(object sender, EventArgs e)
+        private async void UpgradeWindow_Load(object sender, EventArgs e)
         {
             Program.Logger.Add("开始加载 UpgradeWindow");
 
-            ThreadPool.QueueUserWorkItem(obj =>
-            {
-                try
-                {
-                    _updater.GetInfo().Wait();
+            await _updater.GetInfo();
 
-                    if (IsHandleCreated)
-                    {
-                        linkLabelPrerelease.Invoke(new MethodInvoker(() => linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无")));
-                        linkLabelRelease.Invoke(new MethodInvoker(() => linkLabelRelease.SetText(_updater.Release?.Name, "暂无")));
+            linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无");
+            linkLabelRelease.SetText(_updater.Release?.Name, "暂无");
 
-                        Program.Logger.Add("UpgradeWindow 加载完成");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ex.ShowAndLog(Program.Logger);
-                }
-            });
+            Program.Logger.Add("UpgradeWindow 加载完成");
         }
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

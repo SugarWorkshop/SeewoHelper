@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.ServiceProcess;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace SeewoHelper
 {
@@ -33,7 +34,7 @@ namespace SeewoHelper
             return _controller;
         }
 
-        public bool Start()
+        public Task<bool> StartAsync() => Task.Run(() =>
         {
             bool flag = true;
 
@@ -60,9 +61,9 @@ namespace SeewoHelper
 
             Program.Logger.Add($"启动 {Name} 服务");
             return flag;
-        }
+        });
 
-        public bool Stop()
+        public Task<bool> StopAsync() => Task.Run(() =>
         {
             bool flag = true;
 
@@ -89,7 +90,7 @@ namespace SeewoHelper
 
             Program.Logger.Add($"停止 {Name} 服务");
             return flag;
-        }
+        });
 
         public bool SetStartMode(ServiceStartMode startMode)
         {

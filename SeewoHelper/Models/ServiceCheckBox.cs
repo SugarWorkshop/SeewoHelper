@@ -2,6 +2,7 @@
 using System;
 using System.ServiceProcess;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -22,21 +23,21 @@ namespace SeewoHelper
 
         public Action PostAction { get; set; }
 
-        private void SetService(bool enable)
+        private async Task SetService(bool enable)
         {
             if (enable)
             {
                 _service.SetStartMode(_startMode);
-                _service.Start();
+                await _service.StartAsync();
             }
             else
             {
-                _service.Stop();
+                await _service.StopAsync();
                 _service.SetStartMode(ServiceStartMode.Disabled);
             }
         }
 
-        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        private async void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             // --- 用于保留当前状态，解决部分问题 ---
             bool current = _service.IsRunning;
@@ -48,27 +49,20 @@ namespace SeewoHelper
                 PreAction?.Invoke();
                 _checkBox.Enabled = false;
 
-                ThreadPool.QueueUserWorkItem(obj =>
+                try
                 {
-                    try
-                    {
-                        SetService(!current);
-                    }
-                    catch (Exception ex)
-                    {
-                        _checkBox.Invoke(new MethodInvoker(() => _checkBox.Checked = IsChecked));
-                        ex.ShowAndLog(Program.Logger);
-                    }
-                    finally
-                    {
-                        _checkBox.Invoke(new MethodInvoker(() => _checkBox.Enabled = true));
-
-                        if (PostAction != null)
-                        {
-                            _checkBox.Invoke(PostAction);
-                        }
-                    }
-                });
+                    await SetService(!current);
+                }
+                catch
+                {
+                    _checkBox.Checked = IsChecked;
+                    throw;
+                }
+                finally
+                {
+                    _checkBox.Enabled = true;
+                    PostAction?.Invoke();
+                }
             }
         }
 
