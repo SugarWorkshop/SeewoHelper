@@ -96,7 +96,7 @@ namespace SeewoHelper
         {
             try
             {
-                var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start={_serviceStartModeDictionary[startMode]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden };
+                var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startMode]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden };
                 Process.Start(processStartInfo).WaitForExit();
             }
             catch
