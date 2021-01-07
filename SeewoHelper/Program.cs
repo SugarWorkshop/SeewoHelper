@@ -24,7 +24,7 @@ namespace SeewoHelper
 
             if (instance == null)
             {
-                Logger = new Logger(Path.Combine(Application.StartupPath, "Logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+                Logger = new Logger(Path.Combine(Application.StartupPath, "logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
                 Application.ThreadException += Application_ThreadException; // 处理主线程的异常
 
