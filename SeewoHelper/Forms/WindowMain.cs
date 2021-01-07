@@ -135,6 +135,7 @@ namespace SeewoHelper.Forms
             {
                 e.Cancel = true;
                 WindowState = FormWindowState.Minimized;
+                Hide();
             }
             else
             {
@@ -172,6 +173,7 @@ namespace SeewoHelper.Forms
 
         private void ShowWindow()
         {
+            Show();
             WindowState = FormWindowState.Normal;
             Activate();
         }
