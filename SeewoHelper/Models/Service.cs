@@ -78,12 +78,12 @@ namespace SeewoHelper
             Program.Logger.Add($"停止 {Name} 服务");
         });
 
-        public bool SetStartMode(ServiceStartMode startMode)
+        public async Task<bool> SetStartModeAsync(ServiceStartMode startMode)
         {
             try
             {
                 var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startMode]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden };
-                Process.Start(processStartInfo).WaitForExit();
+                await Process.Start(processStartInfo).WaitForExitAsync();
             }
             catch
             {

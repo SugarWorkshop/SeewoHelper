@@ -26,13 +26,13 @@ namespace SeewoHelper
         {
             if (enable)
             {
-                _service.SetStartMode(_startMode);
+                await _service.SetStartModeAsync(_startMode);
                 await _service.StartAsync();
             }
             else
             {
                 await _service.StopAsync();
-                _service.SetStartMode(ServiceStartMode.Disabled);
+                await _service.SetStartModeAsync(ServiceStartMode.Disabled);
             }
         }
 
