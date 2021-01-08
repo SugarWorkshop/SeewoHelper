@@ -13,7 +13,7 @@ namespace SeewoHelper
 
         public bool Exists => _controller.ServiceName.ToLower() == Name.ToLower();
 
-        public bool IsRunning => Refresh().Status == ServiceControllerStatus.Running;
+        public ServiceControllerStatus Status => Refresh().Status;
 
         public ServiceStartMode StartType => Refresh().StartType;
 
@@ -34,64 +34,28 @@ namespace SeewoHelper
             return _controller;
         }
 
-        public Task StartAsync() => Task.Run(() =>
+        public async Task StartAsync()
         {
             _controller.Start();
-
-            for (int i = 0; i < 60; i++)
-            {
-                _controller.Refresh();
-                Thread.Sleep(1000);
-
-                if (_controller.Status == ServiceControllerStatus.Running)
-                {
-                    break;
-                }
-                else if (i == 59)
-                {
-                    throw new System.ServiceProcess.TimeoutException($"Start Service {Name} Timeout.");
-                }
-            }
+            await Task.Run(() => _controller.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromMinutes(1)));
 
             Program.Logger.Add($"启动 {Name} 服务");
-        });
+        }
 
-        public Task StopAsync() => Task.Run(() =>
+        public async Task StopAsync() 
         {
             _controller.Stop();
-
-            for (int i = 0; i < 60; i++)
-            {
-                _controller.Refresh();
-                Thread.Sleep(1000);
-
-                if (_controller.Status == ServiceControllerStatus.Stopped)
-                {
-                    break;
-                }
-                else if (i == 59)
-                {
-                    throw new System.ServiceProcess.TimeoutException($"Stop Service {Name} Timeout.");
-                }
-            }
+            await Task.Run(() =>_controller.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromMinutes(1)));
 
             Program.Logger.Add($"停止 {Name} 服务");
-        });
+        }
 
-        public async Task<bool> SetStartModeAsync(ServiceStartMode startMode)
+        public async Task SetStartModeAsync(ServiceStartMode startMode)
         {
-            try
-            {
-                var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startMode]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden };
-                await Process.Start(processStartInfo).WaitForExitAsync();
-            }
-            catch
-            {
-                return false;
-            }
+            var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startMode]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden };
+            await Process.Start(processStartInfo).WaitForExitAsync();
 
             Program.Logger.Add($"将 {Name} 服务的 StartType 调整为 {startMode}");
-            return true;
         }
 
         public Service(string name)

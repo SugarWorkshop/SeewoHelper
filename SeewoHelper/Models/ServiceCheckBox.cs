@@ -16,7 +16,7 @@ namespace SeewoHelper
 
         private readonly ServiceStartMode _startMode;
 
-        private bool IsChecked => SystemUtilities.ReverseBool(_isReverseCheck, _service.IsRunning);
+        private bool IsChecked => SystemUtilities.ReverseBool(_isReverseCheck, _service.Status == ServiceControllerStatus.Running);
 
         public Action PreAction { get; set; }
 
@@ -39,7 +39,7 @@ namespace SeewoHelper
         private async void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             // --- 用于保留当前状态，解决部分问题 ---
-            bool current = _service.IsRunning;
+            bool current = _service.Status == ServiceControllerStatus.Running;
             bool isChecked = SystemUtilities.ReverseBool(_isReverseCheck, current);
             // --- ! ---
 
