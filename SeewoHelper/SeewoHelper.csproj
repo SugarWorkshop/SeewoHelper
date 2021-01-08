@@ -6,23 +6,14 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Authors>Mo_Ink</Authors>
     <Description>一个为 Seewo 等一体机定制的教室多媒体辅助程序</Description>
-    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageProjectUrl>Copyright© 2020 - 2021 Mo_Ink, All Rights Reserved.</PackageProjectUrl>
-    <PackageIcon>favicon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Mo-Ink/SeewoHelper</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\favicon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
   
 </Project>
