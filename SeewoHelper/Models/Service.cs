@@ -34,62 +34,48 @@ namespace SeewoHelper
             return _controller;
         }
 
-        public Task<bool> StartAsync() => Task.Run(() =>
+        public Task StartAsync() => Task.Run(() =>
         {
-            bool flag = true;
+            _controller.Start();
 
-            if (Exists)
+            for (int i = 0; i < 60; i++)
             {
-                if (!IsRunning && _controller.Status != ServiceControllerStatus.StartPending)
+                _controller.Refresh();
+                Thread.Sleep(1000);
+
+                if (_controller.Status == ServiceControllerStatus.Running)
                 {
-                    _controller.Start();
-                    for (int i = 0; i < 60; i++)
-                    {
-                        _controller.Refresh();
-                        Thread.Sleep(1000);
-                        if (_controller.Status == ServiceControllerStatus.Running)
-                        {
-                            break;
-                        }
-                        if (i == 59)
-                        {
-                            flag = false;
-                        }
-                    }
+                    break;
+                }
+                else if (i == 59)
+                {
+                    throw new System.ServiceProcess.TimeoutException($"Start Service {Name} Timeout.");
                 }
             }
 
             Program.Logger.Add($"启动 {Name} 服务");
-            return flag;
         });
 
-        public Task<bool> StopAsync() => Task.Run(() =>
+        public Task StopAsync() => Task.Run(() =>
         {
-            bool flag = true;
+            _controller.Stop();
 
-            if (Exists)
+            for (int i = 0; i < 60; i++)
             {
-                if (IsRunning)
+                _controller.Refresh();
+                Thread.Sleep(1000);
+
+                if (_controller.Status == ServiceControllerStatus.Stopped)
                 {
-                    _controller.Stop();
-                    for (int i = 0; i < 60; i++)
-                    {
-                        _controller.Refresh();
-                        Thread.Sleep(1000);
-                        if (_controller.Status == ServiceControllerStatus.Stopped)
-                        {
-                            break;
-                        }
-                        if (i == 59)
-                        {
-                            flag = false;
-                        }
-                    }
+                    break;
+                }
+                else if (i == 59)
+                {
+                    throw new System.ServiceProcess.TimeoutException($"Stop Service {Name} Timeout.");
                 }
             }
 
             Program.Logger.Add($"停止 {Name} 服务");
-            return flag;
         });
 
         public bool SetStartMode(ServiceStartMode startMode)

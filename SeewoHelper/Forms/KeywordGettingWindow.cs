@@ -22,7 +22,11 @@ namespace SeewoHelper.Forms
 
         public Keyword GetInfo(Keyword keyword = null)
         {
-            if (keyword != null)
+            if (keyword == null)
+            {
+                comboBoxMatchingWay.SelectedIndex = 0;
+            }
+            else
             {
                 _keyword = keyword;
                 textBoxPattern.Text = keyword.Pattern;
