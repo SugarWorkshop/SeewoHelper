@@ -16,7 +16,7 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public SubjectStorageInfo GetInfo(SubjectStorageInfo info = null)
+        public SubjectStorageInfo GetResult(SubjectStorageInfo info = null)
         {
             if (info != null)
             {
@@ -59,7 +59,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonEditKeyword_Click(object sender, EventArgs e)
         {
-            _keywords = new KeywordEditWindow().GetInfo(_keywords);
+            _keywords = new KeywordEditWindow().GetResult(_keywords);
             textBoxKeywords.Text = string.Join(", ", _keywords.Select(x => x.Pattern));
         }
     }

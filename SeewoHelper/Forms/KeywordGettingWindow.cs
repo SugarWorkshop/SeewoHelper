@@ -20,7 +20,7 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public Keyword GetInfo(Keyword keyword = null)
+        public Keyword GetResult(Keyword keyword = null)
         {
             if (keyword == null)
             {

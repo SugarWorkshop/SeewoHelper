@@ -26,12 +26,12 @@ namespace SeewoHelper.Forms
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
-            listViewSubjectStorageInfos.SelectedItems.Remove();
+            listViewSubjectStorageInfos.SelectedItems.Clear();
         }
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
         {
-            var info = new SubjectStorageInfoGettingWindow().GetInfo();
+            var info = new SubjectStorageInfoGettingWindow().GetResult();
 
             if (info != null)
             {
@@ -119,7 +119,7 @@ namespace SeewoHelper.Forms
 
             if (selectedItem != null)
             {
-                var info = new SubjectStorageInfoGettingWindow().GetInfo((SubjectStorageInfo)selectedItem.Tag);
+                var info = new SubjectStorageInfoGettingWindow().GetResult((SubjectStorageInfo)selectedItem.Tag);
 
                 if (info != null)
                 {

@@ -5,7 +5,10 @@ using System.Runtime.InteropServices;
 
 namespace SeewoHelper.Utilities
 {
-    static class InstanceUtilities
+    /// <summary>
+    /// 提供处理程序实例相关的方法
+    /// </summary>
+    internal static class InstanceUtilities
     {
         private const int WS_SHOWNORMAL = 1;
 

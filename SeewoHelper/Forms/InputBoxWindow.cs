@@ -12,7 +12,7 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public string GetInfo(string prompt, string title = "", string defaultText = "")
+        public string GetResult(string prompt, string title = "", string defaultText = "")
         {
             Text = title;
             lblPrompt.Text = prompt;
