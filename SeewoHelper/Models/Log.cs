@@ -23,7 +23,7 @@ namespace SeewoHelper
         public string Content { get; }
 
         /// <inheritdoc/>
-        public override string ToString() => $"[{Level}]{Time:F}: {Content}";
+        public override string ToString() => $"[ {Level.ToString().ToUpper()} ] {Time:F}: {Content}";
 
         /// <summary>
         /// 创建 <see cref="Log"/> 实例
