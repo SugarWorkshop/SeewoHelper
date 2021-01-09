@@ -6,7 +6,7 @@ namespace SeewoHelper
 {
     internal static class Configurations
     {
-        private static readonly string _path = Path.Combine(Application.StartupPath, "configs");
+        private static readonly string _path = Path.Combine(Constants.BaseDirectory, "configs");
 
         /// <summary>
         /// <see cref="CoursewareSortingInfo"/> 配置
