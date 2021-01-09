@@ -28,5 +28,10 @@ namespace SeewoHelper
         /// Releases API 链接
         /// </summary>
         public static readonly string ReleasesLink = "https://api.github.com/repos/Mo-Ink/SeewoHelper/releases";
+
+        /// <summary>
+        /// 应用运行文件夹路径
+        /// </summary>
+        public static readonly string BaseDirectory = Environment.CurrentDirectory;
     }
 }
