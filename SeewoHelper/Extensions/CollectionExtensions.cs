@@ -10,7 +10,7 @@ namespace SeewoHelper
     internal static class CollectionExtensions
     {
         /// <summary>
-        /// 添加元素至目标集合，并返回所添加的元素
+        /// 添加元素，并返回所添加的元素
         /// </summary>
         /// <typeparam name="TCollection"><see cref="ICollection{T}"/> 的泛型类型</typeparam>
         /// <typeparam name="TElement">元素类型</typeparam>

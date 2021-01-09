@@ -8,7 +8,20 @@ namespace SeewoHelper
     internal static class FormsExtensions
     {
         /// <summary>
-        /// 设置 <see cref="LinkLabel"/> 实例的文本，若文本为 <see langword="null"/> 时显示默认文本并设置 <see cref="Control.Enabled"/> 为 <see langword="false"/>
+        /// 移除所有选中项
+        /// </summary>
+        /// <param name="collection">集合</param>
+        public static void Remove(this ListView.SelectedListViewItemCollection collection)
+        {
+            foreach (ListViewItem item in collection)
+            {
+                item.Remove();
+            }
+        }
+
+        /// <summary>
+        /// 设置文本
+        /// 若文本为 <see langword="null"/> 时显示默认文本并设置 <see cref="Control.Enabled"/> 为 <see langword="false"/>
         /// </summary>
         /// <param name="linkLabel"><see cref="LinkLabel"/> 实例</param>
         /// <param name="text">文本</param>

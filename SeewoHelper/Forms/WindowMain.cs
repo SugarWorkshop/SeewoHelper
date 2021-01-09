@@ -26,7 +26,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
-            listViewSubjectStorageInfos.SelectedItems.Clear();
+            listViewSubjectStorageInfos.SelectedItems.Remove();
         }
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
