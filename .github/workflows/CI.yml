@@ -1,0 +1,49 @@
+name: CI
+on: [push, pull_request]
+
+env:
+  ProjectName: SeewoHelper
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    env:
+      NET_TFM: net5.0-windows
+      Configuration: Release
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      
+    - name: Build
+      shell: pwsh
+      run: .\build.ps1
+      
+    - name: Upload .NET App
+      continue-on-error: true
+      if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.ProjectName }}
+        path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\publish\
+
+    - name: Upload x64
+      continue-on-error: true
+      if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.ProjectName }}-win-x64
+        path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x64\publish\
+
+    - name: Upload x86
+      continue-on-error: true
+      if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.ProjectName }}-win-x86
+        path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x86\publish\
