@@ -382,7 +382,6 @@
             this.MinimizeBox = false;
             this.Name = "WindowMain";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = "SeewoHelper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);

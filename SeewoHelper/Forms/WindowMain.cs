@@ -3,6 +3,7 @@ using SeewoHelper.Utilities;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -134,8 +135,7 @@ namespace SeewoHelper.Forms
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
-                WindowState = FormWindowState.Minimized;
-                Hide();
+                HideWindow();
             }
             else
             {
@@ -176,6 +176,12 @@ namespace SeewoHelper.Forms
             Show();
             WindowState = FormWindowState.Normal;
             Activate();
+        }
+
+        private void HideWindow()
+        {
+            Hide();
+            WindowState = FormWindowState.Minimized;
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
