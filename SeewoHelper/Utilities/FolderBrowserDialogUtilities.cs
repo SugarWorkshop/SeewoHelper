@@ -2,8 +2,15 @@
 
 namespace SeewoHelper.Utilities
 {
+    /// <summary>
+    /// 提供 <see cref="FolderBrowserDialog"/> 相关的方法
+    /// </summary>
     internal static class FolderBrowserDialogUtilities
     {
+        /// <summary>
+        /// 获取文件路径
+        /// </summary>
+        /// <param name="description">描述</param>
         public static string GetFilePath(string description = "")
         {
             var dialog = new FolderBrowserDialog() { Description = description };

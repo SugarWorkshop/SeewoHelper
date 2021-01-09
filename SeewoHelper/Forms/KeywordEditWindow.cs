@@ -15,7 +15,7 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public List<Keyword> GetInfo(List<Keyword> list)
+        public List<Keyword> GetResult(List<Keyword> list)
         {
             _keywords = list;
             listViewKeywords.Items.AddRange(list.Select(x => new ListViewItem(x.Pattern) { Tag = x }).ToArray());
@@ -37,7 +37,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            var keyword = new KeywordGettingWindow().GetInfo();
+            var keyword = new KeywordGettingWindow().GetResult();
 
             if (keyword != null)
             {
@@ -56,7 +56,7 @@ namespace SeewoHelper.Forms
 
             if (selectedItem != null)
             {
-                var keyword = new KeywordGettingWindow().GetInfo((Keyword)selectedItem.Tag);
+                var keyword = new KeywordGettingWindow().GetResult((Keyword)selectedItem.Tag);
 
                 if (keyword != null)
                 {

@@ -4,12 +4,24 @@ using System.Linq;
 
 namespace SeewoHelper.Features
 {
+    /// <summary>
+    /// 定义课件整理器
+    /// </summary>
     public class CoursewareSorter
     {
+        /// <summary>
+        /// 课件信息列表
+        /// </summary>
         private readonly IEnumerable<SubjectStorageInfo> _subjectStorageInfos;
 
+        /// <summary>
+        /// 搜索文件夹信息
+        /// </summary>
         private readonly DirectoryInfo _directory;
 
+        /// <summary>
+        /// 整理多个课件
+        /// </summary>
         public void SortMore()
         {
             Program.Logger.Add("开始整理课件");
@@ -22,10 +34,14 @@ namespace SeewoHelper.Features
             Program.Logger.Add("整理课件完成");
         }
 
+        /// <summary>
+        /// 整理课件
+        /// </summary>
+        /// <param name="info">科目存储信息</param>
         private void Sort(SubjectStorageInfo info)
         {
-            var fileSystemInfos = _directory.GetFileSystemInfos();
-            var selectedFileSystemInfos = new List<FileSystemInfo>();
+            var fileSystemInfos = _directory.GetFileSystemInfos(); // 获取目录下所有文件及文件夹
+            var selectedFileSystemInfos = new List<FileSystemInfo>(); // 创建用于记录匹配到的文件及文件夹信息
 
             Program.Logger.Add($"开始整理科目：{info.Name}，目标路径：{info.Path}");
 
@@ -33,13 +49,13 @@ namespace SeewoHelper.Features
             {
                 Program.Logger.Add($"正在匹配关键词：{keyword.Pattern} ({keyword.MatchingWay})");
 
-                var matchedFileSystemInfos = fileSystemInfos.Where(x => keyword.IsMatch(x.Name));
-                selectedFileSystemInfos.AddRange(matchedFileSystemInfos);
+                var matchedFileSystemInfos = fileSystemInfos.Where(x => keyword.IsMatch(x.Name)); // 匹配当前关键词
+                selectedFileSystemInfos.AddRange(matchedFileSystemInfos); // 将匹配到的信息添加至列表
 
                 Program.Logger.Add($"匹配到：{string.Join(", ", matchedFileSystemInfos)}");
             }
 
-            var processFileSystemInfos = selectedFileSystemInfos.Distinct();
+            var processFileSystemInfos = selectedFileSystemInfos.Distinct(); // 排除重复元素
 
             Program.Logger.Add($"将要处理：{string.Join(", ", processFileSystemInfos)}");
 
@@ -49,7 +65,7 @@ namespace SeewoHelper.Features
 
                 try
                 {
-                    fileSystemInfo.MoveTo(Path.Combine(info.Path, fileSystemInfo.Name), true);
+                    fileSystemInfo.MoveTo(Path.Combine(info.Path, fileSystemInfo.Name), true); // 移动文件或文件夹至目标路径
                 }
                 catch (IOException e)
                 {

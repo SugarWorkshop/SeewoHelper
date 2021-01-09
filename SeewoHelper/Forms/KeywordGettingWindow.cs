@@ -12,7 +12,7 @@ namespace SeewoHelper.Forms
         {
             [KeywordMatchingWay.Normal] = "正常",
             [KeywordMatchingWay.CaseInsensitive] = "不区分大小写",
-            [KeywordMatchingWay.Regex] = "正则匹配"
+            [KeywordMatchingWay.Regex] = "正则表达式"
         };
 
         public KeywordGettingWindow()
@@ -20,9 +20,13 @@ namespace SeewoHelper.Forms
             InitializeComponent();
         }
 
-        public Keyword GetInfo(Keyword keyword = null)
+        public Keyword GetResult(Keyword keyword = null)
         {
-            if (keyword != null)
+            if (keyword == null)
+            {
+                comboBoxMatchingWay.SelectedIndex = 0;
+            }
+            else
             {
                 _keyword = keyword;
                 textBoxPattern.Text = keyword.Pattern;

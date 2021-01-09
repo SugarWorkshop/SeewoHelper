@@ -31,7 +31,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
         {
-            var info = new SubjectStorageInfoGettingWindow().GetInfo();
+            var info = new SubjectStorageInfoGettingWindow().GetResult();
 
             if (info != null)
             {
@@ -119,7 +119,7 @@ namespace SeewoHelper.Forms
 
             if (selectedItem != null)
             {
-                var info = new SubjectStorageInfoGettingWindow().GetInfo((SubjectStorageInfo)selectedItem.Tag);
+                var info = new SubjectStorageInfoGettingWindow().GetResult((SubjectStorageInfo)selectedItem.Tag);
 
                 if (info != null)
                 {
@@ -135,6 +135,7 @@ namespace SeewoHelper.Forms
             {
                 e.Cancel = true;
                 WindowState = FormWindowState.Minimized;
+                Hide();
             }
             else
             {
@@ -172,6 +173,7 @@ namespace SeewoHelper.Forms
 
         private void ShowWindow()
         {
+            Show();
             WindowState = FormWindowState.Normal;
             Activate();
         }
