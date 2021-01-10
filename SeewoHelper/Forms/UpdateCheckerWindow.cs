@@ -1,4 +1,5 @@
 ﻿using SeewoHelper.Features;
+using SeewoHelper.Utilities;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -33,12 +34,12 @@ namespace SeewoHelper.Forms
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(_updater.Release?.Url);
+            NetUtilities.Start(_updater.Release?.Url);
         }
 
         private void LinkLabelPreRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(_updater.Prerelease?.Url);
+            NetUtilities.Start(_updater.Prerelease?.Url);
         }
     }
 }

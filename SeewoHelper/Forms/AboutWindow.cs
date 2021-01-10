@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeewoHelper.Utilities;
+using System;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -12,12 +13,12 @@ namespace SeewoHelper.Forms
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Mo-Ink/SeewoHelper");
+            NetUtilities.Start(Constants.RepositoryLink);
         }
 
         private void AboutWindow_Load(object sender, EventArgs e)
