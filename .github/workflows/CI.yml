@@ -31,7 +31,7 @@ jobs:
       if: ${{ !startsWith(github.ref, 'refs/tags/') }}
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.ProjectName }}
+        name: ${{ env.ProjectName }}-WinNoRuntime
         path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\publish\
 
     - name: Upload x64
@@ -39,7 +39,7 @@ jobs:
       if: ${{ !startsWith(github.ref, 'refs/tags/') }}
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.ProjectName }}-win-x64
+        name: ${{ env.ProjectName }}-Win64
         path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x64\publish\
 
     - name: Upload x86
@@ -47,7 +47,7 @@ jobs:
       if: ${{ !startsWith(github.ref, 'refs/tags/') }}
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.ProjectName }}-win-x86
+        name: ${{ env.ProjectName }}-Win32
         path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x86\publish\
 
     - name: Package .NET App
