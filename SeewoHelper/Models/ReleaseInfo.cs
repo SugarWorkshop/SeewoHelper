@@ -29,7 +29,7 @@ namespace SeewoHelper
         /// 是否为 Pre-Release
         /// </summary>
         [JsonPropertyName("prerelease")]
-        public bool IsPrerelese { get; }
+        public bool IsPrerelease { get; }
 
         /// <summary>
         /// 创建 <see cref="ReleaseInfo"/> 实例
@@ -37,15 +37,14 @@ namespace SeewoHelper
         /// <param name="url">页面 Url</param>
         /// <param name="name">Release 名称</param>
         /// <param name="tag">Tag 名称</param>
-        /// <param name="prerelease">是否为 Pre-Release</param>
+        /// <param name="isPrerelease">是否为 Pre-Release</param>
         [JsonConstructor]
-        public ReleaseInfo(string url, string name, string tag, bool prerelease)
+        public ReleaseInfo(string url, string name, string tag, bool isPrerelease)
         {
             Url = url;
             Name = name;
             Tag = tag;
-            IsPrerelese = prerelease;
+            IsPrerelease = isPrerelease;
         }
     }
 }
-
