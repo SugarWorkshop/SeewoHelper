@@ -294,7 +294,7 @@
             // checkBoxDisableServiceShellHardwareDetection
             // 
             this.checkBoxDisableServiceShellHardwareDetection.AutoSize = true;
-            this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(8, 10);
+            this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(4, 4);
             this.checkBoxDisableServiceShellHardwareDetection.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(389, 23);
@@ -329,13 +329,13 @@
             this.textBoxLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLogs.Location = new System.Drawing.Point(7, 8);
+            this.textBoxLogs.Location = new System.Drawing.Point(4, 4);
             this.textBoxLogs.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLogs.Multiline = true;
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.ReadOnly = true;
             this.textBoxLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxLogs.Size = new System.Drawing.Size(881, 444);
+            this.textBoxLogs.Size = new System.Drawing.Size(765, 427);
             this.textBoxLogs.TabIndex = 0;
             // 
             // notifyIcon
