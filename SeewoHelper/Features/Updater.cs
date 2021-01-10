@@ -32,8 +32,8 @@ namespace SeewoHelper.Features
             string content = await res.Content.ReadAsStringAsync(); // 读取内容
             var infos = JsonSerializer.Deserialize<ReleaseInfo[]>(content); // 序列化信息
 
-            Release = infos.FirstOrDefault(x => !x.IsPrerelese); // 赋值 Release 为符合 !IsPrerelease 第一个元素
-            Prerelease = infos.FirstOrDefault(x => x.IsPrerelese); // 赋值 Prerelease 为符合 IsPrerelease 第一个元素
+            Release = infos.FirstOrDefault(x => !x.IsPrerelease); // 赋值 Release 为符合 !IsPrerelease 第一个元素
+            Prerelease = infos.FirstOrDefault(x => x.IsPrerelease); // 赋值 Prerelease 为符合 IsPrerelease 第一个元素
             Program.Logger.Add("Release 信息获取完成");
         }
 
