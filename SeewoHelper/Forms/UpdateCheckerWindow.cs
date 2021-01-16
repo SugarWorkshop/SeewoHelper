@@ -1,7 +1,6 @@
 ﻿using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms

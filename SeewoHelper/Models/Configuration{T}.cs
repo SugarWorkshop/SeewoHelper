@@ -19,7 +19,8 @@ namespace SeewoHelper
         /// <summary>
         /// 配置内容
         /// </summary>
-        public T Content {
+        public T Content
+        {
             get => _content;
             set
             {
