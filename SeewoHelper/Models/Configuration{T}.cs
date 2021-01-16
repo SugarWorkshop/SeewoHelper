@@ -12,34 +12,26 @@ namespace SeewoHelper
     public class Configuration<T> : IDisposable
     {
         /// <summary>
-        /// 配置名称
+        /// 配置内容
         /// </summary>
-        public string Name { get; }
-
-        /// <summary>
-        /// 目录路径
-        /// </summary>
-        public string DirectoryPath { get; }
-
-        /// <summary>
-        /// 配置文件后缀名
-        /// </summary>
-        private static readonly string _suffix = ".json";
-
-        /// <summary>
-        /// 文件名
-        /// </summary>
-        private string FileName => Name + _suffix;
-
-        /// <summary>
-        /// 文件路径
-        /// </summary>
-        private string Path => System.IO.Path.Combine(DirectoryPath, FileName);
+        private T _content;
 
         /// <summary>
         /// 配置内容
         /// </summary>
-        public T Content { get; set; }
+        public T Content {
+            get => _content;
+            set
+            {
+                _content = value;
+                TrySave();
+            }
+        }
+
+        /// <summary>
+        /// 文件路径
+        /// </summary>
+        public string Path { get; }
 
         /// <summary>
         /// 读取
@@ -59,6 +51,23 @@ namespace SeewoHelper
         /// </summary>
         private void Save() => File.WriteAllText(Path, JsonSerializer.Serialize(Content));
 
+        /// <summary>
+        /// 尝试保存
+        /// </summary>
+        /// <returns>成功则返回 <see langword="true"/>，失败则返回 <see langword="false"/></returns>
+        private bool TrySave()
+        {
+            try
+            {
+                Save();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         /// <inheritdoc/>
         public void Dispose()
         {
@@ -72,24 +81,13 @@ namespace SeewoHelper
         /// <param name="name">名称</param>
         /// <param name="directoryPath">文件夹目录</param>
         /// <param name="defaultValue">默认值</param>
-        public Configuration(string name, string directoryPath, T defaultValue)
+        public Configuration(string path, T defaultValue)
         {
-            if (directoryPath == null)
-            {
-                throw new ArgumentNullException(nameof(directoryPath));
-            }
+            Path = path ?? throw new ArgumentNullException(path);
 
-            if (name == null)
+            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path, true) == PathType.Directionary)
             {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (IOUtilities.IsProperPath(directoryPath) && IOUtilities.GetPathType(directoryPath, true) == PathType.Directionary)
-            {
-                Name = name;
-                DirectoryPath = directoryPath;
-
-                IOUtilities.CreateFile(Path, false);
+                IOUtilities.CreateFile(path, false);
                 Read();
 
                 Content ??= defaultValue;
