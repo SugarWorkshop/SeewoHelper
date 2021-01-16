@@ -177,6 +177,7 @@
             this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
             this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(639, 25);
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
+            this.textBoxCoursewareSortingSearchingPath.TextChanged += new System.EventHandler(this.TextBoxCoursewareSortingSearchingPath_TextChanged);
             // 
             // listViewSubjectStorageInfos
             // 
