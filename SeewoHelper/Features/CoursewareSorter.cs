@@ -69,7 +69,7 @@ namespace SeewoHelper.Features
                 }
                 catch (IOException e)
                 {
-                    Program.Logger.Add($"移动 {fileSystemInfo} 失败，异常消息：{e.Message}");
+                    Program.Logger.Add($"移动 {fileSystemInfo} 失败，异常消息：{e.Message}", LogLevel.Error);
                 }
             }
 
