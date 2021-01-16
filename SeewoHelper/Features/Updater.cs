@@ -30,7 +30,7 @@ namespace SeewoHelper.Features
             res.EnsureSuccessStatusCode(); // 当获取状态码为失败时抛出异常
 
             string content = await res.Content.ReadAsStringAsync(); // 读取内容
-            var infos = JsonSerializer.Deserialize<ReleaseInfo[]>(content); // 序列化信息
+            var infos = JsonSerializer.Deserialize<ReleaseInfo[]>(content); // 反序列化信息
 
             Release = infos.FirstOrDefault(x => !x.IsPrerelease); // 赋值 Release 为符合 !IsPrerelease 第一个元素
             Prerelease = infos.FirstOrDefault(x => x.IsPrerelease); // 赋值 Prerelease 为符合 IsPrerelease 第一个元素

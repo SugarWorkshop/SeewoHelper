@@ -34,12 +34,12 @@ namespace SeewoHelper.Forms
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            NetUtilities.Start(_updater.Release?.Url);
+            NetUtilities.Start(_updater.Release.Url);
         }
 
         private void LinkLabelPreRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            NetUtilities.Start(_updater.Prerelease?.Url);
+            NetUtilities.Start(_updater.Prerelease.Url);
         }
     }
 }
