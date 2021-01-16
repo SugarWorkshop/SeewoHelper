@@ -10,6 +10,6 @@ namespace SeewoHelper
         /// <summary>
         /// <see cref="CoursewareSortingInfo"/> 配置
         /// </summary>
-        public static Configuration<CoursewareSortingInfo> CoursewareSortingInfoConfig = Program.AutoDisposer.AddElement(new Configuration<CoursewareSortingInfo>("CoursewareSortingInfo", _path, new CoursewareSortingInfo(null, new List<SubjectStorageInfo>())));
+        public static Configuration<CoursewareSortingInfo> CoursewareSortingInfoConfig = Program.AutoDisposer.AddElement(new Configuration<CoursewareSortingInfo>(Path.Combine(_path, "CoursewareSortingInfo.json"), new CoursewareSortingInfo(string.Empty, new List<SubjectStorageInfo>())));
     }
 }

@@ -24,7 +24,7 @@ namespace SeewoHelper
 
             if (instance == null)
             {
-                Logger = new Logger(Path.Combine(Constants.BaseDirectory, "logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+                Logger = AutoDisposer.AddElement(new Logger(Path.Combine(Constants.BaseDirectory, "logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log")));
 
                 Application.ThreadException += Application_ThreadException; // 处理主线程的异常
 
@@ -42,7 +42,7 @@ namespace SeewoHelper
             else
             {
                 //InstanceUtilities.HandleRunningInstance(instance);
-                MessageBox.Show("程序已经在运行了！", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("程序已经在运行了！");
             }
         }
 

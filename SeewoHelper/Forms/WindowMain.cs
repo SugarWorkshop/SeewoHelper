@@ -27,6 +27,7 @@ namespace SeewoHelper.Forms
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
             listViewSubjectStorageInfos.SelectedItems.Remove();
+            UpdateSubjectStorageInfoConfig();
         }
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace SeewoHelper.Forms
         {
             var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
             listViewSubjectStorageInfos.Items.Add(item);
+            UpdateSubjectStorageInfoConfig();
         }
 
         private void ListViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
@@ -136,10 +138,6 @@ namespace SeewoHelper.Forms
                 e.Cancel = true;
                 HideWindow();
             }
-            else
-            {
-                UpdateSubjectStorageInfoConfig();
-            }
         }
 
         private void UpdateSubjectStorageInfoConfig()
@@ -186,6 +184,11 @@ namespace SeewoHelper.Forms
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TextBoxCoursewareSortingSearchingPath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateSubjectStorageInfoConfig();
         }
     }
 }
