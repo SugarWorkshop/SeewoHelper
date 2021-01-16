@@ -42,7 +42,7 @@ namespace SeewoHelper
             else
             {
                 //InstanceUtilities.HandleRunningInstance(instance);
-                MessageBox.Show("程序已经在运行了！", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("程序已经在运行了！");
             }
         }
 
