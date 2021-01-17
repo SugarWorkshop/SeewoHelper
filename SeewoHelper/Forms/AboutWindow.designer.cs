@@ -237,7 +237,6 @@
             this.textBoxContributors.ReadOnly = true;
             this.textBoxContributors.Size = new System.Drawing.Size(100, 29);
             this.textBoxContributors.TabIndex = 1;
-            this.textBoxContributors.Text = "贡献者fdffffffffffffffffffffffffff";
             // 
             // AboutWindow
             // 
