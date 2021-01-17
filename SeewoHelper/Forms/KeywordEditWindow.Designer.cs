@@ -69,7 +69,7 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(108, 104);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(108, 91);
             this.tableLayoutPanel.TabIndex = 1;
             // 
             // buttonDelete
@@ -77,7 +77,7 @@ namespace SeewoHelper.Forms
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonDelete.Location = new System.Drawing.Point(3, 61);
+            this.buttonDelete.Location = new System.Drawing.Point(3, 51);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDelete.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonDelete.Name = "buttonDelete";
@@ -92,7 +92,7 @@ namespace SeewoHelper.Forms
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAdd.Location = new System.Drawing.Point(3, 10);
+            this.buttonAdd.Location = new System.Drawing.Point(3, 6);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonAdd.Name = "buttonAdd";
