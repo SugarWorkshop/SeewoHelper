@@ -404,7 +404,6 @@
         private Sunny.UI.UIButton buttonGettingCoursewareSortingSearchingPath;
         private Sunny.UI.UILabel labelCoursewareSortingSearchingPath;
         private Sunny.UI.UITextBox textBoxCoursewareSortingSearchingPath;
-        private Sunny.UI.UIButton buttonStartCoursewareSorting;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage4;
         private Sunny.UI.UICheckBox checkBoxDisableServiceShellHardwareDetection;
@@ -420,6 +419,7 @@
         private Sunny.UI.UIContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowAbout;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUpdateCheckerShow;
+        private Sunny.UI.UIButton buttonStartCoursewareSorting;
     }
 }
 

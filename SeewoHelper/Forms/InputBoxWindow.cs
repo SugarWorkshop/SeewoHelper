@@ -1,6 +1,5 @@
 ﻿using Sunny.UI;
 using System;
-using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
