@@ -229,6 +229,7 @@
             this.ButtonOK.Style = Sunny.UI.UIStyle.Custom;
             this.ButtonOK.TabIndex = 1;
             this.ButtonOK.Text = "确定";
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // AboutWindow
             // 
