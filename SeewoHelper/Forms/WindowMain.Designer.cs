@@ -65,24 +65,25 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.listViewSubjectStorageInfos);
             this.tabPage1.Controls.Add(this.buttonStartCoursewareSorting);
             this.tabPage1.Controls.Add(this.buttonGettingCoursewareSortingSearchingPath);
             this.tabPage1.Controls.Add(this.labelCoursewareSortingSearchingPath);
             this.tabPage1.Controls.Add(this.textBoxCoursewareSortingSearchingPath);
             this.tabPage1.Controls.Add(this.tableLayoutPanelSubjectStorageInfoListControlButtons);
+            this.tabPage1.ForeColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(0, 40);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(776, 433);
+            this.tabPage1.Size = new System.Drawing.Size(801, 453);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课件整理";
             // 
             // listViewSubjectStorageInfos
             // 
             this.listViewSubjectStorageInfos.BackColor = System.Drawing.Color.White;
-            this.listViewSubjectStorageInfos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewSubjectStorageInfos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listViewSubjectStorageInfos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.listViewSubjectStorageInfosColumnHeaderName,
             this.listViewSubjectStorageInfosColumnHeaderPath,
@@ -91,10 +92,10 @@
             this.listViewSubjectStorageInfos.ForeColor = System.Drawing.Color.White;
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
-            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(8, 41);
+            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(4, 41);
             this.listViewSubjectStorageInfos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(756, 338);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(793, 349);
             this.listViewSubjectStorageInfos.TabIndex = 17;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
@@ -121,12 +122,11 @@
             // 
             this.buttonStartCoursewareSorting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(662, 391);
+            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(689, 400);
             this.buttonStartCoursewareSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartCoursewareSorting.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonStartCoursewareSorting.Name = "buttonStartCoursewareSorting";
-            this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(102, 34);
-            this.buttonStartCoursewareSorting.Style = Sunny.UI.UIStyle.Custom;
+            this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(93, 34);
             this.buttonStartCoursewareSorting.TabIndex = 16;
             this.buttonStartCoursewareSorting.Text = "整理";
             this.buttonStartCoursewareSorting.Click += new System.EventHandler(this.ButtonStartCoursewareSorting_Click);
@@ -135,12 +135,11 @@
             // 
             this.buttonGettingCoursewareSortingSearchingPath.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGettingCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(736, 8);
+            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(769, 8);
             this.buttonGettingCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGettingCoursewareSortingSearchingPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonGettingCoursewareSortingSearchingPath.Name = "buttonGettingCoursewareSortingSearchingPath";
             this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(28, 25);
-            this.buttonGettingCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.Custom;
             this.buttonGettingCoursewareSortingSearchingPath.TabIndex = 15;
             this.buttonGettingCoursewareSortingSearchingPath.Text = "...";
             this.buttonGettingCoursewareSortingSearchingPath.Click += new System.EventHandler(this.ButtonGettingCoursewareSortingSearchingPath_Click);
@@ -149,7 +148,6 @@
             // 
             this.labelCoursewareSortingSearchingPath.AutoSize = true;
             this.labelCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCoursewareSortingSearchingPath.ForeColor = System.Drawing.Color.White;
             this.labelCoursewareSortingSearchingPath.Location = new System.Drawing.Point(8, 11);
             this.labelCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCoursewareSortingSearchingPath.Name = "labelCoursewareSortingSearchingPath";
@@ -171,8 +169,7 @@
             this.textBoxCoursewareSortingSearchingPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
             this.textBoxCoursewareSortingSearchingPath.Padding = new System.Windows.Forms.Padding(5);
-            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(639, 25);
-            this.textBoxCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.Custom;
+            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(672, 25);
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
             this.textBoxCoursewareSortingSearchingPath.TextChanged += new System.EventHandler(this.TextBoxCoursewareSortingSearchingPath_TextChanged);
             // 
@@ -183,7 +180,7 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectStorageInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectInfoStorageRemove, 1, 0);
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(8, 387);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(8, 398);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
@@ -203,7 +200,6 @@
             this.buttonSubjectStorageInfoAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
             this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(91, 32);
-            this.buttonSubjectStorageInfoAdd.Style = Sunny.UI.UIStyle.Custom;
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.Click += new System.EventHandler(this.ButtonSubjectStorageInfoAdd_Click);
@@ -220,7 +216,6 @@
             this.buttonSubjectInfoStorageRemove.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
             this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(91, 32);
-            this.buttonSubjectInfoStorageRemove.Style = Sunny.UI.UIStyle.Custom;
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.Click += new System.EventHandler(this.ButtonSubjectInfoRemove_Click);
@@ -234,29 +229,30 @@
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage4);
             this.tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabControl.ItemSize = new System.Drawing.Size(150, 40);
-            this.tabControl.Location = new System.Drawing.Point(18, 49);
+            this.tabControl.Location = new System.Drawing.Point(4, 39);
             this.tabControl.MainPage = "";
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(776, 473);
+            this.tabControl.Size = new System.Drawing.Size(801, 493);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl.Style = Sunny.UI.UIStyle.Custom;
+            this.tabControl.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabControl.TabIndex = 1;
-            this.tabControl.TabUnSelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.tabControl.TabSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.tabControl.TabUnSelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.checkBoxDisableServiceShellHardwareDetection);
+            this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(0, 40);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(776, 433);
+            this.tabPage2.Size = new System.Drawing.Size(801, 453);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "实用功能";
             // 
@@ -264,25 +260,24 @@
             // 
             this.checkBoxDisableServiceShellHardwareDetection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxDisableServiceShellHardwareDetection.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxDisableServiceShellHardwareDetection.ForeColor = System.Drawing.Color.White;
             this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(4, 4);
             this.checkBoxDisableServiceShellHardwareDetection.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxDisableServiceShellHardwareDetection.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(426, 22);
-            this.checkBoxDisableServiceShellHardwareDetection.Style = Sunny.UI.UIStyle.Custom;
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
             this.checkBoxDisableServiceShellHardwareDetection.Text = "关闭U盘插入提示修复（禁用Shell Hardware Detection服务）";
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.tabPage4.BackColor = System.Drawing.Color.White;
             this.tabPage4.Controls.Add(this.textBoxLogs);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(0, 40);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(776, 433);
+            this.tabPage4.Size = new System.Drawing.Size(801, 453);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "日志";
             // 
@@ -300,8 +295,8 @@
             this.textBoxLogs.Multiline = true;
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.Padding = new System.Windows.Forms.Padding(5);
-            this.textBoxLogs.Size = new System.Drawing.Size(768, 423);
-            this.textBoxLogs.Style = Sunny.UI.UIStyle.Custom;
+            this.textBoxLogs.ReadOnly = true;
+            this.textBoxLogs.Size = new System.Drawing.Size(793, 443);
             this.textBoxLogs.TabIndex = 0;
             // 
             // notifyIcon
@@ -314,7 +309,7 @@
             // 
             // contextNotifyIconMenuStrip
             // 
-            this.contextNotifyIconMenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.contextNotifyIconMenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.contextNotifyIconMenuStrip.DropShadowEnabled = false;
             this.contextNotifyIconMenuStrip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.contextNotifyIconMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -322,7 +317,6 @@
             this.ExitToolStripMenuItem});
             this.contextNotifyIconMenuStrip.Name = "contextNotifyIconMenuStrip";
             this.contextNotifyIconMenuStrip.Size = new System.Drawing.Size(136, 52);
-            this.contextNotifyIconMenuStrip.Style = Sunny.UI.UIStyle.Office2010Black;
             // 
             // OpenToolStripMenuItem
             // 
@@ -344,7 +338,7 @@
             // 
             // contextMenuStrip
             // 
-            this.contextMenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.contextMenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.contextMenuStrip.DropShadowEnabled = false;
             this.contextMenuStrip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -352,11 +346,10 @@
             this.toolStripMenuItemUpdateCheckerShow});
             this.contextMenuStrip.Name = "uiContextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(136, 52);
-            this.contextMenuStrip.Style = Sunny.UI.UIStyle.Office2010Black;
             // 
             // toolStripMenuItemShowAbout
             // 
-            this.toolStripMenuItemShowAbout.BackColor = System.Drawing.Color.LightGray;
+            this.toolStripMenuItemShowAbout.BackColor = System.Drawing.Color.White;
             this.toolStripMenuItemShowAbout.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStripMenuItemShowAbout.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItemShowAbout.Name = "toolStripMenuItemShowAbout";
@@ -366,7 +359,7 @@
             // 
             // toolStripMenuItemUpdateCheckerShow
             // 
-            this.toolStripMenuItemUpdateCheckerShow.BackColor = System.Drawing.Color.LightGray;
+            this.toolStripMenuItemUpdateCheckerShow.BackColor = System.Drawing.Color.White;
             this.toolStripMenuItemUpdateCheckerShow.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStripMenuItemUpdateCheckerShow.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItemUpdateCheckerShow.Name = "toolStripMenuItemUpdateCheckerShow";
@@ -378,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(809, 536);
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.tabControl);
@@ -387,8 +380,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowMain";
-            this.RectColor = System.Drawing.Color.Black;
-            this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "SeewoHelper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);

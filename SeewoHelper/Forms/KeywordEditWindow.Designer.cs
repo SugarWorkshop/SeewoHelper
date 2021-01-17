@@ -47,10 +47,10 @@ namespace SeewoHelper.Forms
             this.listViewKeywords.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listViewKeywords.FullRowSelect = true;
             this.listViewKeywords.HideSelection = false;
-            this.listViewKeywords.Location = new System.Drawing.Point(21, 49);
+            this.listViewKeywords.Location = new System.Drawing.Point(15, 49);
             this.listViewKeywords.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listViewKeywords.Name = "listViewKeywords";
-            this.listViewKeywords.Size = new System.Drawing.Size(404, 585);
+            this.listViewKeywords.Size = new System.Drawing.Size(423, 585);
             this.listViewKeywords.TabIndex = 0;
             this.listViewKeywords.UseCompatibleStateImageBehavior = false;
             this.listViewKeywords.View = System.Windows.Forms.View.List;
@@ -82,7 +82,6 @@ namespace SeewoHelper.Forms
             this.buttonDelete.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(102, 33);
-            this.buttonDelete.Style = Sunny.UI.UIStyle.Custom;
             this.buttonDelete.TabIndex = 1;
             this.buttonDelete.Text = "删除";
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
@@ -97,7 +96,6 @@ namespace SeewoHelper.Forms
             this.buttonAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(102, 32);
-            this.buttonAdd.Style = Sunny.UI.UIStyle.Custom;
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "新建";
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
@@ -132,7 +130,6 @@ namespace SeewoHelper.Forms
             this.buttonOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(90, 38);
-            this.buttonOK.Style = Sunny.UI.UIStyle.Custom;
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
@@ -150,7 +147,6 @@ namespace SeewoHelper.Forms
             this.buttonCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(91, 38);
-            this.buttonCancel.Style = Sunny.UI.UIStyle.Custom;
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -160,7 +156,7 @@ namespace SeewoHelper.Forms
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(561, 703);
             this.Controls.Add(this.tableLayoutPanelButton);
@@ -171,8 +167,6 @@ namespace SeewoHelper.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KeywordEditWindow";
-            this.RectColor = System.Drawing.Color.Black;
-            this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "编辑关键词";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanelButton.ResumeLayout(false);
