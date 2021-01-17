@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class InputBoxWindow : Form, IReturnableForm<string, string, string, string>
+    public partial class InputBoxWindow : UIForm, IReturnableForm<string, string, string, string>
     {
         private string _str = null;
 

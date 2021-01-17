@@ -30,13 +30,13 @@ namespace SeewoHelper.Forms
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMatchingWay = new System.Windows.Forms.Label();
-            this.labelPattern = new System.Windows.Forms.Label();
-            this.textBoxPattern = new System.Windows.Forms.TextBox();
-            this.comboBoxMatchingWay = new System.Windows.Forms.ComboBox();
+            this.labelMatchingWay = new Sunny.UI.UILabel();
+            this.labelPattern = new Sunny.UI.UILabel();
+            this.textBoxPattern = new Sunny.UI.UITextBox();
+            this.comboBoxMatchingWay = new Sunny.UI.UIComboBox();
             this.tableLayoutPanelButton = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonCancel = new Sunny.UI.UIButton();
+            this.buttonOK = new Sunny.UI.UIButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanelButton.SuspendLayout();
             this.SuspendLayout();
@@ -50,13 +50,13 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanel1.Controls.Add(this.labelPattern, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPattern, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxMatchingWay, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 17);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 41);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 66);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(903, 67);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelMatchingWay
@@ -66,12 +66,14 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMatchingWay.AutoSize = true;
             this.labelMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMatchingWay.Location = new System.Drawing.Point(4, 33);
-            this.labelMatchingWay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMatchingWay.ForeColor = System.Drawing.Color.White;
+            this.labelMatchingWay.Location = new System.Drawing.Point(3, 33);
             this.labelMatchingWay.Name = "labelMatchingWay";
-            this.labelMatchingWay.Size = new System.Drawing.Size(85, 33);
+            this.labelMatchingWay.Size = new System.Drawing.Size(87, 34);
+            this.labelMatchingWay.Style = Sunny.UI.UIStyle.Custom;
             this.labelMatchingWay.TabIndex = 2;
             this.labelMatchingWay.Text = "匹配方式：";
+            this.labelMatchingWay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelPattern
             // 
@@ -80,23 +82,32 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPattern.AutoSize = true;
             this.labelPattern.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPattern.Location = new System.Drawing.Point(4, 0);
-            this.labelPattern.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPattern.ForeColor = System.Drawing.Color.White;
+            this.labelPattern.Location = new System.Drawing.Point(3, 0);
             this.labelPattern.Name = "labelPattern";
-            this.labelPattern.Size = new System.Drawing.Size(85, 33);
+            this.labelPattern.Size = new System.Drawing.Size(87, 33);
+            this.labelPattern.Style = Sunny.UI.UIStyle.Custom;
             this.labelPattern.TabIndex = 1;
             this.labelPattern.Text = "关键词：";
+            this.labelPattern.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxPattern
             // 
             this.textBoxPattern.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPattern.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxPattern.FillColor = System.Drawing.Color.White;
             this.textBoxPattern.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPattern.Location = new System.Drawing.Point(97, 4);
-            this.textBoxPattern.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPattern.Location = new System.Drawing.Point(96, 4);
+            this.textBoxPattern.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxPattern.Maximum = 2147483647D;
+            this.textBoxPattern.Minimum = -2147483648D;
+            this.textBoxPattern.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxPattern.Name = "textBoxPattern";
-            this.textBoxPattern.Size = new System.Drawing.Size(805, 23);
+            this.textBoxPattern.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPattern.Size = new System.Drawing.Size(804, 23);
+            this.textBoxPattern.Style = Sunny.UI.UIStyle.Custom;
             this.textBoxPattern.TabIndex = 2;
             // 
             // comboBoxMatchingWay
@@ -104,18 +115,23 @@ namespace SeewoHelper.Forms
             this.comboBoxMatchingWay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxMatchingWay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMatchingWay.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.comboBoxMatchingWay.FillColor = System.Drawing.Color.White;
             this.comboBoxMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxMatchingWay.FormattingEnabled = true;
             this.comboBoxMatchingWay.Items.AddRange(new object[] {
             "正常",
             "不区分大小写",
             "正则表达式"});
-            this.comboBoxMatchingWay.Location = new System.Drawing.Point(97, 37);
-            this.comboBoxMatchingWay.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxMatchingWay.Location = new System.Drawing.Point(96, 37);
+            this.comboBoxMatchingWay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxMatchingWay.MinimumSize = new System.Drawing.Size(50, 0);
             this.comboBoxMatchingWay.Name = "comboBoxMatchingWay";
-            this.comboBoxMatchingWay.Size = new System.Drawing.Size(805, 25);
+            this.comboBoxMatchingWay.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.comboBoxMatchingWay.Size = new System.Drawing.Size(804, 23);
+            this.comboBoxMatchingWay.Style = Sunny.UI.UIStyle.Custom;
             this.comboBoxMatchingWay.TabIndex = 3;
+            this.comboBoxMatchingWay.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanelButton
             // 
@@ -124,15 +140,15 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
             this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
-            this.tableLayoutPanelButton.Location = new System.Drawing.Point(705, 91);
-            this.tableLayoutPanelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(742, 112);
+            this.tableLayoutPanelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
             this.tableLayoutPanelButton.RowCount = 1;
             this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanelButton.Size = new System.Drawing.Size(215, 40);
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanelButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanelButton.Size = new System.Drawing.Size(172, 48);
             this.tableLayoutPanelButton.TabIndex = 4;
             // 
             // buttonCancel
@@ -140,15 +156,17 @@ namespace SeewoHelper.Forms
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancel.Location = new System.Drawing.Point(111, 4);
+            this.buttonCancel.Location = new System.Drawing.Point(90, 4);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 32);
+            this.buttonCancel.Size = new System.Drawing.Size(78, 40);
+            this.buttonCancel.Style = Sunny.UI.UIStyle.Custom;
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
-            this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // buttonOK
@@ -156,28 +174,32 @@ namespace SeewoHelper.Forms
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonOK.Location = new System.Drawing.Point(4, 4);
-            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonOK.Location = new System.Drawing.Point(3, 4);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(99, 32);
+            this.buttonOK.Size = new System.Drawing.Size(80, 40);
+            this.buttonOK.Style = Sunny.UI.UIStyle.Custom;
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
-            this.buttonOK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // KeywordGettingWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 144);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.ClientSize = new System.Drawing.Size(933, 175);
             this.Controls.Add(this.tableLayoutPanelButton);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "KeywordGettingWindow";
-            this.ShowIcon = false;
+            this.RectColor = System.Drawing.Color.Black;
+            this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "修改关键词";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -189,12 +211,12 @@ namespace SeewoHelper.Forms
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label labelMatchingWay;
-        private System.Windows.Forms.Label labelPattern;
-        private System.Windows.Forms.TextBox textBoxPattern;
-        private System.Windows.Forms.ComboBox comboBoxMatchingWay;
+        private Sunny.UI.UILabel labelMatchingWay;
+        private Sunny.UI.UILabel labelPattern;
+        private Sunny.UI.UITextBox textBoxPattern;
+        private Sunny.UI.UIComboBox comboBoxMatchingWay;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelButton;
-        private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Button buttonCancel;
+        private Sunny.UI.UIButton buttonOK;
+        private Sunny.UI.UIButton buttonCancel;
     }
 }

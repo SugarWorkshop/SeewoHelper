@@ -1,11 +1,12 @@
 ﻿using SeewoHelper.Features;
 using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class UpdateCheckerWindow : Form
+    public partial class UpdateCheckerWindow : UIForm
     {
         private readonly Updater _updater = new Updater();
 

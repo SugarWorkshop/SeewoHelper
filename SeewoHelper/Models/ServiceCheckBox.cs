@@ -1,8 +1,8 @@
 ﻿using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
 using System.ServiceProcess;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SeewoHelper
 {
@@ -14,7 +14,7 @@ namespace SeewoHelper
         /// <summary>
         /// <see cref="CheckBox"/> 实例
         /// </summary>
-        private readonly CheckBox _checkBox;
+        private readonly UICheckBox _checkBox;
 
         /// <summary>
         /// <see cref="Service"/> 实例
@@ -67,7 +67,7 @@ namespace SeewoHelper
         /// <summary>
         /// 当 <see cref="CheckBox.Checked"/> 状态改变时触发
         /// </summary>
-        private async void CheckBox_CheckedChanged(object sender, EventArgs e)
+        private async void CheckBox_ValueChanged(object sender, bool value)
         {
             // --- 用于保留当前状态，解决部分问题 ---
             bool current = _service.Status == ServiceControllerStatus.Running;
@@ -103,7 +103,7 @@ namespace SeewoHelper
         /// <param name="serviceName">服务名称</param>
         /// <param name="isReverseChecked">是否反转 <see cref="CheckBox.Checked"/> 状态</param>
         /// <param name="startType">启用时设置的启动类型</param>
-        public ServiceCheckBox(CheckBox checkBox, string serviceName, bool isReverseChecked, ServiceStartMode startType = ServiceStartMode.Automatic)
+        public ServiceCheckBox(UICheckBox checkBox, string serviceName, bool isReverseChecked, ServiceStartMode startType = ServiceStartMode.Automatic)
         {
             _checkBox = checkBox ?? throw new ArgumentNullException(nameof(checkBox));
             _service = new Service(serviceName ?? throw new ArgumentNullException(nameof(serviceName)));
@@ -111,7 +111,7 @@ namespace SeewoHelper
             _startType = startType;
 
             checkBox.Checked = IsChecked;
-            checkBox.CheckedChanged += CheckBox_CheckedChanged;
+            checkBox.ValueChanged += CheckBox_ValueChanged;
         }
     }
 }

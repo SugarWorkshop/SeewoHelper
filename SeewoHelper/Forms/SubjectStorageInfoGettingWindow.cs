@@ -1,4 +1,5 @@
 ﻿using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class SubjectStorageInfoGettingWindow : Form, IReturnableForm<SubjectStorageInfo, SubjectStorageInfo>
+    public partial class SubjectStorageInfoGettingWindow : UIForm, IReturnableForm<SubjectStorageInfo, SubjectStorageInfo>
     {
         private SubjectStorageInfo _subjectStorageInfo = null;
         private List<Keyword> _keywords = new List<Keyword>();

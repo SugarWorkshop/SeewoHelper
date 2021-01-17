@@ -1,10 +1,11 @@
 ﻿using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class AboutWindow : Form
+    public partial class AboutWindow : UIForm
     {
         public AboutWindow()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class KeywordEditWindow : Form, IReturnableForm<List<Keyword>, List<Keyword>>
+    public partial class KeywordEditWindow : UIForm, IReturnableForm<List<Keyword>, List<Keyword>>
     {
         private List<Keyword> _keywords;
 

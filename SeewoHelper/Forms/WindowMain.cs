@@ -1,27 +1,19 @@
 using SeewoHelper.Features;
 using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class WindowMain : Form
+    public partial class WindowMain : UIForm
     {
         public WindowMain()
         {
             InitializeComponent();
-        }
-
-        private void AboutMenuItem_Click(object sender, EventArgs e)
-        {
-            new AboutWindow().ShowDialog();
-        }
-
-        private void UpgradeMenuItem_Click(object sender, EventArgs e)
-        {
-            new UpdateCheckerWindow().ShowDialog();
         }
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
@@ -189,6 +181,16 @@ namespace SeewoHelper.Forms
         private void TextBoxCoursewareSortingSearchingPath_TextChanged(object sender, EventArgs e)
         {
             UpdateSubjectStorageInfoConfig();
+        }
+
+        private void ToolStripMenuItemShowAbout_Click(object sender, EventArgs e)
+        {
+            new AboutWindow().ShowDialog();
+        }
+
+        private void ToolStripMenuItemUpdateCheckerShow_Click(object sender, EventArgs e)
+        {
+            new UpdateCheckerWindow().ShowDialog();
         }
     }
 }

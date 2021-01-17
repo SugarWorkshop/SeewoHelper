@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
-    public partial class KeywordGettingWindow : Form, IReturnableForm<Keyword, Keyword>
+    public partial class KeywordGettingWindow : UIForm, IReturnableForm<Keyword, Keyword>
     {
         private Keyword _keyword = null;
 
