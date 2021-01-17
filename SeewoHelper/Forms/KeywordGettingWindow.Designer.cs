@@ -56,7 +56,7 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(903, 67);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(903, 63);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelMatchingWay
@@ -67,9 +67,9 @@ namespace SeewoHelper.Forms
             this.labelMatchingWay.AutoSize = true;
             this.labelMatchingWay.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelMatchingWay.ForeColor = System.Drawing.Color.White;
-            this.labelMatchingWay.Location = new System.Drawing.Point(3, 33);
+            this.labelMatchingWay.Location = new System.Drawing.Point(3, 31);
             this.labelMatchingWay.Name = "labelMatchingWay";
-            this.labelMatchingWay.Size = new System.Drawing.Size(87, 34);
+            this.labelMatchingWay.Size = new System.Drawing.Size(87, 32);
             this.labelMatchingWay.Style = Sunny.UI.UIStyle.Custom;
             this.labelMatchingWay.TabIndex = 2;
             this.labelMatchingWay.Text = "匹配方式：";
@@ -85,7 +85,7 @@ namespace SeewoHelper.Forms
             this.labelPattern.ForeColor = System.Drawing.Color.White;
             this.labelPattern.Location = new System.Drawing.Point(3, 0);
             this.labelPattern.Name = "labelPattern";
-            this.labelPattern.Size = new System.Drawing.Size(87, 33);
+            this.labelPattern.Size = new System.Drawing.Size(87, 31);
             this.labelPattern.Style = Sunny.UI.UIStyle.Custom;
             this.labelPattern.TabIndex = 1;
             this.labelPattern.Text = "关键词：";
@@ -123,7 +123,7 @@ namespace SeewoHelper.Forms
             "正常",
             "不区分大小写",
             "正则表达式"});
-            this.comboBoxMatchingWay.Location = new System.Drawing.Point(96, 37);
+            this.comboBoxMatchingWay.Location = new System.Drawing.Point(96, 35);
             this.comboBoxMatchingWay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxMatchingWay.MinimumSize = new System.Drawing.Size(50, 0);
             this.comboBoxMatchingWay.Name = "comboBoxMatchingWay";
