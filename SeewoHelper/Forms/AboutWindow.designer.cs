@@ -139,7 +139,7 @@
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelPage1.Size = new System.Drawing.Size(364, 205);
+            this.tableLayoutPanelPage1.Size = new System.Drawing.Size(367, 209);
             this.tableLayoutPanelPage1.TabIndex = 1;
             // 
             // linkLabelGithub
@@ -153,9 +153,9 @@
             this.linkLabelGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.linkLabelGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelGithub.Location = new System.Drawing.Point(3, 136);
+            this.linkLabelGithub.Location = new System.Drawing.Point(3, 138);
             this.linkLabelGithub.Name = "linkLabelGithub";
-            this.linkLabelGithub.Size = new System.Drawing.Size(358, 69);
+            this.linkLabelGithub.Size = new System.Drawing.Size(361, 71);
             this.linkLabelGithub.Style = Sunny.UI.UIStyle.Custom;
             this.linkLabelGithub.TabIndex = 1;
             this.linkLabelGithub.TabStop = true;
@@ -171,9 +171,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(3, 68);
+            this.labelVersion.Location = new System.Drawing.Point(3, 69);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(358, 68);
+            this.labelVersion.Size = new System.Drawing.Size(361, 69);
             this.labelVersion.Style = Sunny.UI.UIStyle.Custom;
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "应用版本：";
@@ -188,7 +188,7 @@
             this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(358, 68);
+            this.labelTitle.Size = new System.Drawing.Size(361, 69);
             this.labelTitle.Style = Sunny.UI.UIStyle.Custom;
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "SeewoHelper";
