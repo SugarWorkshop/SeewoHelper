@@ -124,7 +124,6 @@
             this.tableLayoutPanelPage1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelPage1.AutoSize = true;
             this.tableLayoutPanelPage1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanelPage1.ColumnCount = 1;
             this.tableLayoutPanelPage1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -132,14 +131,14 @@
             this.tableLayoutPanelPage1.Controls.Add(this.labelVersion, 0, 1);
             this.tableLayoutPanelPage1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanelPage1.ForeColor = System.Drawing.Color.White;
-            this.tableLayoutPanelPage1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelPage1.Location = new System.Drawing.Point(3, 4);
             this.tableLayoutPanelPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelPage1.Name = "tableLayoutPanelPage1";
             this.tableLayoutPanelPage1.RowCount = 3;
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelPage1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelPage1.Size = new System.Drawing.Size(367, 209);
+            this.tableLayoutPanelPage1.Size = new System.Drawing.Size(361, 201);
             this.tableLayoutPanelPage1.TabIndex = 1;
             // 
             // linkLabelGithub
@@ -153,9 +152,9 @@
             this.linkLabelGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.linkLabelGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelGithub.Location = new System.Drawing.Point(3, 138);
+            this.linkLabelGithub.Location = new System.Drawing.Point(3, 134);
             this.linkLabelGithub.Name = "linkLabelGithub";
-            this.linkLabelGithub.Size = new System.Drawing.Size(361, 71);
+            this.linkLabelGithub.Size = new System.Drawing.Size(355, 67);
             this.linkLabelGithub.Style = Sunny.UI.UIStyle.Custom;
             this.linkLabelGithub.TabIndex = 1;
             this.linkLabelGithub.TabStop = true;
@@ -171,9 +170,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(3, 69);
+            this.labelVersion.Location = new System.Drawing.Point(3, 67);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(361, 69);
+            this.labelVersion.Size = new System.Drawing.Size(355, 67);
             this.labelVersion.Style = Sunny.UI.UIStyle.Custom;
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "应用版本：";
@@ -188,7 +187,7 @@
             this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(361, 69);
+            this.labelTitle.Size = new System.Drawing.Size(355, 67);
             this.labelTitle.Style = Sunny.UI.UIStyle.Custom;
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "SeewoHelper";
@@ -259,7 +258,6 @@
             this.tableLayoutPanelPage2.ResumeLayout(false);
             this.tableLayoutPanelPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tableLayoutPanelPage1.ResumeLayout(false);
             this.tableLayoutPanelPage1.PerformLayout();
             this.tabControl.ResumeLayout(false);
