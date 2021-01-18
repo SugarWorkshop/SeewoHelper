@@ -86,7 +86,7 @@ namespace SeewoHelper
         {
             Path = path ?? throw new ArgumentNullException(path);
 
-            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path, true) == PathType.Directionary)
+            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path, true) == PathType.File)
             {
                 IOUtilities.CreateFile(path, false);
                 Read();
