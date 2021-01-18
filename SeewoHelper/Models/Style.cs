@@ -7,7 +7,7 @@ namespace SeewoHelper
     {
         public delegate void styleChange(object sender, EventArgs e);
         public event styleChange OnStyleChange;
-        UIStyle programStyle = UIStyle.Blue;
+        UIStyle programStyle = UIStyle.LightBlue;
         public UIStyle ProgramStyle
         {
             get

@@ -196,7 +196,7 @@ namespace SeewoHelper.Forms
 
         private void ToolStripMenuItemShowAbout_Click(object sender, EventArgs e)
         {
-            new AboutWindow().Show();
+            new AboutWindow().ShowDialog();
         }
 
         private void ToolStripMenuItemUpdateCheckerShow_Click(object sender, EventArgs e)
