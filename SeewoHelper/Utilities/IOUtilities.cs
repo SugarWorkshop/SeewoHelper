@@ -31,7 +31,7 @@ namespace SeewoHelper.Utilities
         /// <returns></returns>
         public static PathType GetPathType(string path, bool check = false)
         {
-            if (string.IsNullOrEmpty(Path.GetExtension(path)) || (check && File.Exists(path)))
+            if (string.IsNullOrEmpty(Path.GetExtension(path)) || (check && !File.Exists(path)))
             {
                 return PathType.Directionary;
             }
