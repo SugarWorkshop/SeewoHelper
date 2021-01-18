@@ -25,7 +25,7 @@ namespace SeewoHelper.Forms
         private void AboutWindow_Load(object sender, EventArgs e)
         {
             Program.Logger.Add("开始加载 AboutWindow");
-            textBoxContributors.Text = string.Join("\r\n", Constants.Contributors);
+            textBoxContributors.Text = string.Join(", ", Constants.Contributors);
             labelVersion.Text = "应用版本：" + Constants.Version.ToString(3);
             Program.Logger.Add("AboutWindow 加载完成");
         }
