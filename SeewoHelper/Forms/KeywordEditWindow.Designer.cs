@@ -168,6 +168,7 @@ namespace SeewoHelper.Forms
             this.MinimizeBox = false;
             this.Name = "KeywordEditWindow";
             this.Text = "编辑关键词";
+            this.Load += new System.EventHandler(this.KeywordEditWindow_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);

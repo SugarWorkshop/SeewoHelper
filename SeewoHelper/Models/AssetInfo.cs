@@ -22,7 +22,7 @@ namespace SeewoHelper
         public string FastGitUrl;
 
         [JsonConstructor]
-        public AssetInfo(string url , string name)
+        public AssetInfo(string url, string name)
         {
             Url = url;
             Name = name;

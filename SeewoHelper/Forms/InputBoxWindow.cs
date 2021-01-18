@@ -10,6 +10,7 @@ namespace SeewoHelper.Forms
         public InputBoxWindow()
         {
             InitializeComponent();
+            Program.style.OnStyleChange += Style_OnStyleChanged;
         }
 
         public string GetResult(string prompt, string title = "", string defaultText = "")
@@ -36,6 +37,16 @@ namespace SeewoHelper.Forms
         {
             _str = textBox.Text;
             Close();
+        }
+
+        private void InputBoxWindow_Load(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
+        }
+
+        private void Style_OnStyleChanged(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
         }
     }
 }

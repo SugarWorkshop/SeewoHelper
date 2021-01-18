@@ -19,6 +19,7 @@ namespace SeewoHelper.Forms
         public KeywordGettingWindow()
         {
             InitializeComponent();
+            Program.style.OnStyleChange += Style_OnStyleChanged;
         }
 
         public Keyword GetResult(Keyword keyword = null)
@@ -54,6 +55,16 @@ namespace SeewoHelper.Forms
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void KeywordGettingWindow_Load(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
+        }
+
+        private void Style_OnStyleChanged(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
         }
     }
 }

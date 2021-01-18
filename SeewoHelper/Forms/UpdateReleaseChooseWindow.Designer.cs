@@ -43,8 +43,8 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxRelease.AutoScroll = true;
             this.listBoxRelease.FillColor = System.Drawing.Color.White;
-            this.listBoxRelease.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBoxRelease.ItemHeight = 21;
+            this.listBoxRelease.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBoxRelease.ItemHeight = 35;
             this.listBoxRelease.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.listBoxRelease.Location = new System.Drawing.Point(4, 37);
             this.listBoxRelease.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -54,7 +54,8 @@ namespace SeewoHelper.Forms
             this.listBoxRelease.Size = new System.Drawing.Size(294, 325);
             this.listBoxRelease.TabIndex = 0;
             this.listBoxRelease.Text = null;
-            this.listBoxRelease.ItemClick += new System.EventHandler(this.ListBoxRelease_ItemClick);
+            this.listBoxRelease.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.listBoxRelease.ItemDoubleClick += new System.EventHandler(this.ListBoxRelease_ItemDoubleClick);
             // 
             // tableLayoutPanel
             // 
@@ -95,7 +96,7 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelVersion.Location = new System.Drawing.Point(3, 0);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(296, 32);
@@ -113,7 +114,7 @@ namespace SeewoHelper.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateReleaseChooseWindow";
-            this.Text = "点击Release以下载";
+            this.Text = "双击Release以下载";
             this.Load += new System.EventHandler(this.UpdateReleaseChooseWindow_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();

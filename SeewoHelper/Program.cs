@@ -14,6 +14,8 @@ namespace SeewoHelper
 
         public static Logger Logger { get; private set; }
 
+        public static Style style = new Style();
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -41,7 +43,6 @@ namespace SeewoHelper
             }
             else
             {
-                //InstanceUtilities.HandleRunningInstance(instance);
                 MessageBox.Show("程序已经在运行了！");
             }
         }

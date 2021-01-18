@@ -15,6 +15,7 @@ namespace SeewoHelper.Forms
         public SubjectStorageInfoGettingWindow()
         {
             InitializeComponent();
+            Program.style.OnStyleChange += Style_OnStyleChanged;
         }
 
         public SubjectStorageInfo GetResult(SubjectStorageInfo info = null)
@@ -62,6 +63,16 @@ namespace SeewoHelper.Forms
         {
             _keywords = new KeywordEditWindow().GetResult(_keywords);
             textBoxKeywords.Text = string.Join(", ", _keywords.Select(x => x.Pattern));
+        }
+
+        private void SubjectStorageInfoGettingWindow_Load(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
+        }
+
+        private void Style_OnStyleChanged(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
         }
     }
 }

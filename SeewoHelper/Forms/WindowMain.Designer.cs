@@ -45,6 +45,10 @@
             this.tabControl = new Sunny.UI.UITabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelStyle = new Sunny.UI.UILabel();
+            this.comboBoxStyle = new Sunny.UI.UIComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.textBoxLogs = new Sunny.UI.UITextBox();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -58,6 +62,8 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.contextNotifyIconMenuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
@@ -227,6 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Controls.Add(this.tabPage4);
             this.tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -268,6 +275,62 @@
             this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(426, 22);
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
             this.checkBoxDisableServiceShellHardwareDetection.Text = "关闭U盘插入提示修复（禁用Shell Hardware Detection服务）";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage3.Location = new System.Drawing.Point(0, 40);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(801, 453);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "设置";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.Controls.Add(this.labelStyle, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxStyle, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(226, 42);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // labelStyle
+            // 
+            this.labelStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStyle.AutoSize = true;
+            this.labelStyle.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelStyle.Location = new System.Drawing.Point(3, 0);
+            this.labelStyle.Name = "labelStyle";
+            this.labelStyle.Size = new System.Drawing.Size(50, 42);
+            this.labelStyle.Style = Sunny.UI.UIStyle.Custom;
+            this.labelStyle.TabIndex = 1;
+            this.labelStyle.Text = "皮肤";
+            this.labelStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBoxStyle
+            // 
+            this.comboBoxStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxStyle.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.comboBoxStyle.FillColor = System.Drawing.Color.White;
+            this.comboBoxStyle.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxStyle.FormattingEnabled = true;
+            this.comboBoxStyle.Location = new System.Drawing.Point(60, 6);
+            this.comboBoxStyle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxStyle.MinimumSize = new System.Drawing.Size(63, 0);
+            this.comboBoxStyle.Name = "comboBoxStyle";
+            this.comboBoxStyle.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.comboBoxStyle.Size = new System.Drawing.Size(162, 29);
+            this.comboBoxStyle.TabIndex = 0;
+            this.comboBoxStyle.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.comboBoxStyle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxStyle_SelectedIndexChanged);
             // 
             // tabPage4
             // 
@@ -389,6 +452,9 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.contextNotifyIconMenuStrip.ResumeLayout(false);
             this.contextMenuStrip.ResumeLayout(false);
@@ -421,6 +487,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowAbout;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUpdateCheckerShow;
         private Sunny.UI.UIButton buttonStartCoursewareSorting;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Sunny.UI.UIComboBox comboBoxStyle;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Sunny.UI.UILabel labelStyle;
     }
 }
 

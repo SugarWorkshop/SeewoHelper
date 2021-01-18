@@ -46,7 +46,7 @@ namespace SeewoHelper
         /// <param name="tag">Tag 名称</param>
         /// <param name="isPrerelease">是否为 Pre-Release</param>
         [JsonConstructor]
-        public ReleaseInfo(string url, string name, string tag, bool isPrerelease,AssetInfo[] assets)
+        public ReleaseInfo(string url, string name, string tag, bool isPrerelease, AssetInfo[] assets)
         {
             Url = url;
             Name = name;

@@ -13,6 +13,7 @@ namespace SeewoHelper.Forms
         public WindowMain()
         {
             InitializeComponent();
+            Program.style.OnStyleChange += Style_OnStyleChanged;
         }
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
@@ -86,12 +87,24 @@ namespace SeewoHelper.Forms
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
+            Style = Program.style.ProgramStyle;
+            LoadComboBoxStyle();
             Program.Logger.Add("WindowMain 加载完成");
         }
 
         private void CreateServiceCheckBox()
         {
             checkBoxDisableServiceShellHardwareDetection.Tag = new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default };
+        }
+
+        private void LoadComboBoxStyle()
+        {
+            foreach (UIStyle style in Enum.GetValues(typeof(UIStyle)))
+            {
+                if (style != UIStyle.Custom)
+                    comboBoxStyle.Items.Add(style);
+            }
+            comboBoxStyle.SelectedItem = Program.style.ProgramStyle;
         }
 
         private void LoadLoggerConfig()
@@ -183,12 +196,22 @@ namespace SeewoHelper.Forms
 
         private void ToolStripMenuItemShowAbout_Click(object sender, EventArgs e)
         {
-            new AboutWindow().ShowDialog();
+            new AboutWindow().Show();
         }
 
         private void ToolStripMenuItemUpdateCheckerShow_Click(object sender, EventArgs e)
         {
             new UpdateCheckerWindow().ShowDialog();
+        }
+
+        private void ComboBoxStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.style.ProgramStyle = (UIStyle)comboBoxStyle.SelectedItem;
+        }
+
+        private void Style_OnStyleChanged(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
         }
     }
 }

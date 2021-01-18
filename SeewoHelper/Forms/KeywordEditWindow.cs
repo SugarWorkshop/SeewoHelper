@@ -14,6 +14,7 @@ namespace SeewoHelper.Forms
         public KeywordEditWindow()
         {
             InitializeComponent();
+            Program.style.OnStyleChange += Style_OnStyleChanged;
         }
 
         public List<Keyword> GetResult(List<Keyword> list)
@@ -65,6 +66,16 @@ namespace SeewoHelper.Forms
                     listViewKeywords.Items[selectedItem.Index] = item;
                 }
             }
+        }
+
+        private void KeywordEditWindow_Load(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
+        }
+
+        private void Style_OnStyleChanged(object sender, EventArgs e)
+        {
+            Style = Program.style.ProgramStyle;
         }
     }
 }
