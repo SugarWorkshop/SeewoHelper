@@ -86,7 +86,6 @@ namespace SeewoHelper.Forms
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
-
             Program.Logger.Add("WindowMain 加载完成");
         }
 
