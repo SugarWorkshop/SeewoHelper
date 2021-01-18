@@ -46,7 +46,7 @@
             this.ButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ButtonOK.Location = new System.Drawing.Point(284, 280);
+            this.ButtonOK.Location = new System.Drawing.Point(284, 282);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ButtonOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.ButtonOK.Name = "ButtonOK";
@@ -64,7 +64,7 @@
             this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(363, 78);
+            this.labelTitle.Size = new System.Drawing.Size(384, 82);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "检查更新";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,13 +78,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 48);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 39);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 224);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(390, 235);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -99,14 +99,14 @@
             this.tableLayoutPanel2.Controls.Add(this.linkLabelRelease, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.linkLabelPrerelease, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelRelease, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 82);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 86);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(363, 138);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(384, 145);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // labelPreRelease
@@ -116,9 +116,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPreRelease.AutoSize = true;
             this.labelPreRelease.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPreRelease.Location = new System.Drawing.Point(3, 69);
+            this.labelPreRelease.Location = new System.Drawing.Point(3, 72);
             this.labelPreRelease.Name = "labelPreRelease";
-            this.labelPreRelease.Size = new System.Drawing.Size(175, 69);
+            this.labelPreRelease.Size = new System.Drawing.Size(186, 73);
             this.labelPreRelease.TabIndex = 1;
             this.labelPreRelease.Text = "最新开发版：";
             this.labelPreRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,9 +136,9 @@
             this.linkLabelRelease.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelRelease.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelRelease.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelRelease.Location = new System.Drawing.Point(184, 0);
+            this.linkLabelRelease.Location = new System.Drawing.Point(195, 0);
             this.linkLabelRelease.Name = "linkLabelRelease";
-            this.linkLabelRelease.Size = new System.Drawing.Size(176, 69);
+            this.linkLabelRelease.Size = new System.Drawing.Size(186, 72);
             this.linkLabelRelease.TabIndex = 2;
             this.linkLabelRelease.TabStop = true;
             this.linkLabelRelease.Text = "检测中……";
@@ -160,9 +160,9 @@
             this.linkLabelPrerelease.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelPrerelease.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelPrerelease.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelPrerelease.Location = new System.Drawing.Point(184, 69);
+            this.linkLabelPrerelease.Location = new System.Drawing.Point(195, 72);
             this.linkLabelPrerelease.Name = "linkLabelPrerelease";
-            this.linkLabelPrerelease.Size = new System.Drawing.Size(176, 69);
+            this.linkLabelPrerelease.Size = new System.Drawing.Size(186, 73);
             this.linkLabelPrerelease.TabIndex = 3;
             this.linkLabelPrerelease.TabStop = true;
             this.linkLabelPrerelease.Text = "检测中……";
@@ -180,7 +180,7 @@
             this.labelRelease.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelRelease.Location = new System.Drawing.Point(3, 0);
             this.labelRelease.Name = "labelRelease";
-            this.labelRelease.Size = new System.Drawing.Size(175, 69);
+            this.labelRelease.Size = new System.Drawing.Size(186, 72);
             this.labelRelease.TabIndex = 0;
             this.labelRelease.Text = "最新正式版：";
             this.labelRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,14 +188,14 @@
             // UpdateCheckerWindow
             // 
             this.AcceptButton = this.ButtonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.CancelButton = this.ButtonOK;
             this.ClientSize = new System.Drawing.Size(396, 338);
             this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -22,24 +22,24 @@ namespace SeewoHelper.Forms
 
         private async void UpgradeWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Add("开始加载 UpgradeWindow");
+            Program.Logger.Add("开始加载 UpdateCheckerWindow");
 
             await _updater.GetInfo();
 
             linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无");
             linkLabelRelease.SetText(_updater.Release?.Name, "暂无");
 
-            Program.Logger.Add("UpgradeWindow 加载完成");
+            Program.Logger.Add("UpdateCheckerWindow 加载完成");
         }
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            NetUtilities.Start(_updater.Release.Url);
+            new UpdateReleaseChooseWindow(_updater.Release).ShowDialog();
         }
 
         private void LinkLabelPreRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            NetUtilities.Start(_updater.Prerelease.Url);
+            new UpdateReleaseChooseWindow(_updater.Prerelease).ShowDialog();
         }
     }
 }

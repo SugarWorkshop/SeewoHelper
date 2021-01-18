@@ -298,6 +298,7 @@
             this.textBoxLogs.ReadOnly = true;
             this.textBoxLogs.Size = new System.Drawing.Size(793, 443);
             this.textBoxLogs.TabIndex = 0;
+            this.textBoxLogs.WordWarp = false;
             // 
             // notifyIcon
             // 
@@ -375,7 +376,7 @@
             this.ClientSize = new System.Drawing.Size(809, 536);
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.tabControl);
-            this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
