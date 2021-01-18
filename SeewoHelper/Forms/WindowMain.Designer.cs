@@ -89,7 +89,7 @@
             this.listViewSubjectStorageInfosColumnHeaderPath,
             this.listViewSubjectStorageInfosColumnHeaderKeywords});
             this.listViewSubjectStorageInfos.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listViewSubjectStorageInfos.ForeColor = System.Drawing.Color.White;
+            this.listViewSubjectStorageInfos.ForeColor = System.Drawing.Color.Black;
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
             this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(4, 41);
