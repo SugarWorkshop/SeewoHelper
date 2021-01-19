@@ -70,7 +70,9 @@ namespace SeewoHelper.Forms
 
         private void KeywordEditWindow_Load(object sender, EventArgs e)
         {
+            Program.Logger.Add("开始加载 KeywordEditWindow");
             Style = Program.style.ProgramStyle;
+            Program.Logger.Add("KeywordEditWindow 加载完成");
         }
 
         private void Style_OnStyleChanged(object sender, EventArgs e)

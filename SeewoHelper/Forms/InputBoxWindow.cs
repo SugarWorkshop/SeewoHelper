@@ -41,7 +41,9 @@ namespace SeewoHelper.Forms
 
         private void InputBoxWindow_Load(object sender, EventArgs e)
         {
+            Program.Logger.Add("开始加载 InputBoxWindow");
             Style = Program.style.ProgramStyle;
+            Program.Logger.Add("InputBoxWindow 加载完成");
         }
 
         private void Style_OnStyleChanged(object sender, EventArgs e)

@@ -19,6 +19,7 @@ namespace SeewoHelper
                 if (programStyle != value)
                 {
                     programStyle = value;
+                    Program.Logger.Add("切换 Style 为 " + value);
                     OnStyleChange(this, new EventArgs());
                 }
                 else
