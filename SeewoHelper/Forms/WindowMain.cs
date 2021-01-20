@@ -100,6 +100,7 @@ namespace SeewoHelper.Forms
         private void LoadComboBoxStyle()
         {
             comboBoxStyle.Items.AddRange(Enum.GetValues<UIStyle>().SkipWhile(x => x == UIStyle.Custom).Cast<object>().ToArray());
+            comboBoxStyle.SelectedItem = Program.FormStyleController.CurrentStyle;
         }
 
         private void LoadLoggerConfig()
