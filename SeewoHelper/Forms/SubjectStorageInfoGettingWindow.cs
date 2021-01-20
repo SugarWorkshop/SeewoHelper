@@ -3,7 +3,6 @@ using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
@@ -15,6 +14,7 @@ namespace SeewoHelper.Forms
         public SubjectStorageInfoGettingWindow()
         {
             InitializeComponent();
+            Program.FormStyleController.Initialize(this);
         }
 
         public SubjectStorageInfo GetResult(SubjectStorageInfo info = null)
@@ -40,11 +40,11 @@ namespace SeewoHelper.Forms
         {
             if (SystemUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text) || !_keywords.Any())
             {
-                MessageBox.Show("请输入内容！");
+                MessageBox.ShowError("内容不可为空！");
             }
             else if (!(IOUtilities.IsProperPath(textBoxPath.Text) && IOUtilities.GetPathType(textBoxPath.Text, true) == PathType.Directionary))
             {
-                MessageBox.Show("请输入合法路径！");
+                MessageBox.ShowError("路径不合法！");
             }
             else
             {
@@ -62,6 +62,12 @@ namespace SeewoHelper.Forms
         {
             _keywords = new KeywordEditWindow().GetResult(_keywords);
             textBoxKeywords.Text = string.Join(", ", _keywords.Select(x => x.Pattern));
+        }
+
+        private void SubjectStorageInfoGettingWindow_Load(object sender, EventArgs e)
+        {
+            Program.Logger.Add("开始加载 SubjectStorageInfoGettingWindow");
+            Program.Logger.Add("SubjectStorageInfoGettingWindow 加载完成");
         }
     }
 }

@@ -51,12 +51,17 @@
             this.ButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.ButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ButtonOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.ButtonOK.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.ButtonOK.Location = new System.Drawing.Point(271, 296);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ButtonOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.ButtonOK.Size = new System.Drawing.Size(87, 36);
+            this.ButtonOK.Style = Sunny.UI.UIStyle.LightBlue;
             this.ButtonOK.TabIndex = 1;
             this.ButtonOK.Text = "确定";
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
@@ -103,7 +108,7 @@
             this.labelContributors.Location = new System.Drawing.Point(3, 0);
             this.labelContributors.Name = "labelContributors";
             this.labelContributors.Size = new System.Drawing.Size(361, 52);
-            this.labelContributors.Style = Sunny.UI.UIStyle.Custom;
+            this.labelContributors.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelContributors.TabIndex = 1;
             this.labelContributors.Text = "贡献者";
             this.labelContributors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,6 +133,7 @@
             this.textBoxContributors.ReadOnly = true;
             this.textBoxContributors.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.textBoxContributors.Size = new System.Drawing.Size(359, 147);
+            this.textBoxContributors.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxContributors.TabIndex = 2;
             this.textBoxContributors.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -177,6 +183,7 @@
             this.linkLabelGithub.Location = new System.Drawing.Point(3, 138);
             this.linkLabelGithub.Name = "linkLabelGithub";
             this.linkLabelGithub.Size = new System.Drawing.Size(361, 71);
+            this.linkLabelGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelGithub.TabIndex = 1;
             this.linkLabelGithub.TabStop = true;
             this.linkLabelGithub.Text = "Github";
@@ -194,7 +201,7 @@
             this.labelVersion.Location = new System.Drawing.Point(3, 69);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(361, 69);
-            this.labelVersion.Style = Sunny.UI.UIStyle.Custom;
+            this.labelVersion.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "应用版本：";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,7 +216,7 @@
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(361, 69);
-            this.labelTitle.Style = Sunny.UI.UIStyle.Custom;
+            this.labelTitle.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "SeewoHelper";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -232,6 +239,7 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(367, 249);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl.Style = Sunny.UI.UIStyle.LightBlue;
             this.tabControl.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabControl.TabIndex = 1;
             this.tabControl.TabSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -240,18 +248,19 @@
             // AboutWindow
             // 
             this.AcceptButton = this.ButtonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.CancelButton = this.ButtonOK;
             this.ClientSize = new System.Drawing.Size(373, 349);
             this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.tabControl);
-            this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutWindow";
+            this.Style = Sunny.UI.UIStyle.LightBlue;
             this.Text = "关于";
             this.Load += new System.EventHandler(this.AboutWindow_Load);
             this.tabPage2.ResumeLayout(false);

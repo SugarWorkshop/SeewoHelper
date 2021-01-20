@@ -5,7 +5,7 @@ namespace SeewoHelper.Utilities
     /// <summary>
     /// 提供 <see cref="FolderBrowserDialog"/> 相关的方法
     /// </summary>
-    internal static class FolderBrowserDialogUtilities
+    public static class FolderBrowserDialogUtilities
     {
         /// <summary>
         /// 获取文件路径

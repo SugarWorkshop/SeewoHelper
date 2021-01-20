@@ -3,7 +3,7 @@ using System.IO;
 
 namespace SeewoHelper
 {
-    internal static class Configurations
+    public static class Configurations
     {
         private static readonly string _path = Path.Combine(Constants.BaseDirectory, "configs");
 

@@ -13,6 +13,7 @@ namespace SeewoHelper.Forms
         public WindowMain()
         {
             InitializeComponent();
+            Program.FormStyleController.Initialize(this);
         }
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace SeewoHelper.Forms
 
                 if (infos.Any(x => x.Path == path))
                 {
-                    MessageBox.Show("整理目标目录与搜索目录路径相同！");
+                    MessageBox.ShowError("整理目标目录与搜索目录路径相同！");
                 }
                 else
                 {
@@ -71,12 +72,12 @@ namespace SeewoHelper.Forms
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
                     sorter.SortMore();
 
-                    MessageBox.Show("完成！");
+                    MessageBox.ShowSuccess("已完成！");
                 }
             }
             else
             {
-                MessageBox.Show("非法路径或指定目录不存在！");
+                MessageBox.ShowError("非法路径或指定目录不存在！");
             }
         }
 
@@ -86,12 +87,19 @@ namespace SeewoHelper.Forms
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
+            LoadComboBoxStyle();
+            checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Add("WindowMain 加载完成");
         }
 
         private void CreateServiceCheckBox()
         {
             checkBoxDisableServiceShellHardwareDetection.Tag = new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default };
+        }
+
+        private void LoadComboBoxStyle()
+        {
+            comboBoxStyle.Items.AddRange(Enum.GetValues<UIStyle>().SkipWhile(x => x == UIStyle.Custom).Cast<object>().ToArray());
         }
 
         private void LoadLoggerConfig()
@@ -189,6 +197,16 @@ namespace SeewoHelper.Forms
         private void ToolStripMenuItemUpdateCheckerShow_Click(object sender, EventArgs e)
         {
             new UpdateCheckerWindow().ShowDialog();
+        }
+
+        private void ComboBoxStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.FormStyleController.SetStyle((UIStyle)comboBoxStyle.SelectedItem);
+        }
+
+        private void CheckBoxAutoStart_ValueChanged(object sender, bool value)
+        {
+            AutoStartUtilities.SetMeStart(checkBoxAutoStart.Checked);
         }
     }
 }

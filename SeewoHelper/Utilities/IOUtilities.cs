@@ -7,7 +7,7 @@ namespace SeewoHelper.Utilities
     /// <summary>
     /// 提供 <see cref="System.IO"/> 命名空间下相关的方法
     /// </summary>
-    internal static class IOUtilities
+    public static class IOUtilities
     {
         /// <summary>
         /// 检测路径是否合法
@@ -74,7 +74,7 @@ namespace SeewoHelper.Utilities
         }
     }
 
-    internal enum PathType
+    public enum PathType
     {
         Directionary,
         File

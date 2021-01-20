@@ -28,13 +28,15 @@ namespace SeewoHelper.Features
 
             var res = await client.GetAsync(Constants.ReleasesLink); // 获取信息
             res.EnsureSuccessStatusCode(); // 当获取状态码为失败时抛出异常
+            Program.Logger.Add("Release 信息获取完成");
 
+            Program.Logger.Add("开始读取 Release 内容");
             string content = await res.Content.ReadAsStringAsync(); // 读取内容
             var infos = JsonSerializer.Deserialize<ReleaseInfo[]>(content); // 反序列化信息
+            Program.Logger.Add("Release 内容读取完成");
 
             Release = infos.FirstOrDefault(x => !x.IsPrerelease); // 赋值 Release 为符合 !IsPrerelease 第一个元素
             Prerelease = infos.FirstOrDefault(x => x.IsPrerelease); // 赋值 Prerelease 为符合 IsPrerelease 第一个元素
-            Program.Logger.Add("Release 信息获取完成");
         }
 
         public Updater()

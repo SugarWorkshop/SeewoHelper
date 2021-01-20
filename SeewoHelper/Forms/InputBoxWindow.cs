@@ -10,6 +10,7 @@ namespace SeewoHelper.Forms
         public InputBoxWindow()
         {
             InitializeComponent();
+            Program.FormStyleController.Initialize(this);
         }
 
         public string GetResult(string prompt, string title = "", string defaultText = "")
@@ -36,6 +37,12 @@ namespace SeewoHelper.Forms
         {
             _str = textBox.Text;
             Close();
+        }
+
+        private void InputBoxWindow_Load(object sender, EventArgs e)
+        {
+            Program.Logger.Add("开始加载 InputBoxWindow");
+            Program.Logger.Add("InputBoxWindow 加载完成");
         }
     }
 }

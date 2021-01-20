@@ -5,7 +5,7 @@ namespace SeewoHelper
     /// <summary>
     /// 提供 <see cref="System.Windows.Forms"/> 命名空间下相关的扩展方法
     /// </summary>
-    internal static class FormsExtensions
+    public static class FormsExtensions
     {
         /// <summary>
         /// 移除所有选中项

@@ -6,7 +6,7 @@ namespace SeewoHelper
     /// <summary>
     /// 提供 <see cref="System.IO"/> 命名空间下相关的扩展方法
     /// </summary>
-    internal static class IOExtensions
+    public static class IOExtensions
     {
         /// <summary>
         /// 移动已存在的文件到指定文件路径，并指示若目标已存在是否覆盖

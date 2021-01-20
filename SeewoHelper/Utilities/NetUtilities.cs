@@ -6,7 +6,7 @@ namespace SeewoHelper.Utilities
     /// <summary>
     /// 提供 <see cref="System.Net"/> 命名空间下相关的方法
     /// </summary>
-    internal static class NetUtilities
+    public static class NetUtilities
     {
         /// <summary>
         /// 打开指定地址的网页

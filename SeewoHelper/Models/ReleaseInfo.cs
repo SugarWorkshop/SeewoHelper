@@ -32,19 +32,27 @@ namespace SeewoHelper
         public bool IsPrerelease { get; }
 
         /// <summary>
+        /// Release 资源
+        /// </summary>
+        [JsonPropertyName("assets")]
+        public AssetInfo[] Assets { get; private set; }
+
+        /// <summary>
         /// 创建 <see cref="ReleaseInfo"/> 实例
         /// </summary>
         /// <param name="url">页面 Url</param>
         /// <param name="name">Release 名称</param>
+        /// <param name="assets">Release 资源</param>
         /// <param name="tag">Tag 名称</param>
         /// <param name="isPrerelease">是否为 Pre-Release</param>
         [JsonConstructor]
-        public ReleaseInfo(string url, string name, string tag, bool isPrerelease)
+        public ReleaseInfo(string url, string name, string tag, bool isPrerelease, AssetInfo[] assets)
         {
             Url = url;
             Name = name;
             Tag = tag;
             IsPrerelease = isPrerelease;
+            Assets = assets;
         }
     }
 }

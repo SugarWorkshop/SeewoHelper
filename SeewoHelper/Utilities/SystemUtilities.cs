@@ -5,7 +5,7 @@ namespace SeewoHelper.Utilities
     /// <summary>
     /// 提供 <see cref="System"/> 命名空间下相关的方法
     /// </summary>
-    internal static class SystemUtilities
+    public static class SystemUtilities
     {
         /// <summary>
         /// 判断一个或多个字符串是否为 <see langword="null"/> 或为空或仅存在空格符
