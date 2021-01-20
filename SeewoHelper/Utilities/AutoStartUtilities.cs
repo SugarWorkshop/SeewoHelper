@@ -16,11 +16,11 @@ namespace SeewoHelper.Utilities
         /// <returns></returns>
         public static bool SetMeStart(bool onOff)
         {
-            bool isOk = false;
             string appName = Process.GetCurrentProcess().MainModule.ModuleName;
             string appPath = Process.GetCurrentProcess().MainModule.FileName;
-            isOk = SetAutoStart(onOff, appName, appPath);
-            return isOk;
+            if(onOff) Program.Logger.Add("设置开机自启");
+            else Program.Logger.Add("关闭开机自启");
+            return SetAutoStart(onOff, appName, appPath);
         }
 
         /// <summary>
@@ -31,20 +31,23 @@ namespace SeewoHelper.Utilities
         /// <param name="appPath">应用程序完全路径</param>
         public static bool SetAutoStart(bool onOff, string appName, string appPath)
         {
-            bool isOk = true;
             //如果从没有设为开机启动设置到要设为开机启动
             if (!IsExistKey(appName) && onOff)
             {
-                isOk = SelfRunning(onOff, appName, @appPath);
+                return SelfRunning(onOff, appName, @appPath);
             }
             //如果从设为开机启动设置到不要设为开机启动
             else if (IsExistKey(appName) && !onOff)
             {
-                isOk = SelfRunning(onOff, appName, @appPath);
+                return SelfRunning(onOff, appName, @appPath);
             }
-            return isOk;
+            //否则直接返回true
+            return true;
         }
 
+        /// <summary>
+        /// 判断当前程序是否开机自启
+        /// </summary>
         public static bool IsAutoStart()
         {
             return IsExistKey(Process.GetCurrentProcess().MainModule.ModuleName);
@@ -130,7 +133,6 @@ namespace SeewoHelper.Utilities
                 string ss = ex.Message;
                 return false;
             }
-
             return true;
         }
     }

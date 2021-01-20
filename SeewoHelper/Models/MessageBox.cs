@@ -17,6 +17,7 @@ namespace SeewoHelper
         /// </summary>
         public static bool ShowAsk(string text, bool showMask = false)
         {
+            Program.Logger.Add($"弹出询问信息提示框 , text = {text} , showMask = {showMask}");
             return Show(text, "询问", showMask, UIMessageBoxButtons.OKCancel);
         }
 
@@ -25,6 +26,7 @@ namespace SeewoHelper
         /// </summary>
         public static void ShowError(string text, bool showMask = false)
         {
+            Program.Logger.Add($"弹出错误信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "错误", showMask);
         }
 
@@ -33,6 +35,7 @@ namespace SeewoHelper
         /// </summary>
         public static void ShowInfo(string text, bool showMask = false)
         {
+            Program.Logger.Add($"弹出信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "提示", showMask);
         }
 
@@ -41,6 +44,7 @@ namespace SeewoHelper
         /// </summary>
         public static void ShowSuccess(string text, bool showMask = false)
         {
+            Program.Logger.Add($"弹出成功信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "成功", showMask);
         }
 
@@ -49,6 +53,7 @@ namespace SeewoHelper
         /// </summary>
         public static void ShowWarning(string text, bool showMask = false)
         {
+            Program.Logger.Add($"弹出警告信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "警告", showMask);
         }
     }
