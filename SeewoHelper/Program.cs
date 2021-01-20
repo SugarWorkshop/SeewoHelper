@@ -50,7 +50,7 @@ namespace SeewoHelper
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            (e.ExceptionObject as Exception).ShowAndLog(Logger, e.IsTerminating);
+            (e.ExceptionObject as Exception)?.ShowAndLog(Logger, e.IsTerminating);
         }
     }
 }
