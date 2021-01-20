@@ -52,7 +52,6 @@ namespace SeewoHelper.Forms
             this.listBoxRelease.Name = "listBoxRelease";
             this.listBoxRelease.Padding = new System.Windows.Forms.Padding(2);
             this.listBoxRelease.Size = new System.Drawing.Size(294, 325);
-            this.listBoxRelease.Style = Sunny.UI.UIStyle.LightBlue;
             this.listBoxRelease.TabIndex = 0;
             this.listBoxRelease.Text = null;
             this.listBoxRelease.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -88,7 +87,6 @@ namespace SeewoHelper.Forms
             this.checkBoxFastGit.Name = "checkBoxFastGit";
             this.checkBoxFastGit.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxFastGit.Size = new System.Drawing.Size(144, 36);
-            this.checkBoxFastGit.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxFastGit.TabIndex = 1;
             this.checkBoxFastGit.Text = "使用FastGit加速";
             // 
@@ -102,12 +100,11 @@ namespace SeewoHelper.Forms
             this.labelVersion.Location = new System.Drawing.Point(3, 0);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(296, 32);
-            this.labelVersion.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelVersion.TabIndex = 2;
             this.labelVersion.Text = "当前版本";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UpdateReleaseChooseWindow
+            // ReleaseAssetDownloadingWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -116,8 +113,7 @@ namespace SeewoHelper.Forms
             this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "UpdateReleaseChooseWindow";
-            this.Style = Sunny.UI.UIStyle.LightBlue;
+            this.Name = "ReleaseAssetDownloadingWindow";
             this.Text = "双击Release以下载";
             this.Load += new System.EventHandler(this.UpdateReleaseChooseWindow_Load);
             this.tableLayoutPanel.ResumeLayout(false);

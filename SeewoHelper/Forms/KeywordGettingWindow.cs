@@ -1,4 +1,5 @@
-﻿using Sunny.UI;
+﻿using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 
@@ -42,7 +43,7 @@ namespace SeewoHelper.Forms
         {
             if (string.IsNullOrWhiteSpace(textBoxPattern.Text) || comboBoxMatchingWay.SelectedIndex == -1)
             {
-                MessageBox.ShowError("内容不可为空！");
+                MessageBoxUtilities.ShowError("内容不可为空！");
             }
             else
             {

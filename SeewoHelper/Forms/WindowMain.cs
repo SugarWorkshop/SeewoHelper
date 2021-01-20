@@ -48,6 +48,7 @@ namespace SeewoHelper.Forms
         private void ButtonGettingCoursewareSortingSearchingPath_Click(object sender, EventArgs e)
         {
             textBoxCoursewareSortingSearchingPath.Text = FolderBrowserDialogUtilities.GetFilePath();
+            UpdateSubjectStorageInfoConfig();
         }
 
         private void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace SeewoHelper.Forms
 
                 if (infos.Any(x => x.Path == path))
                 {
-                    MessageBox.ShowError("整理目标目录与搜索目录路径相同！");
+                    MessageBoxUtilities.ShowError("整理目标目录与搜索目录路径相同！");
                 }
                 else
                 {
@@ -72,12 +73,12 @@ namespace SeewoHelper.Forms
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
                     sorter.SortMore();
 
-                    MessageBox.ShowSuccess("已完成！");
+                    MessageBoxUtilities.ShowSuccess("已完成！");
                 }
             }
             else
             {
-                MessageBox.ShowError("非法路径或指定目录不存在！");
+                MessageBoxUtilities.ShowError("非法路径或指定目录不存在！");
             }
         }
 
@@ -142,12 +143,13 @@ namespace SeewoHelper.Forms
         private void UpdateSubjectStorageInfoConfig()
         {
             var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
-            Configurations.CoursewareSortingInfoConfig.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
+            Configurations.CoursewareSortingInfo.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
+            Configurations.CoursewareSortingInfo.Save();
         }
 
         private void LoadSubjectStorageInfoConfig()
         {
-            var info = Configurations.CoursewareSortingInfoConfig.Content;
+            var info = Configurations.CoursewareSortingInfo.Content;
 
             foreach (var subject in info.Subjects)
             {
@@ -185,11 +187,6 @@ namespace SeewoHelper.Forms
             Application.Exit();
         }
 
-        private void TextBoxCoursewareSortingSearchingPath_TextChanged(object sender, EventArgs e)
-        {
-            UpdateSubjectStorageInfoConfig();
-        }
-
         private void ToolStripMenuItemShowAbout_Click(object sender, EventArgs e)
         {
             new AboutWindow().ShowDialog();
@@ -202,12 +199,20 @@ namespace SeewoHelper.Forms
 
         private void ComboBoxStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.FormStyleController.SetStyle((UIStyle)comboBoxStyle.SelectedItem);
+            var style = (UIStyle)comboBoxStyle.SelectedItem;
+            Program.FormStyleController.SetStyle(style);
+            Configurations.UISettings.Content.Style = style;
+            Configurations.UISettings.Save();
         }
 
         private void CheckBoxAutoStart_ValueChanged(object sender, bool value)
         {
             AutoStartUtilities.SetMeStart(checkBoxAutoStart.Checked);
+        }
+
+        private void TextBoxCoursewareSortingSearchingPath_Leave(object sender, EventArgs e)
+        {
+            UpdateSubjectStorageInfoConfig();
         }
     }
 }

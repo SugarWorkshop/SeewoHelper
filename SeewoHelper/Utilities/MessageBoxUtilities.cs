@@ -1,8 +1,8 @@
 ﻿using Sunny.UI;
 
-namespace SeewoHelper
+namespace SeewoHelper.Utilities
 {
-    public class MessageBox
+    public class MessageBoxUtilities
     {
         /// <summary>
         /// 显示提示框

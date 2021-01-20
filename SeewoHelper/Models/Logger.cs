@@ -8,7 +8,7 @@ namespace SeewoHelper
     /// <summary>
     /// 定义日志记录器
     /// </summary>
-    public class Logger : ObservableCollection<Log>, IDisposable
+    public class Logger : ObservableCollection<Log>
     {
         /// <summary>
         /// 文件路径
@@ -35,13 +35,6 @@ namespace SeewoHelper
             {
                 return false;
             }
-        }
-
-        /// <inheritdoc/>
-        public void Dispose()
-        {
-            Save();
-            GC.SuppressFinalize(this);
         }
 
         /// <inheritdoc/>

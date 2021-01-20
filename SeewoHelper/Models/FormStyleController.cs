@@ -8,13 +8,11 @@ namespace SeewoHelper
     {
         private readonly List<UIForm> _forms = new List<UIForm>();
 
-        private UIStyle? _currentStyle = null;
-
-        public UIStyle CurrentStyle => _currentStyle.Value;
+        public UIStyle CurrentStyle { get; private set; } = UIStyle.Custom;
 
         public void SetStyle(UIStyle style)
         {
-            _currentStyle = style;
+            CurrentStyle = style;
 
             foreach (var form in _forms)
             {
@@ -25,10 +23,7 @@ namespace SeewoHelper
         public void Initialize(UIForm form)
         {
             _forms.Add(form);
-
-            _currentStyle ??= form.Style;
             form.Style = CurrentStyle;
-            
             form.FormClosed += Form_FormClosed;
         }
 
