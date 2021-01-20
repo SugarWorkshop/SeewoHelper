@@ -90,7 +90,6 @@ namespace SeewoHelper.Utilities
                             return exists;
                         }
                     }
-                return _exist;
 
                     return exists;
                 }
@@ -143,10 +142,8 @@ namespace SeewoHelper.Utilities
             }
             catch
             {
-                string ss = ex.Message;
                 return false;
             }
-            return true;
         }
     }
 }
