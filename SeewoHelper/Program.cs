@@ -43,7 +43,7 @@ namespace SeewoHelper
             }
             else
             {
-                MessageBox.Show("程序已经在运行了！");
+                MessageBoxExtensions.ShowError("程序已经在运行了！");
             }
         }
 

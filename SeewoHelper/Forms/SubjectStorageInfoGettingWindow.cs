@@ -3,7 +3,6 @@ using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
@@ -41,11 +40,11 @@ namespace SeewoHelper.Forms
         {
             if (SystemUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text) || !_keywords.Any())
             {
-                MessageBox.Show("请输入内容！");
+                MessageBoxExtensions.ShowError("内容不可为空！");
             }
             else if (!(IOUtilities.IsProperPath(textBoxPath.Text) && IOUtilities.GetPathType(textBoxPath.Text, true) == PathType.Directionary))
             {
-                MessageBox.Show("请输入合法路径！");
+                MessageBoxExtensions.ShowError("路径不合法！");
             }
             else
             {

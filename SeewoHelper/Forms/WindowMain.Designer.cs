@@ -127,12 +127,17 @@
             // buttonStartCoursewareSorting
             // 
             this.buttonStartCoursewareSorting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStartCoursewareSorting.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonStartCoursewareSorting.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonStartCoursewareSorting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(689, 400);
             this.buttonStartCoursewareSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartCoursewareSorting.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonStartCoursewareSorting.Name = "buttonStartCoursewareSorting";
+            this.buttonStartCoursewareSorting.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartCoursewareSorting.Size = new System.Drawing.Size(93, 34);
+            this.buttonStartCoursewareSorting.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonStartCoursewareSorting.TabIndex = 16;
             this.buttonStartCoursewareSorting.Text = "整理";
             this.buttonStartCoursewareSorting.Click += new System.EventHandler(this.ButtonStartCoursewareSorting_Click);
@@ -140,12 +145,17 @@
             // buttonGettingCoursewareSortingSearchingPath
             // 
             this.buttonGettingCoursewareSortingSearchingPath.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGettingCoursewareSortingSearchingPath.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonGettingCoursewareSortingSearchingPath.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonGettingCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGettingCoursewareSortingSearchingPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(769, 8);
             this.buttonGettingCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGettingCoursewareSortingSearchingPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonGettingCoursewareSortingSearchingPath.Name = "buttonGettingCoursewareSortingSearchingPath";
+            this.buttonGettingCoursewareSortingSearchingPath.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(28, 25);
+            this.buttonGettingCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonGettingCoursewareSortingSearchingPath.TabIndex = 15;
             this.buttonGettingCoursewareSortingSearchingPath.Text = "...";
             this.buttonGettingCoursewareSortingSearchingPath.Click += new System.EventHandler(this.ButtonGettingCoursewareSortingSearchingPath_Click);
@@ -158,7 +168,7 @@
             this.labelCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCoursewareSortingSearchingPath.Name = "labelCoursewareSortingSearchingPath";
             this.labelCoursewareSortingSearchingPath.Size = new System.Drawing.Size(74, 19);
-            this.labelCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.Custom;
+            this.labelCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelCoursewareSortingSearchingPath.TabIndex = 13;
             this.labelCoursewareSortingSearchingPath.Text = "搜索路径：";
             this.labelCoursewareSortingSearchingPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,6 +186,7 @@
             this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
             this.textBoxCoursewareSortingSearchingPath.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(672, 25);
+            this.textBoxCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
             this.textBoxCoursewareSortingSearchingPath.TextChanged += new System.EventHandler(this.TextBoxCoursewareSortingSearchingPath_TextChanged);
             // 
@@ -200,12 +211,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSubjectStorageInfoAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSubjectStorageInfoAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonSubjectStorageInfoAdd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonSubjectStorageInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSubjectStorageInfoAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonSubjectStorageInfoAdd.Location = new System.Drawing.Point(4, 4);
             this.buttonSubjectStorageInfoAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubjectStorageInfoAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonSubjectStorageInfoAdd.Name = "buttonSubjectStorageInfoAdd";
+            this.buttonSubjectStorageInfoAdd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonSubjectStorageInfoAdd.Size = new System.Drawing.Size(91, 32);
+            this.buttonSubjectStorageInfoAdd.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonSubjectStorageInfoAdd.TabIndex = 0;
             this.buttonSubjectStorageInfoAdd.Text = "添加";
             this.buttonSubjectStorageInfoAdd.Click += new System.EventHandler(this.ButtonSubjectStorageInfoAdd_Click);
@@ -216,12 +232,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSubjectInfoStorageRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSubjectInfoStorageRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonSubjectInfoStorageRemove.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonSubjectInfoStorageRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSubjectInfoStorageRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonSubjectInfoStorageRemove.Location = new System.Drawing.Point(103, 4);
             this.buttonSubjectInfoStorageRemove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubjectInfoStorageRemove.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonSubjectInfoStorageRemove.Name = "buttonSubjectInfoStorageRemove";
+            this.buttonSubjectInfoStorageRemove.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonSubjectInfoStorageRemove.Size = new System.Drawing.Size(91, 32);
+            this.buttonSubjectInfoStorageRemove.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonSubjectInfoStorageRemove.TabIndex = 1;
             this.buttonSubjectInfoStorageRemove.Text = "删除";
             this.buttonSubjectInfoStorageRemove.Click += new System.EventHandler(this.ButtonSubjectInfoRemove_Click);
@@ -246,6 +267,7 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(801, 493);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl.Style = Sunny.UI.UIStyle.LightBlue;
             this.tabControl.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabControl.TabIndex = 1;
             this.tabControl.TabSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -273,6 +295,7 @@
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(426, 22);
+            this.checkBoxDisableServiceShellHardwareDetection.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
             this.checkBoxDisableServiceShellHardwareDetection.Text = "关闭U盘插入提示修复（禁用Shell Hardware Detection服务）";
             // 
@@ -310,7 +333,7 @@
             this.labelStyle.Location = new System.Drawing.Point(3, 0);
             this.labelStyle.Name = "labelStyle";
             this.labelStyle.Size = new System.Drawing.Size(50, 42);
-            this.labelStyle.Style = Sunny.UI.UIStyle.Custom;
+            this.labelStyle.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelStyle.TabIndex = 1;
             this.labelStyle.Text = "皮肤";
             this.labelStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -322,12 +345,15 @@
             this.comboBoxStyle.FillColor = System.Drawing.Color.White;
             this.comboBoxStyle.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxStyle.FormattingEnabled = true;
+            this.comboBoxStyle.ItemHeight = 33;
             this.comboBoxStyle.Location = new System.Drawing.Point(60, 6);
             this.comboBoxStyle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxStyle.MaxDropDownItems = 6;
             this.comboBoxStyle.MinimumSize = new System.Drawing.Size(63, 0);
             this.comboBoxStyle.Name = "comboBoxStyle";
             this.comboBoxStyle.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.comboBoxStyle.Size = new System.Drawing.Size(162, 29);
+            this.comboBoxStyle.Style = Sunny.UI.UIStyle.LightBlue;
             this.comboBoxStyle.TabIndex = 0;
             this.comboBoxStyle.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.comboBoxStyle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxStyle_SelectedIndexChanged);
@@ -360,6 +386,7 @@
             this.textBoxLogs.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxLogs.ReadOnly = true;
             this.textBoxLogs.Size = new System.Drawing.Size(793, 443);
+            this.textBoxLogs.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxLogs.TabIndex = 0;
             this.textBoxLogs.WordWarp = false;
             // 
@@ -444,6 +471,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowMain";
+            this.Style = Sunny.UI.UIStyle.LightBlue;
             this.Text = "SeewoHelper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);

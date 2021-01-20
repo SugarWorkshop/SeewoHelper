@@ -60,7 +60,7 @@ namespace SeewoHelper.Forms
 
                 if (infos.Any(x => x.Path == path))
                 {
-                    MessageBox.Show("整理目标目录与搜索目录路径相同！");
+                    MessageBoxExtensions.ShowError("整理目标目录与搜索目录路径相同！");
                 }
                 else
                 {
@@ -72,12 +72,12 @@ namespace SeewoHelper.Forms
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
                     sorter.SortMore();
 
-                    MessageBox.Show("完成！");
+                    MessageBoxExtensions.ShowSuccess("已完成！");
                 }
             }
             else
             {
-                MessageBox.Show("非法路径或指定目录不存在！");
+                MessageBoxExtensions.ShowError("非法路径或指定目录不存在！");
             }
         }
 

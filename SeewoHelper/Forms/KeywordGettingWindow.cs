@@ -1,7 +1,6 @@
 ﻿using Sunny.UI;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
 {
@@ -43,7 +42,7 @@ namespace SeewoHelper.Forms
         {
             if (string.IsNullOrWhiteSpace(textBoxPattern.Text) || comboBoxMatchingWay.SelectedIndex == -1)
             {
-                MessageBox.Show("请输入内容！");
+                MessageBoxExtensions.ShowError("内容不可为空！");
             }
             else
             {
