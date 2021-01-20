@@ -10,7 +10,7 @@ namespace SeewoHelper.Forms
         public AboutWindow()
         {
             InitializeComponent();
-            Program.style.OnStyleChange += Style_OnStyleChanged;
+            Program.FormStyleController.Initialize(this);
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)

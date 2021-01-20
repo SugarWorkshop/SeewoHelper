@@ -14,7 +14,7 @@ namespace SeewoHelper.Forms
         public KeywordEditWindow()
         {
             InitializeComponent();
-            Program.style.OnStyleChange += Style_OnStyleChanged;
+            Program.FormStyleController.Initialize(this);
         }
 
         public List<Keyword> GetResult(List<Keyword> list)
@@ -71,13 +71,7 @@ namespace SeewoHelper.Forms
         private void KeywordEditWindow_Load(object sender, EventArgs e)
         {
             Program.Logger.Add("开始加载 KeywordEditWindow");
-            Style = Program.style.ProgramStyle;
             Program.Logger.Add("KeywordEditWindow 加载完成");
-        }
-
-        private void Style_OnStyleChanged(object sender, EventArgs e)
-        {
-            Style = Program.style.ProgramStyle;
         }
     }
 }

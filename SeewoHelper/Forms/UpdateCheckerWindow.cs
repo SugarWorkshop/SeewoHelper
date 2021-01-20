@@ -12,7 +12,7 @@ namespace SeewoHelper.Forms
         public UpdateCheckerWindow()
         {
             InitializeComponent();
-            Program.style.OnStyleChange += Style_OnStyleChanged;
+            Program.FormStyleController.Initialize(this);
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
@@ -23,7 +23,6 @@ namespace SeewoHelper.Forms
         private async void UpgradeWindow_Load(object sender, EventArgs e)
         {
             Program.Logger.Add("开始加载 UpdateCheckerWindow");
-            Style = Program.style.ProgramStyle;
 
             await _updater.GetInfo();
 
@@ -35,17 +34,12 @@ namespace SeewoHelper.Forms
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new UpdateReleaseChooseWindow(_updater.Release).ShowDialog();
+            new ReleaseAssetDownloadingWindow(_updater.Release).ShowDialog();
         }
 
         private void LinkLabelPreRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new UpdateReleaseChooseWindow(_updater.Prerelease).ShowDialog();
-        }
-
-        private void Style_OnStyleChanged(object sender, EventArgs e)
-        {
-            Style = Program.style.ProgramStyle;
+            new ReleaseAssetDownloadingWindow(_updater.Prerelease).ShowDialog();
         }
     }
 }

@@ -48,7 +48,6 @@
             this.ButtonOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ButtonOK.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ButtonOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.ButtonOK.Location = new System.Drawing.Point(284, 282);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ButtonOK.MinimumSize = new System.Drawing.Size(1, 1);
@@ -70,7 +69,6 @@
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(384, 82);
-            this.labelTitle.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "检查更新";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,7 +123,6 @@
             this.labelPreRelease.Location = new System.Drawing.Point(3, 72);
             this.labelPreRelease.Name = "labelPreRelease";
             this.labelPreRelease.Size = new System.Drawing.Size(186, 73);
-            this.labelPreRelease.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelPreRelease.TabIndex = 1;
             this.labelPreRelease.Text = "最新开发版：";
             this.labelPreRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,7 +143,6 @@
             this.linkLabelRelease.Location = new System.Drawing.Point(195, 0);
             this.linkLabelRelease.Name = "linkLabelRelease";
             this.linkLabelRelease.Size = new System.Drawing.Size(186, 72);
-            this.linkLabelRelease.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelRelease.TabIndex = 2;
             this.linkLabelRelease.TabStop = true;
             this.linkLabelRelease.Text = "检测中……";
@@ -171,7 +167,6 @@
             this.linkLabelPrerelease.Location = new System.Drawing.Point(195, 72);
             this.linkLabelPrerelease.Name = "linkLabelPrerelease";
             this.linkLabelPrerelease.Size = new System.Drawing.Size(186, 73);
-            this.linkLabelPrerelease.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelPrerelease.TabIndex = 3;
             this.linkLabelPrerelease.TabStop = true;
             this.linkLabelPrerelease.Text = "检测中……";
@@ -190,7 +185,6 @@
             this.labelRelease.Location = new System.Drawing.Point(3, 0);
             this.labelRelease.Name = "labelRelease";
             this.labelRelease.Size = new System.Drawing.Size(186, 72);
-            this.labelRelease.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelRelease.TabIndex = 0;
             this.labelRelease.Text = "最新正式版：";
             this.labelRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

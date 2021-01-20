@@ -9,16 +9,28 @@ namespace SeewoHelper
     public class CoursewareSortingInfo
     {
         /// <summary>
+        /// 默认值
+        /// </summary>
+        public static CoursewareSortingInfo Default => new CoursewareSortingInfo();
+
+        /// <summary>
         /// 搜索目录路径
         /// </summary>
         [JsonPropertyName("path")]
-        public string Path { get; }
+        public string Path { get; } = string.Empty;
 
         /// <summary>
         /// <see cref="SubjectStorageInfo"/> 列表
         /// </summary>
         [JsonPropertyName("subjects")]
-        public List<SubjectStorageInfo> Subjects { get; }
+        public List<SubjectStorageInfo> Subjects { get; } = new List<SubjectStorageInfo>();
+
+        /// <summary>
+        /// 创建 <see cref="CoursewareSortingInfo"/> 实例
+        /// </summary>
+        private CoursewareSortingInfo()
+        {
+        }
 
         /// <summary>
         /// 创建 <see cref="CoursewareSortingInfo"/> 实例

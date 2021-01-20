@@ -19,7 +19,8 @@ namespace SeewoHelper
         /// <summary>
         /// 使用FastGit加速的下载链接
         /// </summary>
-        public string FastGitUrl;
+        [JsonIgnore]
+        public string FastGitUrl { get; }
 
         [JsonConstructor]
         public AssetInfo(string url, string name)

@@ -9,25 +9,12 @@ namespace SeewoHelper
     /// 表示配置
     /// </summary>
     /// <typeparam name="T">配置类型</typeparam>
-    public class Configuration<T> : IDisposable
+    public class Configuration<T>
     {
         /// <summary>
         /// 配置内容
         /// </summary>
-        private T _content;
-
-        /// <summary>
-        /// 配置内容
-        /// </summary>
-        public T Content
-        {
-            get => _content;
-            set
-            {
-                _content = value;
-                TrySave();
-            }
-        }
+        public T Content { get; set; }
 
         /// <summary>
         /// 文件路径
@@ -50,31 +37,7 @@ namespace SeewoHelper
         /// <summary>
         /// 保存
         /// </summary>
-        private void Save() => File.WriteAllText(Path, JsonSerializer.Serialize(Content));
-
-        /// <summary>
-        /// 尝试保存
-        /// </summary>
-        /// <returns>成功则返回 <see langword="true"/>，失败则返回 <see langword="false"/></returns>
-        private bool TrySave()
-        {
-            try
-            {
-                Save();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        /// <inheritdoc/>
-        public void Dispose()
-        {
-            Save();
-            GC.SuppressFinalize(this);
-        }
+        public void Save() => File.WriteAllText(Path, JsonSerializer.Serialize(Content));
 
         /// <summary>
         /// 创建 <see cref="Configuration{T}"/> 实例

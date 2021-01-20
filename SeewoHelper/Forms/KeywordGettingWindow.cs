@@ -1,4 +1,5 @@
-﻿using Sunny.UI;
+﻿using SeewoHelper.Utilities;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 
@@ -18,7 +19,7 @@ namespace SeewoHelper.Forms
         public KeywordGettingWindow()
         {
             InitializeComponent();
-            Program.style.OnStyleChange += Style_OnStyleChanged;
+            Program.FormStyleController.Initialize(this);
         }
 
         public Keyword GetResult(Keyword keyword = null)
@@ -42,7 +43,7 @@ namespace SeewoHelper.Forms
         {
             if (string.IsNullOrWhiteSpace(textBoxPattern.Text) || comboBoxMatchingWay.SelectedIndex == -1)
             {
-                MessageBox.ShowError("内容不可为空！");
+                MessageBoxUtilities.ShowError("内容不可为空！");
             }
             else
             {
@@ -59,13 +60,7 @@ namespace SeewoHelper.Forms
         private void KeywordGettingWindow_Load(object sender, EventArgs e)
         {
             Program.Logger.Add("开始加载 KeywordGettingWindow");
-            Style = Program.style.ProgramStyle;
             Program.Logger.Add("KeywordGettingWindow 加载完成");
-        }
-
-        private void Style_OnStyleChanged(object sender, EventArgs e)
-        {
-            Style = Program.style.ProgramStyle;
         }
     }
 }

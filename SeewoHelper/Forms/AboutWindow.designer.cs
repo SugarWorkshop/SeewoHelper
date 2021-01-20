@@ -108,7 +108,6 @@
             this.labelContributors.Location = new System.Drawing.Point(3, 0);
             this.labelContributors.Name = "labelContributors";
             this.labelContributors.Size = new System.Drawing.Size(361, 52);
-            this.labelContributors.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelContributors.TabIndex = 1;
             this.labelContributors.Text = "贡献者";
             this.labelContributors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,7 +200,6 @@
             this.labelVersion.Location = new System.Drawing.Point(3, 69);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(361, 69);
-            this.labelVersion.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "应用版本：";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -216,7 +214,6 @@
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(361, 69);
-            this.labelTitle.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "SeewoHelper";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

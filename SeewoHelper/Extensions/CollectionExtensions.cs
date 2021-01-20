@@ -7,7 +7,7 @@ namespace SeewoHelper
     /// <summary>
     /// 提供 <see cref="System.Collections"/> 命名空间下相关的扩展方法
     /// </summary>
-    internal static class CollectionExtensions
+    public static class CollectionExtensions
     {
         /// <summary>
         /// 添加元素，并返回所添加的元素

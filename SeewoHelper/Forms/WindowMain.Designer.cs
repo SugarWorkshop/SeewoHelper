@@ -189,7 +189,7 @@
             this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(672, 25);
             this.textBoxCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
-            this.textBoxCoursewareSortingSearchingPath.TextChanged += new System.EventHandler(this.TextBoxCoursewareSortingSearchingPath_TextChanged);
+            this.textBoxCoursewareSortingSearchingPath.Leave += new System.EventHandler(this.TextBoxCoursewareSortingSearchingPath_Leave);
             // 
             // tableLayoutPanelSubjectStorageInfoListControlButtons
             // 
