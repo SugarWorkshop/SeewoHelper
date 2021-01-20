@@ -40,11 +40,11 @@ namespace SeewoHelper.Forms
         {
             if (SystemUtilities.IsNullOrWhiteSpace(textBoxName.Text, textBoxPath.Text) || !_keywords.Any())
             {
-                MessageBoxExtensions.ShowError("内容不可为空！");
+                MessageBox.ShowError("内容不可为空！");
             }
             else if (!(IOUtilities.IsProperPath(textBoxPath.Text) && IOUtilities.GetPathType(textBoxPath.Text, true) == PathType.Directionary))
             {
-                MessageBoxExtensions.ShowError("路径不合法！");
+                MessageBox.ShowError("路径不合法！");
             }
             else
             {

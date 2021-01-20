@@ -60,7 +60,7 @@ namespace SeewoHelper.Forms
 
                 if (infos.Any(x => x.Path == path))
                 {
-                    MessageBoxExtensions.ShowError("整理目标目录与搜索目录路径相同！");
+                    MessageBox.ShowError("整理目标目录与搜索目录路径相同！");
                 }
                 else
                 {
@@ -72,12 +72,12 @@ namespace SeewoHelper.Forms
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
                     sorter.SortMore();
 
-                    MessageBoxExtensions.ShowSuccess("已完成！");
+                    MessageBox.ShowSuccess("已完成！");
                 }
             }
             else
             {
-                MessageBoxExtensions.ShowError("非法路径或指定目录不存在！");
+                MessageBox.ShowError("非法路径或指定目录不存在！");
             }
         }
 
@@ -89,6 +89,7 @@ namespace SeewoHelper.Forms
             CreateServiceCheckBox();
             Style = Program.style.ProgramStyle;
             LoadComboBoxStyle();
+            checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Add("WindowMain 加载完成");
         }
 
@@ -212,6 +213,11 @@ namespace SeewoHelper.Forms
         private void Style_OnStyleChanged(object sender, EventArgs e)
         {
             Style = Program.style.ProgramStyle;
+        }
+
+        private void CheckBoxAutoStart_ValueChanged(object sender, bool value)
+        {
+            AutoStartUtilities.SetMeStart(checkBoxAutoStart.Checked);        
         }
     }
 }

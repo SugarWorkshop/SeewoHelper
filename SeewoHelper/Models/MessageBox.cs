@@ -2,10 +2,7 @@
 
 namespace SeewoHelper
 {
-    /// <summary>
-    /// 提供 <see cref="Sunny.UI.UIMessageBox"/> 类下相关的扩展方法
-    /// </summary>
-    internal class MessageBoxExtensions
+    internal class MessageBox
     {
         /// <summary>
         /// 显示提示框

@@ -46,6 +46,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.checkBoxAutoStart = new Sunny.UI.UICheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelStyle = new Sunny.UI.UILabel();
             this.comboBoxStyle = new Sunny.UI.UIComboBox();
@@ -301,6 +302,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.checkBoxAutoStart);
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
             this.tabPage3.Location = new System.Drawing.Point(0, 40);
             this.tabPage3.Name = "tabPage3";
@@ -308,6 +310,20 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "设置";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAutoStart
+            // 
+            this.checkBoxAutoStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxAutoStart.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxAutoStart.Location = new System.Drawing.Point(6, 51);
+            this.checkBoxAutoStart.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxAutoStart.Name = "checkBoxAutoStart";
+            this.checkBoxAutoStart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxAutoStart.Size = new System.Drawing.Size(123, 25);
+            this.checkBoxAutoStart.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxAutoStart.TabIndex = 2;
+            this.checkBoxAutoStart.Text = "开机自动启动";
+            this.checkBoxAutoStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxAutoStart_ValueChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -519,6 +535,7 @@
         private Sunny.UI.UIComboBox comboBoxStyle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Sunny.UI.UILabel labelStyle;
+        private Sunny.UI.UICheckBox checkBoxAutoStart;
     }
 }
 

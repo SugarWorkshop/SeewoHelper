@@ -42,7 +42,7 @@ namespace SeewoHelper.Forms
         {
             if (string.IsNullOrWhiteSpace(textBoxPattern.Text) || comboBoxMatchingWay.SelectedIndex == -1)
             {
-                MessageBoxExtensions.ShowError("内容不可为空！");
+                MessageBox.ShowError("内容不可为空！");
             }
             else
             {
