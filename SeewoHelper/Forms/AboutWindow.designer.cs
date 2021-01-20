@@ -52,7 +52,7 @@
             this.ButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ButtonOK.Location = new System.Drawing.Point(271, 296);
+            this.ButtonOK.Location = new System.Drawing.Point(271, 302);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ButtonOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.ButtonOK.Name = "ButtonOK";
@@ -69,7 +69,7 @@
             this.tabPage2.Location = new System.Drawing.Point(0, 40);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(367, 209);
+            this.tabPage2.Size = new System.Drawing.Size(367, 215);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "贡献者";
             // 
@@ -90,7 +90,7 @@
             this.tableLayoutPanelPage2.RowCount = 2;
             this.tableLayoutPanelPage2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelPage2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanelPage2.Size = new System.Drawing.Size(367, 209);
+            this.tableLayoutPanelPage2.Size = new System.Drawing.Size(367, 215);
             this.tableLayoutPanelPage2.TabIndex = 1;
             // 
             // labelContributors
@@ -102,7 +102,8 @@
             this.labelContributors.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelContributors.Location = new System.Drawing.Point(3, 0);
             this.labelContributors.Name = "labelContributors";
-            this.labelContributors.Size = new System.Drawing.Size(361, 52);
+            this.labelContributors.Size = new System.Drawing.Size(361, 53);
+            this.labelContributors.Style = Sunny.UI.UIStyle.Custom;
             this.labelContributors.TabIndex = 1;
             this.labelContributors.Text = "贡献者";
             this.labelContributors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,7 +117,7 @@
             this.textBoxContributors.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxContributors.FillColor = System.Drawing.Color.White;
             this.textBoxContributors.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContributors.Location = new System.Drawing.Point(4, 57);
+            this.textBoxContributors.Location = new System.Drawing.Point(4, 58);
             this.textBoxContributors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxContributors.Maximum = 2147483647D;
             this.textBoxContributors.Minimum = -2147483648D;
@@ -126,7 +127,7 @@
             this.textBoxContributors.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxContributors.ReadOnly = true;
             this.textBoxContributors.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
-            this.textBoxContributors.Size = new System.Drawing.Size(359, 147);
+            this.textBoxContributors.Size = new System.Drawing.Size(359, 152);
             this.textBoxContributors.TabIndex = 2;
             this.textBoxContributors.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -138,7 +139,7 @@
             this.tabPage1.Location = new System.Drawing.Point(0, 40);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(367, 209);
+            this.tabPage1.Size = new System.Drawing.Size(367, 215);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "关于";
             // 
@@ -169,13 +170,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelGithub.AutoSize = true;
             this.linkLabelGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.linkLabelGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelGithub.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabelGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.linkLabelGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelGithub.Location = new System.Drawing.Point(3, 138);
             this.linkLabelGithub.Name = "linkLabelGithub";
             this.linkLabelGithub.Size = new System.Drawing.Size(361, 71);
+            this.linkLabelGithub.Style = Sunny.UI.UIStyle.Custom;
             this.linkLabelGithub.TabIndex = 1;
             this.linkLabelGithub.TabStop = true;
             this.linkLabelGithub.Text = "Github";
@@ -189,10 +191,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelVersion.Location = new System.Drawing.Point(3, 69);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(361, 69);
+            this.labelVersion.Style = Sunny.UI.UIStyle.Custom;
             this.labelVersion.TabIndex = 1;
             this.labelVersion.Text = "应用版本：";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,10 +206,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(361, 69);
+            this.labelTitle.Style = Sunny.UI.UIStyle.Custom;
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "SeewoHelper";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,7 +231,7 @@
             this.tabControl.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(367, 249);
+            this.tabControl.Size = new System.Drawing.Size(367, 255);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabControl.TabIndex = 1;

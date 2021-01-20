@@ -50,7 +50,7 @@ namespace SeewoHelper.Forms
             this.tableLayoutPanelButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelButton.Controls.Add(this.buttonOK, 0, 0);
             this.tableLayoutPanelButton.Controls.Add(this.buttonCancel, 1, 0);
-            this.tableLayoutPanelButton.Location = new System.Drawing.Point(700, 145);
+            this.tableLayoutPanelButton.Location = new System.Drawing.Point(690, 143);
             this.tableLayoutPanelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelButton.Name = "tableLayoutPanelButton";
             this.tableLayoutPanelButton.RowCount = 1;
@@ -98,7 +98,7 @@ namespace SeewoHelper.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(18, 44);
+            this.label1.Location = new System.Drawing.Point(3, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 6;
@@ -109,7 +109,7 @@ namespace SeewoHelper.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(18, 76);
+            this.label2.Location = new System.Drawing.Point(3, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 7;
@@ -120,7 +120,7 @@ namespace SeewoHelper.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(31, 110);
+            this.label3.Location = new System.Drawing.Point(3, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 8;
@@ -132,14 +132,14 @@ namespace SeewoHelper.Forms
             this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxName.FillColor = System.Drawing.Color.White;
             this.textBoxName.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxName.Location = new System.Drawing.Point(98, 44);
+            this.textBoxName.Location = new System.Drawing.Point(83, 44);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxName.Maximum = 2147483647D;
             this.textBoxName.Minimum = -2147483648D;
             this.textBoxName.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxName.Size = new System.Drawing.Size(797, 25);
+            this.textBoxName.Size = new System.Drawing.Size(815, 25);
             this.textBoxName.TabIndex = 9;
             // 
             // textBoxPath
@@ -147,14 +147,14 @@ namespace SeewoHelper.Forms
             this.textBoxPath.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxPath.FillColor = System.Drawing.Color.White;
             this.textBoxPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPath.Location = new System.Drawing.Point(98, 76);
+            this.textBoxPath.Location = new System.Drawing.Point(83, 76);
             this.textBoxPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPath.Maximum = 2147483647D;
             this.textBoxPath.Minimum = -2147483648D;
             this.textBoxPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPath.Size = new System.Drawing.Size(753, 25);
+            this.textBoxPath.Size = new System.Drawing.Size(768, 25);
             this.textBoxPath.TabIndex = 10;
             // 
             // textBoxKeywords
@@ -162,7 +162,7 @@ namespace SeewoHelper.Forms
             this.textBoxKeywords.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxKeywords.FillColor = System.Drawing.Color.White;
             this.textBoxKeywords.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxKeywords.Location = new System.Drawing.Point(98, 110);
+            this.textBoxKeywords.Location = new System.Drawing.Point(83, 110);
             this.textBoxKeywords.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxKeywords.Maximum = 2147483647D;
             this.textBoxKeywords.Minimum = -2147483648D;
@@ -170,18 +170,18 @@ namespace SeewoHelper.Forms
             this.textBoxKeywords.Name = "textBoxKeywords";
             this.textBoxKeywords.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxKeywords.ReadOnly = true;
-            this.textBoxKeywords.Size = new System.Drawing.Size(753, 25);
+            this.textBoxKeywords.Size = new System.Drawing.Size(768, 25);
             this.textBoxKeywords.TabIndex = 11;
             // 
             // buttonGettingPath
             // 
             this.buttonGettingPath.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGettingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGettingPath.Location = new System.Drawing.Point(860, 79);
+            this.buttonGettingPath.Location = new System.Drawing.Point(860, 76);
             this.buttonGettingPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonGettingPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonGettingPath.Name = "buttonGettingPath";
-            this.buttonGettingPath.Size = new System.Drawing.Size(35, 24);
+            this.buttonGettingPath.Size = new System.Drawing.Size(38, 24);
             this.buttonGettingPath.TabIndex = 12;
             this.buttonGettingPath.Text = "...";
             this.buttonGettingPath.Click += new System.EventHandler(this.ButtonGettingPath_Click);
@@ -190,11 +190,11 @@ namespace SeewoHelper.Forms
             // 
             this.buttonEditKeyword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditKeyword.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonEditKeyword.Location = new System.Drawing.Point(860, 113);
+            this.buttonEditKeyword.Location = new System.Drawing.Point(860, 110);
             this.buttonEditKeyword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEditKeyword.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonEditKeyword.Name = "buttonEditKeyword";
-            this.buttonEditKeyword.Size = new System.Drawing.Size(35, 24);
+            this.buttonEditKeyword.Size = new System.Drawing.Size(38, 24);
             this.buttonEditKeyword.TabIndex = 13;
             this.buttonEditKeyword.Text = "编辑";
             this.buttonEditKeyword.Click += new System.EventHandler(this.ButtonEditKeyword_Click);
@@ -206,7 +206,7 @@ namespace SeewoHelper.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(916, 204);
+            this.ClientSize = new System.Drawing.Size(901, 204);
             this.Controls.Add(this.buttonEditKeyword);
             this.Controls.Add(this.buttonGettingPath);
             this.Controls.Add(this.label1);
