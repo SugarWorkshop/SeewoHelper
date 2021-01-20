@@ -40,59 +40,59 @@ namespace SeewoHelper.Utilities
         public static bool SetAutoStart(bool onOff, string appName, string appPath)
         {
             //如果从没有设为开机启动设置到要设为开机启动
-            if (!IsExistKey(appName) && onOff)
+            if (!KeyExists(appName) && onOff)
             {
                 return SelfRunning(onOff, appName, @appPath);
             }
             //如果从设为开机启动设置到不要设为开机启动
-            else if (IsExistKey(appName) && !onOff)
+            else if (KeyExists(appName) && !onOff)
             {
                 return SelfRunning(onOff, appName, @appPath);
             }
-            //否则直接返回true
-            return true;
+            else
+            {
+                //否则直接返回true
+                return true;
+            }
         }
 
         /// <summary>
         /// 判断当前程序是否开机自启
         /// </summary>
-        public static bool IsAutoStart()
-        {
-            return IsExistKey(Process.GetCurrentProcess().MainModule.ModuleName);
-        }
+        public static bool IsAutoStart() => KeyExists(Process.GetCurrentProcess().MainModule.ModuleName);
 
         /// <summary>
         /// 判断注册键值对是否存在，即是否处于开机启动状态
         /// </summary>
         /// <param name="keyName">键值名</param>
         /// <returns></returns>
-        private static bool IsExistKey(string keyName)
+        private static bool KeyExists(string keyName)
         {
             try
             {
-                bool _exist = false;
-                RegistryKey local = Registry.LocalMachine;
-                RegistryKey runs = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                bool exists = false;
+                var local = Registry.LocalMachine;
+                var runs = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+
                 if (runs == null)
                 {
-                    RegistryKey key2 = local.CreateSubKey("SOFTWARE");
-                    RegistryKey key3 = key2.CreateSubKey("Microsoft");
-                    RegistryKey key4 = key3.CreateSubKey("Windows");
-                    RegistryKey key5 = key4.CreateSubKey("CurrentVersion");
-                    RegistryKey key6 = key5.CreateSubKey("Run");
-                    runs = key6;
+                    throw new InvalidOperationException();
                 }
-                string[] runsName = runs.GetValueNames();
-                foreach (string strName in runsName)
+                else
                 {
-                    if (strName.ToUpper() == keyName.ToUpper())
-                    {
-                        _exist = true;
-                        return _exist;
-                    }
-                }
-                return _exist;
+                    string[] runsName = runs.GetValueNames();
 
+                    foreach (string strName in runsName)
+                    {
+                        if (strName.ToUpper() == keyName.ToUpper())
+                        {
+                            exists = true;
+                            return exists;
+                        }
+                    }
+
+                    return exists;
+                }
             }
             catch
             {
@@ -111,12 +111,14 @@ namespace SeewoHelper.Utilities
         {
             try
             {
-                RegistryKey local = Registry.LocalMachine;
-                RegistryKey key = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                var local = Registry.LocalMachine;
+                var key = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+
                 if (key == null)
                 {
                     local.CreateSubKey("SOFTWARE//Microsoft//Windows//CurrentVersion//Run");
                 }
+
                 //若开机自启动则添加键值对
                 if (isStart)
                 {
@@ -128,20 +130,20 @@ namespace SeewoHelper.Utilities
                     string[] keyNames = key.GetValueNames();
                     foreach (string keyName in keyNames)
                     {
-                        if (keyName.ToUpper() == exeName.ToUpper())
+                        if (keyName.ToLower() == exeName.ToLower())
                         {
                             key.DeleteValue(exeName);
                             key.Close();
                         }
                     }
                 }
+
+                return true;
             }
-            catch (Exception ex)
+            catch
             {
-                string ss = ex.Message;
                 return false;
             }
-            return true;
         }
     }
 }
