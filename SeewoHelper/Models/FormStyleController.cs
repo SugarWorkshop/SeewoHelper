@@ -12,11 +12,15 @@ namespace SeewoHelper
 
         public void SetStyle(UIStyle style)
         {
-            CurrentStyle = style;
-
-            foreach (var form in _forms)
+            if (CurrentStyle != style)
             {
-                form.Style = style;
+                Program.Logger.Add($"设置 Style 为 {style}");
+                CurrentStyle = style;
+
+                foreach (var form in _forms)
+                {
+                    form.Style = style;
+                }
             }
         }
 
