@@ -67,12 +67,17 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonOK.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonOK.Location = new System.Drawing.Point(3, 4);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonOK.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonOK.Name = "buttonOK";
+            this.buttonOK.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonOK.Size = new System.Drawing.Size(91, 40);
+            this.buttonOK.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
@@ -84,12 +89,17 @@ namespace SeewoHelper.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Location = new System.Drawing.Point(100, 4);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Size = new System.Drawing.Size(92, 40);
+            this.buttonCancel.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -101,6 +111,7 @@ namespace SeewoHelper.Forms
             this.label1.Location = new System.Drawing.Point(3, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Style = Sunny.UI.UIStyle.LightBlue;
             this.label1.TabIndex = 6;
             this.label1.Text = "科目名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,6 +123,7 @@ namespace SeewoHelper.Forms
             this.label2.Location = new System.Drawing.Point(3, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Style = Sunny.UI.UIStyle.LightBlue;
             this.label2.TabIndex = 7;
             this.label2.Text = "指定路径：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,6 +135,7 @@ namespace SeewoHelper.Forms
             this.label3.Location = new System.Drawing.Point(3, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 19);
+            this.label3.Style = Sunny.UI.UIStyle.LightBlue;
             this.label3.TabIndex = 8;
             this.label3.Text = "关键词：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -140,6 +153,7 @@ namespace SeewoHelper.Forms
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxName.Size = new System.Drawing.Size(815, 25);
+            this.textBoxName.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxName.TabIndex = 9;
             // 
             // textBoxPath
@@ -155,6 +169,7 @@ namespace SeewoHelper.Forms
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPath.Size = new System.Drawing.Size(768, 25);
+            this.textBoxPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxPath.TabIndex = 10;
             // 
             // textBoxKeywords
@@ -171,17 +186,23 @@ namespace SeewoHelper.Forms
             this.textBoxKeywords.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxKeywords.ReadOnly = true;
             this.textBoxKeywords.Size = new System.Drawing.Size(768, 25);
+            this.textBoxKeywords.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxKeywords.TabIndex = 11;
             // 
             // buttonGettingPath
             // 
             this.buttonGettingPath.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGettingPath.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonGettingPath.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonGettingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGettingPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonGettingPath.Location = new System.Drawing.Point(860, 76);
             this.buttonGettingPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonGettingPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonGettingPath.Name = "buttonGettingPath";
+            this.buttonGettingPath.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonGettingPath.Size = new System.Drawing.Size(38, 24);
+            this.buttonGettingPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonGettingPath.TabIndex = 12;
             this.buttonGettingPath.Text = "...";
             this.buttonGettingPath.Click += new System.EventHandler(this.ButtonGettingPath_Click);
@@ -189,12 +210,17 @@ namespace SeewoHelper.Forms
             // buttonEditKeyword
             // 
             this.buttonEditKeyword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditKeyword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonEditKeyword.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonEditKeyword.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditKeyword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonEditKeyword.Location = new System.Drawing.Point(860, 110);
             this.buttonEditKeyword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEditKeyword.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonEditKeyword.Name = "buttonEditKeyword";
+            this.buttonEditKeyword.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonEditKeyword.Size = new System.Drawing.Size(38, 24);
+            this.buttonEditKeyword.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonEditKeyword.TabIndex = 13;
             this.buttonEditKeyword.Text = "编辑";
             this.buttonEditKeyword.Click += new System.EventHandler(this.ButtonEditKeyword_Click);
@@ -221,6 +247,7 @@ namespace SeewoHelper.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SubjectStorageInfoGettingWindow";
+            this.Style = Sunny.UI.UIStyle.LightBlue;
             this.Text = "添加/编辑课件存储信息";
             this.Load += new System.EventHandler(this.SubjectStorageInfoGettingWindow_Load);
             this.tableLayoutPanelButton.ResumeLayout(false);
