@@ -16,7 +16,7 @@ namespace SeewoHelper
         /// <param name="terminating">是否终止程序</param>
         public static Exception ShowAndLog(this Exception ex, Logger logger, bool terminating = false)
         {
-            MessageBoxUtilities.ShowWarning($"程序给你抛出了异常，异常消息：\n{ex.Message}\n详细信息请查看日志，并提交Issue，有能力的话也可以发Pull Request哦");
+            MessageBoxUtilities.ShowWarning($"程序给你抛出了异常，异常消息：\n{ex.Message}\n详细信息请查看日志，并提交 Issue，有能力的话也可以发 Pull Request 哦");
             logger.Add(ex.ToString(), terminating ? LogLevel.Fatal : LogLevel.Error);
 
             return ex;
