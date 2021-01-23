@@ -209,10 +209,5 @@ namespace SeewoHelper.Forms
         {
             AutoStartUtilities.SetMeStart(checkBoxAutoStart.Checked);
         }
-
-        private void TextBoxCoursewareSortingSearchingPath_Leave(object sender, EventArgs e)
-        {
-            UpdateSubjectStorageInfoConfig();
-        }
     }
 }

@@ -187,10 +187,10 @@
             this.textBoxCoursewareSortingSearchingPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
             this.textBoxCoursewareSortingSearchingPath.Padding = new System.Windows.Forms.Padding(5);
+            this.textBoxCoursewareSortingSearchingPath.ReadOnly = true;
             this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(672, 25);
             this.textBoxCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
-            this.textBoxCoursewareSortingSearchingPath.Leave += new System.EventHandler(this.TextBoxCoursewareSortingSearchingPath_Leave);
             // 
             // tableLayoutPanelSubjectStorageInfoListControlButtons
             // 

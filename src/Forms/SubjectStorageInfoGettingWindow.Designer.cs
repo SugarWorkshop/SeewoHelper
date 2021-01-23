@@ -168,6 +168,7 @@ namespace SeewoHelper.Forms
             this.textBoxPath.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPath.ReadOnly = true;
             this.textBoxPath.Size = new System.Drawing.Size(768, 25);
             this.textBoxPath.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxPath.TabIndex = 10;
