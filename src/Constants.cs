@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SeewoHelper
 {
@@ -8,6 +9,11 @@ namespace SeewoHelper
     /// </summary>
     public static class Constants
     {
+        /// <summary>
+        /// 应用名称
+        /// </summary>
+        public static readonly string AppName = Application.ProductName;
+
         /// <summary>
         /// 贡献者
         /// 若有贡献请修改该字段

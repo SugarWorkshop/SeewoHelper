@@ -106,6 +106,7 @@
             this.listViewSubjectStorageInfos.TabIndex = 17;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
+            this.listViewSubjectStorageInfos.DoubleClick += new System.EventHandler(this.ListViewSubjectStorageInfos_DoubleClick);
             // 
             // listViewSubjectStorageInfosColumnHeaderName
             // 

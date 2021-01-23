@@ -9,7 +9,7 @@ namespace SeewoHelper
 {
     static class Program
     {
-        public static Logger Logger { get; private set; }
+        public static Logger Logger { get; private set; } = new Logger(Path.Combine(Constants.BaseDirectory, "logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
         public static FormStyleController FormStyleController { get; } = new FormStyleController();
 
@@ -19,13 +19,12 @@ namespace SeewoHelper
         [STAThread]
         static void Main()
         {
-            var instance = InstanceUtilities.GetRunningInstance();
+            using var mutex = new Mutex(true, Constants.AppName, out bool createdNew);
 
-            if (instance == null)
+            FormStyleController.SetStyle(Configurations.UISettings.Content.Style);
+
+            if (createdNew)
             {
-                Logger = new Logger(Path.Combine(Constants.BaseDirectory, "logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
-                FormStyleController.SetStyle(Configurations.UISettings.Content.Style);
-
                 Application.ThreadException += Application_ThreadException; // 处理主线程的异常
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; // 处理子线程未捕获异常
 

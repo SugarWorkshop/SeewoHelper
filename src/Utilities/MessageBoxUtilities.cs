@@ -2,13 +2,14 @@
 
 namespace SeewoHelper.Utilities
 {
-    public class MessageBoxUtilities
+    public static class MessageBoxUtilities
     {
         /// <summary>
         /// 显示提示框
         /// </summary>
         public static bool Show(string text, string caption, bool showMask = false, UIMessageBoxButtons buttons = UIMessageBoxButtons.OK)
         {
+            Program.Logger.Add($"显示消息框，参数：[text: {text}, caption: {caption}, showMask: {showMask}, buttons: {buttons}]");
             return UIMessageBox.Show(text, caption, Program.FormStyleController.CurrentStyle, buttons, showMask);
         }
 
@@ -17,7 +18,6 @@ namespace SeewoHelper.Utilities
         /// </summary>
         public static bool ShowAsk(string text, bool showMask = false)
         {
-            Program.Logger.Add($"弹出询问信息提示框 , text = {text} , showMask = {showMask}");
             return Show(text, "询问", showMask, UIMessageBoxButtons.OKCancel);
         }
 
@@ -26,7 +26,6 @@ namespace SeewoHelper.Utilities
         /// </summary>
         public static void ShowError(string text, bool showMask = false)
         {
-            Program.Logger.Add($"弹出错误信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "错误", showMask);
         }
 
@@ -35,7 +34,6 @@ namespace SeewoHelper.Utilities
         /// </summary>
         public static void ShowInfo(string text, bool showMask = false)
         {
-            Program.Logger.Add($"弹出信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "提示", showMask);
         }
 
@@ -44,7 +42,6 @@ namespace SeewoHelper.Utilities
         /// </summary>
         public static void ShowSuccess(string text, bool showMask = false)
         {
-            Program.Logger.Add($"弹出成功信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "成功", showMask);
         }
 
@@ -53,7 +50,6 @@ namespace SeewoHelper.Utilities
         /// </summary>
         public static void ShowWarning(string text, bool showMask = false)
         {
-            Program.Logger.Add($"弹出警告信息提示框 , text = {text} , showMask = {showMask}");
             Show(text, "警告", showMask);
         }
     }
