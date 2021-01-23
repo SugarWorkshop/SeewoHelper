@@ -1,0 +1,3 @@
+[submodule "build/DotNetDllPathPatcher"]
+	path = build/DotNetDllPathPatcher
+	url = https://github.com/HMBSbige/DotNetDllPathPatcher.git
