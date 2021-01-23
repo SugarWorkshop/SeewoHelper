@@ -17,11 +17,6 @@ namespace SeewoHelper
         public string Name { get; }
 
         /// <summary>
-        /// 是否存在
-        /// </summary>
-        public bool Exists => _controller.ServiceName.ToLower() == Name.ToLower();
-
-        /// <summary>
         /// 状态
         /// </summary>
         public ServiceControllerStatus Status => Refresh().Status;

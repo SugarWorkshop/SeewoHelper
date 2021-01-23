@@ -84,7 +84,7 @@ namespace SeewoHelper.Utilities
 
                     foreach (string strName in runsName)
                     {
-                        if (strName.ToUpper() == keyName.ToUpper())
+                        if (strName.Equals(keyName, StringComparison.InvariantCultureIgnoreCase))
                         {
                             exists = true;
                             return exists;
@@ -130,7 +130,7 @@ namespace SeewoHelper.Utilities
                     string[] keyNames = key.GetValueNames();
                     foreach (string keyName in keyNames)
                     {
-                        if (keyName.ToLower() == exeName.ToLower())
+                        if (keyName.Equals(exeName, StringComparison.InvariantCultureIgnoreCase))
                         {
                             key.DeleteValue(exeName);
                             key.Close();

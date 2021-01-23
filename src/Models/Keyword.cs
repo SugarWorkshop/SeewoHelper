@@ -29,7 +29,7 @@ namespace SeewoHelper
         public bool IsMatch(string input) => MatchingWay switch
         {
             KeywordMatchingWay.Normal => input.Contains(Pattern),
-            KeywordMatchingWay.CaseInsensitive => input.ToLower().Contains(Pattern.ToLower()),
+            KeywordMatchingWay.CaseInsensitive => input.Contains(Pattern, StringComparison.InvariantCultureIgnoreCase),
             KeywordMatchingWay.Regex => new Regex(Pattern).IsMatch(input),
             _ => throw new InvalidOperationException()
         };
