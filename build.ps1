@@ -8,10 +8,10 @@ $exe = 'SeewoHelper.exe'
 $net_tfm = 'net5.0-windows'
 $dllpatcher_tfm = 'net5.0'
 $configuration = 'Release'
-$output_dir = "SeewoHelper\bin\$configuration"
-$dllpatcher_dir = "Build\DotNetDllPathPatcher"
+$output_dir = "src\bin\$configuration"
+$dllpatcher_dir = "build\DotNetDllPathPatcher"
 $dllpatcher_exe = "$dllpatcher_dir\bin\$configuration\$dllpatcher_tfm\DotNetDllPathPatcher.exe"
-$proj_path = "SeewoHelper\SeewoHelper.csproj"
+$proj_path = "src\SeewoHelper.csproj"
 
 $build    = $buildtfm -eq 'all' -or $buildtfm -eq 'app'
 $buildX86 = $buildtfm -eq 'all' -or $buildtfm -eq 'x86'

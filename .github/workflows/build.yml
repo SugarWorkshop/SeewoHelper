@@ -32,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: ${{ env.ProjectName }}-App
-        path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\publish\
+        path: src\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\publish\
 
     - name: Upload x64
       continue-on-error: true
@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: ${{ env.ProjectName }}-Win64
-        path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x64\publish\
+        path: src\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x64\publish\
 
     - name: Upload x86
       continue-on-error: true
@@ -48,28 +48,28 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: ${{ env.ProjectName }}-Win32
-        path: SeewoHelper\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x86\publish\
+        path: src\bin\${{ env.Configuration }}\${{ env.NET_TFM }}\win-x86\publish\
 
     - name: Package .NET App
       if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') }}
       shell: pwsh
       run: |
         New-Item -ItemType Directory -Path C:\builtfiles -Force > $null
-        7z a -mx9 "C:\builtfiles\$env:ProjectName-App.7z" ".\SeewoHelper\bin\$env:Configuration\$env:NET_TFM\publish\*"
+        7z a -mx9 "C:\builtfiles\$env:ProjectName-App.7z" ".\src\bin\$env:Configuration\$env:NET_TFM\publish\*"
 
     - name: Package x64
       if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') }}
       shell: pwsh
       run: |
         New-Item -ItemType Directory -Path C:\builtfiles -Force > $null
-        7z a -mx9 "C:\builtfiles\$env:ProjectName-Win64.7z" ".\SeewoHelper\bin\$env:Configuration\$env:NET_TFM\win-x64\publish\*"
+        7z a -mx9 "C:\builtfiles\$env:ProjectName-Win64.7z" ".\src\bin\$env:Configuration\$env:NET_TFM\win-x64\publish\*"
 
     - name: Package x86
       if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') }}
       shell: pwsh
       run: |
         New-Item -ItemType Directory -Path C:\builtfiles -Force > $null
-        7z a -mx9 "C:\builtfiles\$env:ProjectName-Win32.7z" ".\SeewoHelper\bin\$env:Configuration\$env:NET_TFM\win-x86\publish\*"
+        7z a -mx9 "C:\builtfiles\$env:ProjectName-Win32.7z" ".\src\bin\$env:Configuration\$env:NET_TFM\win-x86\publish\*"
 
     - name: Create a new GitHub release if a new tag is pushed
       uses: softprops/action-gh-release@v1

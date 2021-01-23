@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeewoHelper", "SeewoHelper\SeewoHelper.csproj", "{84FC0603-FD33-45D1-8749-4AEC1FC5D792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeewoHelper", "src\SeewoHelper.csproj", "{84FC0603-FD33-45D1-8749-4AEC1FC5D792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
