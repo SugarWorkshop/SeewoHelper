@@ -33,7 +33,7 @@ namespace SeewoHelper
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                Logger.Add("应用启动");
+                Logger.Add("应用启动完毕");
 
                 Application.Run(new WindowMain());
             }
