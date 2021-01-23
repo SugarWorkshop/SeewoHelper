@@ -80,7 +80,7 @@ namespace SeewoHelper
         /// </summary>
         public async Task SetStartTypeAsync(ServiceStartMode startType)
         {
-            var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startType]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden };
+            var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startType]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden, UseShellExecute = true };
             await Process.Start(processStartInfo).WaitForExitAsync();
 
             Program.Logger.Add($"将 {Name} 服务的 StartType 调整为 {startType}");
