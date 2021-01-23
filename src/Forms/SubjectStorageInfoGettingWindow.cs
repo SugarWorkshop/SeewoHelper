@@ -33,7 +33,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonGettingPath_Click(object sender, EventArgs e)
         {
-            textBoxPath.Text = FolderBrowserDialogUtilities.GetFilePath();
+            textBoxPath.Text = FolderBrowserDialogUtilities.GetFilePath() ?? textBoxPath.Text;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)

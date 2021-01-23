@@ -47,7 +47,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonGettingCoursewareSortingSearchingPath_Click(object sender, EventArgs e)
         {
-            textBoxCoursewareSortingSearchingPath.Text = FolderBrowserDialogUtilities.GetFilePath();
+            textBoxCoursewareSortingSearchingPath.Text = FolderBrowserDialogUtilities.GetFilePath() ?? textBoxCoursewareSortingSearchingPath.Text;
             UpdateSubjectStorageInfoConfig();
         }
 
