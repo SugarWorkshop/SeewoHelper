@@ -51,7 +51,7 @@ namespace SeewoHelper.Forms
             UpdateSubjectStorageInfoConfig();
         }
 
-        private void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
+        private async void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
         {
             var path = textBoxCoursewareSortingSearchingPath.Text;
 
@@ -71,7 +71,7 @@ namespace SeewoHelper.Forms
                     }
 
                     var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
-                    sorter.SortMore();
+                    await sorter.SortMore();
 
                     MessageBoxUtilities.ShowSuccess("已完成！");
                 }
