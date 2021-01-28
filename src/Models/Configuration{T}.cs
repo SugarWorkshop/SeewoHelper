@@ -42,14 +42,13 @@ namespace SeewoHelper
         /// <summary>
         /// 创建 <see cref="Configuration{T}"/> 实例
         /// </summary>
-        /// <param name="name">名称</param>
-        /// <param name="directoryPath">文件夹目录</param>
+        /// <param name="path">文件夹目录</param>
         /// <param name="defaultValue">默认值</param>
         public Configuration(string path, T defaultValue)
         {
             Path = path ?? throw new ArgumentNullException(path);
 
-            if (IOUtilities.IsProperPath(path))
+            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.File)
             {
                 IOUtilities.CreateFile(path, false);
                 Read();

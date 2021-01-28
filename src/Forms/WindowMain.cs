@@ -55,7 +55,7 @@ namespace SeewoHelper.Forms
         {
             var path = textBoxCoursewareSortingSearchingPath.Text;
 
-            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path, true) == PathType.Directionary && Directory.Exists(path))
+            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.Directionary && Directory.Exists(path))
             {
                 var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
 

@@ -48,9 +48,9 @@ namespace SeewoHelper
         {
             Path = path ?? throw new ArgumentNullException(nameof(path));
 
-            if (IOUtilities.IsProperPath(Path) && !Directory.Exists(Path))
+            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.File)
             {
-                IOUtilities.CreateFile(Path);
+                IOUtilities.CreateFile(path);
                 CollectionChanged += (sender, e) => TrySave();
             }
             else
