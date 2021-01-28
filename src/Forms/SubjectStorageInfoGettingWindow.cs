@@ -42,7 +42,7 @@ namespace SeewoHelper.Forms
             {
                 MessageBoxUtilities.ShowError("内容不可为空！");
             }
-            else if (!(IOUtilities.IsProperPath(textBoxPath.Text) && IOUtilities.GetPathType(textBoxPath.Text, true) == PathType.Directionary))
+            else if (!(IOUtilities.IsProperPath(textBoxPath.Text) && IOUtilities.GetPathType(textBoxPath.Text) == PathType.Directionary))
             {
                 MessageBoxUtilities.ShowError("路径不合法！");
             }

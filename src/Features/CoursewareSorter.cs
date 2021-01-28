@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SeewoHelper.Features
 {
@@ -22,13 +23,13 @@ namespace SeewoHelper.Features
         /// <summary>
         /// 整理多个课件
         /// </summary>
-        public void SortMore()
+        public async Task SortMore()
         {
             Program.Logger.Add("开始整理课件");
 
             foreach (var info in _subjectStorageInfos)
             {
-                Sort(info);
+                await Sort(info);
             }
 
             Program.Logger.Add("整理课件完成");
@@ -38,7 +39,7 @@ namespace SeewoHelper.Features
         /// 整理课件
         /// </summary>
         /// <param name="info">科目存储信息</param>
-        private void Sort(SubjectStorageInfo info)
+        private Task Sort(SubjectStorageInfo info) => Task.Run(() =>
         {
             var fileSystemInfos = _directory.GetFileSystemInfos(); // 获取目录下所有文件及文件夹
             var selectedFileSystemInfos = new List<FileSystemInfo>(); // 创建用于记录匹配到的文件及文件夹信息
@@ -74,7 +75,7 @@ namespace SeewoHelper.Features
             }
 
             Program.Logger.Add($"科目 {info.Name} 整理完成");
-        }
+        });
 
         public CoursewareSorter(CoursewareSortingInfo info)
         {

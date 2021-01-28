@@ -17,6 +17,11 @@ namespace SeewoHelper.Utilities
         /// <returns></returns>
         public static bool IsProperPath(string path, bool allowRoot = true)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentException($"“{nameof(path)}”不能为 Null 或空白", nameof(path));
+            }
+
             var regex = new Regex(@"^[a-zA-Z]:[\\]((?! )(?![^\\/]*\s+[\\/])[\w -]+[\\/])*(?! )(?![^.]*\s+\.)[\w -]+$");
             var regexRoot = new Regex(@"^[a-zA-Z]:[\\]");
 
@@ -27,11 +32,15 @@ namespace SeewoHelper.Utilities
         /// 获取路径类型
         /// </summary>
         /// <param name="path">路径</param>
-        /// <param name="check">是否通过 <see cref="File.Exists(string?)"/> 检测</param>
         /// <returns></returns>
-        public static PathType GetPathType(string path, bool check = false)
+        public static PathType GetPathType(string path)
         {
-            if (string.IsNullOrEmpty(Path.GetExtension(path)) || (check && !File.Exists(path)))
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentException($"“{nameof(path)}”不能为 Null 或空白", nameof(path));
+            }
+
+            if (Directory.Exists(path) || (Path.GetExtension(path) == string.Empty && !File.Exists(path)))
             {
                 return PathType.Directionary;
             }
@@ -47,6 +56,11 @@ namespace SeewoHelper.Utilities
         /// <param name="path">路径</param>
         public static string ToFormattedPath(string path)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentException($"“{nameof(path)}”不能为 Null 或空白", nameof(path));
+            }
+
             if (IsProperPath(path))
             {
                 return path.TrimEnd('\\');
@@ -64,6 +78,11 @@ namespace SeewoHelper.Utilities
         /// <param name="overwrite">是否覆盖</param>
         public static void CreateFile(string path, bool overwrite = true)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentException($"“{nameof(path)}”不能为 Null 或空白", nameof(path));
+            }
+
             var fileInfo = new FileInfo(path);
 
             if (overwrite || !fileInfo.Exists)
