@@ -9,7 +9,7 @@ namespace SeewoHelper
     public static class SystemExtensions
     {
         /// <summary>
-        /// 使用 <see cref="MessageBoxUtilities.Show(string,string)"/> 友好界面显示并在日志记录器中记录异常信息
+        /// 使用 <see cref="MessageBoxUtilities.Show(string, string, bool, Sunny.UI.UIMessageBoxButtons)"/> 友好界面显示并在日志记录器中记录异常信息
         /// </summary>
         /// <param name="ex">异常</param>
         /// <param name="logger">日志记录器</param>
