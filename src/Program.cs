@@ -19,9 +19,9 @@ namespace SeewoHelper
         [STAThread]
         static void Main()
         {
-            using var mutex = new Mutex(true, Constants.AppName, out bool createdNew);
+            using var mutex = new Mutex(true, Constants.AppName, out bool createdNew); // 互斥锁，用于检测是否已运行有该程序实例
 
-            FormStyleController.SetStyle(Configurations.UISettings.Content.Style);
+            FormStyleController.SetStyle(Configurations.UISettings.Content.Style); // 设置窗体风格
 
             if (createdNew)
             {

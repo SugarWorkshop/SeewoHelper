@@ -3,21 +3,23 @@ using System.Text.Json.Serialization;
 
 namespace SeewoHelper
 {
+    /// <summary>
+    /// 表示 UI 设置
+    /// </summary>
     public class UISettings
     {
-        public static UISettings Default => new UISettings();
-
+        /// <summary>
+        /// UI 风格
+        /// </summary>
         [JsonPropertyName("style")]
         public UIStyle Style { get; set; } = UIStyle.LightBlue;
 
-        private UISettings()
-        {
-        }
-
+        /// <summary>
+        /// 创建 <see cref="UISettings"/> 实例
+        /// </summary>
         [JsonConstructor]
-        public UISettings(UIStyle style)
+        public UISettings()
         {
-            Style = style;
         }
     }
 }

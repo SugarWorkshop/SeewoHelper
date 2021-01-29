@@ -9,11 +9,6 @@ namespace SeewoHelper
     public class CoursewareSortingInfo
     {
         /// <summary>
-        /// 默认值
-        /// </summary>
-        public static CoursewareSortingInfo Default => new CoursewareSortingInfo();
-
-        /// <summary>
         /// 搜索目录路径
         /// </summary>
         [JsonPropertyName("path")]
@@ -28,7 +23,7 @@ namespace SeewoHelper
         /// <summary>
         /// 创建 <see cref="CoursewareSortingInfo"/> 实例
         /// </summary>
-        private CoursewareSortingInfo()
+        public CoursewareSortingInfo()
         {
         }
 
