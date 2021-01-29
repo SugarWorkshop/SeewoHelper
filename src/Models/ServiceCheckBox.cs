@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace SeewoHelper
 {
     /// <summary>
-    /// 定义控制服务开关的 <see cref="CheckBox"/>
+    /// 定义控制服务开关的 <see cref="UICheckBox"/>
     /// </summary>
     public class ServiceCheckBox
     {
         /// <summary>
-        /// <see cref="CheckBox"/> 实例
+        /// <see cref="UICheckBox"/> 实例
         /// </summary>
         private readonly UICheckBox _checkBox;
 
@@ -22,7 +22,7 @@ namespace SeewoHelper
         private readonly Service _service;
 
         /// <summary>
-        /// 是否反转 <see cref="CheckBox.Checked"/> 状态
+        /// 是否反转 <see cref="UICheckBox.Checked"/> 状态
         /// </summary>
         private readonly bool _isReverseChecked;
 
@@ -32,7 +32,7 @@ namespace SeewoHelper
         private readonly ServiceStartMode _startType;
 
         /// <summary>
-        /// 当前 <see cref="CheckBox.Checked"/> 应为的状态
+        /// 当前 <see cref="UICheckBox.Checked"/> 应为的状态
         /// </summary>
         private bool IsChecked => SystemUtilities.ReverseBool(_isReverseChecked, _service.Status == ServiceControllerStatus.Running);
 
@@ -65,7 +65,7 @@ namespace SeewoHelper
         }
 
         /// <summary>
-        /// 当 <see cref="CheckBox.Checked"/> 状态改变时触发
+        /// 当 <see cref="UICheckBox.Checked"/> 状态改变时触发
         /// </summary>
         private async void CheckBox_ValueChanged(object sender, bool value)
         {
@@ -99,9 +99,9 @@ namespace SeewoHelper
         /// <summary>
         /// 创建 <see cref="ServiceCheckBox"/> 实例
         /// </summary>
-        /// <param name="checkBox"><see cref="CheckBox"/> 实例</param>
+        /// <param name="checkBox"><see cref="UICheckBox"/> 实例</param>
         /// <param name="serviceName">服务名称</param>
-        /// <param name="isReverseChecked">是否反转 <see cref="CheckBox.Checked"/> 状态</param>
+        /// <param name="isReverseChecked">是否反转 <see cref="UICheckBox.Checked"/> 状态</param>
         /// <param name="startType">启用时设置的启动类型</param>
         public ServiceCheckBox(UICheckBox checkBox, string serviceName, bool isReverseChecked, ServiceStartMode startType = ServiceStartMode.Automatic)
         {
