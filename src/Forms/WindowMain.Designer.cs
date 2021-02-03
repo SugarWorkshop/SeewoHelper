@@ -46,6 +46,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonCleanLog = new Sunny.UI.UIButton();
             this.checkBoxAutoStart = new Sunny.UI.UICheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelStyle = new Sunny.UI.UILabel();
@@ -303,6 +304,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.buttonCleanLog);
             this.tabPage3.Controls.Add(this.checkBoxAutoStart);
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
             this.tabPage3.Location = new System.Drawing.Point(0, 40);
@@ -311,6 +313,22 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "设置";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // buttonCleanLog
+            // 
+            this.buttonCleanLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCleanLog.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonCleanLog.Location = new System.Drawing.Point(6, 82);
+            this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
+            this.buttonCleanLog.Name = "buttonCleanLog";
+            this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonCleanLog.Size = new System.Drawing.Size(123, 36);
+            this.buttonCleanLog.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonCleanLog.TabIndex = 3;
+            this.buttonCleanLog.Text = "清除Logs";
             // 
             // checkBoxAutoStart
             // 
@@ -537,6 +555,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Sunny.UI.UILabel labelStyle;
         private Sunny.UI.UICheckBox checkBoxAutoStart;
+        private Sunny.UI.UIButton buttonCleanLog;
     }
 }
 
