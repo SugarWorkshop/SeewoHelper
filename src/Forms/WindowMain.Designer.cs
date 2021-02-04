@@ -329,6 +329,7 @@
             this.buttonCleanLog.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonCleanLog.TabIndex = 3;
             this.buttonCleanLog.Text = "清除Logs";
+            this.buttonCleanLog.Click += new System.EventHandler(this.ButtonCleanLog_Click);
             // 
             // checkBoxAutoStart
             // 

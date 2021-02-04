@@ -9,7 +9,7 @@ namespace SeewoHelper
 {
     static class Program
     {
-        public static Logger Logger { get; } = new Logger(Path.Combine(Constants.BaseDirectory, "logs", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+        public static Logger Logger { get; } = new Logger(Path.Combine(Constants.LogPath, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
         public static FormStyleController FormStyleController { get; } = new FormStyleController();
 

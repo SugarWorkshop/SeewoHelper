@@ -55,7 +55,7 @@ namespace SeewoHelper.Forms
         {
             var path = textBoxCoursewareSortingSearchingPath.Text;
 
-            if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.Directionary && Directory.Exists(path))
+            if (!string.IsNullOrWhiteSpace(path) && IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.Directionary && Directory.Exists(path))
             {
                 var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
 
@@ -208,6 +208,14 @@ namespace SeewoHelper.Forms
         private void CheckBoxAutoStart_ValueChanged(object sender, bool value)
         {
             AutoStartUtilities.SetMeStart(checkBoxAutoStart.Checked);
+        }
+
+        private void ButtonCleanLog_Click(object sender, EventArgs e)
+        {
+            foreach (var file in Directory.GetFiles(Constants.LogPath).Where(x => x != Program.Logger.Path))
+            {
+                File.Delete(file);
+            }
         }
     }
 }

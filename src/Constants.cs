@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -39,5 +40,15 @@ namespace SeewoHelper
         /// 应用运行文件夹路径
         /// </summary>
         public static readonly string BaseDirectory = Environment.CurrentDirectory;
+
+        /// <summary>
+        /// 日志路径
+        /// </summary>
+        public static readonly string LogPath = Path.Combine(BaseDirectory, "logs");
+
+        /// <summary>
+        /// 配置路径
+        /// </summary>
+        public static readonly string ConfigurationPath = Path.Combine(BaseDirectory, "configs");
     }
 }
