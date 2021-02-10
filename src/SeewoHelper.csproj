@@ -6,8 +6,6 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Authors>Mo_Ink</Authors>
     <Description>一个为 Seewo 等一体机定制的教室多媒体辅助程序</Description>
-    <RepositoryUrl>https://github.com/Mo-Ink/SeewoHelper</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <StartupObject>SeewoHelper.Program</StartupObject>
