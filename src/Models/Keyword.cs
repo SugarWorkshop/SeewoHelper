@@ -7,20 +7,8 @@ namespace SeewoHelper
     /// <summary>
     /// 表示关键词
     /// </summary>
-    public class Keyword
+    public record Keyword(string Pattern, KeywordMatchingWay MatchingWay)
     {
-        /// <summary>
-        /// 模板字符串
-        /// </summary>
-        [JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// 匹配方式
-        /// </summary>
-        [JsonPropertyName("matchingWay")]
-        public KeywordMatchingWay MatchingWay { get; set; }
-
         /// <summary>
         /// 判断输入字符串是否匹配
         /// </summary>
@@ -33,18 +21,6 @@ namespace SeewoHelper
             KeywordMatchingWay.Regex => new Regex(Pattern).IsMatch(input),
             _ => throw new InvalidOperationException()
         };
-
-        /// <summary>
-        /// 创建 <see cref="Keyword"/> 实例
-        /// </summary>
-        /// <param name="pattern">模板字符串</param>
-        /// <param name="matchingWay">匹配方式</param>
-        [JsonConstructor]
-        public Keyword(string pattern, KeywordMatchingWay matchingWay)
-        {
-            Pattern = pattern;
-            MatchingWay = matchingWay;
-        }
     }
 
     public enum KeywordMatchingWay

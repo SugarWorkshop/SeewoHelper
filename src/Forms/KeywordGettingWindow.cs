@@ -59,8 +59,8 @@ namespace SeewoHelper.Forms
 
         private void KeywordGettingWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Add("开始加载 KeywordGettingWindow");
-            Program.Logger.Add("KeywordGettingWindow 加载完成");
+            Program.Logger.Info("开始加载 KeywordGettingWindow");
+            Program.Logger.Info("KeywordGettingWindow 加载完成");
         }
     }
 }

@@ -52,6 +52,8 @@
             this.labelStyle = new Sunny.UI.UILabel();
             this.comboBoxStyle = new Sunny.UI.UIComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBoxLogLevel = new Sunny.UI.UIComboBox();
+            this.labelLogLevel = new Sunny.UI.UILabel();
             this.textBoxLogs = new Sunny.UI.UITextBox();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextNotifyIconMenuStrip = new Sunny.UI.UIContextMenuStrip();
@@ -397,6 +399,8 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.Controls.Add(this.comboBoxLogLevel);
+            this.tabPage4.Controls.Add(this.labelLogLevel);
             this.tabPage4.Controls.Add(this.textBoxLogs);
             this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(0, 40);
@@ -405,6 +409,34 @@
             this.tabPage4.Size = new System.Drawing.Size(801, 453);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "日志";
+            // 
+            // comboBoxLogLevel
+            // 
+            this.comboBoxLogLevel.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.comboBoxLogLevel.FillColor = System.Drawing.Color.White;
+            this.comboBoxLogLevel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxLogLevel.Location = new System.Drawing.Point(77, 423);
+            this.comboBoxLogLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxLogLevel.MinimumSize = new System.Drawing.Size(63, 0);
+            this.comboBoxLogLevel.Name = "comboBoxLogLevel";
+            this.comboBoxLogLevel.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.comboBoxLogLevel.Size = new System.Drawing.Size(255, 23);
+            this.comboBoxLogLevel.Style = Sunny.UI.UIStyle.LightBlue;
+            this.comboBoxLogLevel.TabIndex = 2;
+            this.comboBoxLogLevel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.comboBoxLogLevel.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLogLevel_SelectedIndexChanged);
+            // 
+            // labelLogLevel
+            // 
+            this.labelLogLevel.AutoSize = true;
+            this.labelLogLevel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLogLevel.Location = new System.Drawing.Point(4, 423);
+            this.labelLogLevel.Name = "labelLogLevel";
+            this.labelLogLevel.Size = new System.Drawing.Size(79, 20);
+            this.labelLogLevel.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelLogLevel.TabIndex = 1;
+            this.labelLogLevel.Text = "日志级别：";
+            this.labelLogLevel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxLogs
             // 
@@ -421,7 +453,7 @@
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxLogs.ReadOnly = true;
-            this.textBoxLogs.Size = new System.Drawing.Size(793, 443);
+            this.textBoxLogs.Size = new System.Drawing.Size(793, 413);
             this.textBoxLogs.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxLogs.TabIndex = 0;
             this.textBoxLogs.WordWarp = false;
@@ -520,6 +552,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.contextNotifyIconMenuStrip.ResumeLayout(false);
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -557,6 +590,8 @@
         private Sunny.UI.UILabel labelStyle;
         private Sunny.UI.UICheckBox checkBoxAutoStart;
         private Sunny.UI.UIButton buttonCleanLog;
+        private Sunny.UI.UIComboBox comboBoxLogLevel;
+        private Sunny.UI.UILabel labelLogLevel;
     }
 }
 

@@ -21,11 +21,11 @@ namespace SeewoHelper.Utilities
 
             if (enable)
             {
-                Program.Logger.Add("设置开机自启");
+                Program.Logger.Info("设置开机自启");
             }
             else
             {
-                Program.Logger.Add("关闭开机自启");
+                Program.Logger.Info("关闭开机自启");
             }
 
             return SetAutoStart(enable, appName, appPath);

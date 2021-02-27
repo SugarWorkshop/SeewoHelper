@@ -25,14 +25,14 @@ namespace SeewoHelper.Features
         /// </summary>
         public async Task SortMore()
         {
-            Program.Logger.Add("开始整理课件");
+            Program.Logger.Info("开始整理课件");
 
             foreach (var info in _subjectStorageInfos)
             {
                 await Sort(info);
             }
 
-            Program.Logger.Add("整理课件完成");
+            Program.Logger.Info("整理课件完成");
         }
 
         /// <summary>
@@ -44,25 +44,25 @@ namespace SeewoHelper.Features
             var fileSystemInfos = _directory.GetFileSystemInfos(); // 获取目录下所有文件及文件夹
             var selectedFileSystemInfos = new List<FileSystemInfo>(); // 创建用于记录匹配到的文件及文件夹信息
 
-            Program.Logger.Add($"开始整理科目：{info.Name}，目标路径：{info.Path}");
+            Program.Logger.Info($"开始整理科目：{info.Name}，目标路径：{info.Path}");
 
             foreach (var keyword in info.Keywords)
             {
-                Program.Logger.Add($"正在匹配关键词：{keyword.Pattern} ({keyword.MatchingWay})");
+                Program.Logger.Info($"正在匹配关键词：{keyword.Pattern} ({keyword.MatchingWay})");
 
                 var matchedFileSystemInfos = fileSystemInfos.Where(x => keyword.IsMatch(x.Name)); // 匹配当前关键词
                 selectedFileSystemInfos.AddRange(matchedFileSystemInfos); // 将匹配到的信息添加至列表
 
-                Program.Logger.Add($"匹配到：{string.Join(", ", matchedFileSystemInfos)}");
+                Program.Logger.Info($"匹配到：{string.Join(", ", matchedFileSystemInfos)}");
             }
 
             var processFileSystemInfos = selectedFileSystemInfos.Distinct(); // 排除重复元素
 
-            Program.Logger.Add($"将要处理：{string.Join(", ", processFileSystemInfos)}");
+            Program.Logger.Info($"将要处理：{string.Join(", ", processFileSystemInfos)}");
 
             foreach (var fileSystemInfo in processFileSystemInfos)
             {
-                Program.Logger.Add($"正在移动：{fileSystemInfo}");
+                Program.Logger.Info($"正在移动：{fileSystemInfo}");
 
                 try
                 {
@@ -70,11 +70,11 @@ namespace SeewoHelper.Features
                 }
                 catch (IOException e)
                 {
-                    Program.Logger.Add($"移动 {fileSystemInfo} 失败，异常消息：{e.Message}", LogLevel.Error);
+                    Program.Logger.Error($"移动 {fileSystemInfo} 失败，异常消息：{e.Message}");
                 }
             }
 
-            Program.Logger.Add($"科目 {info.Name} 整理完成");
+            Program.Logger.Info($"科目 {info.Name} 整理完成");
         });
 
         public CoursewareSorter(CoursewareSortingInfo info)

@@ -14,7 +14,7 @@ namespace SeewoHelper
         {
             if (CurrentStyle != style)
             {
-                Program.Logger.Add($"设置 Style 为 {style}");
+                Program.Logger.Info($"设置 Style 为 {style}");
                 CurrentStyle = style;
 
                 foreach (var form in _forms)

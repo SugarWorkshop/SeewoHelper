@@ -22,18 +22,18 @@ namespace SeewoHelper.Features
 
         public async Task GetInfo()
         {
-            Program.Logger.Add("开始获取 Release 信息");
+            Program.Logger.Info("开始获取 Release 信息");
             var client = new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.50 Safari/537.36 Edge/88.0.705.29"); // 添加 User-Agent 头信息
 
             var res = await client.GetAsync(Constants.ReleasesLink); // 获取信息
             res.EnsureSuccessStatusCode(); // 当获取状态码为失败时抛出异常
-            Program.Logger.Add("Release 信息获取完成");
+            Program.Logger.Info("Release 信息获取完成");
 
-            Program.Logger.Add("开始读取 Release 内容");
+            Program.Logger.Info("开始读取 Release 内容");
             string content = await res.Content.ReadAsStringAsync(); // 读取内容
             var infos = JsonSerializer.Deserialize<ReleaseInfo[]>(content); // 反序列化信息
-            Program.Logger.Add("Release 内容读取完成");
+            Program.Logger.Info("Release 内容读取完成");
 
             Release = infos.FirstOrDefault(x => !x.IsPrerelease); // 赋值 Release 为符合 !IsPrerelease 第一个元素
             Prerelease = infos.FirstOrDefault(x => x.IsPrerelease); // 赋值 Prerelease 为符合 IsPrerelease 第一个元素

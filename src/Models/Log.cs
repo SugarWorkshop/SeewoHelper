@@ -5,50 +5,15 @@ namespace SeewoHelper
     /// <summary>
     /// 表示日志
     /// </summary>
-    public class Log
+    public record Log(string Content, LogLevel Level = LogLevel.Info)
     {
         /// <summary>
         /// 时间
         /// </summary>
-        public DateTime Time { get; set; }
-
-        /// <summary>
-        /// 等级
-        /// </summary>
-        public LogLevel Level { get; }
-
-        /// <summary>
-        /// 内容
-        /// </summary>
-        public string Content { get; }
+        public DateTime Time { get; } = DateTime.Now;
 
         /// <inheritdoc/>
         public override string ToString() => $"[ {Level.ToString().ToUpper()} ] {Time:F}: {Content}";
-
-        /// <summary>
-        /// 创建 <see cref="Log"/> 实例
-        /// </summary>
-        /// <param name="content">内容</param>
-        /// <param name="time">时间</param>
-        /// <param name="level">等级</param>
-        public Log(string content, DateTime time, LogLevel level = LogLevel.Info)
-        {
-            Content = content;
-            Level = level;
-            Time = time;
-        }
-
-        /// <summary>
-        /// 创建时间为现在时间的 <see cref="Log"/> 实例
-        /// </summary>
-        /// <param name="content">内容</param>
-        /// <param name="level">等级</param>
-        public Log(string content, LogLevel level = LogLevel.Info)
-        {
-            Content = content;
-            Level = level;
-            Time = DateTime.Now;
-        }
     }
 
     /// <summary>
@@ -56,10 +21,10 @@ namespace SeewoHelper
     /// </summary>
     public enum LogLevel
     {
-        Debug,
-        Info,
-        Warning,
-        Error,
-        Fatal
+        Debug = 0,
+        Info = 1,
+        Warning = 2,
+        Error = 3,
+        Fatal = 4
     }
 }

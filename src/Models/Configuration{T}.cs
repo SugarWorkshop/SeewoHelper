@@ -21,23 +21,36 @@ namespace SeewoHelper
         /// </summary>
         public string Path { get; }
 
+        private static readonly JsonSerializerOptions JsonSerializerOptions = new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+
         /// <summary>
         /// 读取
         /// </summary>
         private void Read()
         {
+            Program.Logger.Info($"正在读取配置文件 {Path}");
             string data = File.ReadAllText(Path);
+            Program.Logger.Info($"读取完毕");
+            Program.Logger.Debug($"读取到内容为 {data}");
 
             if (!string.IsNullOrWhiteSpace(data))
             {
-                Content = JsonSerializer.Deserialize<T>(data);
+                Content = JsonSerializer.Deserialize<T>(data, JsonSerializerOptions);
             }
         }
 
         /// <summary>
         /// 保存
         /// </summary>
-        public void Save() => File.WriteAllText(Path, JsonSerializer.Serialize(Content));
+        public void Save()
+        {
+            Program.Logger.Debug($"正在序列化配置类 {typeof(T).Name}");
+            string data = JsonSerializer.Serialize(Content, JsonSerializerOptions);
+            Program.Logger.Debug($"序列化结果为 {data}");
+            Program.Logger.Info($"正在保存配置文件 {typeof(T).Name}");
+            File.WriteAllText(Path, JsonSerializer.Serialize(Content, JsonSerializerOptions));
+            Program.Logger.Info($"保存完毕");
+        }
 
         /// <summary>
         /// 创建 <see cref="Configuration{T}"/> 实例

@@ -9,7 +9,7 @@ namespace SeewoHelper.Forms
     public partial class SubjectStorageInfoGettingWindow : UIForm, IReturnableForm<SubjectStorageInfo, SubjectStorageInfo>
     {
         private SubjectStorageInfo _subjectStorageInfo = null;
-        private List<Keyword> _keywords = new List<Keyword>();
+        private List<Keyword> _keywords = new();
 
         public SubjectStorageInfoGettingWindow()
         {
@@ -66,8 +66,8 @@ namespace SeewoHelper.Forms
 
         private void SubjectStorageInfoGettingWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Add("开始加载 SubjectStorageInfoGettingWindow");
-            Program.Logger.Add("SubjectStorageInfoGettingWindow 加载完成");
+            Program.Logger.Info("开始加载 SubjectStorageInfoGettingWindow");
+            Program.Logger.Info("SubjectStorageInfoGettingWindow 加载完成");
         }
     }
 }
