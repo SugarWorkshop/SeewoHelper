@@ -1,5 +1,7 @@
 ﻿using Sunny.UI;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace SeewoHelper
 {
@@ -8,7 +10,7 @@ namespace SeewoHelper
         /// <summary>
         /// <see cref="SeewoHelper.CoursewareSortingInfo"/> 配置
         /// </summary>
-        public static readonly Configuration<CoursewareSortingInfo> CoursewareSortingInfo = new Configuration<CoursewareSortingInfo>(Path.Combine(Constants.ConfigurationPath, "CoursewareSortingInfo.json"), new CoursewareSortingInfo(string.Empty, new()));
+        public static readonly Configuration<IEnumerable<FileSortingInfo>> FileSortingInfos = new Configuration<IEnumerable<FileSortingInfo>>(Path.Combine(Constants.ConfigurationPath, "CoursewareSortingInfo.json"), Enumerable.Empty<FileSortingInfo>());
 
         /// <summary>
         /// <see cref="SeewoHelper.UISettings"/> 配置

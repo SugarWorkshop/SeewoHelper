@@ -6,18 +6,18 @@ using System.Linq;
 
 namespace SeewoHelper.Forms
 {
-    public partial class SubjectStorageInfoGettingWindow : UIForm, IReturnableForm<SubjectStorageInfo, SubjectStorageInfo>
+    public partial class FileSortingInfoGettingWindow : UIForm, IReturnableForm<FileSortingInfo, FileSortingInfo>
     {
-        private SubjectStorageInfo _subjectStorageInfo = null;
+        private FileSortingInfo _subjectStorageInfo = null;
         private List<Keyword> _keywords = new();
 
-        public SubjectStorageInfoGettingWindow()
+        public FileSortingInfoGettingWindow()
         {
             InitializeComponent();
             Program.FormStyleController.Initialize(this);
         }
 
-        public SubjectStorageInfo GetResult(SubjectStorageInfo info = null)
+        public FileSortingInfo GetResult(FileSortingInfo info = null)
         {
             if (info != null)
             {
@@ -48,7 +48,7 @@ namespace SeewoHelper.Forms
             }
             else
             {
-                _subjectStorageInfo = new SubjectStorageInfo(textBoxName.Text, textBoxPath.Text, _keywords);
+                _subjectStorageInfo = new FileSortingInfo(textBoxName.Text, textBoxPath.Text, _keywords);
                 Close();
             }
         }
@@ -64,10 +64,10 @@ namespace SeewoHelper.Forms
             textBoxKeywords.Text = string.Join(", ", _keywords.Select(x => x.Pattern));
         }
 
-        private void SubjectStorageInfoGettingWindow_Load(object sender, EventArgs e)
+        private void FileSortingInfoGettingWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Info("开始加载 SubjectStorageInfoGettingWindow");
-            Program.Logger.Info("SubjectStorageInfoGettingWindow 加载完成");
+            Program.Logger.Info($"开始加载 {nameof(FileSortingInfoGettingWindow)}");
+            Program.Logger.Info($"{nameof(FileSortingInfoGettingWindow)} 加载完成");
         }
     }
 }

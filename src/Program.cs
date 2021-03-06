@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SeewoHelper
 {
-    static class Program
+    internal static class Program
     {
         public static Logger Logger { get; } = new Logger(Path.Combine(Constants.LogPath, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
@@ -17,7 +17,7 @@ namespace SeewoHelper
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             using var mutex = new Mutex(true, Constants.AppName, out bool createdNew); // 互斥锁，用于检测是否已运行有该程序实例
 

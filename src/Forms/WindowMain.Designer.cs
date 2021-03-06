@@ -36,9 +36,6 @@
             this.listViewSubjectStorageInfosColumnHeaderPath = new System.Windows.Forms.ColumnHeader();
             this.listViewSubjectStorageInfosColumnHeaderKeywords = new System.Windows.Forms.ColumnHeader();
             this.buttonStartCoursewareSorting = new Sunny.UI.UIButton();
-            this.buttonGettingCoursewareSortingSearchingPath = new Sunny.UI.UIButton();
-            this.labelCoursewareSortingSearchingPath = new Sunny.UI.UILabel();
-            this.textBoxCoursewareSortingSearchingPath = new Sunny.UI.UITextBox();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubjectStorageInfoAdd = new Sunny.UI.UIButton();
             this.buttonSubjectInfoStorageRemove = new Sunny.UI.UIButton();
@@ -78,9 +75,6 @@
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.listViewSubjectStorageInfos);
             this.tabPage1.Controls.Add(this.buttonStartCoursewareSorting);
-            this.tabPage1.Controls.Add(this.buttonGettingCoursewareSortingSearchingPath);
-            this.tabPage1.Controls.Add(this.labelCoursewareSortingSearchingPath);
-            this.tabPage1.Controls.Add(this.textBoxCoursewareSortingSearchingPath);
             this.tabPage1.Controls.Add(this.tableLayoutPanelSubjectStorageInfoListControlButtons);
             this.tabPage1.ForeColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(0, 40);
@@ -88,7 +82,7 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(801, 453);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "课件整理";
+            this.tabPage1.Text = "桌面整理";
             // 
             // listViewSubjectStorageInfos
             // 
@@ -102,10 +96,10 @@
             this.listViewSubjectStorageInfos.ForeColor = System.Drawing.Color.Black;
             this.listViewSubjectStorageInfos.FullRowSelect = true;
             this.listViewSubjectStorageInfos.HideSelection = false;
-            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(4, 41);
+            this.listViewSubjectStorageInfos.Location = new System.Drawing.Point(4, 4);
             this.listViewSubjectStorageInfos.Margin = new System.Windows.Forms.Padding(4);
             this.listViewSubjectStorageInfos.Name = "listViewSubjectStorageInfos";
-            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(793, 349);
+            this.listViewSubjectStorageInfos.Size = new System.Drawing.Size(793, 401);
             this.listViewSubjectStorageInfos.TabIndex = 17;
             this.listViewSubjectStorageInfos.UseCompatibleStateImageBehavior = false;
             this.listViewSubjectStorageInfos.View = System.Windows.Forms.View.Details;
@@ -136,7 +130,7 @@
             this.buttonStartCoursewareSorting.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartCoursewareSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartCoursewareSorting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(689, 400);
+            this.buttonStartCoursewareSorting.Location = new System.Drawing.Point(704, 413);
             this.buttonStartCoursewareSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartCoursewareSorting.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonStartCoursewareSorting.Name = "buttonStartCoursewareSorting";
@@ -147,54 +141,6 @@
             this.buttonStartCoursewareSorting.Text = "整理";
             this.buttonStartCoursewareSorting.Click += new System.EventHandler(this.ButtonStartCoursewareSorting_Click);
             // 
-            // buttonGettingCoursewareSortingSearchingPath
-            // 
-            this.buttonGettingCoursewareSortingSearchingPath.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonGettingCoursewareSortingSearchingPath.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonGettingCoursewareSortingSearchingPath.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonGettingCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGettingCoursewareSortingSearchingPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonGettingCoursewareSortingSearchingPath.Location = new System.Drawing.Point(769, 8);
-            this.buttonGettingCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonGettingCoursewareSortingSearchingPath.MinimumSize = new System.Drawing.Size(1, 1);
-            this.buttonGettingCoursewareSortingSearchingPath.Name = "buttonGettingCoursewareSortingSearchingPath";
-            this.buttonGettingCoursewareSortingSearchingPath.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonGettingCoursewareSortingSearchingPath.Size = new System.Drawing.Size(28, 25);
-            this.buttonGettingCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
-            this.buttonGettingCoursewareSortingSearchingPath.TabIndex = 15;
-            this.buttonGettingCoursewareSortingSearchingPath.Text = "...";
-            this.buttonGettingCoursewareSortingSearchingPath.Click += new System.EventHandler(this.ButtonGettingCoursewareSortingSearchingPath_Click);
-            // 
-            // labelCoursewareSortingSearchingPath
-            // 
-            this.labelCoursewareSortingSearchingPath.AutoSize = true;
-            this.labelCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCoursewareSortingSearchingPath.Location = new System.Drawing.Point(8, 11);
-            this.labelCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCoursewareSortingSearchingPath.Name = "labelCoursewareSortingSearchingPath";
-            this.labelCoursewareSortingSearchingPath.Size = new System.Drawing.Size(74, 19);
-            this.labelCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
-            this.labelCoursewareSortingSearchingPath.TabIndex = 13;
-            this.labelCoursewareSortingSearchingPath.Text = "搜索路径：";
-            this.labelCoursewareSortingSearchingPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxCoursewareSortingSearchingPath
-            // 
-            this.textBoxCoursewareSortingSearchingPath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxCoursewareSortingSearchingPath.FillColor = System.Drawing.Color.White;
-            this.textBoxCoursewareSortingSearchingPath.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCoursewareSortingSearchingPath.Location = new System.Drawing.Point(89, 8);
-            this.textBoxCoursewareSortingSearchingPath.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCoursewareSortingSearchingPath.Maximum = 2147483647D;
-            this.textBoxCoursewareSortingSearchingPath.Minimum = -2147483648D;
-            this.textBoxCoursewareSortingSearchingPath.MinimumSize = new System.Drawing.Size(1, 1);
-            this.textBoxCoursewareSortingSearchingPath.Name = "textBoxCoursewareSortingSearchingPath";
-            this.textBoxCoursewareSortingSearchingPath.Padding = new System.Windows.Forms.Padding(5);
-            this.textBoxCoursewareSortingSearchingPath.ReadOnly = true;
-            this.textBoxCoursewareSortingSearchingPath.Size = new System.Drawing.Size(672, 25);
-            this.textBoxCoursewareSortingSearchingPath.Style = Sunny.UI.UIStyle.LightBlue;
-            this.textBoxCoursewareSortingSearchingPath.TabIndex = 14;
-            // 
             // tableLayoutPanelSubjectStorageInfoListControlButtons
             // 
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnCount = 2;
@@ -202,7 +148,7 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectStorageInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonSubjectInfoStorageRemove, 1, 0);
-            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(8, 398);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(4, 409);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.RowCount = 1;
@@ -544,7 +490,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -565,9 +510,6 @@
         private Sunny.UI.UIButton buttonSubjectStorageInfoAdd;
         private Sunny.UI.UIButton buttonSubjectInfoStorageRemove;
         private Sunny.UI.UITabControl tabControl;
-        private Sunny.UI.UIButton buttonGettingCoursewareSortingSearchingPath;
-        private Sunny.UI.UILabel labelCoursewareSortingSearchingPath;
-        private Sunny.UI.UITextBox textBoxCoursewareSortingSearchingPath;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage4;
         private Sunny.UI.UICheckBox checkBoxDisableServiceShellHardwareDetection;
