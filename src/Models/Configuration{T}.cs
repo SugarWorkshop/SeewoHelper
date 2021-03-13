@@ -21,7 +21,7 @@ namespace SeewoHelper
         /// </summary>
         public string Path { get; }
 
-        private static readonly JsonSerializerOptions JsonSerializerOptions = new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+        private static readonly JsonSerializerOptions JsonSerializerOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
         /// <summary>
         /// 读取

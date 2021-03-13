@@ -2,6 +2,7 @@ using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using Sunny.UI;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,6 +11,12 @@ namespace SeewoHelper.Forms
 {
     public partial class WindowMain : UIForm
     {
+        private static readonly Dictionary<ExtraFileSortingWay, string> _extraFileSortingWayDictionary = new()
+        {
+            [ExtraFileSortingWay.None] = "不进行操作",
+            [ExtraFileSortingWay.Delete] = "删除"
+        };
+
         public WindowMain()
         {
             InitializeComponent();
@@ -18,7 +25,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
-            listViewSubjectStorageInfos.SelectedItems.Remove();
+            listViewFileSortingInfos.SelectedItems.Remove();
             UpdateSubjectStorageInfoConfig();
         }
 
@@ -35,19 +42,19 @@ namespace SeewoHelper.Forms
         private void AddSubjectStorageInfoToList(FileSortingInfo info)
         {
             var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
-            listViewSubjectStorageInfos.Items.Add(item);
+            listViewFileSortingInfos.Items.Add(item);
             UpdateSubjectStorageInfoConfig();
         }
 
         private void ListViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             e.Cancel = true;
-            e.NewWidth = listViewSubjectStorageInfos.Columns[e.ColumnIndex].Width;
+            e.NewWidth = listViewFileSortingInfos.Columns[e.ColumnIndex].Width;
         }
 
         private async void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
         {
-            var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
+            var infos = listViewFileSortingInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
 
             foreach (var info in infos)
             {
@@ -56,6 +63,8 @@ namespace SeewoHelper.Forms
 
             var sorter = new FileSorter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), infos);
             await sorter.SortMore();
+
+            await sorter.SortExtraFiles(_extraFileSortingWayDictionary.GetKey((string)comboBoxExtraFileSortingWay.SelectedItem));
 
             MessageBoxUtilities.ShowSuccess("已完成！");
         }
@@ -67,9 +76,16 @@ namespace SeewoHelper.Forms
             LoadLoggerConfig();
             CreateServiceCheckBox();
             LoadComboBoxStyle();
+            LoadComboBoxExtraFileSortingWay();
             LoadComboBoxLogLevel();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
+        }
+
+        private void LoadComboBoxExtraFileSortingWay()
+        {
+            comboBoxExtraFileSortingWay.Items.AddRange(_extraFileSortingWayDictionary.Values.ToArray());
+            comboBoxExtraFileSortingWay.SelectedItem = _extraFileSortingWayDictionary[Configurations.FileSortingInfos.Content.ExtraFileSortingWay];
         }
 
         private void CreateServiceCheckBox()
@@ -102,7 +118,7 @@ namespace SeewoHelper.Forms
 
         private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
         {
-            var selectedItem = listViewSubjectStorageInfos.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
+            var selectedItem = listViewFileSortingInfos.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
             if (selectedItem != null)
             {
@@ -111,7 +127,7 @@ namespace SeewoHelper.Forms
                 if (info != null)
                 {
                     var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
-                    listViewSubjectStorageInfos.Items[selectedItem.Index] = item;
+                    listViewFileSortingInfos.Items[selectedItem.Index] = item;
                 }
             }
         }
@@ -127,8 +143,8 @@ namespace SeewoHelper.Forms
 
         private void UpdateSubjectStorageInfoConfig()
         {
-            var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
-            Configurations.FileSortingInfos.Content = infos;
+            var infos = listViewFileSortingInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
+            Configurations.FileSortingInfos.Content = Configurations.FileSortingInfos.Content with { FileSortingInfos = infos.ToArray() };
             Configurations.FileSortingInfos.Save();
         }
 
@@ -136,7 +152,7 @@ namespace SeewoHelper.Forms
         {
             var info = Configurations.FileSortingInfos.Content;
 
-            foreach (var subject in info)
+            foreach (var subject in info.FileSortingInfos)
             {
                 AddSubjectStorageInfoToList(subject);
             }

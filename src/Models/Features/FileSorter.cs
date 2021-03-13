@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -44,7 +45,7 @@ namespace SeewoHelper.Features
             var fileSystemInfos = _directory.GetFileSystemInfos(); // 获取目录下所有文件及文件夹
             var selectedFileSystemInfos = new List<FileSystemInfo>(); // 创建用于记录匹配到的文件及文件夹信息
 
-            Program.Logger.Info($"开始整理科目：{info.Name}，目标路径：{info.Path}");
+            Program.Logger.Info($"开始整理：{info.Name}，目标路径：{info.Path}");
 
             foreach (var keyword in info.Keywords)
             {
@@ -74,7 +75,26 @@ namespace SeewoHelper.Features
                 }
             }
 
-            Program.Logger.Info($"科目 {info.Name} 整理完成");
+            Program.Logger.Info($"{info.Name} 整理完成");
+        });
+
+        public Task SortExtraFiles(ExtraFileSortingWay extraFileSortingWay) => Task.Run(() =>
+        {
+            switch (extraFileSortingWay)
+            {
+                case ExtraFileSortingWay.None:
+                    break;
+
+                case ExtraFileSortingWay.Delete:
+                    foreach (var file in _directory.GetFiles())
+                    {
+                        file.Delete();
+                    }
+                    break;
+
+                default:
+                    throw new InvalidOperationException();
+            }
         });
 
         public FileSorter(string path, IEnumerable<FileSortingInfo> info)

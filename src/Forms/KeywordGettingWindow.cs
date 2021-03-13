@@ -9,7 +9,7 @@ namespace SeewoHelper.Forms
     {
         private Keyword _keyword = null;
 
-        private static readonly Dictionary<KeywordMatchingWay, string> _keywordMatchingWayDictionary = new Dictionary<KeywordMatchingWay, string>()
+        private static readonly Dictionary<KeywordMatchingWay, string> _keywordMatchingWayDictionary = new()
         {
             [KeywordMatchingWay.Normal] = "正常",
             [KeywordMatchingWay.CaseInsensitive] = "不区分大小写",
