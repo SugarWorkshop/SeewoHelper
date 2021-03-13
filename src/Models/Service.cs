@@ -61,7 +61,7 @@ namespace SeewoHelper
             _controller.Start();
             await Task.Run(() => _controller.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromMinutes(1)));
 
-            Program.Logger.Add($"启动 {Name} 服务");
+            Program.Logger.Info($"启动 {Name} 服务");
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace SeewoHelper
             _controller.Stop();
             await Task.Run(() => _controller.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromMinutes(1)));
 
-            Program.Logger.Add($"停止 {Name} 服务");
+            Program.Logger.Info($"停止 {Name} 服务");
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace SeewoHelper
             var processStartInfo = new ProcessStartInfo("sc.exe", $"config {Name} start= {_serviceStartModeDictionary[startType]}") { CreateNoWindow = false, WindowStyle = ProcessWindowStyle.Hidden, UseShellExecute = true };
             await Process.Start(processStartInfo).WaitForExitAsync();
 
-            Program.Logger.Add($"将 {Name} 服务的 StartType 调整为 {startType}");
+            Program.Logger.Info($"将 {Name} 服务的 StartType 调整为 {startType}");
         }
 
         /// <summary>

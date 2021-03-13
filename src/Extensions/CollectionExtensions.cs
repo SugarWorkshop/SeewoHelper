@@ -33,22 +33,5 @@ namespace SeewoHelper
         /// <param name="value">指定 Value</param>
         /// <returns></returns>
         public static TKey GetKey<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TValue value) => dictionary.Where(x => x.Value.Equals(value)).Single().Key;
-
-        /// <summary>
-        /// 添加日志
-        /// </summary>
-        /// <param name="logger">日志记录器</param>
-        /// <param name="content">内容</param>
-        /// <param name="level">等级</param>
-        public static void Add(this Logger logger, string content, LogLevel level = LogLevel.Info) => logger.Add(new Log(content, level));
-
-        /// <summary>
-        /// 添加日志
-        /// </summary>
-        /// <param name="logger">日志记录器</param>
-        /// <param name="content">内容</param>
-        /// <param name="time">时间</param>
-        /// <param name="level">等级</param>
-        public static void Add(this Logger logger, string content, DateTime time, LogLevel level = LogLevel.Info) => logger.Add(new Log(content, time, level));
     }
 }

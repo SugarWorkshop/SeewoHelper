@@ -22,9 +22,11 @@ namespace SeewoHelper.Forms
 
         private void UpgradeWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Add("开始加载 UpdateCheckerWindow");
+            Program.Logger.Info("开始加载 UpdateCheckerWindow");
+
             CheckUpdate();
-            Program.Logger.Add("UpdateCheckerWindow 加载完成");
+            
+            Program.Logger.Info("UpdateCheckerWindow 加载完成");
         }
 
         private void LinkLabelRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

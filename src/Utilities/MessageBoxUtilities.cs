@@ -9,7 +9,7 @@ namespace SeewoHelper.Utilities
         /// </summary>
         public static bool Show(string text, string caption, bool showMask = false, UIMessageBoxButtons buttons = UIMessageBoxButtons.OK)
         {
-            Program.Logger.Add($"显示消息框，参数：[text: {text}, caption: {caption}, showMask: {showMask}, buttons: {buttons}]");
+            Program.Logger.Info($"显示消息框，参数：[text: {text}, caption: {caption}, showMask: {showMask}, buttons: {buttons}]");
             return UIMessageBox.Show(text, caption, Program.FormStyleController.CurrentStyle, buttons, showMask);
         }
 

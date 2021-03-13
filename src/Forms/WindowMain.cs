@@ -84,13 +84,14 @@ namespace SeewoHelper.Forms
 
         private void WindowMain_Load(object sender, EventArgs e)
         {
-            Program.Logger.Add("开始加载 WindowMain");
+            Program.Logger.Info("开始加载 WindowMain");
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
             LoadComboBoxStyle();
+            LoadComboBoxLogLevel();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
-            Program.Logger.Add("WindowMain 加载完成");
+            Program.Logger.Info("WindowMain 加载完成");
         }
 
         private void CreateServiceCheckBox()
@@ -104,6 +105,12 @@ namespace SeewoHelper.Forms
             comboBoxStyle.SelectedItem = Program.FormStyleController.CurrentStyle;
         }
 
+        private void LoadComboBoxLogLevel()
+        {
+            comboBoxLogLevel.Items.AddRange(Enum.GetValues<LogLevel>().Cast<object>().ToArray());
+            comboBoxLogLevel.SelectedItem = Configurations.UISettings.Content.LogLevel;
+        }
+
         private void LoadLoggerConfig()
         {
             UpdateLoggerElement();
@@ -112,7 +119,7 @@ namespace SeewoHelper.Forms
 
         private void UpdateLoggerElement()
         {
-            textBoxLogs.Invoke(new MethodInvoker(() => textBoxLogs.Text = Program.Logger.ToString()));
+            textBoxLogs.Invoke(new MethodInvoker(() => textBoxLogs.Text = Program.Logger.ToString(Configurations.UISettings.Content.LogLevel)));
         }
 
         private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
@@ -201,7 +208,7 @@ namespace SeewoHelper.Forms
         {
             var style = (UIStyle)comboBoxStyle.SelectedItem;
             Program.FormStyleController.SetStyle(style);
-            Configurations.UISettings.Content.Style = style;
+            Configurations.UISettings.Content = Configurations.UISettings.Content with { Style = style };
             Configurations.UISettings.Save();
         }
 
@@ -216,6 +223,13 @@ namespace SeewoHelper.Forms
             {
                 File.Delete(file);
             }
+        }
+
+        private void ComboBoxLogLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Configurations.UISettings.Content = Configurations.UISettings.Content with { LogLevel = (LogLevel)comboBoxLogLevel.SelectedItem };
+            Configurations.UISettings.Save();
+            UpdateLoggerElement();
         }
     }
 }
