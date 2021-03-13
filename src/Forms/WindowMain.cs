@@ -207,5 +207,15 @@ namespace SeewoHelper.Forms
             Configurations.UISettings.Save();
             UpdateLoggerElement();
         }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == NativeMethods.WM_SHOWWINDOW)
+            {
+                ShowWindow();
+            }
+            
+            base.WndProc(ref m);
+        }
     }
 }
