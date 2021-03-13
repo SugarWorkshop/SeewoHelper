@@ -40,7 +40,7 @@ namespace SeewoHelper
             }
             else
             {
-                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWWINDOW, IntPtr.Zero, IntPtr.Zero);
+                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
             }
         }
 

@@ -226,7 +226,7 @@ namespace SeewoHelper.Forms
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == NativeMethods.WM_SHOWWINDOW)
+            if (m.Msg == NativeMethods.WM_SHOWME)
             {
                 ShowWindow();
             }
