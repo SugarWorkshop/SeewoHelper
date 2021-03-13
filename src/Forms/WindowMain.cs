@@ -189,12 +189,12 @@ namespace SeewoHelper.Forms
 
         private void ToolStripMenuItemShowAbout_Click(object sender, EventArgs e)
         {
-            new AboutWindow().ShowDialog();
+            new AboutWindow().Show();
         }
 
         private void ToolStripMenuItemUpdateCheckerShow_Click(object sender, EventArgs e)
         {
-            new UpdateCheckerWindow().ShowDialog();
+            new UpdateCheckerWindow().Show();
         }
 
         private void ComboBoxStyle_SelectedIndexChanged(object sender, EventArgs e)

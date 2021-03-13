@@ -36,6 +36,7 @@
             this.linkLabelRelease = new Sunny.UI.UILinkLabel();
             this.linkLabelPrerelease = new Sunny.UI.UILinkLabel();
             this.labelRelease = new Sunny.UI.UILabel();
+            this.ButtonCheckAgain = new Sunny.UI.UIButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,7 @@
             this.ButtonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.ButtonOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.ButtonOK.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonOK.Font = new System.Drawing.Font("微软雅黑", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ButtonOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.ButtonOK.Location = new System.Drawing.Point(284, 282);
             this.ButtonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -195,6 +196,26 @@
             this.labelRelease.Text = "最新正式版：";
             this.labelRelease.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ButtonCheckAgain
+            // 
+            this.ButtonCheckAgain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ButtonCheckAgain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonCheckAgain.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ButtonCheckAgain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.ButtonCheckAgain.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.ButtonCheckAgain.Font = new System.Drawing.Font("微软雅黑", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonCheckAgain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.ButtonCheckAgain.Location = new System.Drawing.Point(170, 282);
+            this.ButtonCheckAgain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ButtonCheckAgain.MinimumSize = new System.Drawing.Size(1, 1);
+            this.ButtonCheckAgain.Name = "ButtonCheckAgain";
+            this.ButtonCheckAgain.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.ButtonCheckAgain.Size = new System.Drawing.Size(108, 42);
+            this.ButtonCheckAgain.Style = Sunny.UI.UIStyle.LightBlue;
+            this.ButtonCheckAgain.TabIndex = 5;
+            this.ButtonCheckAgain.Text = "重新检测";
+            this.ButtonCheckAgain.Click += new System.EventHandler(this.ButtonCheckAgain_Click);
+            // 
             // UpdateCheckerWindow
             // 
             this.AcceptButton = this.ButtonOK;
@@ -203,6 +224,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.CancelButton = this.ButtonOK;
             this.ClientSize = new System.Drawing.Size(396, 338);
+            this.Controls.Add(this.ButtonCheckAgain);
             this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -230,5 +252,6 @@
         private Sunny.UI.UILabel labelPreRelease;
         private Sunny.UI.UILinkLabel linkLabelRelease;
         private Sunny.UI.UILinkLabel linkLabelPrerelease;
+        private Sunny.UI.UIButton ButtonCheckAgain;
     }
 }

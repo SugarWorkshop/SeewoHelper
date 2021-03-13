@@ -20,15 +20,10 @@ namespace SeewoHelper.Forms
             Close();
         }
 
-        private async void UpgradeWindow_Load(object sender, EventArgs e)
+        private void UpgradeWindow_Load(object sender, EventArgs e)
         {
             Program.Logger.Add("开始加载 UpdateCheckerWindow");
-
-            await _updater.GetInfo();
-
-            linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无");
-            linkLabelRelease.SetText(_updater.Release?.Name, "暂无");
-
+            CheckUpdate();
             Program.Logger.Add("UpdateCheckerWindow 加载完成");
         }
 
@@ -40,6 +35,19 @@ namespace SeewoHelper.Forms
         private void LinkLabelPreRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new ReleaseAssetDownloadingWindow(_updater.Prerelease).ShowDialog();
+        }
+
+        private void ButtonCheckAgain_Click(object sender, EventArgs e)
+        {
+            CheckUpdate();
+        }
+
+        private async void CheckUpdate() {
+            linkLabelPrerelease.Text = "检测中……";
+            linkLabelRelease.Text = "检测中……";
+            await _updater.GetInfo();
+            linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无");
+            linkLabelRelease.SetText(_updater.Release?.Name, "暂无");
         }
     }
 }
