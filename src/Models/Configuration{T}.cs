@@ -21,7 +21,7 @@ namespace SeewoHelper
         /// </summary>
         public string Path { get; }
 
-        private static readonly JsonSerializerOptions JsonSerializerOptions = new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+        private static readonly JsonSerializerOptions JsonSerializerOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
         /// <summary>
         /// 读取
@@ -44,10 +44,10 @@ namespace SeewoHelper
         /// </summary>
         public void Save()
         {
-            Program.Logger.Debug($"正在序列化配置类 {typeof(T).Name}");
+            Program.Logger.Debug($"正在序列化配置类 {Content}");
             string data = JsonSerializer.Serialize(Content, JsonSerializerOptions);
             Program.Logger.Debug($"序列化结果为 {data}");
-            Program.Logger.Info($"正在保存配置文件 {typeof(T).Name}");
+            Program.Logger.Info($"正在保存配置文件 {Content}");
             File.WriteAllText(Path, JsonSerializer.Serialize(Content, JsonSerializerOptions));
             Program.Logger.Info($"保存完毕");
         }

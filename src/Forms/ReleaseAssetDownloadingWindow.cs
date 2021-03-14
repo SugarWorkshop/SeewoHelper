@@ -30,10 +30,10 @@ namespace SeewoHelper.Forms
 
         private void UpdateReleaseChooseWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Info("开始加载 UpdateReleaseChooseWindow");
+            Program.Logger.Info($"开始加载 {nameof(ReleaseAssetDownloadingWindow)}");
             labelVersion.Text = "版本：" + _release.Name;
             listBoxRelease.Items.AddRange(_release.Assets.Select(x => x.Name).ToArray());
-            Program.Logger.Info("UpdateReleaseChooseWindow 加载完成");
+            Program.Logger.Info($"{nameof(ReleaseAssetDownloadingWindow)} 加载完成");
         }
     }
 }

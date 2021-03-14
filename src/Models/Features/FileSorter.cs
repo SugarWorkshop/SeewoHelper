@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,14 +7,14 @@ using System.Threading.Tasks;
 namespace SeewoHelper.Features
 {
     /// <summary>
-    /// 定义课件整理器
+    /// 定义文件整理器
     /// </summary>
-    public class CoursewareSorter
+    public class FileSorter
     {
         /// <summary>
-        /// 课件信息列表
+        /// 文件信息列表
         /// </summary>
-        private readonly IEnumerable<SubjectStorageInfo> _subjectStorageInfos;
+        private readonly IEnumerable<FileSortingInfo> _fileSortingInfos;
 
         /// <summary>
         /// 搜索文件夹信息
@@ -21,30 +22,30 @@ namespace SeewoHelper.Features
         private readonly DirectoryInfo _directory;
 
         /// <summary>
-        /// 整理多个课件
+        /// 整理多个文件
         /// </summary>
         public async Task SortMore()
         {
-            Program.Logger.Info("开始整理课件");
+            Program.Logger.Info("开始整理文件");
 
-            foreach (var info in _subjectStorageInfos)
+            foreach (var info in _fileSortingInfos)
             {
                 await Sort(info);
             }
 
-            Program.Logger.Info("整理课件完成");
+            Program.Logger.Info("整理文件完成");
         }
 
         /// <summary>
-        /// 整理课件
+        /// 整理文件
         /// </summary>
         /// <param name="info">科目存储信息</param>
-        private Task Sort(SubjectStorageInfo info) => Task.Run(() =>
+        private Task Sort(FileSortingInfo info) => Task.Run(() =>
         {
             var fileSystemInfos = _directory.GetFileSystemInfos(); // 获取目录下所有文件及文件夹
             var selectedFileSystemInfos = new List<FileSystemInfo>(); // 创建用于记录匹配到的文件及文件夹信息
 
-            Program.Logger.Info($"开始整理科目：{info.Name}，目标路径：{info.Path}");
+            Program.Logger.Info($"开始整理：{info.Name}，目标路径：{info.Path}");
 
             foreach (var keyword in info.Keywords)
             {
@@ -74,13 +75,32 @@ namespace SeewoHelper.Features
                 }
             }
 
-            Program.Logger.Info($"科目 {info.Name} 整理完成");
+            Program.Logger.Info($"{info.Name} 整理完成");
         });
 
-        public CoursewareSorter(CoursewareSortingInfo info)
+        public Task SortExtraFiles(ExtraFileSortingWay extraFileSortingWay) => Task.Run(() =>
         {
-            _subjectStorageInfos = info.Subjects;
-            _directory = new DirectoryInfo(info.Path);
+            switch (extraFileSortingWay)
+            {
+                case ExtraFileSortingWay.None:
+                    break;
+
+                case ExtraFileSortingWay.Delete:
+                    foreach (var file in _directory.GetFiles())
+                    {
+                        file.Delete();
+                    }
+                    break;
+
+                default:
+                    throw new InvalidOperationException();
+            }
+        });
+
+        public FileSorter(string path, IEnumerable<FileSortingInfo> info)
+        {
+            _directory = new DirectoryInfo(path);
+            _fileSortingInfos = info;
         }
     }
 }

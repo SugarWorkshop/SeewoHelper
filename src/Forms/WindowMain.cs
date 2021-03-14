@@ -2,6 +2,7 @@ using SeewoHelper.Features;
 using SeewoHelper.Utilities;
 using Sunny.UI;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,6 +11,12 @@ namespace SeewoHelper.Forms
 {
     public partial class WindowMain : UIForm
     {
+        private static readonly Dictionary<ExtraFileSortingWay, string> _extraFileSortingWayDictionary = new()
+        {
+            [ExtraFileSortingWay.None] = "不进行操作",
+            [ExtraFileSortingWay.Delete] = "删除"
+        };
+
         public WindowMain()
         {
             InitializeComponent();
@@ -18,13 +25,13 @@ namespace SeewoHelper.Forms
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
         {
-            listViewSubjectStorageInfos.SelectedItems.Remove();
+            listViewFileSortingInfos.SelectedItems.Remove();
             UpdateSubjectStorageInfoConfig();
         }
 
         private void ButtonSubjectStorageInfoAdd_Click(object sender, EventArgs e)
         {
-            var info = new SubjectStorageInfoGettingWindow().GetResult();
+            var info = new FileSortingInfoGettingWindow().GetResult();
 
             if (info != null)
             {
@@ -32,66 +39,53 @@ namespace SeewoHelper.Forms
             }
         }
 
-        private void AddSubjectStorageInfoToList(SubjectStorageInfo info)
+        private void AddSubjectStorageInfoToList(FileSortingInfo info)
         {
             var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
-            listViewSubjectStorageInfos.Items.Add(item);
+            listViewFileSortingInfos.Items.Add(item);
             UpdateSubjectStorageInfoConfig();
         }
 
         private void ListViewSubjectStorageInfos_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             e.Cancel = true;
-            e.NewWidth = listViewSubjectStorageInfos.Columns[e.ColumnIndex].Width;
-        }
-
-        private void ButtonGettingCoursewareSortingSearchingPath_Click(object sender, EventArgs e)
-        {
-            textBoxCoursewareSortingSearchingPath.Text = FolderBrowserDialogUtilities.GetFilePath() ?? textBoxCoursewareSortingSearchingPath.Text;
-            UpdateSubjectStorageInfoConfig();
+            e.NewWidth = listViewFileSortingInfos.Columns[e.ColumnIndex].Width;
         }
 
         private async void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
         {
-            var path = textBoxCoursewareSortingSearchingPath.Text;
+            var infos = listViewFileSortingInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
 
-            if (!string.IsNullOrWhiteSpace(path) && IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.Directionary && Directory.Exists(path))
+            foreach (var info in infos)
             {
-                var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
-
-                if (infos.Any(x => x.Path == path))
-                {
-                    MessageBoxUtilities.ShowError("整理目标目录与搜索目录路径相同！");
-                }
-                else
-                {
-                    foreach (var info in infos)
-                    {
-                        Directory.CreateDirectory(info.Path);
-                    }
-
-                    var sorter = new CoursewareSorter(new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList()));
-                    await sorter.SortMore();
-
-                    MessageBoxUtilities.ShowSuccess("已完成！");
-                }
+                Directory.CreateDirectory(info.Path);
             }
-            else
-            {
-                MessageBoxUtilities.ShowError("非法路径或指定目录不存在！");
-            }
+
+            var sorter = new FileSorter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), infos);
+            await sorter.SortMore();
+
+            await sorter.SortExtraFiles(_extraFileSortingWayDictionary.GetKey((string)comboBoxExtraFileSortingWay.SelectedItem));
+
+            MessageBoxUtilities.ShowSuccess("已完成！");
         }
 
         private void WindowMain_Load(object sender, EventArgs e)
         {
-            Program.Logger.Info("开始加载 WindowMain");
+            Program.Logger.Info($"开始加载 {nameof(WindowMain)}");
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
             LoadComboBoxStyle();
+            LoadComboBoxExtraFileSortingWay();
             LoadComboBoxLogLevel();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
-            Program.Logger.Info("WindowMain 加载完成");
+            Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
+        }
+
+        private void LoadComboBoxExtraFileSortingWay()
+        {
+            comboBoxExtraFileSortingWay.Items.AddRange(_extraFileSortingWayDictionary.Values.ToArray());
+            comboBoxExtraFileSortingWay.SelectedItem = _extraFileSortingWayDictionary[Configurations.FileSortingInfos.Content.ExtraFileSortingWay];
         }
 
         private void CreateServiceCheckBox()
@@ -124,16 +118,16 @@ namespace SeewoHelper.Forms
 
         private void ListViewSubjectStorageInfos_DoubleClick(object sender, EventArgs e)
         {
-            var selectedItem = listViewSubjectStorageInfos.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
+            var selectedItem = listViewFileSortingInfos.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
             if (selectedItem != null)
             {
-                var info = new SubjectStorageInfoGettingWindow().GetResult((SubjectStorageInfo)selectedItem.Tag);
+                var info = new FileSortingInfoGettingWindow().GetResult((FileSortingInfo)selectedItem.Tag);
 
                 if (info != null)
                 {
                     var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
-                    listViewSubjectStorageInfos.Items[selectedItem.Index] = item;
+                    listViewFileSortingInfos.Items[selectedItem.Index] = item;
                 }
             }
         }
@@ -149,21 +143,19 @@ namespace SeewoHelper.Forms
 
         private void UpdateSubjectStorageInfoConfig()
         {
-            var infos = listViewSubjectStorageInfos.Items.Cast<ListViewItem>().Select(x => (SubjectStorageInfo)x.Tag);
-            Configurations.CoursewareSortingInfo.Content = new CoursewareSortingInfo(textBoxCoursewareSortingSearchingPath.Text, infos.ToList());
-            Configurations.CoursewareSortingInfo.Save();
+            var infos = listViewFileSortingInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
+            Configurations.FileSortingInfos.Content = Configurations.FileSortingInfos.Content with { FileSortingInfos = infos.ToArray() };
+            Configurations.FileSortingInfos.Save();
         }
 
         private void LoadSubjectStorageInfoConfig()
         {
-            var info = Configurations.CoursewareSortingInfo.Content;
+            var info = Configurations.FileSortingInfos.Content;
 
-            foreach (var subject in info.Subjects)
+            foreach (var subject in info.FileSortingInfos)
             {
                 AddSubjectStorageInfoToList(subject);
             }
-
-            textBoxCoursewareSortingSearchingPath.Text = info.Path;
         }
 
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -230,6 +222,16 @@ namespace SeewoHelper.Forms
             Configurations.UISettings.Content = Configurations.UISettings.Content with { LogLevel = (LogLevel)comboBoxLogLevel.SelectedItem };
             Configurations.UISettings.Save();
             UpdateLoggerElement();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == NativeMethods.WM_SHOWME)
+            {
+                ShowWindow();
+            }
+            
+            base.WndProc(ref m);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SeewoHelper.Forms
     {
         private Keyword _keyword = null;
 
-        private static readonly Dictionary<KeywordMatchingWay, string> _keywordMatchingWayDictionary = new Dictionary<KeywordMatchingWay, string>()
+        private static readonly Dictionary<KeywordMatchingWay, string> _keywordMatchingWayDictionary = new()
         {
             [KeywordMatchingWay.Normal] = "正常",
             [KeywordMatchingWay.CaseInsensitive] = "不区分大小写",
@@ -59,8 +59,8 @@ namespace SeewoHelper.Forms
 
         private void KeywordGettingWindow_Load(object sender, EventArgs e)
         {
-            Program.Logger.Info("开始加载 KeywordGettingWindow");
-            Program.Logger.Info("KeywordGettingWindow 加载完成");
+            Program.Logger.Info($"开始加载 {nameof(KeywordGettingWindow)}");
+            Program.Logger.Info($"{nameof(KeywordGettingWindow)} 加载完成");
         }
     }
 }

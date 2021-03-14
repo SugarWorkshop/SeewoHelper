@@ -1,7 +1,7 @@
 ﻿
 namespace SeewoHelper.Forms
 {
-    partial class SubjectStorageInfoGettingWindow
+    partial class FileSortingInfoGettingWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -110,10 +110,10 @@ namespace SeewoHelper.Forms
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(3, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(48, 19);
             this.label1.Style = Sunny.UI.UIStyle.LightBlue;
             this.label1.TabIndex = 6;
-            this.label1.Text = "科目名称：";
+            this.label1.Text = "名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -226,7 +226,7 @@ namespace SeewoHelper.Forms
             this.buttonEditKeyword.Text = "编辑";
             this.buttonEditKeyword.Click += new System.EventHandler(this.ButtonEditKeyword_Click);
             // 
-            // SubjectStorageInfoGettingWindow
+            // FileSortingInfoGettingWindow
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -247,10 +247,10 @@ namespace SeewoHelper.Forms
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SubjectStorageInfoGettingWindow";
+            this.Name = "FileSortingInfoGettingWindow";
             this.Style = Sunny.UI.UIStyle.LightBlue;
-            this.Text = "添加/编辑课件存储信息";
-            this.Load += new System.EventHandler(this.SubjectStorageInfoGettingWindow_Load);
+            this.Text = "添加/编辑文件整理信息";
+            this.Load += new System.EventHandler(this.FileSortingInfoGettingWindow_Load);
             this.tableLayoutPanelButton.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

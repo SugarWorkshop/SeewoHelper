@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace SeewoHelper
 {
-    static class Program
+    internal static class Program
     {
-        public static Logger Logger { get; } = new Logger(Path.Combine(Constants.LogPath, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+        public static Logger Logger { get; private set; }
 
         public static FormStyleController FormStyleController { get; } = new FormStyleController();
 
@@ -17,14 +17,14 @@ namespace SeewoHelper
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             using var mutex = new Mutex(true, Constants.AppName, out bool createdNew); // 互斥锁，用于检测是否已运行有该程序实例
 
-            FormStyleController.SetStyle(Configurations.UISettings.Content.Style); // 设置窗体风格
-
             if (createdNew)
             {
+                Logger = new Logger(Path.Combine(Constants.LogPath, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+
                 Application.ThreadException += Application_ThreadException; // 处理主线程的异常
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; // 处理子线程未捕获异常
 
@@ -32,13 +32,15 @@ namespace SeewoHelper
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
+                FormStyleController.SetStyle(Configurations.UISettings.Content.Style); // 设置窗体风格
+
                 Logger.Info("应用启动完毕");
 
                 Application.Run(new WindowMain());
             }
             else
             {
-                MessageBoxUtilities.ShowError("程序已经在运行了！");
+                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
             }
         }
 
