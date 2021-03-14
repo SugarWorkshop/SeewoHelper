@@ -230,7 +230,7 @@ namespace SeewoHelper.Forms
             {
                 ShowWindow();
             }
-            
+
             base.WndProc(ref m);
         }
     }

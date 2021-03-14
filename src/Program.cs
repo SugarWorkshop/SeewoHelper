@@ -1,5 +1,4 @@
 ﻿using SeewoHelper.Forms;
-using SeewoHelper.Utilities;
 using System;
 using System.IO;
 using System.Threading;

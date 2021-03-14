@@ -7,8 +7,8 @@ namespace SeewoHelper.Forms
 {
     public partial class UpdateCheckerWindow : UIForm
     {
-        private readonly Updater _updater = new Updater();
-        private bool isChecking = false;
+        private readonly Updater _updater = new();
+        private bool _isChecking = false;
 
         public UpdateCheckerWindow()
         {
@@ -42,7 +42,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonCheckAgain_Click(object sender, EventArgs e)
         {
-            if (!isChecking)
+            if (!_isChecking)
             {
                 CheckUpdate();
             }
@@ -50,13 +50,13 @@ namespace SeewoHelper.Forms
 
         private async void CheckUpdate()
         {
-            isChecking = true;
+            _isChecking = true;
             linkLabelPrerelease.SetText(null, "检测中……");
             linkLabelRelease.SetText(null, "检测中……");
             await _updater.GetInfo();
             linkLabelPrerelease.SetText(_updater.Prerelease?.Name, "暂无");
             linkLabelRelease.SetText(_updater.Release?.Name, "暂无");
-            isChecking = false;
+            _isChecking = false;
         }
     }
 }
