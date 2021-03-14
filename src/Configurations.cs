@@ -7,9 +7,9 @@ namespace SeewoHelper
     public static class Configurations
     {
         /// <summary>
-        /// <see cref="SeewoHelper.CoursewareSortingInfo"/> 配置
+        /// <see cref="SeewoHelper.FileSorterConfig"/> 配置
         /// </summary>
-        public static readonly Configuration<FileSorterConfig> FileSortingInfos = new(Path.Combine(Constants.ConfigurationPath, "CoursewareSortingInfo.json"), new(ExtraFileSortingWay.None, Array.Empty<FileSortingInfo>()));
+        public static readonly Configuration<FileSorterConfig> FileSorterConfig = new(Path.Combine(Constants.ConfigurationPath, "FileSorterConfig.json"), new(ExtraFileSortingWay.None, Array.Empty<FileSortingInfo>()));
 
         /// <summary>
         /// <see cref="SeewoHelper.UISettings"/> 配置

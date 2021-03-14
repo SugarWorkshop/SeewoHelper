@@ -52,7 +52,7 @@ namespace SeewoHelper.Forms
             e.NewWidth = listViewFileSortingInfos.Columns[e.ColumnIndex].Width;
         }
 
-        private async void ButtonStartCoursewareSorting_Click(object sender, EventArgs e)
+        private async void ButtonStartFileSorting_Click(object sender, EventArgs e)
         {
             var infos = listViewFileSortingInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
 
@@ -85,7 +85,7 @@ namespace SeewoHelper.Forms
         private void LoadComboBoxExtraFileSortingWay()
         {
             comboBoxExtraFileSortingWay.Items.AddRange(_extraFileSortingWayDictionary.Values.ToArray());
-            comboBoxExtraFileSortingWay.SelectedItem = _extraFileSortingWayDictionary[Configurations.FileSortingInfos.Content.ExtraFileSortingWay];
+            comboBoxExtraFileSortingWay.SelectedItem = _extraFileSortingWayDictionary[Configurations.FileSorterConfig.Content.ExtraFileSortingWay];
         }
 
         private void CreateServiceCheckBox()
@@ -144,13 +144,13 @@ namespace SeewoHelper.Forms
         private void UpdateSubjectStorageInfoConfig()
         {
             var infos = listViewFileSortingInfos.Items.Cast<ListViewItem>().Select(x => (FileSortingInfo)x.Tag);
-            Configurations.FileSortingInfos.Content = Configurations.FileSortingInfos.Content with { FileSortingInfos = infos.ToArray() };
-            Configurations.FileSortingInfos.Save();
+            Configurations.FileSorterConfig.Content = Configurations.FileSorterConfig.Content with { FileSortingInfos = infos.ToArray() };
+            Configurations.FileSorterConfig.Save();
         }
 
         private void LoadSubjectStorageInfoConfig()
         {
-            var info = Configurations.FileSortingInfos.Content;
+            var info = Configurations.FileSorterConfig.Content;
 
             foreach (var subject in info.FileSortingInfos)
             {

@@ -104,7 +104,7 @@
             this.buttonStartFileSorting.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonStartFileSorting.TabIndex = 16;
             this.buttonStartFileSorting.Text = "整理";
-            this.buttonStartFileSorting.Click += new System.EventHandler(this.ButtonStartCoursewareSorting_Click);
+            this.buttonStartFileSorting.Click += new System.EventHandler(this.ButtonStartFileSorting_Click);
             // 
             // comboBoxExtraFileSortingWay
             // 
