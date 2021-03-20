@@ -45,6 +45,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.checkBoxAutoCheckUpdate = new Sunny.UI.UICheckBox();
             this.buttonCleanLog = new Sunny.UI.UIButton();
             this.checkBoxAutoStart = new Sunny.UI.UICheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -283,6 +284,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.checkBoxAutoCheckUpdate);
             this.tabPage3.Controls.Add(this.buttonCleanLog);
             this.tabPage3.Controls.Add(this.checkBoxAutoStart);
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
@@ -293,6 +295,20 @@
             this.tabPage3.Text = "设置";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // checkBoxAutoCheckUpdate
+            // 
+            this.checkBoxAutoCheckUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxAutoCheckUpdate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxAutoCheckUpdate.Location = new System.Drawing.Point(6, 82);
+            this.checkBoxAutoCheckUpdate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxAutoCheckUpdate.Name = "checkBoxAutoCheckUpdate";
+            this.checkBoxAutoCheckUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxAutoCheckUpdate.Size = new System.Drawing.Size(192, 25);
+            this.checkBoxAutoCheckUpdate.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxAutoCheckUpdate.TabIndex = 4;
+            this.checkBoxAutoCheckUpdate.Text = "启动时自动检查更新";
+            this.checkBoxAutoCheckUpdate.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.checkBoxAutoCheckUpdate_ValueChanged);
+            // 
             // buttonCleanLog
             // 
             this.buttonCleanLog.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -300,7 +316,7 @@
             this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonCleanLog.Location = new System.Drawing.Point(6, 82);
+            this.buttonCleanLog.Location = new System.Drawing.Point(6, 113);
             this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCleanLog.Name = "buttonCleanLog";
             this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -568,6 +584,7 @@
         private Sunny.UI.UILabel labelLogLevel;
         private Sunny.UI.UILabel labelExtraFileSortingWay;
         private Sunny.UI.UIComboBox comboBoxExtraFileSortingWay;
+        private Sunny.UI.UICheckBox checkBoxAutoCheckUpdate;
     }
 }
 

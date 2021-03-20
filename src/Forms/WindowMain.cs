@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper.Forms
@@ -78,6 +79,7 @@ namespace SeewoHelper.Forms
             LoadComboBoxStyle();
             LoadComboBoxExtraFileSortingWay();
             LoadComboBoxLogLevel();
+            LoadAutoCheckUpdate();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
         }
@@ -86,6 +88,17 @@ namespace SeewoHelper.Forms
         {
             comboBoxExtraFileSortingWay.Items.AddRange(_extraFileSortingWayDictionary.Values.ToArray());
             comboBoxExtraFileSortingWay.SelectedItem = _extraFileSortingWayDictionary[Configurations.FileSorterConfig.Content.ExtraFileSortingWay];
+        }
+
+        private async void LoadAutoCheckUpdate()
+        {
+            bool isAutoCheckUpdate = Configurations.UpdateCheckingConfig.Content.isAutoCheckUpdate;
+            checkBoxAutoCheckUpdate.Checked = isAutoCheckUpdate;
+            if (isAutoCheckUpdate)
+            {
+                await Task.Delay(1000);
+                new UpdateCheckerWindow().Show();
+            }
         }
 
         private void CreateServiceCheckBox()
@@ -232,6 +245,12 @@ namespace SeewoHelper.Forms
             }
 
             base.WndProc(ref m);
+        }
+
+        private void checkBoxAutoCheckUpdate_ValueChanged(object sender, bool value)
+        {
+            Configurations.UpdateCheckingConfig.Content = Configurations.UpdateCheckingConfig.Content with { isAutoCheckUpdate = checkBoxAutoCheckUpdate.Checked };
+            Configurations.UpdateCheckingConfig.Save();
         }
     }
 }
