@@ -1,6 +1,4 @@
-﻿using Sunny.UI;
-
-namespace SeewoHelper
+﻿namespace SeewoHelper
 {
     /// <summary>
     /// 表示自动检查更新设置
