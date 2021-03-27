@@ -92,7 +92,7 @@ namespace SeewoHelper.Forms
 
         private async void LoadAutoCheckUpdate()
         {
-            bool isAutoCheckUpdate = Configurations.UpdateCheckingConfig.Content.isAutoCheckUpdate;
+            bool isAutoCheckUpdate = Configurations.UpdateCheckingConfig.Content.IsAutoCheckUpdate;
             checkBoxAutoCheckUpdate.Checked = isAutoCheckUpdate;
             if (isAutoCheckUpdate)
             {
@@ -247,9 +247,9 @@ namespace SeewoHelper.Forms
             base.WndProc(ref m);
         }
 
-        private void checkBoxAutoCheckUpdate_ValueChanged(object sender, bool value)
+        private void CheckBoxAutoCheckUpdate_ValueChanged(object sender, bool value)
         {
-            Configurations.UpdateCheckingConfig.Content = Configurations.UpdateCheckingConfig.Content with { isAutoCheckUpdate = checkBoxAutoCheckUpdate.Checked };
+            Configurations.UpdateCheckingConfig.Content = Configurations.UpdateCheckingConfig.Content with { IsAutoCheckUpdate = checkBoxAutoCheckUpdate.Checked };
             Configurations.UpdateCheckingConfig.Save();
         }
     }

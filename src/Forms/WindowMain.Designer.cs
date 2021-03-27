@@ -307,7 +307,7 @@
             this.checkBoxAutoCheckUpdate.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxAutoCheckUpdate.TabIndex = 4;
             this.checkBoxAutoCheckUpdate.Text = "启动时自动检查更新";
-            this.checkBoxAutoCheckUpdate.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.checkBoxAutoCheckUpdate_ValueChanged);
+            this.checkBoxAutoCheckUpdate.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxAutoCheckUpdate_ValueChanged);
             // 
             // buttonCleanLog
             // 
