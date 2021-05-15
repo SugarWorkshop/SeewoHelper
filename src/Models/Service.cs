@@ -34,7 +34,7 @@ namespace SeewoHelper
         /// <summary>
         /// <see cref="ServiceStartMode"/> 对应 <see cref="string"/> 指令词典
         /// </summary>
-        private static readonly Dictionary<ServiceStartMode, string> _serviceStartModeDictionary = new Dictionary<ServiceStartMode, string>()
+        private static readonly Dictionary<ServiceStartMode, string> _serviceStartModeDictionary = new()
         {
             [ServiceStartMode.Boot] = "boot",
             [ServiceStartMode.System] = "system",

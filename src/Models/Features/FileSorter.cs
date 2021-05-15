@@ -57,7 +57,7 @@ namespace SeewoHelper.Features
                 Program.Logger.Info($"匹配到：{string.Join(", ", matchedFileSystemInfos)}");
             }
 
-            var processFileSystemInfos = selectedFileSystemInfos.Distinct(); // 排除重复元素
+            var processFileSystemInfos = selectedFileSystemInfos.Distinct().Where(x => x.FullName != Path.GetFullPath(info.Path)); // 排除重复元素
 
             Program.Logger.Info($"将要处理：{string.Join(", ", processFileSystemInfos)}");
 
