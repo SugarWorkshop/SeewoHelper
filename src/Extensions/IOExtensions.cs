@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 
 namespace SeewoHelper
@@ -58,6 +59,11 @@ namespace SeewoHelper
             }
             else if (fileSystemInfo is DirectoryInfo directoryInfo)
             {
+                if (Directory.GetParent(destName).FullName == directoryInfo.FullName)
+                {
+                    throw new InvalidOperationException("目标文件夹的父文件夹为当前文件夹。");
+                }
+
                 directoryInfo.MoveTo(destName, overwrite);
             }
         }

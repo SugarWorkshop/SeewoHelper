@@ -16,7 +16,7 @@ namespace SeewoHelper.Utilities
             var dialog = new FolderBrowserDialog() { Description = description };
             dialog.ShowDialog();
 
-            return dialog.SelectedPath.CheckEmpty();
+            return dialog.SelectedPath.IsEmptyOrNull();
         }
     }
 }
