@@ -14,7 +14,7 @@ namespace SeewoHelper
         /// <summary>
         /// <see cref="SeewoHelper.UISettings"/> 配置
         /// </summary>
-        public static readonly Configuration<UISettings> UISettings = new(Path.Combine(Constants.ConfigurationPath, "UISettings.json"), new UISettings(UIStyle.LightBlue, LogLevel.Info));
+        public static readonly Configuration<UISettings> UISettings = new(Path.Combine(Constants.ConfigurationPath, "UISettings.json"), new UISettings(UIStyle.LightBlue, LogLevel.Info, false));
 
         /// <summary>
         /// <see cref="SeewoHelper.UpdateCheckingConfig"/> 配置

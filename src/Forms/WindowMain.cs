@@ -80,6 +80,7 @@ namespace SeewoHelper.Forms
             LoadComboBoxExtraFileSortingWay();
             LoadComboBoxLogLevel();
             LoadAutoCheckUpdate();
+            LoadHideWhenStart();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
         }
@@ -88,6 +89,16 @@ namespace SeewoHelper.Forms
         {
             comboBoxExtraFileSortingWay.Items.AddRange(_extraFileSortingWayDictionary.Values.ToArray());
             comboBoxExtraFileSortingWay.SelectedItem = _extraFileSortingWayDictionary[Configurations.FileSorterConfig.Content.ExtraFileSortingWay];
+        }
+
+        private void LoadHideWhenStart()
+        {
+            bool isHideWhenStart = Configurations.UISettings.Content.IsHideWhenStart;
+            checkBoxHideWhenStart.Checked = isHideWhenStart;
+            if (isHideWhenStart)
+            {
+                HideWindow();
+            }
         }
 
         private async void LoadAutoCheckUpdate()
@@ -183,15 +194,15 @@ namespace SeewoHelper.Forms
 
         private void ShowWindow()
         {
-            Show();
             WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
             Activate();
         }
 
         private void HideWindow()
         {
-            Hide();
             WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -243,7 +254,6 @@ namespace SeewoHelper.Forms
             {
                 ShowWindow();
             }
-
             base.WndProc(ref m);
         }
 
@@ -251,6 +261,12 @@ namespace SeewoHelper.Forms
         {
             Configurations.UpdateCheckingConfig.Content = Configurations.UpdateCheckingConfig.Content with { IsAutoCheckUpdate = checkBoxAutoCheckUpdate.Checked };
             Configurations.UpdateCheckingConfig.Save();
+        }
+
+        private void checkBoxHideWhenStart_ValueChanged(object sender, bool value)
+        {
+            Configurations.UISettings.Content = Configurations.UISettings.Content with { IsHideWhenStart = checkBoxHideWhenStart.Checked };
+            Configurations.UISettings.Save();
         }
     }
 }

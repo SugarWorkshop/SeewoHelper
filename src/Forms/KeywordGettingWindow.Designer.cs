@@ -104,9 +104,10 @@ namespace SeewoHelper.Forms
             this.textBoxPattern.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxPattern.Name = "textBoxPattern";
             this.textBoxPattern.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPattern.Size = new System.Drawing.Size(694, 25);
+            this.textBoxPattern.Size = new System.Drawing.Size(694, 28);
             this.textBoxPattern.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxPattern.TabIndex = 2;
+            this.textBoxPattern.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboBoxMatchingWay
             // 

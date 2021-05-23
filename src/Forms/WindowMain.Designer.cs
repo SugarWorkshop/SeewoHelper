@@ -45,6 +45,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.checkBoxHideWhenStart = new Sunny.UI.UICheckBox();
             this.checkBoxAutoCheckUpdate = new Sunny.UI.UICheckBox();
             this.buttonCleanLog = new Sunny.UI.UIButton();
             this.checkBoxAutoStart = new Sunny.UI.UICheckBox();
@@ -284,6 +285,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.checkBoxHideWhenStart);
             this.tabPage3.Controls.Add(this.checkBoxAutoCheckUpdate);
             this.tabPage3.Controls.Add(this.buttonCleanLog);
             this.tabPage3.Controls.Add(this.checkBoxAutoStart);
@@ -295,11 +297,25 @@
             this.tabPage3.Text = "设置";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // checkBoxHideWhenStart
+            // 
+            this.checkBoxHideWhenStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxHideWhenStart.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxHideWhenStart.Location = new System.Drawing.Point(6, 82);
+            this.checkBoxHideWhenStart.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxHideWhenStart.Name = "checkBoxHideWhenStart";
+            this.checkBoxHideWhenStart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxHideWhenStart.Size = new System.Drawing.Size(164, 25);
+            this.checkBoxHideWhenStart.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxHideWhenStart.TabIndex = 5;
+            this.checkBoxHideWhenStart.Text = "启动时隐藏到托盘";
+            this.checkBoxHideWhenStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.checkBoxHideWhenStart_ValueChanged);
+            // 
             // checkBoxAutoCheckUpdate
             // 
             this.checkBoxAutoCheckUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxAutoCheckUpdate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxAutoCheckUpdate.Location = new System.Drawing.Point(6, 82);
+            this.checkBoxAutoCheckUpdate.Location = new System.Drawing.Point(6, 113);
             this.checkBoxAutoCheckUpdate.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxAutoCheckUpdate.Name = "checkBoxAutoCheckUpdate";
             this.checkBoxAutoCheckUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
@@ -316,7 +332,7 @@
             this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonCleanLog.Location = new System.Drawing.Point(6, 113);
+            this.buttonCleanLog.Location = new System.Drawing.Point(6, 144);
             this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCleanLog.Name = "buttonCleanLog";
             this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -449,6 +465,7 @@
             this.textBoxLogs.Size = new System.Drawing.Size(793, 413);
             this.textBoxLogs.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxLogs.TabIndex = 0;
+            this.textBoxLogs.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.textBoxLogs.WordWarp = false;
             // 
             // notifyIcon
@@ -528,6 +545,7 @@
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -585,6 +603,7 @@
         private Sunny.UI.UILabel labelExtraFileSortingWay;
         private Sunny.UI.UIComboBox comboBoxExtraFileSortingWay;
         private Sunny.UI.UICheckBox checkBoxAutoCheckUpdate;
+        private Sunny.UI.UICheckBox checkBoxHideWhenStart;
     }
 }
 

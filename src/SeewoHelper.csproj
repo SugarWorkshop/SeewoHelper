@@ -9,11 +9,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <StartupObject>SeewoHelper.Program</StartupObject>
-    <Version>0.4.2</Version>
+    <Version>0.4.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SunnyUI" Version="3.0.2" />
+    <PackageReference Include="SunnyUI" Version="3.0.4" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
   </ItemGroup>
   
