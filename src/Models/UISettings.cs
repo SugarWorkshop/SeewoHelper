@@ -5,5 +5,5 @@ namespace SeewoHelper
     /// <summary>
     /// 表示 UI 设置
     /// </summary>
-    public record UISettings(UIStyle Style, LogLevel LogLevel, bool IsHideWhenStart);
+    public record UISettings(UIStyle Style, LogLevel LogLevel, bool IsHideWhenStart, bool IsAutoCheckUpdate);
 }

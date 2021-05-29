@@ -103,7 +103,7 @@ namespace SeewoHelper.Forms
 
         private async void LoadAutoCheckUpdate()
         {
-            bool isAutoCheckUpdate = Configurations.UpdateCheckingConfig.Content.IsAutoCheckUpdate;
+            bool isAutoCheckUpdate = Configurations.UISettings.Content.IsAutoCheckUpdate;
             checkBoxAutoCheckUpdate.Checked = isAutoCheckUpdate;
             if (isAutoCheckUpdate)
             {
@@ -259,8 +259,8 @@ namespace SeewoHelper.Forms
 
         private void CheckBoxAutoCheckUpdate_ValueChanged(object sender, bool value)
         {
-            Configurations.UpdateCheckingConfig.Content = Configurations.UpdateCheckingConfig.Content with { IsAutoCheckUpdate = checkBoxAutoCheckUpdate.Checked };
-            Configurations.UpdateCheckingConfig.Save();
+            Configurations.UISettings.Content = Configurations.UISettings.Content with { IsAutoCheckUpdate = checkBoxAutoCheckUpdate.Checked };
+            Configurations.UISettings.Save();
         }
 
         private void checkBoxHideWhenStart_ValueChanged(object sender, bool value)
