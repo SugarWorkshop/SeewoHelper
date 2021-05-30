@@ -49,7 +49,7 @@
             this.checkBoxAutoCheckUpdate = new Sunny.UI.UICheckBox();
             this.buttonCleanLog = new Sunny.UI.UIButton();
             this.checkBoxAutoStart = new Sunny.UI.UICheckBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelSkin = new System.Windows.Forms.TableLayoutPanel();
             this.labelStyle = new Sunny.UI.UILabel();
             this.comboBoxStyle = new Sunny.UI.UIComboBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
@@ -64,19 +64,15 @@
             this.contextMenuStrip = new Sunny.UI.UIContextMenuStrip();
             this.toolStripMenuItemShowAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemUpdateCheckerShow = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tabPageFileSorting.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageUsefulFeatures.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tabPageAbout.SuspendLayout();
+            this.tableLayoutPanelSkin.SuspendLayout();
             this.tabPageLogs.SuspendLayout();
             this.contextNotifyIconMenuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
-            this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPageFileSorting
@@ -295,7 +291,7 @@
             this.tabPageSettings.Controls.Add(this.checkBoxAutoCheckUpdate);
             this.tabPageSettings.Controls.Add(this.buttonCleanLog);
             this.tabPageSettings.Controls.Add(this.checkBoxAutoStart);
-            this.tabPageSettings.Controls.Add(this.tableLayoutPanel1);
+            this.tabPageSettings.Controls.Add(this.tableLayoutPanelSkin);
             this.tabPageSettings.Location = new System.Drawing.Point(0, 40);
             this.tabPageSettings.Name = "tabPageSettings";
             this.tabPageSettings.Size = new System.Drawing.Size(801, 453);
@@ -362,19 +358,19 @@
             this.checkBoxAutoStart.Text = "开机自动启动";
             this.checkBoxAutoStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxAutoStart_ValueChanged);
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelSkin
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Controls.Add(this.labelStyle, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxStyle, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(226, 42);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanelSkin.ColumnCount = 2;
+            this.tableLayoutPanelSkin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelSkin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanelSkin.Controls.Add(this.labelStyle, 0, 0);
+            this.tableLayoutPanelSkin.Controls.Add(this.comboBoxStyle, 1, 0);
+            this.tableLayoutPanelSkin.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelSkin.Name = "tableLayoutPanelSkin";
+            this.tableLayoutPanelSkin.RowCount = 1;
+            this.tableLayoutPanelSkin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSkin.Size = new System.Drawing.Size(226, 42);
+            this.tableLayoutPanelSkin.TabIndex = 1;
             // 
             // labelStyle
             // 
@@ -389,7 +385,7 @@
             this.labelStyle.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelStyle.TabIndex = 1;
             this.labelStyle.Text = "皮肤";
-            this.labelStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxStyle
             // 
@@ -413,7 +409,6 @@
             // 
             // tabPageAbout
             // 
-            this.tabPageAbout.Controls.Add(this.tableLayoutPanel);
             this.tabPageAbout.Location = new System.Drawing.Point(0, 40);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Size = new System.Drawing.Size(801, 453);
@@ -552,39 +547,6 @@
             this.toolStripMenuItemUpdateCheckerShow.Text = "检查更新";
             this.toolStripMenuItemUpdateCheckerShow.Click += new System.EventHandler(this.ToolStripMenuItemUpdateCheckerShow_Click);
             // 
-            // tableLayoutPanel
-            // 
-            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel.ColumnCount = 1;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 2;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(795, 447);
-            this.tableLayoutPanel.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.3346F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.6654F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(789, 217);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -609,14 +571,12 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageUsefulFeatures.ResumeLayout(false);
             this.tabPageSettings.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tabPageAbout.ResumeLayout(false);
+            this.tableLayoutPanelSkin.ResumeLayout(false);
+            this.tableLayoutPanelSkin.PerformLayout();
             this.tabPageLogs.ResumeLayout(false);
             this.tabPageLogs.PerformLayout();
             this.contextNotifyIconMenuStrip.ResumeLayout(false);
             this.contextMenuStrip.ResumeLayout(false);
-            this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -645,7 +605,7 @@
         private Sunny.UI.UIButton buttonStartFileSorting;
         private System.Windows.Forms.TabPage tabPageSettings;
         private Sunny.UI.UIComboBox comboBoxStyle;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSkin;
         private Sunny.UI.UILabel labelStyle;
         private Sunny.UI.UICheckBox checkBoxAutoStart;
         private Sunny.UI.UIButton buttonCleanLog;
@@ -657,8 +617,6 @@
         private Sunny.UI.UICheckBox checkBoxHideWhenStart;
         private System.Windows.Forms.TabPage tabPageAbout;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
 
