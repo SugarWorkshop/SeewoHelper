@@ -16,7 +16,7 @@ namespace SeewoHelper
         public bool IsMatch(string input) => MatchingWay switch
         {
             KeywordMatchingWay.Normal => input.Contains(Pattern),
-            KeywordMatchingWay.CaseInsensitive => input.Contains(Pattern, StringComparison.InvariantCultureIgnoreCase),
+            KeywordMatchingWay.CaseInsensitive => input.Contains(Pattern, StringComparison.CurrentCultureIgnoreCase),
             KeywordMatchingWay.Regex => new Regex(Pattern).IsMatch(input),
             _ => throw new InvalidOperationException()
         };

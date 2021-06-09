@@ -51,27 +51,6 @@ namespace SeewoHelper.Utilities
         }
 
         /// <summary>
-        /// 格式化路径
-        /// </summary>
-        /// <param name="path">路径</param>
-        public static string ToFormattedPath(string path)
-        {
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                throw new ArgumentException($"“{nameof(path)}”不能为 Null 或空白", nameof(path));
-            }
-
-            if (IsProperPath(path))
-            {
-                return path.TrimEnd('\\');
-            }
-            else
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
-        /// <summary>
         /// 创建文件
         /// </summary>
         /// <param name="path">路径</param>

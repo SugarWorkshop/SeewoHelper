@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace SeewoHelper.Utilities
 {
@@ -12,14 +13,15 @@ namespace SeewoHelper.Utilities
         /// <summary>
         /// 将本程序设为开启自启
         /// </summary>
-        /// <param name="enable">自启开关</param>
+        /// <param name="enabled">自启开关</param>
         /// <returns></returns>
-        public static bool SetMeStart(bool enable)
+        public static void SetMeStart(bool enabled)
         {
-            string appName = Process.GetCurrentProcess().MainModule.ModuleName;
-            string appPath = Process.GetCurrentProcess().MainModule.FileName;
+            var process = Process.GetCurrentProcess();
+            string name = process.MainModule.ModuleName;
+            string path = process.MainModule.FileName;
 
-            if (enable)
+            if (enabled)
             {
                 Program.Logger.Info("设置开机自启");
             }
@@ -28,31 +30,39 @@ namespace SeewoHelper.Utilities
                 Program.Logger.Info("关闭开机自启");
             }
 
-            return SetAutoStart(enable, appName, appPath);
+            SetAutoStart(enabled, name, path);
         }
 
         /// <summary>
         /// 将应用程序设为或不设为开机启动
         /// </summary>
-        /// <param name="onOff">自启开关</param>
-        /// <param name="appName">应用程序名</param>
-        /// <param name="appPath">应用程序完全路径</param>
-        public static bool SetAutoStart(bool onOff, string appName, string appPath)
+        /// <param name="enabled">自启开关</param>
+        /// <param name="name">应用程序名</param>
+        /// <param name="path">应用程序完全路径</param>
+        public static void SetAutoStart(bool enabled, string name, string path)
         {
-            //如果从没有设为开机启动设置到要设为开机启动
-            if (!KeyExists(appName) && onOff)
+            var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+
+            if (key is null)
             {
-                return SelfRunning(onOff, appName, @appPath);
+                throw new InvalidOperationException();
             }
-            //如果从设为开机启动设置到不要设为开机启动
-            else if (KeyExists(appName) && !onOff)
+
+            // 若开机自启动则添加键值对
+            if (enabled)
             {
-                return SelfRunning(onOff, appName, @appPath);
+                key.SetValue(name, path);
+                key.Close();
             }
-            else
+            else // 否则删除键值对
             {
-                //否则直接返回true
-                return true;
+                var keyNames = key.GetValueNames().Where(keyName => keyName.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+                foreach (string keyName in keyNames)
+                {
+                    key.DeleteValue(name);
+                    key.Close();
+                }
             }
         }
 
@@ -68,82 +78,14 @@ namespace SeewoHelper.Utilities
         /// <returns></returns>
         private static bool KeyExists(string keyName)
         {
-            try
+            var runs = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+
+            if (runs is null)
             {
-                bool exists = false;
-                var local = Registry.LocalMachine;
-                var runs = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-
-                if (runs == null)
-                {
-                    throw new InvalidOperationException();
-                }
-                else
-                {
-                    string[] runsName = runs.GetValueNames();
-
-                    foreach (string strName in runsName)
-                    {
-                        if (strName.Equals(keyName, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            exists = true;
-                            return exists;
-                        }
-                    }
-
-                    return exists;
-                }
+                throw new InvalidOperationException();
             }
-            catch
-            {
-                return false;
-            }
-        }
 
-        /// <summary>
-        /// 写入或删除注册表键值对,即设为开机启动或开机不启动
-        /// </summary>
-        /// <param name="isStart">是否开机启动</param>
-        /// <param name="exeName">应用程序名</param>
-        /// <param name="path">应用程序路径带程序名</param>
-        /// <returns></returns>
-        private static bool SelfRunning(bool isStart, string exeName, string path)
-        {
-            try
-            {
-                var local = Registry.LocalMachine;
-                var key = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-
-                if (key == null)
-                {
-                    local.CreateSubKey("SOFTWARE//Microsoft//Windows//CurrentVersion//Run");
-                }
-
-                //若开机自启动则添加键值对
-                if (isStart)
-                {
-                    key.SetValue(exeName, path);
-                    key.Close();
-                }
-                else//否则删除键值对
-                {
-                    string[] keyNames = key.GetValueNames();
-                    foreach (string keyName in keyNames)
-                    {
-                        if (keyName.Equals(exeName, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            key.DeleteValue(exeName);
-                            key.Close();
-                        }
-                    }
-                }
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return runs.GetValueNames().Any(name => name.Equals(keyName, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
