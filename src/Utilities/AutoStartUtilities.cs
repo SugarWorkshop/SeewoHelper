@@ -17,10 +17,6 @@ namespace SeewoHelper.Utilities
         /// <returns></returns>
         public static void SetMeStart(bool enabled)
         {
-            var process = Process.GetCurrentProcess();
-            string name = process.MainModule.ModuleName;
-            string path = process.MainModule.FileName;
-
             if (enabled)
             {
                 Program.Logger.Info("设置开机自启");
@@ -30,7 +26,8 @@ namespace SeewoHelper.Utilities
                 Program.Logger.Info("关闭开机自启");
             }
 
-            SetAutoStart(enabled, name, path);
+            var module = Process.GetCurrentProcess().MainModule;
+            SetAutoStart(enabled, module.ModuleName, module.FileName);
         }
 
         /// <summary>
