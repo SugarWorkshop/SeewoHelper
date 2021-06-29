@@ -81,6 +81,7 @@ namespace SeewoHelper.Forms
             LoadComboBoxLogLevel();
             LoadAutoCheckUpdate();
             LoadHideWhenStart();
+            LoadHideToNotify();
             LoadDoubleClickNotify();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
@@ -107,6 +108,11 @@ namespace SeewoHelper.Forms
             checkBoxDoubleClickNotify.Checked = Configurations.UISettings.Content.IsDoubleClickNotify;
         }
 
+        private void LoadHideToNotify()
+        {
+            checkBoxHideToNotify.Checked = Configurations.UISettings.Content.IsHideToNotify;
+        }
+
         private async void LoadAutoCheckUpdate()
         {
             bool isAutoCheckUpdate = Configurations.UISettings.Content.IsAutoCheckUpdate;
@@ -121,6 +127,8 @@ namespace SeewoHelper.Forms
         private void CreateServiceCheckBox()
         {
             checkBoxDisableServiceShellHardwareDetection.Tag = new ServiceCheckBox(checkBoxDisableServiceShellHardwareDetection, "ShellHWDetection", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default };
+            checkBoxDisableServiceWindowsUpdate.Tag = new ServiceCheckBox(checkBoxDisableServiceWindowsUpdate, "wuauserv", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default };
+            checkBoxDisableServiceWindowsSearch.Tag = new ServiceCheckBox(checkBoxDisableServiceWindowsSearch, "WSearch", true) { PreAction = () => Cursor = Cursors.WaitCursor, PostAction = () => Cursor = Cursors.Default };
         }
 
         private void LoadComboBoxStyle()
@@ -164,7 +172,7 @@ namespace SeewoHelper.Forms
 
         private void WindowMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (checkBoxHideToNotify.Checked && e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 HideWindow();
@@ -300,6 +308,13 @@ namespace SeewoHelper.Forms
         private void CheckBoxDoubleClickNotify_CheckedChanged(object sender, EventArgs e)
         {
             Configurations.UISettings.Content = Configurations.UISettings.Content with { IsDoubleClickNotify = checkBoxDoubleClickNotify.Checked };
+            Configurations.UISettings.Save();
+        }
+
+        private void CheckBoxHideToNotify_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxDoubleClickNotify.Enabled = checkBoxHideToNotify.Checked;
+            Configurations.UISettings.Content = Configurations.UISettings.Content with { IsHideToNotify = checkBoxHideToNotify.Checked };
             Configurations.UISettings.Save();
         }
     }

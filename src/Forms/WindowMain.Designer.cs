@@ -43,8 +43,11 @@
             this.buttonFileSortingInfoRemove = new Sunny.UI.UIButton();
             this.tabControl = new Sunny.UI.UITabControl();
             this.tabPageUsefulFeatures = new System.Windows.Forms.TabPage();
+            this.checkBoxDisableServiceWindowsSearch = new Sunny.UI.UICheckBox();
+            this.checkBoxDisableServiceWindowsUpdate = new Sunny.UI.UICheckBox();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
+            this.checkBoxHideToNotify = new Sunny.UI.UICheckBox();
             this.checkBoxDoubleClickNotify = new Sunny.UI.UICheckBox();
             this.checkBoxHideWhenStart = new Sunny.UI.UICheckBox();
             this.checkBoxAutoCheckUpdate = new Sunny.UI.UICheckBox();
@@ -282,6 +285,8 @@
             // tabPageUsefulFeatures
             // 
             this.tabPageUsefulFeatures.BackColor = System.Drawing.Color.White;
+            this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceWindowsSearch);
+            this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceWindowsUpdate);
             this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceShellHardwareDetection);
             this.tabPageUsefulFeatures.ForeColor = System.Drawing.Color.White;
             this.tabPageUsefulFeatures.Location = new System.Drawing.Point(0, 40);
@@ -290,6 +295,34 @@
             this.tabPageUsefulFeatures.Size = new System.Drawing.Size(801, 453);
             this.tabPageUsefulFeatures.TabIndex = 1;
             this.tabPageUsefulFeatures.Text = "实用功能";
+            // 
+            // checkBoxDisableServiceWindowsSearch
+            // 
+            this.checkBoxDisableServiceWindowsSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxDisableServiceWindowsSearch.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxDisableServiceWindowsSearch.Location = new System.Drawing.Point(4, 64);
+            this.checkBoxDisableServiceWindowsSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxDisableServiceWindowsSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxDisableServiceWindowsSearch.Name = "checkBoxDisableServiceWindowsSearch";
+            this.checkBoxDisableServiceWindowsSearch.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxDisableServiceWindowsSearch.Size = new System.Drawing.Size(195, 22);
+            this.checkBoxDisableServiceWindowsSearch.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxDisableServiceWindowsSearch.TabIndex = 2;
+            this.checkBoxDisableServiceWindowsSearch.Text = "禁用 Windows Search";
+            // 
+            // checkBoxDisableServiceWindowsUpdate
+            // 
+            this.checkBoxDisableServiceWindowsUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxDisableServiceWindowsUpdate.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxDisableServiceWindowsUpdate.Location = new System.Drawing.Point(4, 34);
+            this.checkBoxDisableServiceWindowsUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxDisableServiceWindowsUpdate.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxDisableServiceWindowsUpdate.Name = "checkBoxDisableServiceWindowsUpdate";
+            this.checkBoxDisableServiceWindowsUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxDisableServiceWindowsUpdate.Size = new System.Drawing.Size(195, 22);
+            this.checkBoxDisableServiceWindowsUpdate.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxDisableServiceWindowsUpdate.TabIndex = 1;
+            this.checkBoxDisableServiceWindowsUpdate.Text = "禁用 Windows Update";
             // 
             // checkBoxDisableServiceShellHardwareDetection
             // 
@@ -300,13 +333,14 @@
             this.checkBoxDisableServiceShellHardwareDetection.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(426, 22);
+            this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(133, 22);
             this.checkBoxDisableServiceShellHardwareDetection.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
-            this.checkBoxDisableServiceShellHardwareDetection.Text = "关闭U盘插入提示修复（禁用Shell Hardware Detection服务）";
+            this.checkBoxDisableServiceShellHardwareDetection.Text = "禁用 自动播放";
             // 
             // tabPageSettings
             // 
+            this.tabPageSettings.Controls.Add(this.checkBoxHideToNotify);
             this.tabPageSettings.Controls.Add(this.checkBoxDoubleClickNotify);
             this.tabPageSettings.Controls.Add(this.checkBoxHideWhenStart);
             this.tabPageSettings.Controls.Add(this.checkBoxAutoCheckUpdate);
@@ -320,12 +354,27 @@
             this.tabPageSettings.Text = "设置";
             this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
+            // checkBoxHideToNotify
+            // 
+            this.checkBoxHideToNotify.Checked = true;
+            this.checkBoxHideToNotify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxHideToNotify.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxHideToNotify.Location = new System.Drawing.Point(6, 144);
+            this.checkBoxHideToNotify.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxHideToNotify.Name = "checkBoxHideToNotify";
+            this.checkBoxHideToNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxHideToNotify.Size = new System.Drawing.Size(192, 25);
+            this.checkBoxHideToNotify.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxHideToNotify.TabIndex = 7;
+            this.checkBoxHideToNotify.Text = "关闭窗口隐藏至托盘";
+            this.checkBoxHideToNotify.CheckedChanged += new System.EventHandler(this.CheckBoxHideToNotify_CheckedChanged);
+            // 
             // checkBoxDoubleClickNotify
             // 
             this.checkBoxDoubleClickNotify.Checked = true;
             this.checkBoxDoubleClickNotify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxDoubleClickNotify.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxDoubleClickNotify.Location = new System.Drawing.Point(6, 144);
+            this.checkBoxDoubleClickNotify.Location = new System.Drawing.Point(6, 175);
             this.checkBoxDoubleClickNotify.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDoubleClickNotify.Name = "checkBoxDoubleClickNotify";
             this.checkBoxDoubleClickNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
@@ -370,7 +419,7 @@
             this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonCleanLog.Location = new System.Drawing.Point(6, 175);
+            this.buttonCleanLog.Location = new System.Drawing.Point(6, 206);
             this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCleanLog.Name = "buttonCleanLog";
             this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -906,6 +955,9 @@
         private Sunny.UI.UILinkLabel linkLabelRickyGithub;
         private Sunny.UI.UISymbolLabel symbolLabelRicky;
         private Sunny.UI.UICheckBox checkBoxDoubleClickNotify;
+        private Sunny.UI.UICheckBox checkBoxDisableServiceWindowsUpdate;
+        private Sunny.UI.UICheckBox checkBoxDisableServiceWindowsSearch;
+        private Sunny.UI.UICheckBox checkBoxHideToNotify;
     }
 }
 
