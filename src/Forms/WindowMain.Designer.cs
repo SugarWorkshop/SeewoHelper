@@ -45,6 +45,7 @@
             this.tabPageUsefulFeatures = new System.Windows.Forms.TabPage();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
+            this.checkBoxDoubleClickNotify = new Sunny.UI.UICheckBox();
             this.checkBoxHideWhenStart = new Sunny.UI.UICheckBox();
             this.checkBoxAutoCheckUpdate = new Sunny.UI.UICheckBox();
             this.buttonCleanLog = new Sunny.UI.UIButton();
@@ -53,6 +54,20 @@
             this.labelStyle = new Sunny.UI.UILabel();
             this.comboBoxStyle = new Sunny.UI.UIComboBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelAbout = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.linkLabelGithub = new Sunny.UI.UILinkLabel();
+            this.labelProgramName = new Sunny.UI.UILabel();
+            this.labelVersion = new Sunny.UI.UILabel();
+            this.tableLayoutPanelContributors = new System.Windows.Forms.TableLayoutPanel();
+            this.uiAvatarMoInk = new Sunny.UI.UIAvatar();
+            this.uiAvatarRicky = new Sunny.UI.UIAvatar();
+            this.tableLayoutPanelMoInk = new System.Windows.Forms.TableLayoutPanel();
+            this.symbolLabelMoInk = new Sunny.UI.UISymbolLabel();
+            this.linkLabelMoInkGithub = new Sunny.UI.UILinkLabel();
+            this.tableLayoutPanelRicky = new System.Windows.Forms.TableLayoutPanel();
+            this.linkLabelRickyGithub = new Sunny.UI.UILinkLabel();
+            this.symbolLabelRicky = new Sunny.UI.UISymbolLabel();
             this.tabPageLogs = new System.Windows.Forms.TabPage();
             this.comboBoxLogLevel = new Sunny.UI.UIComboBox();
             this.labelLogLevel = new Sunny.UI.UILabel();
@@ -62,7 +77,6 @@
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip = new Sunny.UI.UIContextMenuStrip();
-            this.toolStripMenuItemShowAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemUpdateCheckerShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPageFileSorting.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
@@ -70,6 +84,12 @@
             this.tabPageUsefulFeatures.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSkin.SuspendLayout();
+            this.tabPageAbout.SuspendLayout();
+            this.tableLayoutPanelAbout.SuspendLayout();
+            this.tableLayoutPanelInfo.SuspendLayout();
+            this.tableLayoutPanelContributors.SuspendLayout();
+            this.tableLayoutPanelMoInk.SuspendLayout();
+            this.tableLayoutPanelRicky.SuspendLayout();
             this.tabPageLogs.SuspendLayout();
             this.contextNotifyIconMenuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
@@ -287,6 +307,7 @@
             // 
             // tabPageSettings
             // 
+            this.tabPageSettings.Controls.Add(this.checkBoxDoubleClickNotify);
             this.tabPageSettings.Controls.Add(this.checkBoxHideWhenStart);
             this.tabPageSettings.Controls.Add(this.checkBoxAutoCheckUpdate);
             this.tabPageSettings.Controls.Add(this.buttonCleanLog);
@@ -298,6 +319,21 @@
             this.tabPageSettings.TabIndex = 3;
             this.tabPageSettings.Text = "设置";
             this.tabPageSettings.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDoubleClickNotify
+            // 
+            this.checkBoxDoubleClickNotify.Checked = true;
+            this.checkBoxDoubleClickNotify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxDoubleClickNotify.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxDoubleClickNotify.Location = new System.Drawing.Point(6, 144);
+            this.checkBoxDoubleClickNotify.MinimumSize = new System.Drawing.Size(1, 1);
+            this.checkBoxDoubleClickNotify.Name = "checkBoxDoubleClickNotify";
+            this.checkBoxDoubleClickNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.checkBoxDoubleClickNotify.Size = new System.Drawing.Size(192, 25);
+            this.checkBoxDoubleClickNotify.Style = Sunny.UI.UIStyle.LightBlue;
+            this.checkBoxDoubleClickNotify.TabIndex = 6;
+            this.checkBoxDoubleClickNotify.Text = "双击托盘图标显示界面";
+            this.checkBoxDoubleClickNotify.CheckedChanged += new System.EventHandler(this.CheckBoxDoubleClickNotify_CheckedChanged);
             // 
             // checkBoxHideWhenStart
             // 
@@ -311,7 +347,7 @@
             this.checkBoxHideWhenStart.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxHideWhenStart.TabIndex = 5;
             this.checkBoxHideWhenStart.Text = "启动时隐藏到托盘";
-            this.checkBoxHideWhenStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.checkBoxHideWhenStart_ValueChanged);
+            this.checkBoxHideWhenStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxHideWhenStart_ValueChanged);
             // 
             // checkBoxAutoCheckUpdate
             // 
@@ -334,7 +370,7 @@
             this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonCleanLog.Location = new System.Drawing.Point(6, 144);
+            this.buttonCleanLog.Location = new System.Drawing.Point(6, 175);
             this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCleanLog.Name = "buttonCleanLog";
             this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -409,12 +445,256 @@
             // 
             // tabPageAbout
             // 
+            this.tabPageAbout.Controls.Add(this.tableLayoutPanelAbout);
             this.tabPageAbout.Location = new System.Drawing.Point(0, 40);
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.Size = new System.Drawing.Size(801, 453);
             this.tabPageAbout.TabIndex = 4;
             this.tabPageAbout.Text = "关于";
             this.tabPageAbout.UseVisualStyleBackColor = true;
+            this.tabPageAbout.Paint += new System.Windows.Forms.PaintEventHandler(this.TabPageAbout_Paint);
+            // 
+            // tableLayoutPanelAbout
+            // 
+            this.tableLayoutPanelAbout.ColumnCount = 1;
+            this.tableLayoutPanelAbout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelAbout.Controls.Add(this.tableLayoutPanelInfo, 0, 0);
+            this.tableLayoutPanelAbout.Controls.Add(this.tableLayoutPanelContributors, 0, 1);
+            this.tableLayoutPanelAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelAbout.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelAbout.Name = "tableLayoutPanelAbout";
+            this.tableLayoutPanelAbout.RowCount = 2;
+            this.tableLayoutPanelAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAbout.Size = new System.Drawing.Size(801, 453);
+            this.tableLayoutPanelAbout.TabIndex = 5;
+            // 
+            // tableLayoutPanelInfo
+            // 
+            this.tableLayoutPanelInfo.ColumnCount = 1;
+            this.tableLayoutPanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelInfo.Controls.Add(this.linkLabelGithub, 0, 2);
+            this.tableLayoutPanelInfo.Controls.Add(this.labelProgramName, 0, 0);
+            this.tableLayoutPanelInfo.Controls.Add(this.labelVersion, 0, 1);
+            this.tableLayoutPanelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelInfo.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelInfo.Name = "tableLayoutPanelInfo";
+            this.tableLayoutPanelInfo.RowCount = 3;
+            this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelInfo.Size = new System.Drawing.Size(795, 220);
+            this.tableLayoutPanelInfo.TabIndex = 0;
+            // 
+            // linkLabelGithub
+            // 
+            this.linkLabelGithub.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.linkLabelGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelGithub.AutoSize = true;
+            this.linkLabelGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.linkLabelGithub.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.linkLabelGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.linkLabelGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.linkLabelGithub.Location = new System.Drawing.Point(3, 146);
+            this.linkLabelGithub.Name = "linkLabelGithub";
+            this.linkLabelGithub.Size = new System.Drawing.Size(789, 74);
+            this.linkLabelGithub.Style = Sunny.UI.UIStyle.LightBlue;
+            this.linkLabelGithub.TabIndex = 4;
+            this.linkLabelGithub.TabStop = true;
+            this.linkLabelGithub.Text = "Github 仓库地址";
+            this.linkLabelGithub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabelGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.linkLabelGithub.Click += new System.EventHandler(this.LinkLabelGithub_Click);
+            // 
+            // labelProgramName
+            // 
+            this.labelProgramName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelProgramName.AutoSize = true;
+            this.labelProgramName.Font = new System.Drawing.Font("微软雅黑", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProgramName.Location = new System.Drawing.Point(3, 0);
+            this.labelProgramName.Name = "labelProgramName";
+            this.labelProgramName.Size = new System.Drawing.Size(789, 73);
+            this.labelProgramName.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelProgramName.TabIndex = 2;
+            this.labelProgramName.Text = "SeewoHelper";
+            this.labelProgramName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.Location = new System.Drawing.Point(3, 73);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(789, 73);
+            this.labelVersion.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelVersion.TabIndex = 3;
+            this.labelVersion.Text = "应用版本：";
+            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanelContributors
+            // 
+            this.tableLayoutPanelContributors.ColumnCount = 4;
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarMoInk, 0, 0);
+            this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarRicky, 2, 0);
+            this.tableLayoutPanelContributors.Controls.Add(this.tableLayoutPanelMoInk, 1, 0);
+            this.tableLayoutPanelContributors.Controls.Add(this.tableLayoutPanelRicky, 3, 0);
+            this.tableLayoutPanelContributors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelContributors.Location = new System.Drawing.Point(3, 229);
+            this.tableLayoutPanelContributors.Name = "tableLayoutPanelContributors";
+            this.tableLayoutPanelContributors.RowCount = 1;
+            this.tableLayoutPanelContributors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelContributors.Size = new System.Drawing.Size(795, 221);
+            this.tableLayoutPanelContributors.TabIndex = 1;
+            // 
+            // uiAvatarMoInk
+            // 
+            this.uiAvatarMoInk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiAvatarMoInk.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiAvatarMoInk.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
+            this.uiAvatarMoInk.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarMoInk.Image")));
+            this.uiAvatarMoInk.Location = new System.Drawing.Point(3, 34);
+            this.uiAvatarMoInk.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiAvatarMoInk.Name = "uiAvatarMoInk";
+            this.uiAvatarMoInk.Size = new System.Drawing.Size(153, 153);
+            this.uiAvatarMoInk.Style = Sunny.UI.UIStyle.LightBlue;
+            this.uiAvatarMoInk.TabIndex = 0;
+            this.uiAvatarMoInk.Text = "uiAvatar1";
+            // 
+            // uiAvatarRicky
+            // 
+            this.uiAvatarRicky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiAvatarRicky.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiAvatarRicky.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
+            this.uiAvatarRicky.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarRicky.Image")));
+            this.uiAvatarRicky.Location = new System.Drawing.Point(400, 34);
+            this.uiAvatarRicky.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiAvatarRicky.Name = "uiAvatarRicky";
+            this.uiAvatarRicky.Size = new System.Drawing.Size(153, 153);
+            this.uiAvatarRicky.Style = Sunny.UI.UIStyle.LightBlue;
+            this.uiAvatarRicky.TabIndex = 1;
+            this.uiAvatarRicky.Text = "uiAvatar2";
+            // 
+            // tableLayoutPanelMoInk
+            // 
+            this.tableLayoutPanelMoInk.ColumnCount = 1;
+            this.tableLayoutPanelMoInk.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMoInk.Controls.Add(this.symbolLabelMoInk, 0, 1);
+            this.tableLayoutPanelMoInk.Controls.Add(this.linkLabelMoInkGithub, 0, 2);
+            this.tableLayoutPanelMoInk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMoInk.Location = new System.Drawing.Point(162, 3);
+            this.tableLayoutPanelMoInk.Name = "tableLayoutPanelMoInk";
+            this.tableLayoutPanelMoInk.RowCount = 4;
+            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelMoInk.Size = new System.Drawing.Size(232, 215);
+            this.tableLayoutPanelMoInk.TabIndex = 2;
+            // 
+            // symbolLabelMoInk
+            // 
+            this.symbolLabelMoInk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.symbolLabelMoInk.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.symbolLabelMoInk.Location = new System.Drawing.Point(3, 33);
+            this.symbolLabelMoInk.MinimumSize = new System.Drawing.Size(1, 1);
+            this.symbolLabelMoInk.Name = "symbolLabelMoInk";
+            this.symbolLabelMoInk.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.symbolLabelMoInk.Size = new System.Drawing.Size(226, 71);
+            this.symbolLabelMoInk.Style = Sunny.UI.UIStyle.LightBlue;
+            this.symbolLabelMoInk.Symbol = 61447;
+            this.symbolLabelMoInk.TabIndex = 0;
+            this.symbolLabelMoInk.Text = "Mo-Ink";
+            // 
+            // linkLabelMoInkGithub
+            // 
+            this.linkLabelMoInkGithub.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.linkLabelMoInkGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelMoInkGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.linkLabelMoInkGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelMoInkGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.linkLabelMoInkGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.linkLabelMoInkGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.linkLabelMoInkGithub.Location = new System.Drawing.Point(3, 107);
+            this.linkLabelMoInkGithub.Name = "linkLabelMoInkGithub";
+            this.linkLabelMoInkGithub.Size = new System.Drawing.Size(226, 77);
+            this.linkLabelMoInkGithub.Style = Sunny.UI.UIStyle.LightBlue;
+            this.linkLabelMoInkGithub.TabIndex = 1;
+            this.linkLabelMoInkGithub.TabStop = true;
+            this.linkLabelMoInkGithub.Text = "Github 主页";
+            this.linkLabelMoInkGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelMoInkGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.linkLabelMoInkGithub.Click += new System.EventHandler(this.LinkLabelMoInkGithub_Click);
+            // 
+            // tableLayoutPanelRicky
+            // 
+            this.tableLayoutPanelRicky.ColumnCount = 1;
+            this.tableLayoutPanelRicky.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRicky.Controls.Add(this.linkLabelRickyGithub, 0, 2);
+            this.tableLayoutPanelRicky.Controls.Add(this.symbolLabelRicky, 0, 1);
+            this.tableLayoutPanelRicky.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelRicky.Location = new System.Drawing.Point(559, 3);
+            this.tableLayoutPanelRicky.Name = "tableLayoutPanelRicky";
+            this.tableLayoutPanelRicky.RowCount = 4;
+            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelRicky.Size = new System.Drawing.Size(233, 215);
+            this.tableLayoutPanelRicky.TabIndex = 3;
+            // 
+            // linkLabelRickyGithub
+            // 
+            this.linkLabelRickyGithub.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.linkLabelRickyGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelRickyGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.linkLabelRickyGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelRickyGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.linkLabelRickyGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.linkLabelRickyGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.linkLabelRickyGithub.Location = new System.Drawing.Point(3, 107);
+            this.linkLabelRickyGithub.Name = "linkLabelRickyGithub";
+            this.linkLabelRickyGithub.Size = new System.Drawing.Size(227, 77);
+            this.linkLabelRickyGithub.Style = Sunny.UI.UIStyle.LightBlue;
+            this.linkLabelRickyGithub.TabIndex = 2;
+            this.linkLabelRickyGithub.TabStop = true;
+            this.linkLabelRickyGithub.Text = "Github 主页";
+            this.linkLabelRickyGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelRickyGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.linkLabelRickyGithub.Click += new System.EventHandler(this.LinkLabelRickyGithub_Click);
+            // 
+            // symbolLabelRicky
+            // 
+            this.symbolLabelRicky.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.symbolLabelRicky.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.symbolLabelRicky.Location = new System.Drawing.Point(3, 33);
+            this.symbolLabelRicky.MinimumSize = new System.Drawing.Size(1, 1);
+            this.symbolLabelRicky.Name = "symbolLabelRicky";
+            this.symbolLabelRicky.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.symbolLabelRicky.Size = new System.Drawing.Size(227, 71);
+            this.symbolLabelRicky.Style = Sunny.UI.UIStyle.LightBlue;
+            this.symbolLabelRicky.Symbol = 61447;
+            this.symbolLabelRicky.TabIndex = 1;
+            this.symbolLabelRicky.Text = "Ricky8955555";
             // 
             // tabPageLogs
             // 
@@ -522,20 +802,9 @@
             this.contextMenuStrip.DropShadowEnabled = false;
             this.contextMenuStrip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemShowAbout,
             this.toolStripMenuItemUpdateCheckerShow});
             this.contextMenuStrip.Name = "uiContextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(136, 52);
-            // 
-            // toolStripMenuItemShowAbout
-            // 
-            this.toolStripMenuItemShowAbout.BackColor = System.Drawing.Color.White;
-            this.toolStripMenuItemShowAbout.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStripMenuItemShowAbout.ForeColor = System.Drawing.Color.Black;
-            this.toolStripMenuItemShowAbout.Name = "toolStripMenuItemShowAbout";
-            this.toolStripMenuItemShowAbout.Size = new System.Drawing.Size(135, 24);
-            this.toolStripMenuItemShowAbout.Text = "关于";
-            this.toolStripMenuItemShowAbout.Click += new System.EventHandler(this.ToolStripMenuItemShowAbout_Click);
+            this.contextMenuStrip.Size = new System.Drawing.Size(136, 28);
             // 
             // toolStripMenuItemUpdateCheckerShow
             // 
@@ -573,6 +842,13 @@
             this.tabPageSettings.ResumeLayout(false);
             this.tableLayoutPanelSkin.ResumeLayout(false);
             this.tableLayoutPanelSkin.PerformLayout();
+            this.tabPageAbout.ResumeLayout(false);
+            this.tableLayoutPanelAbout.ResumeLayout(false);
+            this.tableLayoutPanelInfo.ResumeLayout(false);
+            this.tableLayoutPanelInfo.PerformLayout();
+            this.tableLayoutPanelContributors.ResumeLayout(false);
+            this.tableLayoutPanelMoInk.ResumeLayout(false);
+            this.tableLayoutPanelRicky.ResumeLayout(false);
             this.tabPageLogs.ResumeLayout(false);
             this.tabPageLogs.PerformLayout();
             this.contextNotifyIconMenuStrip.ResumeLayout(false);
@@ -600,7 +876,6 @@
         private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderPath;
         private System.Windows.Forms.ColumnHeader listViewSubjectStorageInfosColumnHeaderKeywords;
         private Sunny.UI.UIContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShowAbout;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUpdateCheckerShow;
         private Sunny.UI.UIButton buttonStartFileSorting;
         private System.Windows.Forms.TabPage tabPageSettings;
@@ -616,7 +891,21 @@
         private Sunny.UI.UICheckBox checkBoxAutoCheckUpdate;
         private Sunny.UI.UICheckBox checkBoxHideWhenStart;
         private System.Windows.Forms.TabPage tabPageAbout;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAbout;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelInfo;
+        private Sunny.UI.UILabel labelProgramName;
+        private Sunny.UI.UILabel labelVersion;
+        private Sunny.UI.UILinkLabel linkLabelGithub;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelContributors;
+        private Sunny.UI.UIAvatar uiAvatarMoInk;
+        private Sunny.UI.UIAvatar uiAvatarRicky;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMoInk;
+        private Sunny.UI.UISymbolLabel symbolLabelMoInk;
+        private Sunny.UI.UILinkLabel linkLabelMoInkGithub;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRicky;
+        private Sunny.UI.UILinkLabel linkLabelRickyGithub;
+        private Sunny.UI.UISymbolLabel symbolLabelRicky;
+        private Sunny.UI.UICheckBox checkBoxDoubleClickNotify;
     }
 }
 

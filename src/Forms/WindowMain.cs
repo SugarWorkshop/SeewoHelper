@@ -81,6 +81,7 @@ namespace SeewoHelper.Forms
             LoadComboBoxLogLevel();
             LoadAutoCheckUpdate();
             LoadHideWhenStart();
+            LoadDoubleClickNotify();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
         }
@@ -99,6 +100,11 @@ namespace SeewoHelper.Forms
             {
                 HideWindow();
             }
+        }
+
+        private void LoadDoubleClickNotify()
+        {
+            checkBoxDoubleClickNotify.Checked = Configurations.UISettings.Content.IsDoubleClickNotify;
         }
 
         private async void LoadAutoCheckUpdate()
@@ -184,7 +190,10 @@ namespace SeewoHelper.Forms
 
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            ShowWindow();
+            if (checkBoxDoubleClickNotify.Checked)
+            {
+                ShowWindow();
+            }
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,27 +201,26 @@ namespace SeewoHelper.Forms
             ShowWindow();
         }
 
-        private void ShowWindow()
+        private async void ShowWindow()
         {
+            this.Visible = true;
+            await Task.Delay(380);
             WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             Activate();
         }
 
-        private void HideWindow()
+        private async void HideWindow()
         {
             WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+            await Task.Delay(380);
+            this.Visible = false;
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void ToolStripMenuItemShowAbout_Click(object sender, EventArgs e)
-        {
-            new AboutWindow().Show();
         }
 
         private void ToolStripMenuItemUpdateCheckerShow_Click(object sender, EventArgs e)
@@ -263,9 +271,35 @@ namespace SeewoHelper.Forms
             Configurations.UISettings.Save();
         }
 
-        private void checkBoxHideWhenStart_ValueChanged(object sender, bool value)
+        private void CheckBoxHideWhenStart_ValueChanged(object sender, bool value)
         {
             Configurations.UISettings.Content = Configurations.UISettings.Content with { IsHideWhenStart = checkBoxHideWhenStart.Checked };
+            Configurations.UISettings.Save();
+        }
+
+        private void LinkLabelGithub_Click(object sender, EventArgs e)
+        {
+            NetUtilities.Start(Constants.RepositoryLink);
+        }
+
+        private void TabPageAbout_Paint(object sender, PaintEventArgs e)
+        {
+            labelVersion.Text = "应用版本：" + Constants.Version.ToString(3);
+        }
+
+        private void LinkLabelMoInkGithub_Click(object sender, EventArgs e)
+        {
+            NetUtilities.Start(Constants.MoInkLink);
+        }
+
+        private void LinkLabelRickyGithub_Click(object sender, EventArgs e)
+        {
+            NetUtilities.Start(Constants.RickyLink);
+        }
+
+        private void CheckBoxDoubleClickNotify_CheckedChanged(object sender, EventArgs e)
+        {
+            Configurations.UISettings.Content = Configurations.UISettings.Content with { IsDoubleClickNotify = checkBoxDoubleClickNotify.Checked };
             Configurations.UISettings.Save();
         }
     }

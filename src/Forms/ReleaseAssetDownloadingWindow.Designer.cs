@@ -44,14 +44,15 @@ namespace SeewoHelper.Forms
             this.listBoxRelease.AutoScroll = true;
             this.listBoxRelease.FillColor = System.Drawing.Color.White;
             this.listBoxRelease.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBoxRelease.FormatString = "";
             this.listBoxRelease.ItemHeight = 35;
             this.listBoxRelease.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.listBoxRelease.Location = new System.Drawing.Point(4, 37);
+            this.listBoxRelease.Location = new System.Drawing.Point(4, 38);
             this.listBoxRelease.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBoxRelease.MinimumSize = new System.Drawing.Size(1, 1);
             this.listBoxRelease.Name = "listBoxRelease";
             this.listBoxRelease.Padding = new System.Windows.Forms.Padding(2);
-            this.listBoxRelease.Size = new System.Drawing.Size(294, 325);
+            this.listBoxRelease.Size = new System.Drawing.Size(300, 330);
             this.listBoxRelease.Style = Sunny.UI.UIStyle.LightBlue;
             this.listBoxRelease.TabIndex = 0;
             this.listBoxRelease.Text = null;
@@ -60,21 +61,19 @@ namespace SeewoHelper.Forms
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.Controls.Add(this.checkBoxFastGit, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.listBoxRelease, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.labelVersion, 0, 0);
-            this.tableLayoutPanel.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 35);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 3;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(302, 409);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(308, 415);
             this.tableLayoutPanel.TabIndex = 1;
             // 
             // checkBoxFastGit
@@ -83,7 +82,7 @@ namespace SeewoHelper.Forms
             this.checkBoxFastGit.Checked = true;
             this.checkBoxFastGit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxFastGit.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxFastGit.Location = new System.Drawing.Point(79, 370);
+            this.checkBoxFastGit.Location = new System.Drawing.Point(82, 376);
             this.checkBoxFastGit.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxFastGit.Name = "checkBoxFastGit";
             this.checkBoxFastGit.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
@@ -101,7 +100,7 @@ namespace SeewoHelper.Forms
             this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelVersion.Location = new System.Drawing.Point(3, 0);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(296, 32);
+            this.labelVersion.Size = new System.Drawing.Size(302, 33);
             this.labelVersion.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelVersion.TabIndex = 2;
             this.labelVersion.Text = "当前版本";

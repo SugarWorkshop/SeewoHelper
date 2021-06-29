@@ -16,15 +16,19 @@ namespace SeewoHelper
         public static readonly string AppName = Application.ProductName;
 
         /// <summary>
-        /// 贡献者
-        /// 若有贡献请修改该字段
-        /// </summary>
-        public static readonly string[] Contributors = new string[] { "Mo_Ink", "ricky8955555" };
-
-        /// <summary>
         /// 项目链接
         /// </summary>
         public static readonly string RepositoryLink = "https://github.com/Mo-Ink/SeewoHelper";
+
+        /// <summary>
+        /// Mo-Ink Github 主页
+        /// </summary>
+        public static readonly string MoInkLink = "https://github.com/Mo-Ink";
+
+        /// <summary>
+        /// Ricky Github 主页
+        /// </summary>
+        public static readonly string RickyLink = "https://github.com/ricky8955555";
 
         /// <summary>
         /// 应用版本
