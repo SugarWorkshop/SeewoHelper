@@ -3,6 +3,7 @@ using SeewoHelper.Utilities;
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace SeewoHelper.Forms
 {
     public partial class WindowMain : UIForm
     {
+        public int QuicklyControlTimerCount = 0;
+        public bool isShuttingDown = false;
+
         private static readonly Dictionary<ExtraFileSortingWay, string> _extraFileSortingWayDictionary = new()
         {
             [ExtraFileSortingWay.None] = "不进行操作",
@@ -83,8 +87,16 @@ namespace SeewoHelper.Forms
             LoadHideWhenStart();
             LoadHideToNotify();
             LoadDoubleClickNotify();
+            LoadQuicklyControlTimer();
             checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
             Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
+        }
+
+        private void LoadQuicklyControlTimer()
+        {
+            timerQuicklyControl.Enabled = true;
+            timerQuicklyControl.Interval = 1;
+            timerQuicklyControl.Stop();
         }
 
         private void LoadComboBoxExtraFileSortingWay()
@@ -316,6 +328,51 @@ namespace SeewoHelper.Forms
             checkBoxDoubleClickNotify.Enabled = checkBoxHideToNotify.Checked;
             Configurations.UISettings.Content = Configurations.UISettings.Content with { IsHideToNotify = checkBoxHideToNotify.Checked };
             Configurations.UISettings.Save();
+        }
+
+        private void ButtonShutdown_Click(object sender, EventArgs e)
+        {
+            if (!isShuttingDown)
+            {
+                timerQuicklyControl.Start();
+                SystemUtilities.RunCmdProcess("shutdown -s -t 10 -c 将在10s后关机");
+                isShuttingDown = true;
+            }
+        }
+
+        private void ButtonRestart_Click(object sender, EventArgs e)
+        {
+            if (!isShuttingDown)
+            {
+                SystemUtilities.RunCmdProcess("shutdown -r -t 10 -c 将在10s后重启");
+                timerQuicklyControl.Start();
+                isShuttingDown = true;
+            }
+        }
+
+        private void ButtonLogout_Click(object sender, EventArgs e)
+        {
+            if (!isShuttingDown) 
+            {
+                SystemUtilities.RunCmdProcess("shutdown -l -t 10");
+                timerQuicklyControl.Start();
+                isShuttingDown = true;
+            }
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            SystemUtilities.RunCmdProcess("shutdown -a");
+            timerQuicklyControl.Stop();
+            processBarQuicklyControl.Value = 0;
+            QuicklyControlTimerCount = 0;
+            isShuttingDown = false;
+        }
+
+        private void timerQuicklyControl_Tick(object sender, EventArgs e)
+        {
+            QuicklyControlTimerCount += 1;
+            processBarQuicklyControl.Value = QuicklyControlTimerCount;
         }
     }
 }

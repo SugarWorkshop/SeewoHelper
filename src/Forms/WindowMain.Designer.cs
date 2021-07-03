@@ -43,6 +43,13 @@
             this.buttonFileSortingInfoRemove = new Sunny.UI.UIButton();
             this.tabControl = new Sunny.UI.UITabControl();
             this.tabPageUsefulFeatures = new System.Windows.Forms.TabPage();
+            this.groupBoxQuicklyControl = new System.Windows.Forms.GroupBox();
+            this.processBarQuicklyControl = new Sunny.UI.UIProcessBar();
+            this.tableLayoutPanelQuicklyControl = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonShutdown = new Sunny.UI.UIButton();
+            this.buttonCancel = new Sunny.UI.UIButton();
+            this.buttonRestart = new Sunny.UI.UIButton();
+            this.buttonLogout = new Sunny.UI.UIButton();
             this.checkBoxDisableServiceWindowsSearch = new Sunny.UI.UICheckBox();
             this.checkBoxDisableServiceWindowsUpdate = new Sunny.UI.UICheckBox();
             this.checkBoxDisableServiceShellHardwareDetection = new Sunny.UI.UICheckBox();
@@ -81,10 +88,13 @@
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip = new Sunny.UI.UIContextMenuStrip();
             this.toolStripMenuItemUpdateCheckerShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerQuicklyControl = new System.Windows.Forms.Timer(this.components);
             this.tabPageFileSorting.SuspendLayout();
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageUsefulFeatures.SuspendLayout();
+            this.groupBoxQuicklyControl.SuspendLayout();
+            this.tableLayoutPanelQuicklyControl.SuspendLayout();
             this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelSkin.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
@@ -266,7 +276,7 @@
             this.tabControl.Controls.Add(this.tabPageAbout);
             this.tabControl.Controls.Add(this.tabPageLogs);
             this.tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabControl.ItemSize = new System.Drawing.Size(150, 40);
             this.tabControl.Location = new System.Drawing.Point(4, 39);
             this.tabControl.MainPage = "";
@@ -285,6 +295,7 @@
             // tabPageUsefulFeatures
             // 
             this.tabPageUsefulFeatures.BackColor = System.Drawing.Color.White;
+            this.tabPageUsefulFeatures.Controls.Add(this.groupBoxQuicklyControl);
             this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceWindowsSearch);
             this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceWindowsUpdate);
             this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceShellHardwareDetection);
@@ -296,16 +307,134 @@
             this.tabPageUsefulFeatures.TabIndex = 1;
             this.tabPageUsefulFeatures.Text = "实用功能";
             // 
+            // groupBoxQuicklyControl
+            // 
+            this.groupBoxQuicklyControl.Controls.Add(this.processBarQuicklyControl);
+            this.groupBoxQuicklyControl.Controls.Add(this.tableLayoutPanelQuicklyControl);
+            this.groupBoxQuicklyControl.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBoxQuicklyControl.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxQuicklyControl.Location = new System.Drawing.Point(4, 321);
+            this.groupBoxQuicklyControl.Name = "groupBoxQuicklyControl";
+            this.groupBoxQuicklyControl.Size = new System.Drawing.Size(794, 129);
+            this.groupBoxQuicklyControl.TabIndex = 9;
+            this.groupBoxQuicklyControl.TabStop = false;
+            this.groupBoxQuicklyControl.Text = "快捷电源控制";
+            // 
+            // processBarQuicklyControl
+            // 
+            this.processBarQuicklyControl.DecimalCount = 1;
+            this.processBarQuicklyControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.processBarQuicklyControl.Location = new System.Drawing.Point(6, 25);
+            this.processBarQuicklyControl.Maximum = 1000;
+            this.processBarQuicklyControl.MinimumSize = new System.Drawing.Size(70, 5);
+            this.processBarQuicklyControl.Name = "processBarQuicklyControl";
+            this.processBarQuicklyControl.Size = new System.Drawing.Size(782, 32);
+            this.processBarQuicklyControl.Style = Sunny.UI.UIStyle.LightBlue;
+            this.processBarQuicklyControl.TabIndex = 8;
+            this.processBarQuicklyControl.TagString = "";
+            this.processBarQuicklyControl.Text = "0.0%";
+            // 
+            // tableLayoutPanelQuicklyControl
+            // 
+            this.tableLayoutPanelQuicklyControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanelQuicklyControl.ColumnCount = 4;
+            this.tableLayoutPanelQuicklyControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelQuicklyControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelQuicklyControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelQuicklyControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelQuicklyControl.Controls.Add(this.buttonShutdown, 0, 0);
+            this.tableLayoutPanelQuicklyControl.Controls.Add(this.buttonCancel, 3, 0);
+            this.tableLayoutPanelQuicklyControl.Controls.Add(this.buttonRestart, 1, 0);
+            this.tableLayoutPanelQuicklyControl.Controls.Add(this.buttonLogout, 2, 0);
+            this.tableLayoutPanelQuicklyControl.Location = new System.Drawing.Point(3, 63);
+            this.tableLayoutPanelQuicklyControl.Name = "tableLayoutPanelQuicklyControl";
+            this.tableLayoutPanelQuicklyControl.RowCount = 1;
+            this.tableLayoutPanelQuicklyControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelQuicklyControl.Size = new System.Drawing.Size(788, 60);
+            this.tableLayoutPanelQuicklyControl.TabIndex = 7;
+            // 
+            // buttonShutdown
+            // 
+            this.buttonShutdown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonShutdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShutdown.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonShutdown.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonShutdown.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonShutdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonShutdown.Location = new System.Drawing.Point(38, 4);
+            this.buttonShutdown.MinimumSize = new System.Drawing.Size(1, 1);
+            this.buttonShutdown.Name = "buttonShutdown";
+            this.buttonShutdown.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonShutdown.Size = new System.Drawing.Size(120, 51);
+            this.buttonShutdown.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonShutdown.TabIndex = 3;
+            this.buttonShutdown.Text = "关机";
+            this.buttonShutdown.Click += new System.EventHandler(this.ButtonShutdown_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonCancel.Location = new System.Drawing.Point(629, 4);
+            this.buttonCancel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonCancel.Size = new System.Drawing.Size(120, 51);
+            this.buttonCancel.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonCancel.TabIndex = 6;
+            this.buttonCancel.Text = "取消操作";
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonRestart.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonRestart.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRestart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonRestart.Location = new System.Drawing.Point(235, 4);
+            this.buttonRestart.MinimumSize = new System.Drawing.Size(1, 1);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonRestart.Size = new System.Drawing.Size(120, 51);
+            this.buttonRestart.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonRestart.TabIndex = 4;
+            this.buttonRestart.Text = "重启";
+            this.buttonRestart.Click += new System.EventHandler(this.ButtonRestart_Click);
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.buttonLogout.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonLogout.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonLogout.Location = new System.Drawing.Point(432, 4);
+            this.buttonLogout.MinimumSize = new System.Drawing.Size(1, 1);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.buttonLogout.Size = new System.Drawing.Size(120, 51);
+            this.buttonLogout.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonLogout.TabIndex = 5;
+            this.buttonLogout.Text = "注销";
+            this.buttonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
+            // 
             // checkBoxDisableServiceWindowsSearch
             // 
             this.checkBoxDisableServiceWindowsSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxDisableServiceWindowsSearch.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxDisableServiceWindowsSearch.Location = new System.Drawing.Point(4, 64);
+            this.checkBoxDisableServiceWindowsSearch.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxDisableServiceWindowsSearch.Location = new System.Drawing.Point(7, 72);
             this.checkBoxDisableServiceWindowsSearch.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxDisableServiceWindowsSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDisableServiceWindowsSearch.Name = "checkBoxDisableServiceWindowsSearch";
             this.checkBoxDisableServiceWindowsSearch.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxDisableServiceWindowsSearch.Size = new System.Drawing.Size(195, 22);
+            this.checkBoxDisableServiceWindowsSearch.Size = new System.Drawing.Size(207, 26);
             this.checkBoxDisableServiceWindowsSearch.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceWindowsSearch.TabIndex = 2;
             this.checkBoxDisableServiceWindowsSearch.Text = "禁用 Windows Search";
@@ -313,13 +442,13 @@
             // checkBoxDisableServiceWindowsUpdate
             // 
             this.checkBoxDisableServiceWindowsUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxDisableServiceWindowsUpdate.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxDisableServiceWindowsUpdate.Location = new System.Drawing.Point(4, 34);
+            this.checkBoxDisableServiceWindowsUpdate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxDisableServiceWindowsUpdate.Location = new System.Drawing.Point(7, 38);
             this.checkBoxDisableServiceWindowsUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxDisableServiceWindowsUpdate.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDisableServiceWindowsUpdate.Name = "checkBoxDisableServiceWindowsUpdate";
             this.checkBoxDisableServiceWindowsUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxDisableServiceWindowsUpdate.Size = new System.Drawing.Size(195, 22);
+            this.checkBoxDisableServiceWindowsUpdate.Size = new System.Drawing.Size(207, 26);
             this.checkBoxDisableServiceWindowsUpdate.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceWindowsUpdate.TabIndex = 1;
             this.checkBoxDisableServiceWindowsUpdate.Text = "禁用 Windows Update";
@@ -327,13 +456,13 @@
             // checkBoxDisableServiceShellHardwareDetection
             // 
             this.checkBoxDisableServiceShellHardwareDetection.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxDisableServiceShellHardwareDetection.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(4, 4);
+            this.checkBoxDisableServiceShellHardwareDetection.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxDisableServiceShellHardwareDetection.Location = new System.Drawing.Point(7, 4);
             this.checkBoxDisableServiceShellHardwareDetection.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxDisableServiceShellHardwareDetection.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(133, 22);
+            this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(144, 26);
             this.checkBoxDisableServiceShellHardwareDetection.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
             this.checkBoxDisableServiceShellHardwareDetection.Text = "禁用 自动播放";
@@ -359,11 +488,11 @@
             this.checkBoxHideToNotify.Checked = true;
             this.checkBoxHideToNotify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxHideToNotify.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxHideToNotify.Location = new System.Drawing.Point(6, 144);
+            this.checkBoxHideToNotify.Location = new System.Drawing.Point(6, 147);
             this.checkBoxHideToNotify.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxHideToNotify.Name = "checkBoxHideToNotify";
             this.checkBoxHideToNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxHideToNotify.Size = new System.Drawing.Size(192, 25);
+            this.checkBoxHideToNotify.Size = new System.Drawing.Size(192, 26);
             this.checkBoxHideToNotify.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxHideToNotify.TabIndex = 7;
             this.checkBoxHideToNotify.Text = "关闭窗口隐藏至托盘";
@@ -374,11 +503,11 @@
             this.checkBoxDoubleClickNotify.Checked = true;
             this.checkBoxDoubleClickNotify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxDoubleClickNotify.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxDoubleClickNotify.Location = new System.Drawing.Point(6, 175);
+            this.checkBoxDoubleClickNotify.Location = new System.Drawing.Point(6, 179);
             this.checkBoxDoubleClickNotify.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxDoubleClickNotify.Name = "checkBoxDoubleClickNotify";
             this.checkBoxDoubleClickNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxDoubleClickNotify.Size = new System.Drawing.Size(192, 25);
+            this.checkBoxDoubleClickNotify.Size = new System.Drawing.Size(192, 26);
             this.checkBoxDoubleClickNotify.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDoubleClickNotify.TabIndex = 6;
             this.checkBoxDoubleClickNotify.Text = "双击托盘图标显示界面";
@@ -388,11 +517,11 @@
             // 
             this.checkBoxHideWhenStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxHideWhenStart.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxHideWhenStart.Location = new System.Drawing.Point(6, 82);
+            this.checkBoxHideWhenStart.Location = new System.Drawing.Point(6, 83);
             this.checkBoxHideWhenStart.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxHideWhenStart.Name = "checkBoxHideWhenStart";
             this.checkBoxHideWhenStart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxHideWhenStart.Size = new System.Drawing.Size(164, 25);
+            this.checkBoxHideWhenStart.Size = new System.Drawing.Size(164, 26);
             this.checkBoxHideWhenStart.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxHideWhenStart.TabIndex = 5;
             this.checkBoxHideWhenStart.Text = "启动时隐藏到托盘";
@@ -402,11 +531,11 @@
             // 
             this.checkBoxAutoCheckUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxAutoCheckUpdate.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxAutoCheckUpdate.Location = new System.Drawing.Point(6, 113);
+            this.checkBoxAutoCheckUpdate.Location = new System.Drawing.Point(6, 115);
             this.checkBoxAutoCheckUpdate.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxAutoCheckUpdate.Name = "checkBoxAutoCheckUpdate";
             this.checkBoxAutoCheckUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxAutoCheckUpdate.Size = new System.Drawing.Size(192, 25);
+            this.checkBoxAutoCheckUpdate.Size = new System.Drawing.Size(192, 26);
             this.checkBoxAutoCheckUpdate.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxAutoCheckUpdate.TabIndex = 4;
             this.checkBoxAutoCheckUpdate.Text = "启动时自动检查更新";
@@ -419,7 +548,7 @@
             this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.buttonCleanLog.Location = new System.Drawing.Point(6, 206);
+            this.buttonCleanLog.Location = new System.Drawing.Point(6, 211);
             this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCleanLog.Name = "buttonCleanLog";
             this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -437,7 +566,7 @@
             this.checkBoxAutoStart.MinimumSize = new System.Drawing.Size(1, 1);
             this.checkBoxAutoStart.Name = "checkBoxAutoStart";
             this.checkBoxAutoStart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.checkBoxAutoStart.Size = new System.Drawing.Size(123, 25);
+            this.checkBoxAutoStart.Size = new System.Drawing.Size(123, 26);
             this.checkBoxAutoStart.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxAutoStart.TabIndex = 2;
             this.checkBoxAutoStart.Text = "开机自动启动";
@@ -645,10 +774,10 @@
             this.tableLayoutPanelMoInk.Location = new System.Drawing.Point(162, 3);
             this.tableLayoutPanelMoInk.Name = "tableLayoutPanelMoInk";
             this.tableLayoutPanelMoInk.RowCount = 4;
-            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelMoInk.Size = new System.Drawing.Size(232, 215);
             this.tableLayoutPanelMoInk.TabIndex = 2;
             // 
@@ -658,11 +787,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.symbolLabelMoInk.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.symbolLabelMoInk.Location = new System.Drawing.Point(3, 33);
+            this.symbolLabelMoInk.Location = new System.Drawing.Point(3, 38);
             this.symbolLabelMoInk.MinimumSize = new System.Drawing.Size(1, 1);
             this.symbolLabelMoInk.Name = "symbolLabelMoInk";
             this.symbolLabelMoInk.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.symbolLabelMoInk.Size = new System.Drawing.Size(226, 71);
+            this.symbolLabelMoInk.Size = new System.Drawing.Size(226, 66);
             this.symbolLabelMoInk.Style = Sunny.UI.UIStyle.LightBlue;
             this.symbolLabelMoInk.Symbol = 61447;
             this.symbolLabelMoInk.TabIndex = 0;
@@ -681,7 +810,7 @@
             this.linkLabelMoInkGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelMoInkGithub.Location = new System.Drawing.Point(3, 107);
             this.linkLabelMoInkGithub.Name = "linkLabelMoInkGithub";
-            this.linkLabelMoInkGithub.Size = new System.Drawing.Size(226, 77);
+            this.linkLabelMoInkGithub.Size = new System.Drawing.Size(226, 72);
             this.linkLabelMoInkGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelMoInkGithub.TabIndex = 1;
             this.linkLabelMoInkGithub.TabStop = true;
@@ -700,10 +829,10 @@
             this.tableLayoutPanelRicky.Location = new System.Drawing.Point(559, 3);
             this.tableLayoutPanelRicky.Name = "tableLayoutPanelRicky";
             this.tableLayoutPanelRicky.RowCount = 4;
-            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelRicky.Size = new System.Drawing.Size(233, 215);
             this.tableLayoutPanelRicky.TabIndex = 3;
             // 
@@ -720,7 +849,7 @@
             this.linkLabelRickyGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelRickyGithub.Location = new System.Drawing.Point(3, 107);
             this.linkLabelRickyGithub.Name = "linkLabelRickyGithub";
-            this.linkLabelRickyGithub.Size = new System.Drawing.Size(227, 77);
+            this.linkLabelRickyGithub.Size = new System.Drawing.Size(227, 72);
             this.linkLabelRickyGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelRickyGithub.TabIndex = 2;
             this.linkLabelRickyGithub.TabStop = true;
@@ -735,11 +864,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.symbolLabelRicky.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.symbolLabelRicky.Location = new System.Drawing.Point(3, 33);
+            this.symbolLabelRicky.Location = new System.Drawing.Point(3, 38);
             this.symbolLabelRicky.MinimumSize = new System.Drawing.Size(1, 1);
             this.symbolLabelRicky.Name = "symbolLabelRicky";
             this.symbolLabelRicky.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.symbolLabelRicky.Size = new System.Drawing.Size(227, 71);
+            this.symbolLabelRicky.Size = new System.Drawing.Size(227, 66);
             this.symbolLabelRicky.Style = Sunny.UI.UIStyle.LightBlue;
             this.symbolLabelRicky.Symbol = 61447;
             this.symbolLabelRicky.TabIndex = 1;
@@ -865,6 +994,10 @@
             this.toolStripMenuItemUpdateCheckerShow.Text = "检查更新";
             this.toolStripMenuItemUpdateCheckerShow.Click += new System.EventHandler(this.ToolStripMenuItemUpdateCheckerShow_Click);
             // 
+            // timerQuicklyControl
+            // 
+            this.timerQuicklyControl.Tick += new System.EventHandler(this.timerQuicklyControl_Tick);
+            // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -888,6 +1021,8 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPageUsefulFeatures.ResumeLayout(false);
+            this.groupBoxQuicklyControl.ResumeLayout(false);
+            this.tableLayoutPanelQuicklyControl.ResumeLayout(false);
             this.tabPageSettings.ResumeLayout(false);
             this.tableLayoutPanelSkin.ResumeLayout(false);
             this.tableLayoutPanelSkin.PerformLayout();
@@ -958,6 +1093,14 @@
         private Sunny.UI.UICheckBox checkBoxDisableServiceWindowsUpdate;
         private Sunny.UI.UICheckBox checkBoxDisableServiceWindowsSearch;
         private Sunny.UI.UICheckBox checkBoxHideToNotify;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelQuicklyControl;
+        private Sunny.UI.UIButton buttonShutdown;
+        private Sunny.UI.UIButton buttonCancel;
+        private Sunny.UI.UIButton buttonRestart;
+        private Sunny.UI.UIButton buttonLogout;
+        private System.Windows.Forms.GroupBox groupBoxQuicklyControl;
+        private Sunny.UI.UIProcessBar processBarQuicklyControl;
+        private System.Windows.Forms.Timer timerQuicklyControl;
     }
 }
 

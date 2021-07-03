@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 
 namespace SeewoHelper.Utilities
 {
@@ -21,5 +22,21 @@ namespace SeewoHelper.Utilities
         /// <param name="b">指定 bool</param>
         /// <returns></returns>
         public static bool ReverseBool(bool isReverse, bool b) => isReverse ? !b : b;
+
+        public static void RunCmdProcess(string str)
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            process.StandardInput.WriteLine(str);
+            process.StandardInput.WriteLine("exit");
+            process.WaitForExit();
+            process.Close();
+        }
     }
 }
