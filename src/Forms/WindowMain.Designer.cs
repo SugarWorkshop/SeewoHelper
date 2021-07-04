@@ -994,10 +994,6 @@
             this.toolStripMenuItemUpdateCheckerShow.Text = "检查更新";
             this.toolStripMenuItemUpdateCheckerShow.Click += new System.EventHandler(this.ToolStripMenuItemUpdateCheckerShow_Click);
             // 
-            // timerQuicklyControl
-            // 
-            this.timerQuicklyControl.Tick += new System.EventHandler(this.timerQuicklyControl_Tick);
-            // 
             // WindowMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

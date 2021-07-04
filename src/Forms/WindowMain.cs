@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,7 +14,6 @@ namespace SeewoHelper.Forms
 {
     public partial class WindowMain : UIForm
     {
-        public int QuicklyControlTimerCount = 0;
         public bool isShuttingDown = false;
 
         private static readonly Dictionary<ExtraFileSortingWay, string> _extraFileSortingWayDictionary = new()
@@ -334,9 +334,8 @@ namespace SeewoHelper.Forms
         {
             if (!isShuttingDown)
             {
-                timerQuicklyControl.Start();
+                bw_DoWork();
                 SystemUtilities.RunCmdProcess("shutdown -s -t 10 -c 将在10s后关机");
-                isShuttingDown = true;
             }
         }
 
@@ -365,14 +364,16 @@ namespace SeewoHelper.Forms
             SystemUtilities.RunCmdProcess("shutdown -a");
             timerQuicklyControl.Stop();
             processBarQuicklyControl.Value = 0;
-            QuicklyControlTimerCount = 0;
             isShuttingDown = false;
         }
 
-        private void timerQuicklyControl_Tick(object sender, EventArgs e)
+        private async void bw_DoWork()
         {
-            QuicklyControlTimerCount += 1;
-            processBarQuicklyControl.Value = QuicklyControlTimerCount;
+            for (int i = 1; i <= 1000; i++)
+            {
+                await Task.Delay(10);
+                this.processBarQuicklyControl.Value = i;
+            }
         }
     }
 }
