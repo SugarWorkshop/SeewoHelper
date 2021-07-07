@@ -224,7 +224,7 @@ namespace SeewoHelper.Forms
         private async void ShowWindow()
         {
             this.Visible = true;
-            await Task.Delay(380);
+            await Task.Delay(150);
             WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             Activate();
@@ -234,7 +234,7 @@ namespace SeewoHelper.Forms
         {
             WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
-            await Task.Delay(380);
+            await Task.Delay(500);
             this.Visible = false;
         }
 
