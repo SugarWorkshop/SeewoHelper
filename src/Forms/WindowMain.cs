@@ -14,7 +14,7 @@ namespace SeewoHelper.Forms
 {
     public partial class WindowMain : UIForm
     {
-        public bool isShuttingDown = false;
+        private PowerControlTask _powerControlTask;
 
         private static readonly Dictionary<ExtraFileSortingWay, string> _extraFileSortingWayDictionary = new()
         {
@@ -332,48 +332,56 @@ namespace SeewoHelper.Forms
 
         private void ButtonShutdown_Click(object sender, EventArgs e)
         {
-            if (!isShuttingDown)
+            if (_powerControlTask is null)
             {
-                bw_DoWork();
-                PowerControlUtilities.Shutdown(10, "将在 10s 后关机");
+                _powerControlTask = new PowerControlTask(PowerControlType.Shutdown, TimeSpan.FromSeconds(10)).Start();
+                timerQuicklyControl.Start();
             }
         }
 
         private void ButtonRestart_Click(object sender, EventArgs e)
         {
-            if (!isShuttingDown)
+            if (_powerControlTask is null)
             {
-                PowerControlUtilities.Reboot(10, "将在 10s 后重启");
+                _powerControlTask = new PowerControlTask(PowerControlType.Reboot, TimeSpan.FromSeconds(10)).Start();
                 timerQuicklyControl.Start();
-                isShuttingDown = true;
             }
         }
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
-            if (!isShuttingDown) 
+            if (_powerControlTask is null)
             {
-                PowerControlUtilities.Lock(10);
+                _powerControlTask = new PowerControlTask(PowerControlType.Logout, TimeSpan.FromSeconds(10)).Start();
                 timerQuicklyControl.Start();
-                isShuttingDown = true;
             }
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            PowerControlUtilities.Abort();
-            timerQuicklyControl.Stop();
-            processBarQuicklyControl.Value = 0;
-            isShuttingDown = false;
+            if (_powerControlTask is not null)
+            {
+                _powerControlTask.Cancel();
+                _powerControlTask = null;
+
+                timerQuicklyControl.Stop();
+
+                processBarQuicklyControl.Value = 0;
+                processBarQuicklyControl.Text = "0.0%";
+            }
         }
 
-        private async void bw_DoWork()
+        private void TimerQuicklyControl_Tick(object sender, EventArgs e)
         {
-            for (int i = 1; i <= 1000; i++)
+            if (_powerControlTask is null)
             {
-                await Task.Delay(10);
-                this.processBarQuicklyControl.Value = i;
+                return;
             }
+
+            double result = _powerControlTask.Elapsed / _powerControlTask.Delay * 100;
+
+            processBarQuicklyControl.Value = (int)(result * 10);
+            processBarQuicklyControl.Text = $"{result:f1}%";
         }
     }
 }
