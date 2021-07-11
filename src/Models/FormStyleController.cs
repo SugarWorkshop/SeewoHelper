@@ -6,7 +6,7 @@ namespace SeewoHelper
 {
     public class FormStyleController
     {
-        private readonly List<UIForm> _forms = new List<UIForm>();
+        private readonly List<UIForm> _forms = new();
 
         public UIStyle CurrentStyle { get; private set; } = UIStyle.Custom;
 

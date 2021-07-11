@@ -78,7 +78,7 @@ namespace SeewoHelper
 
         private static Process GetProcess(string arguments)
         {
-            return new Process() { StartInfo = new ProcessStartInfo("shutdown.exe", arguments) };
+            return new() { StartInfo = new ProcessStartInfo("shutdown.exe", arguments) };
         }
 
         private async void HandleAsync()
