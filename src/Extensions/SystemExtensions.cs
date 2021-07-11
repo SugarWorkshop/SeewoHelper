@@ -22,6 +22,6 @@ namespace SeewoHelper
             return ex;
         }
 
-        public static string IsEmptyOrNull(this string str) => string.IsNullOrEmpty(str) ? null : str;
+        public static string NotEmptyOrDefault(this string str) => string.IsNullOrEmpty(str) ? null : str;
     }
 }
