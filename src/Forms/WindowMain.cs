@@ -335,7 +335,7 @@ namespace SeewoHelper.Forms
             if (!isShuttingDown)
             {
                 bw_DoWork();
-                SystemUtilities.RunCmdProcess("shutdown -s -t 10 -c 将在10s后关机");
+                PowerControlUtilities.Shutdown(10, "将在 10s 后关机");
             }
         }
 
@@ -343,7 +343,7 @@ namespace SeewoHelper.Forms
         {
             if (!isShuttingDown)
             {
-                SystemUtilities.RunCmdProcess("shutdown -r -t 10 -c 将在10s后重启");
+                PowerControlUtilities.Reboot(10, "将在 10s 后重启");
                 timerQuicklyControl.Start();
                 isShuttingDown = true;
             }
@@ -353,7 +353,7 @@ namespace SeewoHelper.Forms
         {
             if (!isShuttingDown) 
             {
-                SystemUtilities.RunCmdProcess("shutdown -l -t 10");
+                PowerControlUtilities.Lock(10);
                 timerQuicklyControl.Start();
                 isShuttingDown = true;
             }
@@ -361,7 +361,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            SystemUtilities.RunCmdProcess("shutdown -a");
+            PowerControlUtilities.Abort();
             timerQuicklyControl.Stop();
             processBarQuicklyControl.Value = 0;
             isShuttingDown = false;
