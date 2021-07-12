@@ -1,5 +1,8 @@
 name: build
-on: [push]
+on:
+  push:
+    paths:
+      - 'src/**'
 
 env:
   ProjectName: SeewoHelper
