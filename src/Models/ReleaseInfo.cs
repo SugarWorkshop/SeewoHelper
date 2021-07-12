@@ -5,37 +5,37 @@ namespace SeewoHelper
     /// <summary>
     /// 表示 Release 信息
     /// </summary>
-    public class ReleaseInfo
+    public record ReleaseInfo
     {
         /// <summary>
         /// 页面 Url
         /// </summary>
         [JsonPropertyName("html_url")]
-        public string Url { get; }
+        public string Url { get; init; }
 
         /// <summary>
         /// Release 名称
         /// </summary>
         [JsonPropertyName("name")]
-        public string Name { get; }
+        public string Name { get; init; }
 
         /// <summary>
         /// Tag 名称
         /// </summary>
         [JsonPropertyName("tag_name")]
-        public string Tag { get; }
+        public string Tag { get; init; }
 
         /// <summary>
         /// 是否为 Pre-Release
         /// </summary>
         [JsonPropertyName("prerelease")]
-        public bool IsPrerelease { get; }
+        public bool IsPrerelease { get; init; }
 
         /// <summary>
         /// Release 资源
         /// </summary>
         [JsonPropertyName("assets")]
-        public AssetInfo[] Assets { get; private set; }
+        public AssetInfo[] Assets { get; init; }
 
         /// <summary>
         /// 创建 <see cref="ReleaseInfo"/> 实例

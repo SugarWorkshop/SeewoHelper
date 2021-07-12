@@ -2,25 +2,25 @@
 
 namespace SeewoHelper
 {
-    public class AssetInfo
+    public record AssetInfo
     {
         /// <summary>
         /// 下载链接
         /// </summary>
         [JsonPropertyName("browser_download_url")]
-        public string Url { get; }
+        public string Url { get; init; }
 
         /// <summary>
         /// 文件名
         /// </summary>
         [JsonPropertyName("name")]
-        public string Name { get; }
+        public string Name { get; init; }
 
         /// <summary>
         /// 使用FastGit加速的下载链接
         /// </summary>
         [JsonIgnore]
-        public string FastGitUrl { get; }
+        public string FastGitUrl { get; init; }
 
         [JsonConstructor]
         public AssetInfo(string url, string name)

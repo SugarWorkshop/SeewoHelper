@@ -93,7 +93,7 @@ namespace SeewoHelper.Features
                     break;
 
                 default:
-                    throw new InvalidOperationException();
+                    throw new NotSupportedException();
             }
         });
 
