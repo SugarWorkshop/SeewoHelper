@@ -23,13 +23,13 @@ namespace SeewoHelper
         /// 设置文本
         /// 若文本为 <see langword="null"/> 时显示默认文本并设置 <see cref="Control.Enabled"/> 为 <see langword="false"/>
         /// </summary>
-        /// <param name="linkLabel"><see cref="LinkLabel"/> 实例</param>
+        /// <param name="control"><see cref="Control"/> 实例</param>
         /// <param name="text">文本</param>
         /// <param name="nullText">文本为 <see langword="null"/> 时显示的默认文本</param>
-        public static void SetText(this LinkLabel linkLabel, string text, string nullText)
+        public static void SetText(this Control control, string text, string nullText)
         {
-            linkLabel.Text = text ?? nullText;
-            linkLabel.Enabled = text != null;
+            control.Text = text ?? nullText;
+            control.Enabled = text != null;
         }
     }
 }
