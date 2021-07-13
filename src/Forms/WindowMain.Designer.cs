@@ -682,7 +682,7 @@
             this.linkLabelGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelGithub.TabIndex = 4;
             this.linkLabelGithub.TabStop = true;
-            this.linkLabelGithub.Text = "Github 仓库地址";
+            this.linkLabelGithub.Text = "GitHub 仓库地址";
             this.linkLabelGithub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkLabelGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.linkLabelGithub.Click += new System.EventHandler(this.LinkLabelGithub_Click);
@@ -814,7 +814,7 @@
             this.linkLabelMoInkGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelMoInkGithub.TabIndex = 1;
             this.linkLabelMoInkGithub.TabStop = true;
-            this.linkLabelMoInkGithub.Text = "Github 主页";
+            this.linkLabelMoInkGithub.Text = "GitHub 主页";
             this.linkLabelMoInkGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelMoInkGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.linkLabelMoInkGithub.Click += new System.EventHandler(this.LinkLabelMoInkGithub_Click);
@@ -853,7 +853,7 @@
             this.linkLabelRickyGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelRickyGithub.TabIndex = 2;
             this.linkLabelRickyGithub.TabStop = true;
-            this.linkLabelRickyGithub.Text = "Github 主页";
+            this.linkLabelRickyGithub.Text = "GitHub 主页";
             this.linkLabelRickyGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelRickyGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.linkLabelRickyGithub.Click += new System.EventHandler(this.LinkLabelRickyGithub_Click);
