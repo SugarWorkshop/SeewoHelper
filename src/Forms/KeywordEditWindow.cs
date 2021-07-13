@@ -41,7 +41,7 @@ namespace SeewoHelper.Forms
         {
             var keyword = new KeywordGettingWindow().GetResult();
 
-            if (keyword != null)
+            if (keyword is not null)
             {
                 listViewKeywords.Items.Add(new ListViewItem(keyword.Pattern) { Tag = keyword });
             }
@@ -56,11 +56,11 @@ namespace SeewoHelper.Forms
         {
             var selectedItem = listViewKeywords.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
-            if (selectedItem != null)
+            if (selectedItem is not null)
             {
                 var keyword = new KeywordGettingWindow().GetResult((Keyword)selectedItem.Tag);
 
-                if (keyword != null)
+                if (keyword is not null)
                 {
                     var item = new ListViewItem(keyword.Pattern) { Tag = keyword };
                     listViewKeywords.Items[selectedItem.Index] = item;

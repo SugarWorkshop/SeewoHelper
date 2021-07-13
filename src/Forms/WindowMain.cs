@@ -36,7 +36,7 @@ namespace SeewoHelper.Forms
         {
             var info = new FileSortingInfoGettingWindow().GetResult();
 
-            if (info != null)
+            if (info is not null)
             {
                 AddSubjectStorageInfoToList(info);
             }
@@ -157,11 +157,11 @@ namespace SeewoHelper.Forms
         {
             var selectedItem = listViewFileSortingInfos.SelectedItems.Cast<ListViewItem>().SingleOrDefault();
 
-            if (selectedItem != null)
+            if (selectedItem is not null)
             {
                 var info = new FileSortingInfoGettingWindow().GetResult((FileSortingInfo)selectedItem.Tag);
 
-                if (info != null)
+                if (info is not null)
                 {
                     var item = new ListViewItem(new string[] { info.Name, info.Path, string.Join(", ", info.Keywords.Select(x => x.Pattern)) }) { Tag = info };
                     listViewFileSortingInfos.Items[selectedItem.Index] = item;
