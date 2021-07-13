@@ -171,7 +171,7 @@ namespace SeewoHelper.Forms
 
         private void WindowMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (checkBoxHideToNotify.Checked && e.CloseReason == CloseReason.UserClosing)
+            if (Configurations.UISettings.Content.IsHideToNotify && e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 HideWindow();
@@ -197,7 +197,7 @@ namespace SeewoHelper.Forms
 
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (checkBoxDoubleClickNotify.Checked)
+            if (Configurations.UISettings.Content.IsDoubleClickNotify)
             {
                 ShowWindow();
             }
