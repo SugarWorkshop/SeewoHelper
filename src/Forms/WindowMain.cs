@@ -3,10 +3,8 @@ using SeewoHelper.Utilities;
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,6 +75,7 @@ namespace SeewoHelper.Forms
         private void WindowMain_Load(object sender, EventArgs e)
         {
             Program.Logger.Info($"开始加载 {nameof(WindowMain)}");
+
             LoadSubjectStorageInfoConfig();
             LoadLoggerConfig();
             CreateServiceCheckBox();
@@ -85,18 +84,12 @@ namespace SeewoHelper.Forms
             LoadComboBoxLogLevel();
             LoadAutoCheckUpdate();
             LoadHideWhenStart();
-            LoadHideToNotify();
-            LoadDoubleClickNotify();
-            LoadQuicklyControlTimer();
-            checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
-            Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
-        }
 
-        private void LoadQuicklyControlTimer()
-        {
-            timerQuicklyControl.Enabled = true;
-            timerQuicklyControl.Interval = 1;
-            timerQuicklyControl.Stop();
+            checkBoxDoubleClickNotify.Checked = Configurations.UISettings.Content.IsDoubleClickNotify;
+            checkBoxAutoStart.Checked = AutoStartUtilities.IsAutoStart();
+            checkBoxHideToNotify.Checked = Configurations.UISettings.Content.IsHideToNotify;
+
+            Program.Logger.Info($"{nameof(WindowMain)} 加载完成");
         }
 
         private void LoadComboBoxExtraFileSortingWay()
@@ -108,27 +101,21 @@ namespace SeewoHelper.Forms
         private void LoadHideWhenStart()
         {
             bool isHideWhenStart = Configurations.UISettings.Content.IsHideWhenStart;
+
             checkBoxHideWhenStart.Checked = isHideWhenStart;
+
             if (isHideWhenStart)
             {
                 HideWindow();
             }
         }
 
-        private void LoadDoubleClickNotify()
-        {
-            checkBoxDoubleClickNotify.Checked = Configurations.UISettings.Content.IsDoubleClickNotify;
-        }
-
-        private void LoadHideToNotify()
-        {
-            checkBoxHideToNotify.Checked = Configurations.UISettings.Content.IsHideToNotify;
-        }
-
         private async void LoadAutoCheckUpdate()
         {
             bool isAutoCheckUpdate = Configurations.UISettings.Content.IsAutoCheckUpdate;
+
             checkBoxAutoCheckUpdate.Checked = isAutoCheckUpdate;
+
             if (isAutoCheckUpdate)
             {
                 await Task.Delay(1000);
@@ -223,19 +210,19 @@ namespace SeewoHelper.Forms
 
         private async void ShowWindow()
         {
-            this.Visible = true;
+            Visible = true;
             await Task.Delay(150);
             WindowState = FormWindowState.Normal;
-            this.ShowInTaskbar = true;
+            ShowInTaskbar = true;
             Activate();
         }
 
         private async void HideWindow()
         {
             WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
+            ShowInTaskbar = false;
             await Task.Delay(500);
-            this.Visible = false;
+            Visible = false;
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,7 +250,7 @@ namespace SeewoHelper.Forms
 
         private void ButtonCleanLog_Click(object sender, EventArgs e)
         {
-            foreach (var file in Directory.GetFiles(Constants.LogPath).Where(x => x != Program.Logger.Path))
+            foreach (var file in Directory.GetFiles(Constants.LogDirectory).Where(x => x != Program.Logger.Path))
             {
                 File.Delete(file);
             }

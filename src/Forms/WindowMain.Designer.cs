@@ -996,6 +996,7 @@
             // 
             // timerQuicklyControl
             // 
+            this.timerQuicklyControl.Interval = 1;
             this.timerQuicklyControl.Tick += new System.EventHandler(this.TimerQuicklyControl_Tick);
             // 
             // WindowMain

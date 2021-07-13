@@ -48,11 +48,11 @@ namespace SeewoHelper
         /// <summary>
         /// 日志路径
         /// </summary>
-        public static readonly string LogPath = Path.Combine(BaseDirectory, "logs");
+        public static readonly string LogDirectory = Path.Combine(BaseDirectory, "logs");
 
         /// <summary>
         /// 配置路径
         /// </summary>
-        public static readonly string ConfigurationPath = Path.Combine(BaseDirectory, "configs");
+        public static readonly string ConfigurationDirectory = Path.Combine(BaseDirectory, "configs");
     }
 }

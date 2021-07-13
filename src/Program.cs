@@ -22,7 +22,7 @@ namespace SeewoHelper
 
             if (createdNew)
             {
-                Logger = new Logger(Path.Combine(Constants.LogPath, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
+                Logger = new Logger(Path.Combine(Constants.LogDirectory, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".log"));
 
                 Application.ThreadException += Application_ThreadException; // 处理主线程的异常
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException; // 处理子线程未捕获异常
