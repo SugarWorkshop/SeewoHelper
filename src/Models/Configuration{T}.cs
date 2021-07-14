@@ -2,6 +2,8 @@
 using System;
 using System.IO;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SeewoHelper
 {
@@ -11,6 +13,10 @@ namespace SeewoHelper
     /// <typeparam name="T">配置类型</typeparam>
     public class Configuration<T>
     {
+        private static readonly JsonSerializerOptions JsonSerializerOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+
+        private readonly SemaphoreSlim _semaphoreSlim = new(1, 1);
+
         /// <summary>
         /// 配置内容
         /// </summary>
@@ -21,8 +27,6 @@ namespace SeewoHelper
         /// </summary>
         public string Path { get; }
 
-        private static readonly JsonSerializerOptions JsonSerializerOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-
         /// <summary>
         /// 读取
         /// </summary>
@@ -30,6 +34,7 @@ namespace SeewoHelper
         {
             Program.Logger.Debug($"正在读取配置文件 {Path}");
             string data = File.ReadAllText(Path);
+
             Program.Logger.Debug($"读取完毕");
             Program.Logger.Debug($"读取到内容为 {data}");
 
@@ -44,12 +49,28 @@ namespace SeewoHelper
         /// </summary>
         public void Save()
         {
+            _ = SaveAsync();
+        }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        public async Task SaveAsync()
+        {
+            Program.Logger.Debug($"正在保存配置类 {Content.GetType()}({Content})");
+            Program.Logger.Debug($"等待上一个操作写入");
+            await _semaphoreSlim.WaitAsync();
+            Program.Logger.Debug($"等待完毕，开始保存");
+
             Program.Logger.Debug($"正在序列化配置类 {Content.GetType()}({Content})");
             string data = JsonSerializer.Serialize(Content, JsonSerializerOptions);
             Program.Logger.Debug($"序列化结果为 {data}");
+
             Program.Logger.Debug($"正在保存配置文件 {Content.GetType()}({Content})");
             File.WriteAllText(Path, JsonSerializer.Serialize(Content, JsonSerializerOptions));
             Program.Logger.Debug($"保存完毕");
+
+            _semaphoreSlim.Release();
         }
 
         /// <summary>
