@@ -67,7 +67,7 @@ namespace SeewoHelper
             Program.Logger.Debug($"序列化结果为 {data}");
 
             Program.Logger.Debug($"正在保存配置文件 {Content.GetType()}({Content})");
-            File.WriteAllText(Path, JsonSerializer.Serialize(Content, JsonSerializerOptions));
+            await File.WriteAllTextAsync(Path, JsonSerializer.Serialize(Content, JsonSerializerOptions));
             Program.Logger.Debug($"保存完毕");
 
             _semaphoreSlim.Release();
