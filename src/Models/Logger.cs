@@ -3,6 +3,9 @@ using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace SeewoHelper
 {
@@ -11,6 +14,8 @@ namespace SeewoHelper
     /// </summary>
     public class Logger : ObservableCollection<Log>
     {
+        private readonly SemaphoreSlim _semaphoreSlim = new(1, 1);
+
         /// <summary>
         /// 文件路径
         /// </summary>
@@ -49,23 +54,11 @@ namespace SeewoHelper
         /// <summary>
         /// 保存
         /// </summary>
-        private void Save() => File.WriteAllText(Path, ToString());
-
-        /// <summary>
-        /// 尝试保存
-        /// </summary>
-        /// <returns>成功则返回 <see langword="true"/>，失败则返回 <see langword="false"/></returns>
-        private bool TrySave()
+        public async Task SaveAsync()
         {
-            try
-            {
-                Save();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            await _semaphoreSlim.WaitAsync();
+            await File.WriteAllTextAsync(Path, ToString());
+            _semaphoreSlim.Release();
         }
 
         /// <inheritdoc/>
@@ -88,7 +81,7 @@ namespace SeewoHelper
             if (IOUtilities.IsProperPath(path) && IOUtilities.GetPathType(path) == PathType.File)
             {
                 IOUtilities.CreateFile(path);
-                CollectionChanged += (sender, e) => TrySave();
+                CollectionChanged += async (sender, e) => await SaveAsync();
             }
             else
             {
