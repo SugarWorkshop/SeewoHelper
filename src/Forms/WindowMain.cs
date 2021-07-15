@@ -23,7 +23,13 @@ namespace SeewoHelper.Forms
         public WindowMain()
         {
             InitializeComponent();
+            Program.HandleCreated += Program_HandleCreated;
             Program.FormStyleController.Initialize(this);
+        }
+
+        private void Program_HandleCreated(object sender, EventArgs e)
+        {
+            Invoke(new MethodInvoker(ShowWindow));
         }
 
         private void ButtonSubjectInfoRemove_Click(object sender, EventArgs e)
@@ -261,15 +267,6 @@ namespace SeewoHelper.Forms
             Configurations.UISettings.Content = Configurations.UISettings.Content with { LogLevel = (LogLevel)comboBoxLogLevel.SelectedItem };
             Configurations.UISettings.Save();
             UpdateLoggerElement();
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == NativeMethods.WM_SHOWME)
-            {
-                ShowWindow();
-            }
-            base.WndProc(ref m);
         }
 
         private void CheckBoxAutoCheckUpdate_ValueChanged(object sender, bool value)

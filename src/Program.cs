@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SeewoHelper
@@ -12,13 +13,15 @@ namespace SeewoHelper
 
         public static FormStyleController FormStyleController { get; } = new FormStyleController();
 
+        public static event EventHandler HandleCreated;
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
         private static void Main()
         {
-            using var mutex = new Mutex(true, Constants.AppName, out bool createdNew); // 互斥锁，用于检测是否已运行有该程序实例
+            using var eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, Constants.AppName, out bool createdNew);
 
             if (createdNew)
             {
@@ -33,14 +36,24 @@ namespace SeewoHelper
 
                 FormStyleController.SetStyle(Configurations.UISettings.Content.Style); // 设置窗体风格
 
+                _ = HandleNewInstanceAsync();
+
                 Logger.Info("应用启动完毕");
 
                 Application.Run(new WindowMain());
             }
             else
             {
-                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
+                eventWaitHandle.Set();
             }
+
+            Task HandleNewInstanceAsync() => Task.Factory.StartNew(() =>
+            {
+                while (eventWaitHandle.WaitOne())
+                {
+                    HandleCreated?.Invoke(null, new());
+                }
+            }, TaskCreationOptions.LongRunning);
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
