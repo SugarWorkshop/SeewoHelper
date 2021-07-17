@@ -144,6 +144,7 @@
             // 
             // comboBoxExtraFileSortingWay
             // 
+            this.comboBoxExtraFileSortingWay.DataSource = null;
             this.comboBoxExtraFileSortingWay.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.comboBoxExtraFileSortingWay.FillColor = System.Drawing.Color.White;
             this.comboBoxExtraFileSortingWay.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -604,6 +605,7 @@
             // comboBoxStyle
             // 
             this.comboBoxStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxStyle.DataSource = null;
             this.comboBoxStyle.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.comboBoxStyle.FillColor = System.Drawing.Color.White;
             this.comboBoxStyle.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -720,10 +722,10 @@
             // tableLayoutPanelContributors
             // 
             this.tableLayoutPanelContributors.ColumnCount = 4;
-            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarMoInk, 0, 0);
             this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarRicky, 2, 0);
             this.tableLayoutPanelContributors.Controls.Add(this.tableLayoutPanelMoInk, 1, 0);
@@ -738,29 +740,37 @@
             // 
             // uiAvatarMoInk
             // 
-            this.uiAvatarMoInk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiAvatarMoInk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiAvatarMoInk.AvatarSize = 180;
             this.uiAvatarMoInk.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiAvatarMoInk.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
             this.uiAvatarMoInk.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarMoInk.Image")));
-            this.uiAvatarMoInk.Location = new System.Drawing.Point(3, 34);
+            this.uiAvatarMoInk.Location = new System.Drawing.Point(3, 3);
             this.uiAvatarMoInk.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiAvatarMoInk.Name = "uiAvatarMoInk";
-            this.uiAvatarMoInk.Size = new System.Drawing.Size(153, 153);
+            this.uiAvatarMoInk.Size = new System.Drawing.Size(192, 215);
             this.uiAvatarMoInk.Style = Sunny.UI.UIStyle.LightBlue;
+            this.uiAvatarMoInk.SymbolSize = 50;
             this.uiAvatarMoInk.TabIndex = 0;
             this.uiAvatarMoInk.Text = "uiAvatar1";
             // 
             // uiAvatarRicky
             // 
-            this.uiAvatarRicky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiAvatarRicky.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiAvatarRicky.AvatarSize = 180;
             this.uiAvatarRicky.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiAvatarRicky.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
             this.uiAvatarRicky.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarRicky.Image")));
-            this.uiAvatarRicky.Location = new System.Drawing.Point(400, 34);
+            this.uiAvatarRicky.Location = new System.Drawing.Point(399, 3);
             this.uiAvatarRicky.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiAvatarRicky.Name = "uiAvatarRicky";
-            this.uiAvatarRicky.Size = new System.Drawing.Size(153, 153);
+            this.uiAvatarRicky.Size = new System.Drawing.Size(192, 215);
             this.uiAvatarRicky.Style = Sunny.UI.UIStyle.LightBlue;
+            this.uiAvatarRicky.SymbolSize = 50;
             this.uiAvatarRicky.TabIndex = 1;
             this.uiAvatarRicky.Text = "uiAvatar2";
             // 
@@ -771,14 +781,14 @@
             this.tableLayoutPanelMoInk.Controls.Add(this.symbolLabelMoInk, 0, 1);
             this.tableLayoutPanelMoInk.Controls.Add(this.linkLabelMoInkGithub, 0, 2);
             this.tableLayoutPanelMoInk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMoInk.Location = new System.Drawing.Point(162, 3);
+            this.tableLayoutPanelMoInk.Location = new System.Drawing.Point(201, 3);
             this.tableLayoutPanelMoInk.Name = "tableLayoutPanelMoInk";
             this.tableLayoutPanelMoInk.RowCount = 4;
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelMoInk.Size = new System.Drawing.Size(232, 215);
+            this.tableLayoutPanelMoInk.Size = new System.Drawing.Size(192, 215);
             this.tableLayoutPanelMoInk.TabIndex = 2;
             // 
             // symbolLabelMoInk
@@ -791,7 +801,7 @@
             this.symbolLabelMoInk.MinimumSize = new System.Drawing.Size(1, 1);
             this.symbolLabelMoInk.Name = "symbolLabelMoInk";
             this.symbolLabelMoInk.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.symbolLabelMoInk.Size = new System.Drawing.Size(226, 66);
+            this.symbolLabelMoInk.Size = new System.Drawing.Size(186, 66);
             this.symbolLabelMoInk.Style = Sunny.UI.UIStyle.LightBlue;
             this.symbolLabelMoInk.Symbol = 61447;
             this.symbolLabelMoInk.TabIndex = 0;
@@ -810,7 +820,7 @@
             this.linkLabelMoInkGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelMoInkGithub.Location = new System.Drawing.Point(3, 107);
             this.linkLabelMoInkGithub.Name = "linkLabelMoInkGithub";
-            this.linkLabelMoInkGithub.Size = new System.Drawing.Size(226, 72);
+            this.linkLabelMoInkGithub.Size = new System.Drawing.Size(186, 72);
             this.linkLabelMoInkGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelMoInkGithub.TabIndex = 1;
             this.linkLabelMoInkGithub.TabStop = true;
@@ -826,14 +836,14 @@
             this.tableLayoutPanelRicky.Controls.Add(this.linkLabelRickyGithub, 0, 2);
             this.tableLayoutPanelRicky.Controls.Add(this.symbolLabelRicky, 0, 1);
             this.tableLayoutPanelRicky.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRicky.Location = new System.Drawing.Point(559, 3);
+            this.tableLayoutPanelRicky.Location = new System.Drawing.Point(597, 3);
             this.tableLayoutPanelRicky.Name = "tableLayoutPanelRicky";
             this.tableLayoutPanelRicky.RowCount = 4;
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelRicky.Size = new System.Drawing.Size(233, 215);
+            this.tableLayoutPanelRicky.Size = new System.Drawing.Size(195, 215);
             this.tableLayoutPanelRicky.TabIndex = 3;
             // 
             // linkLabelRickyGithub
@@ -849,7 +859,7 @@
             this.linkLabelRickyGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelRickyGithub.Location = new System.Drawing.Point(3, 107);
             this.linkLabelRickyGithub.Name = "linkLabelRickyGithub";
-            this.linkLabelRickyGithub.Size = new System.Drawing.Size(227, 72);
+            this.linkLabelRickyGithub.Size = new System.Drawing.Size(189, 72);
             this.linkLabelRickyGithub.Style = Sunny.UI.UIStyle.LightBlue;
             this.linkLabelRickyGithub.TabIndex = 2;
             this.linkLabelRickyGithub.TabStop = true;
@@ -863,12 +873,12 @@
             this.symbolLabelRicky.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.symbolLabelRicky.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.symbolLabelRicky.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.symbolLabelRicky.Location = new System.Drawing.Point(3, 38);
             this.symbolLabelRicky.MinimumSize = new System.Drawing.Size(1, 1);
             this.symbolLabelRicky.Name = "symbolLabelRicky";
             this.symbolLabelRicky.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.symbolLabelRicky.Size = new System.Drawing.Size(227, 66);
+            this.symbolLabelRicky.Size = new System.Drawing.Size(189, 66);
             this.symbolLabelRicky.Style = Sunny.UI.UIStyle.LightBlue;
             this.symbolLabelRicky.Symbol = 61447;
             this.symbolLabelRicky.TabIndex = 1;
@@ -890,6 +900,7 @@
             // 
             // comboBoxLogLevel
             // 
+            this.comboBoxLogLevel.DataSource = null;
             this.comboBoxLogLevel.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.comboBoxLogLevel.FillColor = System.Drawing.Color.White;
             this.comboBoxLogLevel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
