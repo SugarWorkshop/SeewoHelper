@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SunnyUI" Version="3.0.5" />
+    <PackageReference Include="SunnyUI" Version="3.0.7" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
   </ItemGroup>
   
