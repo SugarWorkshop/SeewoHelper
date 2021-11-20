@@ -277,6 +277,8 @@ namespace SeewoHelper.Forms
 
         private void CheckBoxHideWhenStart_ValueChanged(object sender, bool value)
         {
+            checkBoxAutoCheckUpdate.Enabled = !checkBoxHideWhenStart.Checked;
+            checkBoxAutoCheckUpdate.Checked = false;
             Configurations.UISettings.Content = Configurations.UISettings.Content with { IsHideWhenStart = checkBoxHideWhenStart.Checked };
             Configurations.UISettings.Save();
         }
