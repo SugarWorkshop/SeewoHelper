@@ -43,7 +43,7 @@ function Build-SelfContained
 
 	Remove-Item $publishDir -Recurse -Force -Confirm:$false -ErrorAction Ignore
 
-	dotnet publish -c $configuration -f $net_tfm -r $rid --self-contained true -p:PublishTrimmed=true $proj_path
+	dotnet publish -c $configuration -f $net_tfm -r $rid --self-contained true -p:PublishTrimmed=false $proj_path
 	if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
 	& $dllpatcher_exe $publishDir\$exe bin
