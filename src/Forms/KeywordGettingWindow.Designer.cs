@@ -69,7 +69,7 @@ namespace SeewoHelper.Forms
             this.labelMatchingWay.Location = new System.Drawing.Point(3, 36);
             this.labelMatchingWay.Name = "labelMatchingWay";
             this.labelMatchingWay.Size = new System.Drawing.Size(74, 36);
-            this.labelMatchingWay.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelMatchingWay.Style = Sunny.UI.UIStyle.Blue;
             this.labelMatchingWay.TabIndex = 2;
             this.labelMatchingWay.Text = "匹配方式：";
             this.labelMatchingWay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -84,7 +84,7 @@ namespace SeewoHelper.Forms
             this.labelPattern.Location = new System.Drawing.Point(3, 0);
             this.labelPattern.Name = "labelPattern";
             this.labelPattern.Size = new System.Drawing.Size(74, 36);
-            this.labelPattern.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelPattern.Style = Sunny.UI.UIStyle.Blue;
             this.labelPattern.TabIndex = 1;
             this.labelPattern.Text = "关键词：";
             this.labelPattern.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,7 +105,7 @@ namespace SeewoHelper.Forms
             this.textBoxPattern.Name = "textBoxPattern";
             this.textBoxPattern.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPattern.Size = new System.Drawing.Size(694, 28);
-            this.textBoxPattern.Style = Sunny.UI.UIStyle.LightBlue;
+            this.textBoxPattern.Style = Sunny.UI.UIStyle.Blue;
             this.textBoxPattern.TabIndex = 2;
             this.textBoxPattern.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -129,7 +129,7 @@ namespace SeewoHelper.Forms
             this.comboBoxMatchingWay.Name = "comboBoxMatchingWay";
             this.comboBoxMatchingWay.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.comboBoxMatchingWay.Size = new System.Drawing.Size(694, 25);
-            this.comboBoxMatchingWay.Style = Sunny.UI.UIStyle.LightBlue;
+            this.comboBoxMatchingWay.Style = Sunny.UI.UIStyle.Blue;
             this.comboBoxMatchingWay.TabIndex = 3;
             this.comboBoxMatchingWay.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -168,7 +168,7 @@ namespace SeewoHelper.Forms
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Size = new System.Drawing.Size(96, 40);
-            this.buttonCancel.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonCancel.Style = Sunny.UI.UIStyle.Blue;
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -189,7 +189,7 @@ namespace SeewoHelper.Forms
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonOK.Size = new System.Drawing.Size(97, 40);
-            this.buttonOK.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonOK.Style = Sunny.UI.UIStyle.Blue;
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
@@ -206,7 +206,7 @@ namespace SeewoHelper.Forms
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "KeywordGettingWindow";
-            this.Style = Sunny.UI.UIStyle.LightBlue;
+            this.Style = Sunny.UI.UIStyle.Blue;
             this.Text = "修改关键词";
             this.Load += new System.EventHandler(this.KeywordGettingWindow_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

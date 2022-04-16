@@ -86,7 +86,7 @@ namespace SeewoHelper.Forms
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonDelete.Size = new System.Drawing.Size(102, 33);
-            this.buttonDelete.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonDelete.Style = Sunny.UI.UIStyle.Blue;
             this.buttonDelete.TabIndex = 1;
             this.buttonDelete.Text = "删除";
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
@@ -105,7 +105,7 @@ namespace SeewoHelper.Forms
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonAdd.Size = new System.Drawing.Size(102, 32);
-            this.buttonAdd.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonAdd.Style = Sunny.UI.UIStyle.Blue;
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "新建";
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
@@ -144,7 +144,7 @@ namespace SeewoHelper.Forms
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonOK.Size = new System.Drawing.Size(91, 42);
-            this.buttonOK.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonOK.Style = Sunny.UI.UIStyle.Blue;
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "确定";
             this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
@@ -166,7 +166,7 @@ namespace SeewoHelper.Forms
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Size = new System.Drawing.Size(92, 42);
-            this.buttonCancel.Style = Sunny.UI.UIStyle.LightBlue;
+            this.buttonCancel.Style = Sunny.UI.UIStyle.Blue;
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -187,7 +187,7 @@ namespace SeewoHelper.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KeywordEditWindow";
-            this.Style = Sunny.UI.UIStyle.LightBlue;
+            this.Style = Sunny.UI.UIStyle.Blue;
             this.Text = "编辑关键词";
             this.Load += new System.EventHandler(this.KeywordEditWindow_Load);
             this.tableLayoutPanel.ResumeLayout(false);

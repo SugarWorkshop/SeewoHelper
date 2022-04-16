@@ -295,7 +295,7 @@ namespace SeewoHelper.Forms
 
         private void LinkLabelMoInkGithub_Click(object sender, EventArgs e)
         {
-            NetUtilities.Start(Constants.MoInkLink);
+            NetUtilities.Start(Constants.SugarLink);
         }
 
         private void LinkLabelRickyGithub_Click(object sender, EventArgs e)

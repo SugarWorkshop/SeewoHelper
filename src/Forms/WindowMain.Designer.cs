@@ -70,11 +70,11 @@
             this.labelProgramName = new Sunny.UI.UILabel();
             this.labelVersion = new Sunny.UI.UILabel();
             this.tableLayoutPanelContributors = new System.Windows.Forms.TableLayoutPanel();
-            this.uiAvatarMoInk = new Sunny.UI.UIAvatar();
+            this.uiAvatarSugar = new Sunny.UI.UIAvatar();
             this.uiAvatarRicky = new Sunny.UI.UIAvatar();
             this.tableLayoutPanelMoInk = new System.Windows.Forms.TableLayoutPanel();
-            this.symbolLabelMoInk = new Sunny.UI.UISymbolLabel();
-            this.linkLabelMoInkGithub = new Sunny.UI.UILinkLabel();
+            this.symbolLabelSugar = new Sunny.UI.UISymbolLabel();
+            this.linkLabelSugarGithub = new Sunny.UI.UILinkLabel();
             this.tableLayoutPanelRicky = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabelRickyGithub = new Sunny.UI.UILinkLabel();
             this.symbolLabelRicky = new Sunny.UI.UISymbolLabel();
@@ -110,7 +110,7 @@
             // 
             // tabPageFileSorting
             // 
-            this.tabPageFileSorting.BackColor = System.Drawing.Color.White;
+            this.tabPageFileSorting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.tabPageFileSorting.Controls.Add(this.buttonStartFileSorting);
             this.tabPageFileSorting.Controls.Add(this.comboBoxExtraFileSortingWay);
             this.tabPageFileSorting.Controls.Add(this.labelExtraFileSortingWay);
@@ -127,17 +127,12 @@
             // buttonStartFileSorting
             // 
             this.buttonStartFileSorting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStartFileSorting.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonStartFileSorting.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartFileSorting.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonStartFileSorting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartFileSorting.Location = new System.Drawing.Point(706, 413);
             this.buttonStartFileSorting.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartFileSorting.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonStartFileSorting.Name = "buttonStartFileSorting";
-            this.buttonStartFileSorting.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonStartFileSorting.Size = new System.Drawing.Size(91, 32);
-            this.buttonStartFileSorting.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonStartFileSorting.TabIndex = 16;
             this.buttonStartFileSorting.Text = "整理";
             this.buttonStartFileSorting.Click += new System.EventHandler(this.ButtonStartFileSorting_Click);
@@ -154,7 +149,6 @@
             this.comboBoxExtraFileSortingWay.Name = "comboBoxExtraFileSortingWay";
             this.comboBoxExtraFileSortingWay.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.comboBoxExtraFileSortingWay.Size = new System.Drawing.Size(655, 26);
-            this.comboBoxExtraFileSortingWay.Style = Sunny.UI.UIStyle.LightBlue;
             this.comboBoxExtraFileSortingWay.TabIndex = 20;
             this.comboBoxExtraFileSortingWay.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -165,7 +159,6 @@
             this.labelExtraFileSortingWay.Location = new System.Drawing.Point(7, 7);
             this.labelExtraFileSortingWay.Name = "labelExtraFileSortingWay";
             this.labelExtraFileSortingWay.Size = new System.Drawing.Size(135, 20);
-            this.labelExtraFileSortingWay.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelExtraFileSortingWay.TabIndex = 19;
             this.labelExtraFileSortingWay.Text = "额外文件处理方式：";
             this.labelExtraFileSortingWay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,6 +209,7 @@
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonFileSortingInfoAdd, 0, 0);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Controls.Add(this.buttonFileSortingInfoRemove, 1, 0);
+            this.tableLayoutPanelSubjectStorageInfoListControlButtons.ForeColor = System.Drawing.Color.White;
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Location = new System.Drawing.Point(4, 409);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelSubjectStorageInfoListControlButtons.Name = "tableLayoutPanelSubjectStorageInfoListControlButtons";
@@ -230,17 +224,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFileSortingInfoAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFileSortingInfoAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonFileSortingInfoAdd.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonFileSortingInfoAdd.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonFileSortingInfoAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonFileSortingInfoAdd.Location = new System.Drawing.Point(4, 4);
             this.buttonFileSortingInfoAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFileSortingInfoAdd.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonFileSortingInfoAdd.Name = "buttonFileSortingInfoAdd";
-            this.buttonFileSortingInfoAdd.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonFileSortingInfoAdd.Size = new System.Drawing.Size(91, 32);
-            this.buttonFileSortingInfoAdd.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonFileSortingInfoAdd.TabIndex = 0;
             this.buttonFileSortingInfoAdd.Text = "添加";
             this.buttonFileSortingInfoAdd.Click += new System.EventHandler(this.ButtonSubjectStorageInfoAdd_Click);
@@ -251,17 +240,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFileSortingInfoRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFileSortingInfoRemove.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonFileSortingInfoRemove.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonFileSortingInfoRemove.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonFileSortingInfoRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonFileSortingInfoRemove.Location = new System.Drawing.Point(103, 4);
             this.buttonFileSortingInfoRemove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFileSortingInfoRemove.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonFileSortingInfoRemove.Name = "buttonFileSortingInfoRemove";
-            this.buttonFileSortingInfoRemove.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonFileSortingInfoRemove.Size = new System.Drawing.Size(91, 32);
-            this.buttonFileSortingInfoRemove.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonFileSortingInfoRemove.TabIndex = 1;
             this.buttonFileSortingInfoRemove.Text = "删除";
             this.buttonFileSortingInfoRemove.Click += new System.EventHandler(this.ButtonSubjectInfoRemove_Click);
@@ -282,20 +266,19 @@
             this.tabControl.Location = new System.Drawing.Point(4, 39);
             this.tabControl.MainPage = "";
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
+            this.tabControl.MenuStyle = Sunny.UI.UIMenuStyle.White;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(801, 493);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl.Style = Sunny.UI.UIStyle.LightBlue;
-            this.tabControl.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tabControl.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.tabControl.TabIndex = 1;
-            this.tabControl.TabSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.tabControl.TabSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabControl.TabUnSelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             // 
             // tabPageUsefulFeatures
             // 
-            this.tabPageUsefulFeatures.BackColor = System.Drawing.Color.White;
+            this.tabPageUsefulFeatures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.tabPageUsefulFeatures.Controls.Add(this.groupBoxQuicklyControl);
             this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceWindowsSearch);
             this.tabPageUsefulFeatures.Controls.Add(this.checkBoxDisableServiceWindowsUpdate);
@@ -323,14 +306,13 @@
             // 
             // processBarQuicklyControl
             // 
-            this.processBarQuicklyControl.DecimalCount = 1;
+            this.processBarQuicklyControl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.processBarQuicklyControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.processBarQuicklyControl.Location = new System.Drawing.Point(6, 25);
             this.processBarQuicklyControl.Maximum = 1000;
             this.processBarQuicklyControl.MinimumSize = new System.Drawing.Size(70, 5);
             this.processBarQuicklyControl.Name = "processBarQuicklyControl";
             this.processBarQuicklyControl.Size = new System.Drawing.Size(782, 32);
-            this.processBarQuicklyControl.Style = Sunny.UI.UIStyle.LightBlue;
             this.processBarQuicklyControl.TabIndex = 8;
             this.processBarQuicklyControl.TagString = "";
             this.processBarQuicklyControl.Text = "0.0%";
@@ -358,16 +340,11 @@
             // 
             this.buttonShutdown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonShutdown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShutdown.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonShutdown.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonShutdown.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonShutdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonShutdown.Location = new System.Drawing.Point(38, 4);
             this.buttonShutdown.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonShutdown.Name = "buttonShutdown";
-            this.buttonShutdown.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonShutdown.Size = new System.Drawing.Size(120, 51);
-            this.buttonShutdown.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonShutdown.TabIndex = 3;
             this.buttonShutdown.Text = "关机";
             this.buttonShutdown.Click += new System.EventHandler(this.ButtonShutdown_Click);
@@ -376,16 +353,11 @@
             // 
             this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonCancel.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Location = new System.Drawing.Point(629, 4);
             this.buttonCancel.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCancel.Size = new System.Drawing.Size(120, 51);
-            this.buttonCancel.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "取消操作";
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
@@ -394,16 +366,11 @@
             // 
             this.buttonRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRestart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonRestart.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonRestart.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRestart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonRestart.Location = new System.Drawing.Point(235, 4);
             this.buttonRestart.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonRestart.Name = "buttonRestart";
-            this.buttonRestart.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonRestart.Size = new System.Drawing.Size(120, 51);
-            this.buttonRestart.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonRestart.TabIndex = 4;
             this.buttonRestart.Text = "重启";
             this.buttonRestart.Click += new System.EventHandler(this.ButtonRestart_Click);
@@ -412,16 +379,11 @@
             // 
             this.buttonLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonLogout.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonLogout.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonLogout.Location = new System.Drawing.Point(432, 4);
             this.buttonLogout.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonLogout.Size = new System.Drawing.Size(120, 51);
-            this.buttonLogout.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonLogout.TabIndex = 5;
             this.buttonLogout.Text = "注销";
             this.buttonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
@@ -436,7 +398,6 @@
             this.checkBoxDisableServiceWindowsSearch.Name = "checkBoxDisableServiceWindowsSearch";
             this.checkBoxDisableServiceWindowsSearch.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxDisableServiceWindowsSearch.Size = new System.Drawing.Size(207, 26);
-            this.checkBoxDisableServiceWindowsSearch.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceWindowsSearch.TabIndex = 2;
             this.checkBoxDisableServiceWindowsSearch.Text = "禁用 Windows Search";
             // 
@@ -450,7 +411,6 @@
             this.checkBoxDisableServiceWindowsUpdate.Name = "checkBoxDisableServiceWindowsUpdate";
             this.checkBoxDisableServiceWindowsUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxDisableServiceWindowsUpdate.Size = new System.Drawing.Size(207, 26);
-            this.checkBoxDisableServiceWindowsUpdate.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceWindowsUpdate.TabIndex = 1;
             this.checkBoxDisableServiceWindowsUpdate.Text = "禁用 Windows Update";
             // 
@@ -464,12 +424,12 @@
             this.checkBoxDisableServiceShellHardwareDetection.Name = "checkBoxDisableServiceShellHardwareDetection";
             this.checkBoxDisableServiceShellHardwareDetection.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxDisableServiceShellHardwareDetection.Size = new System.Drawing.Size(144, 26);
-            this.checkBoxDisableServiceShellHardwareDetection.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDisableServiceShellHardwareDetection.TabIndex = 0;
             this.checkBoxDisableServiceShellHardwareDetection.Text = "禁用 自动播放";
             // 
             // tabPageSettings
             // 
+            this.tabPageSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.tabPageSettings.Controls.Add(this.checkBoxHideToNotify);
             this.tabPageSettings.Controls.Add(this.checkBoxDoubleClickNotify);
             this.tabPageSettings.Controls.Add(this.checkBoxHideWhenStart);
@@ -482,7 +442,6 @@
             this.tabPageSettings.Size = new System.Drawing.Size(801, 453);
             this.tabPageSettings.TabIndex = 3;
             this.tabPageSettings.Text = "设置";
-            this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
             // checkBoxHideToNotify
             // 
@@ -494,7 +453,6 @@
             this.checkBoxHideToNotify.Name = "checkBoxHideToNotify";
             this.checkBoxHideToNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxHideToNotify.Size = new System.Drawing.Size(192, 26);
-            this.checkBoxHideToNotify.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxHideToNotify.TabIndex = 7;
             this.checkBoxHideToNotify.Text = "关闭窗口隐藏至托盘";
             this.checkBoxHideToNotify.CheckedChanged += new System.EventHandler(this.CheckBoxHideToNotify_CheckedChanged);
@@ -509,7 +467,6 @@
             this.checkBoxDoubleClickNotify.Name = "checkBoxDoubleClickNotify";
             this.checkBoxDoubleClickNotify.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxDoubleClickNotify.Size = new System.Drawing.Size(192, 26);
-            this.checkBoxDoubleClickNotify.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxDoubleClickNotify.TabIndex = 6;
             this.checkBoxDoubleClickNotify.Text = "双击托盘图标显示界面";
             this.checkBoxDoubleClickNotify.CheckedChanged += new System.EventHandler(this.CheckBoxDoubleClickNotify_CheckedChanged);
@@ -523,7 +480,6 @@
             this.checkBoxHideWhenStart.Name = "checkBoxHideWhenStart";
             this.checkBoxHideWhenStart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxHideWhenStart.Size = new System.Drawing.Size(164, 26);
-            this.checkBoxHideWhenStart.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxHideWhenStart.TabIndex = 5;
             this.checkBoxHideWhenStart.Text = "启动时隐藏到托盘";
             this.checkBoxHideWhenStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxHideWhenStart_ValueChanged);
@@ -537,7 +493,6 @@
             this.checkBoxAutoCheckUpdate.Name = "checkBoxAutoCheckUpdate";
             this.checkBoxAutoCheckUpdate.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxAutoCheckUpdate.Size = new System.Drawing.Size(192, 26);
-            this.checkBoxAutoCheckUpdate.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxAutoCheckUpdate.TabIndex = 4;
             this.checkBoxAutoCheckUpdate.Text = "启动时自动检查更新";
             this.checkBoxAutoCheckUpdate.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxAutoCheckUpdate_ValueChanged);
@@ -545,16 +500,11 @@
             // buttonCleanLog
             // 
             this.buttonCleanLog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCleanLog.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.buttonCleanLog.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCleanLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Location = new System.Drawing.Point(6, 211);
             this.buttonCleanLog.MinimumSize = new System.Drawing.Size(1, 1);
             this.buttonCleanLog.Name = "buttonCleanLog";
-            this.buttonCleanLog.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.buttonCleanLog.Size = new System.Drawing.Size(123, 36);
-            this.buttonCleanLog.Style = Sunny.UI.UIStyle.LightBlue;
             this.buttonCleanLog.TabIndex = 3;
             this.buttonCleanLog.Text = "清除Logs";
             this.buttonCleanLog.Click += new System.EventHandler(this.ButtonCleanLog_Click);
@@ -568,7 +518,6 @@
             this.checkBoxAutoStart.Name = "checkBoxAutoStart";
             this.checkBoxAutoStart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.checkBoxAutoStart.Size = new System.Drawing.Size(123, 26);
-            this.checkBoxAutoStart.Style = Sunny.UI.UIStyle.LightBlue;
             this.checkBoxAutoStart.TabIndex = 2;
             this.checkBoxAutoStart.Text = "开机自动启动";
             this.checkBoxAutoStart.ValueChanged += new Sunny.UI.UICheckBox.OnValueChanged(this.CheckBoxAutoStart_ValueChanged);
@@ -597,7 +546,7 @@
             this.labelStyle.Location = new System.Drawing.Point(3, 0);
             this.labelStyle.Name = "labelStyle";
             this.labelStyle.Size = new System.Drawing.Size(50, 42);
-            this.labelStyle.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelStyle.Style = Sunny.UI.UIStyle.Blue;
             this.labelStyle.TabIndex = 1;
             this.labelStyle.Text = "皮肤";
             this.labelStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -618,20 +567,19 @@
             this.comboBoxStyle.Name = "comboBoxStyle";
             this.comboBoxStyle.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.comboBoxStyle.Size = new System.Drawing.Size(162, 29);
-            this.comboBoxStyle.Style = Sunny.UI.UIStyle.LightBlue;
             this.comboBoxStyle.TabIndex = 0;
             this.comboBoxStyle.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.comboBoxStyle.SelectedIndexChanged += new System.EventHandler(this.ComboBoxStyle_SelectedIndexChanged);
             // 
             // tabPageAbout
             // 
+            this.tabPageAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.tabPageAbout.Controls.Add(this.tableLayoutPanelAbout);
             this.tabPageAbout.Location = new System.Drawing.Point(0, 40);
             this.tabPageAbout.Name = "tabPageAbout";
-            this.tabPageAbout.Size = new System.Drawing.Size(801, 453);
+            this.tabPageAbout.Size = new System.Drawing.Size(200, 60);
             this.tabPageAbout.TabIndex = 4;
             this.tabPageAbout.Text = "关于";
-            this.tabPageAbout.UseVisualStyleBackColor = true;
             this.tabPageAbout.Paint += new System.Windows.Forms.PaintEventHandler(this.TabPageAbout_Paint);
             // 
             // tableLayoutPanelAbout
@@ -646,7 +594,7 @@
             this.tableLayoutPanelAbout.RowCount = 2;
             this.tableLayoutPanelAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAbout.Size = new System.Drawing.Size(801, 453);
+            this.tableLayoutPanelAbout.Size = new System.Drawing.Size(200, 60);
             this.tableLayoutPanelAbout.TabIndex = 5;
             // 
             // tableLayoutPanelInfo
@@ -663,7 +611,7 @@
             this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelInfo.Size = new System.Drawing.Size(795, 220);
+            this.tableLayoutPanelInfo.Size = new System.Drawing.Size(194, 24);
             this.tableLayoutPanelInfo.TabIndex = 0;
             // 
             // linkLabelGithub
@@ -675,13 +623,10 @@
             this.linkLabelGithub.AutoSize = true;
             this.linkLabelGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.linkLabelGithub.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
-            this.linkLabelGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelGithub.Location = new System.Drawing.Point(3, 146);
+            this.linkLabelGithub.Location = new System.Drawing.Point(3, 16);
             this.linkLabelGithub.Name = "linkLabelGithub";
-            this.linkLabelGithub.Size = new System.Drawing.Size(789, 74);
-            this.linkLabelGithub.Style = Sunny.UI.UIStyle.LightBlue;
+            this.linkLabelGithub.Size = new System.Drawing.Size(188, 8);
             this.linkLabelGithub.TabIndex = 4;
             this.linkLabelGithub.TabStop = true;
             this.linkLabelGithub.Text = "GitHub 仓库地址";
@@ -698,8 +643,8 @@
             this.labelProgramName.Font = new System.Drawing.Font("微软雅黑", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelProgramName.Location = new System.Drawing.Point(3, 0);
             this.labelProgramName.Name = "labelProgramName";
-            this.labelProgramName.Size = new System.Drawing.Size(789, 73);
-            this.labelProgramName.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelProgramName.Size = new System.Drawing.Size(188, 8);
+            this.labelProgramName.Style = Sunny.UI.UIStyle.Blue;
             this.labelProgramName.TabIndex = 2;
             this.labelProgramName.Text = "SeewoHelper";
             this.labelProgramName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -711,10 +656,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(3, 73);
+            this.labelVersion.Location = new System.Drawing.Point(3, 8);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(789, 73);
-            this.labelVersion.Style = Sunny.UI.UIStyle.LightBlue;
+            this.labelVersion.Size = new System.Drawing.Size(188, 8);
+            this.labelVersion.Style = Sunny.UI.UIStyle.Blue;
             this.labelVersion.TabIndex = 3;
             this.labelVersion.Text = "应用版本：";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -726,35 +671,34 @@
             this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelContributors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarMoInk, 0, 0);
+            this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarSugar, 0, 0);
             this.tableLayoutPanelContributors.Controls.Add(this.uiAvatarRicky, 2, 0);
             this.tableLayoutPanelContributors.Controls.Add(this.tableLayoutPanelMoInk, 1, 0);
             this.tableLayoutPanelContributors.Controls.Add(this.tableLayoutPanelRicky, 3, 0);
             this.tableLayoutPanelContributors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelContributors.Location = new System.Drawing.Point(3, 229);
+            this.tableLayoutPanelContributors.Location = new System.Drawing.Point(3, 33);
             this.tableLayoutPanelContributors.Name = "tableLayoutPanelContributors";
             this.tableLayoutPanelContributors.RowCount = 1;
             this.tableLayoutPanelContributors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelContributors.Size = new System.Drawing.Size(795, 221);
+            this.tableLayoutPanelContributors.Size = new System.Drawing.Size(194, 24);
             this.tableLayoutPanelContributors.TabIndex = 1;
             // 
-            // uiAvatarMoInk
+            // uiAvatarSugar
             // 
-            this.uiAvatarMoInk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.uiAvatarSugar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiAvatarMoInk.AvatarSize = 180;
-            this.uiAvatarMoInk.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiAvatarMoInk.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
-            this.uiAvatarMoInk.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarMoInk.Image")));
-            this.uiAvatarMoInk.Location = new System.Drawing.Point(3, 3);
-            this.uiAvatarMoInk.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiAvatarMoInk.Name = "uiAvatarMoInk";
-            this.uiAvatarMoInk.Size = new System.Drawing.Size(192, 215);
-            this.uiAvatarMoInk.Style = Sunny.UI.UIStyle.LightBlue;
-            this.uiAvatarMoInk.SymbolSize = 50;
-            this.uiAvatarMoInk.TabIndex = 0;
-            this.uiAvatarMoInk.Text = "uiAvatar1";
+            this.uiAvatarSugar.AvatarSize = 180;
+            this.uiAvatarSugar.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiAvatarSugar.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
+            this.uiAvatarSugar.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarSugar.Image")));
+            this.uiAvatarSugar.Location = new System.Drawing.Point(3, 3);
+            this.uiAvatarSugar.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiAvatarSugar.Name = "uiAvatarSugar";
+            this.uiAvatarSugar.Size = new System.Drawing.Size(42, 18);
+            this.uiAvatarSugar.SymbolSize = 50;
+            this.uiAvatarSugar.TabIndex = 0;
+            this.uiAvatarSugar.Text = "uiAvatar1";
             // 
             // uiAvatarRicky
             // 
@@ -765,11 +709,10 @@
             this.uiAvatarRicky.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiAvatarRicky.Icon = Sunny.UI.UIAvatar.UIIcon.Image;
             this.uiAvatarRicky.Image = ((System.Drawing.Image)(resources.GetObject("uiAvatarRicky.Image")));
-            this.uiAvatarRicky.Location = new System.Drawing.Point(399, 3);
+            this.uiAvatarRicky.Location = new System.Drawing.Point(99, 3);
             this.uiAvatarRicky.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiAvatarRicky.Name = "uiAvatarRicky";
-            this.uiAvatarRicky.Size = new System.Drawing.Size(192, 215);
-            this.uiAvatarRicky.Style = Sunny.UI.UIStyle.LightBlue;
+            this.uiAvatarRicky.Size = new System.Drawing.Size(42, 18);
             this.uiAvatarRicky.SymbolSize = 50;
             this.uiAvatarRicky.TabIndex = 1;
             this.uiAvatarRicky.Text = "uiAvatar2";
@@ -778,56 +721,52 @@
             // 
             this.tableLayoutPanelMoInk.ColumnCount = 1;
             this.tableLayoutPanelMoInk.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMoInk.Controls.Add(this.symbolLabelMoInk, 0, 1);
-            this.tableLayoutPanelMoInk.Controls.Add(this.linkLabelMoInkGithub, 0, 2);
+            this.tableLayoutPanelMoInk.Controls.Add(this.symbolLabelSugar, 0, 1);
+            this.tableLayoutPanelMoInk.Controls.Add(this.linkLabelSugarGithub, 0, 2);
             this.tableLayoutPanelMoInk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMoInk.Location = new System.Drawing.Point(201, 3);
+            this.tableLayoutPanelMoInk.Location = new System.Drawing.Point(51, 3);
             this.tableLayoutPanelMoInk.Name = "tableLayoutPanelMoInk";
             this.tableLayoutPanelMoInk.RowCount = 4;
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMoInk.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelMoInk.Size = new System.Drawing.Size(192, 215);
+            this.tableLayoutPanelMoInk.Size = new System.Drawing.Size(42, 18);
             this.tableLayoutPanelMoInk.TabIndex = 2;
             // 
-            // symbolLabelMoInk
+            // symbolLabelSugar
             // 
-            this.symbolLabelMoInk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.symbolLabelSugar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.symbolLabelMoInk.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.symbolLabelMoInk.Location = new System.Drawing.Point(3, 38);
-            this.symbolLabelMoInk.MinimumSize = new System.Drawing.Size(1, 1);
-            this.symbolLabelMoInk.Name = "symbolLabelMoInk";
-            this.symbolLabelMoInk.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.symbolLabelMoInk.Size = new System.Drawing.Size(186, 66);
-            this.symbolLabelMoInk.Style = Sunny.UI.UIStyle.LightBlue;
-            this.symbolLabelMoInk.Symbol = 61447;
-            this.symbolLabelMoInk.TabIndex = 0;
-            this.symbolLabelMoInk.Text = "Mo-Ink";
+            this.symbolLabelSugar.Font = new System.Drawing.Font("微软雅黑", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.symbolLabelSugar.Location = new System.Drawing.Point(3, 38);
+            this.symbolLabelSugar.MinimumSize = new System.Drawing.Size(1, 1);
+            this.symbolLabelSugar.Name = "symbolLabelSugar";
+            this.symbolLabelSugar.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.symbolLabelSugar.Size = new System.Drawing.Size(36, 1);
+            this.symbolLabelSugar.Symbol = 61447;
+            this.symbolLabelSugar.TabIndex = 0;
+            this.symbolLabelSugar.Text = "SugarMGP";
             // 
-            // linkLabelMoInkGithub
+            // linkLabelSugarGithub
             // 
-            this.linkLabelMoInkGithub.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.linkLabelMoInkGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.linkLabelSugarGithub.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.linkLabelSugarGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelMoInkGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.linkLabelMoInkGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelMoInkGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelMoInkGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
-            this.linkLabelMoInkGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelMoInkGithub.Location = new System.Drawing.Point(3, 107);
-            this.linkLabelMoInkGithub.Name = "linkLabelMoInkGithub";
-            this.linkLabelMoInkGithub.Size = new System.Drawing.Size(186, 72);
-            this.linkLabelMoInkGithub.Style = Sunny.UI.UIStyle.LightBlue;
-            this.linkLabelMoInkGithub.TabIndex = 1;
-            this.linkLabelMoInkGithub.TabStop = true;
-            this.linkLabelMoInkGithub.Text = "GitHub 主页";
-            this.linkLabelMoInkGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabelMoInkGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.linkLabelMoInkGithub.Click += new System.EventHandler(this.LinkLabelMoInkGithub_Click);
+            this.linkLabelSugarGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.linkLabelSugarGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelSugarGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.linkLabelSugarGithub.Location = new System.Drawing.Point(3, 9);
+            this.linkLabelSugarGithub.Name = "linkLabelSugarGithub";
+            this.linkLabelSugarGithub.Size = new System.Drawing.Size(36, 1);
+            this.linkLabelSugarGithub.TabIndex = 1;
+            this.linkLabelSugarGithub.TabStop = true;
+            this.linkLabelSugarGithub.Text = "GitHub 主页";
+            this.linkLabelSugarGithub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelSugarGithub.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.linkLabelSugarGithub.Click += new System.EventHandler(this.LinkLabelMoInkGithub_Click);
             // 
             // tableLayoutPanelRicky
             // 
@@ -836,14 +775,14 @@
             this.tableLayoutPanelRicky.Controls.Add(this.linkLabelRickyGithub, 0, 2);
             this.tableLayoutPanelRicky.Controls.Add(this.symbolLabelRicky, 0, 1);
             this.tableLayoutPanelRicky.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRicky.Location = new System.Drawing.Point(597, 3);
+            this.tableLayoutPanelRicky.Location = new System.Drawing.Point(147, 3);
             this.tableLayoutPanelRicky.Name = "tableLayoutPanelRicky";
             this.tableLayoutPanelRicky.RowCount = 4;
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelRicky.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelRicky.Size = new System.Drawing.Size(195, 215);
+            this.tableLayoutPanelRicky.Size = new System.Drawing.Size(44, 18);
             this.tableLayoutPanelRicky.TabIndex = 3;
             // 
             // linkLabelRickyGithub
@@ -854,13 +793,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelRickyGithub.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.linkLabelRickyGithub.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelRickyGithub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.linkLabelRickyGithub.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
-            this.linkLabelRickyGithub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.linkLabelRickyGithub.Location = new System.Drawing.Point(3, 107);
+            this.linkLabelRickyGithub.Location = new System.Drawing.Point(3, 9);
             this.linkLabelRickyGithub.Name = "linkLabelRickyGithub";
-            this.linkLabelRickyGithub.Size = new System.Drawing.Size(189, 72);
-            this.linkLabelRickyGithub.Style = Sunny.UI.UIStyle.LightBlue;
+            this.linkLabelRickyGithub.Size = new System.Drawing.Size(38, 1);
             this.linkLabelRickyGithub.TabIndex = 2;
             this.linkLabelRickyGithub.TabStop = true;
             this.linkLabelRickyGithub.Text = "GitHub 主页";
@@ -878,15 +814,14 @@
             this.symbolLabelRicky.MinimumSize = new System.Drawing.Size(1, 1);
             this.symbolLabelRicky.Name = "symbolLabelRicky";
             this.symbolLabelRicky.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.symbolLabelRicky.Size = new System.Drawing.Size(189, 66);
-            this.symbolLabelRicky.Style = Sunny.UI.UIStyle.LightBlue;
+            this.symbolLabelRicky.Size = new System.Drawing.Size(38, 1);
             this.symbolLabelRicky.Symbol = 61447;
             this.symbolLabelRicky.TabIndex = 1;
             this.symbolLabelRicky.Text = "Ricky8955555";
             // 
             // tabPageLogs
             // 
-            this.tabPageLogs.BackColor = System.Drawing.Color.White;
+            this.tabPageLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.tabPageLogs.Controls.Add(this.comboBoxLogLevel);
             this.tabPageLogs.Controls.Add(this.labelLogLevel);
             this.tabPageLogs.Controls.Add(this.textBoxLogs);
@@ -894,7 +829,7 @@
             this.tabPageLogs.Location = new System.Drawing.Point(0, 40);
             this.tabPageLogs.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageLogs.Name = "tabPageLogs";
-            this.tabPageLogs.Size = new System.Drawing.Size(801, 453);
+            this.tabPageLogs.Size = new System.Drawing.Size(200, 60);
             this.tabPageLogs.TabIndex = 2;
             this.tabPageLogs.Text = "日志";
             // 
@@ -910,7 +845,6 @@
             this.comboBoxLogLevel.Name = "comboBoxLogLevel";
             this.comboBoxLogLevel.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.comboBoxLogLevel.Size = new System.Drawing.Size(255, 23);
-            this.comboBoxLogLevel.Style = Sunny.UI.UIStyle.LightBlue;
             this.comboBoxLogLevel.TabIndex = 2;
             this.comboBoxLogLevel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.comboBoxLogLevel.SelectedIndexChanged += new System.EventHandler(this.ComboBoxLogLevel_SelectedIndexChanged);
@@ -922,7 +856,6 @@
             this.labelLogLevel.Location = new System.Drawing.Point(4, 423);
             this.labelLogLevel.Name = "labelLogLevel";
             this.labelLogLevel.Size = new System.Drawing.Size(79, 20);
-            this.labelLogLevel.Style = Sunny.UI.UIStyle.LightBlue;
             this.labelLogLevel.TabIndex = 1;
             this.labelLogLevel.Text = "日志级别：";
             this.labelLogLevel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -930,20 +863,18 @@
             // textBoxLogs
             // 
             this.textBoxLogs.AutoScroll = true;
+            this.textBoxLogs.ButtonSymbol = 61761;
             this.textBoxLogs.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxLogs.FillColor = System.Drawing.Color.White;
             this.textBoxLogs.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxLogs.Location = new System.Drawing.Point(4, 5);
             this.textBoxLogs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxLogs.Maximum = 2147483647D;
-            this.textBoxLogs.Minimum = -2147483648D;
             this.textBoxLogs.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxLogs.Multiline = true;
             this.textBoxLogs.Name = "textBoxLogs";
             this.textBoxLogs.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxLogs.ReadOnly = true;
+            this.textBoxLogs.ShowText = false;
             this.textBoxLogs.Size = new System.Drawing.Size(793, 413);
-            this.textBoxLogs.Style = Sunny.UI.UIStyle.LightBlue;
             this.textBoxLogs.TabIndex = 0;
             this.textBoxLogs.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.textBoxLogs.WordWarp = false;
@@ -1012,9 +943,8 @@
             // 
             // WindowMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(809, 536);
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.tabControl);
@@ -1024,7 +954,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowMain";
-            this.Style = Sunny.UI.UIStyle.LightBlue;
             this.Text = "SeewoHelper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowMain_FormClosing);
             this.Load += new System.EventHandler(this.WindowMain_Load);
@@ -1093,11 +1022,11 @@
         private Sunny.UI.UILabel labelVersion;
         private Sunny.UI.UILinkLabel linkLabelGithub;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelContributors;
-        private Sunny.UI.UIAvatar uiAvatarMoInk;
+        private Sunny.UI.UIAvatar uiAvatarSugar;
         private Sunny.UI.UIAvatar uiAvatarRicky;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMoInk;
-        private Sunny.UI.UISymbolLabel symbolLabelMoInk;
-        private Sunny.UI.UILinkLabel linkLabelMoInkGithub;
+        private Sunny.UI.UISymbolLabel symbolLabelSugar;
+        private Sunny.UI.UILinkLabel linkLabelSugarGithub;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRicky;
         private Sunny.UI.UILinkLabel linkLabelRickyGithub;
         private Sunny.UI.UISymbolLabel symbolLabelRicky;

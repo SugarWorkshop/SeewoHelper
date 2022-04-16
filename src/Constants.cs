@@ -18,12 +18,12 @@ namespace SeewoHelper
         /// <summary>
         /// 项目链接
         /// </summary>
-        public static readonly string RepositoryLink = "https://github.com/Mo-Ink/SeewoHelper";
+        public static readonly string RepositoryLink = "https://github.com/SugarMGP/SeewoHelper";
 
         /// <summary>
-        /// Mo-Ink Github 主页
+        /// SugarMGP Github 主页
         /// </summary>
-        public static readonly string MoInkLink = "https://github.com/Mo-Ink";
+        public static readonly string SugarLink = "https://github.com/SugarMGP";
 
         /// <summary>
         /// Ricky Github 主页
@@ -38,7 +38,7 @@ namespace SeewoHelper
         /// <summary>
         /// Releases API 链接
         /// </summary>
-        public static readonly string ReleasesLink = "https://api.github.com/repos/Mo-Ink/SeewoHelper/releases";
+        public static readonly string ReleasesLink = "https://api.github.com/repos/SugarMGP/SeewoHelper/releases";
 
         /// <summary>
         /// 应用运行文件夹路径
